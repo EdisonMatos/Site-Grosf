@@ -46,7 +46,7 @@ export default function Numbers() {
                 />
               }
               number={<AnimatedCounter endValue={yearsOfService} />}
-              text="Anos de serviços prestados"
+              text="A definir."
             />
             <ResultsCard
               icon={
@@ -58,7 +58,7 @@ export default function Numbers() {
                 />
               }
               number={<AnimatedCounter endValue={1800} />}
-              text="Quantidade de itens oferecidos"
+              text="A definir."
             />
             <ResultsCard
               icon={
@@ -70,7 +70,7 @@ export default function Numbers() {
                 />
               }
               number={<AnimatedCounter endValue={2400} />}
-              text='Número de clientes atendidos anualmente'
+              text='A definir.'
             />
             <ResultsCard
               icon={
@@ -82,7 +82,7 @@ export default function Numbers() {
                 />
               }
               number={<AnimatedCounter endValue={8000} />}
-              text="Capacidade de entregas diária em kilo/litro"
+              text="A definir."
             />
           </h1>
         </div>
