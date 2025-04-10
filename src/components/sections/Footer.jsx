@@ -19,7 +19,7 @@ function Footer() {
               src={mpaLogo}
               className="w-[109px] h-[115px]"
             ></img>
-            <p className="full">Na sua piscinas fazemos tudo, você nada!</p>
+            <p className="full">A definir.</p>
             <div className="flex full gap-x-[8px] items-center">
               <Phone
                 size={24}
@@ -32,7 +32,7 @@ function Footer() {
                 target="_blank"
                 className="hover:underline"
               >
-                (11) 99488-9426
+                (00) 00000-0000
               </a>
             </div>
             <div className="flex full gap-x-[8px] items-center">
@@ -42,25 +42,22 @@ function Footer() {
                 strokeWidth={1}
                 className="text-white"
               />
-              <p>contato@mpapiscinas.com.br</p>
+              <p>contato@adefinir.com.br</p>
             </div>
           </div>
         </MotionDivLeftToRight>
         <MotionDivUpToDown>
           <div className="flex flex-col gap-y-[16px] desktop1:w-[290px]">
             <h1 className="font-medium text-title2 desktop1:text-title5 desktop1:h-[115px] flex items-center">
-              SOBRE
+              A definir.
             </h1>
-            <p>
-              Agradecemos sua visita! Esperamos que em breve você se torne nosso
-              cliente e desfrute de todos os benefícios que oferecemos.
-            </p>
+            <p>A definir.</p>
           </div>
         </MotionDivUpToDown>
         <MotionDivRightToLeft>
           <div className="flex flex-col gap-y-[16px] desktop1:w-[290px]">
             <h1 className="font-medium text-title2 desktop1:text-title5 desktop1:h-[115px] flex items-center">
-              NAVEGAÇÃO
+              A definir.
             </h1>
             <div className="flex justify-between full">
               <div className="w-[46%] flex flex-col gap-y-[16px] text-paragraph3 font-semibold ">
@@ -74,7 +71,7 @@ function Footer() {
                     offset={-100}
                     href="#"
                   >
-                    Início
+                    A definir.
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -87,7 +84,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Sobre nós
+                    A definir.
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -100,7 +97,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Produtos e Acessórios
+                    A definir.
                   </Link>
                 </div>
               </div>
@@ -115,7 +112,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Cursos e Palestras
+                    A definir.
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -128,7 +125,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Perguntas Frequentes
+                    A definir.
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -141,7 +138,7 @@ function Footer() {
                     offset={-190}
                     href="#"
                   >
-                    Contato
+                    A definir.
                   </Link>
                 </div>
               </div>
@@ -155,7 +152,7 @@ function Footer() {
       <div className="text-center w-[88%] max-w-[1110px] flex flex-col mb-[48px] phone2:mb-[80px] tablet1:mb-0">
         <MotionDivUpToDown>
           <p className="w-full">
-            2024 - MPA Piscinas - Todos os direitos reservados
+            2025 - A definir. - Todos os direitos reservados
           </p>
           <p>
             <a
