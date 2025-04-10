@@ -25,7 +25,7 @@ export default function ImgAndButtonsCard(props) {
       </div>
 
       <Link onClick={handleClick} className="w-full">
-        <button className="text-white bg-primary rounded-[10px] text-paragraph3 py-[8px] px-[31px] font-mainFont font-medium w-full transition hover:bg-red-900">
+        <button className="text-white bg-primary rounded-[10px] text-paragraph3 py-[8px] px-[31px] font-mainFont font-medium w-full transition hover:bg-blue-600">
           <MotionDivLeftToRight><p>{button1Label}</p></MotionDivLeftToRight>
         </button>
       </Link>
