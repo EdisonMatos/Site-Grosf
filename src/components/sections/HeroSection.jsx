@@ -47,7 +47,7 @@ export default function HeroSection() {
                         onClick={() =>
                           window.open(whatsappContactLink, "_blank")
                         }
-                        className="flex flex-row items-center justify-around w-auto h-16 transition rounded-[40px] p-6 bg-red-700 hover:bg-red-900"
+                        className="flex flex-row items-center justify-around w-auto h-16 transition rounded-[40px] p-6 bg-primary hover:bg-blue-600"
                       >
                         <div className="flex p-4 text-center items-center">
                           <img

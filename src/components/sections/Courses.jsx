@@ -18,22 +18,22 @@ export default function Courses() {
             img={hthLogo}
             text="A definir."
             button1Label="A definir."
-            button1Link="https://hth.com.br/cursos-presenciais
-            "
+            // button1Link="https://hth.com.br/cursos-presenciais
+            // "
             alt="Logo da marca Hth"
           />
           <ImgTextAndButtonsCard
             img={gencoLogo}
             text="A definir."
             button1Label="A definir."
-            button1Link="https://www.genco.com.br/escola-da-piscina/"
+            // button1Link="https://www.genco.com.br/escola-da-piscina/"
             alt="Logo da marca Genco"
           />
           <ImgTextAndButtonsCard
             img={hidroazulLogo}
             text="A definir."
             button1Label="A definir."
-            button1Link="https://hidroazul.com.br/universidade-da-piscina/"
+            // button1Link="https://hidroazul.com.br/universidade-da-piscina/"
             alt="Logo da marca Hidroazul"
           />
         </SectionContent>
