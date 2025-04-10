@@ -58,13 +58,12 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A empresa abre nos finais de semana e nos feriados?
+              A definir.
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Não, nosso horário de atendimento é de segunda a sexta-feira, das
-              8:00 às 18:00 horas.
+              A definir.
             </p>
           </AccordionDetails>
         </Accordion>
@@ -74,13 +73,12 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A empresa conta com atendimento presencial?
+              A definir.
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Não, nosso atendimento é somente pelo WhatsApp, por telefone ou
-              e-mail.
+              A definir.
             </p>
           </AccordionDetails>
         </Accordion>
@@ -90,15 +88,12 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A empresa oferece cursos ou treinamentos para profissionais ou
-              proprietários de piscinas?
+              A definir.
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Os cursos e treinamentos são oferecidos pelos nossos parceiros
-              comerciais. Clique no link do fabricante que você deseja e agende
-              seu curso.
+              A definir.
             </p>
           </AccordionDetails>
         </Accordion>
@@ -108,14 +103,12 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              Qual é o valor mínimo para faturamento e qual o prazo de
-              pagamento?
+              A definir.
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              O valor mínimo por pedido é de R$ 1.200,00 e o prazo é de 21 dias
-              para pagamento com boleto bancário.
+              A definir.
             </p>
           </AccordionDetails>
         </Accordion>
@@ -125,14 +118,12 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              Existe um valor mínimo para entrega do pedido?
+              A definir.
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Sim, segue o mesmo padrão do faturamento mínimo, ou seja, R$
-              1.200,00 por pedido para entrega grátis no nosso território de
-              atuação.
+              A definir.
             </p>
           </AccordionDetails>
         </Accordion>
@@ -142,15 +133,12 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel6d-content" id="panel6d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              Como faço para fazer o primeiro pedido?
+              A definir.
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Faça seu pré-cadastro com um dos nossos atendentes e aguarde a
-              aprovação pelo nosso financeiro. Isso deve levar no máximo 2 dias.
-              Para CNPJs novos, as primeiras compras deverão ser pagas à vista
-              de forma antecipada.
+              A definir.
             </p>
           </AccordionDetails>
         </Accordion>
@@ -160,12 +148,12 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel7d-content" id="panel7d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              O que a empresa entende por CNPJ novo?
+              A definir.
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Aquele cuja abertura oficial da empresa seja inferior a 3 anos.
+              A definir.
             </p>
           </AccordionDetails>
         </Accordion>
