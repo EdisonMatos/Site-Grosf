@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import imgOfficeGreenBackground from "../../assets/importAssets/bg2.webp";
+import imgOfficeGreenBackground from "../../assets/importAssets/bg2.jpg";
 import ResultsCard from "../cards/ResultsCard";
 import AnimatedCounter from "../util/AnimatedCounter";
 import { Handshake, Building, Box, Truck } from "lucide-react";
@@ -38,10 +38,10 @@ export default function Numbers() {
           <h1 className="flex flex-col items-center w-full tablet1:flex-row tablet1:justify-between tablet1:flex-wrap desktop1:flex-nowrap">
             <ResultsCard
               icon={
-                <Building
+                <Box
                   size={32}
                   strokeWidth={1}
-                  aria-label="Ícone de Predio da empresa"
+                  aria-label="Ícone de Caixa de itens"
                   className="text-white"
                 />
               }
@@ -57,31 +57,31 @@ export default function Numbers() {
                   className="text-white"
                 />
               }
-              number={<AnimatedCounter endValue={1800} />}
+              number={<AnimatedCounter endValue={0} />}
               text="A definir."
             />
             <ResultsCard
               icon={
-                <Handshake
+                <Box
                   size={32}
                   strokeWidth={1}
-                  aria-label="Ícone de Aperto de mãos"
+                  aria-label="Ícone de Caixa de itens"
                   className="text-white"
                 />
               }
-              number={<AnimatedCounter endValue={2400} />}
+              number={<AnimatedCounter endValue={0} />}
               text='A definir.'
             />
             <ResultsCard
               icon={
-                <Truck
-                  size={32}
-                  strokeWidth={1}
-                  aria-label="Ícone de Caminhão de entregas"
-                  className="text-white"
-                />
+                <Box
+                size={32}
+                strokeWidth={1}
+                aria-label="Ícone de Caixa de itens"
+                className="text-white"
+              />
               }
-              number={<AnimatedCounter endValue={8000} />}
+              number={<AnimatedCounter endValue={0} />}
               text="A definir."
             />
           </h1>
