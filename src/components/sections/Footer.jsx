@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import mpaLogo from "../../assets/importAssets/Logo.webp";
+import mpaLogo from "../../assets/importAssets/Logo.png";
 import { Phone, Mail } from "lucide-react";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
 import MotionDivUpToDown from "../animation/MotionDivUpToDown";
