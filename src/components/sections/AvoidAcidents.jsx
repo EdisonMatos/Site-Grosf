@@ -9,8 +9,8 @@ export default function AboutUs() {
     <div className="flex justify-center full">
       <div className="font-mainFont w-[88%] max-w-[1110px] pb-[8px] pt-[26px] phone3:pt-[48px] tablet1:pb-0">
         <SectionHeader
-          sectionHeaderTitleSecond="Zerar-Site"
-          sectionHeaderDescription="Zerar-Site"
+          sectionHeaderTitleSecond="A definir."
+          sectionHeaderDescription="A definir."
         />
         <div className=" desktop1:flex desktop1:flex-row-reverse desktop1:justify-between desktop1:pb-[54px] desktop3:pb-[48px]">
           <div className=" pb-[28px] desktop1:w-[48%] desktop1:py-0 desktop3:w-[46.3%]">
@@ -25,15 +25,14 @@ export default function AboutUs() {
           <div className="desktop1:w-[48.5%] desktop3:w-[46.3%]">
             <MotionDivLeftToRight>
               <h1 className="  text-primary flex items-center phone1:w-[100%] phone1:font-medium phone1:text-title2 phone3:text-title2 phone1:pb-[10px] tablet1:text-title2 desktop1:text-title4">
-                Zerar-Site
+                A definir.
               </h1>
               <div className=" text-quaternary phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] desktop3:w-[100%]">
                 <p>
-                  Zerar-Site <br />
+                  A definir. <br />
                   <br />
-                  Zerar-Site <br />
-                  <br />
-                  Zerar-Site
+                  A definir. <br />
+                  <br />A definir.
                 </p>
               </div>
             </MotionDivLeftToRight>
@@ -53,13 +52,12 @@ export default function AboutUs() {
             <div className=" text-quaternary phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] desktop3:w-[100%]">
               <MotionDivRightToLeft>
                 <p>
-                  Zerar-Site <br />
+                  A definir. <br />
                   <br />
-                  Zerar-Site <br />
+                  A definir. <br />
                   <br />
-                  Zerar-Site <br />
-                  <br />
-                  Zerar-Site
+                  A definir. <br />
+                  <br />A definir.
                 </p>
               </MotionDivRightToLeft>
             </div>
