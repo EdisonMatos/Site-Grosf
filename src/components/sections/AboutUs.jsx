@@ -16,8 +16,8 @@ export default function AboutUs() {
         id="about"
       >
         <SectionHeader
-          sectionHeaderTitleSecond="Sobre nós"
-          sectionHeaderDescription="A MPA destaca-se no mercado pela excelência no atendimento personalizado e sua vasta experiência em piscinas com grandes volumes de água."
+          sectionHeaderTitleSecond="A definir."
+          sectionHeaderDescription="A definir."
         />
 
         <div>
@@ -26,11 +26,11 @@ export default function AboutUs() {
               <div className=" desktop1:w-[60%] desktop3:w-[55%]">
                 <MotionDivLeftToRight>
                   <SectionArticle
-                    articleSubtitle="Nossa História"
-                    articleTitle="Experiência em piscinas olímpicas e semiolímpicas."
-                    articleParagraphOne="A MPA é uma empresa familiar criada especialmente para oferecer um atendimento exclusivo e personalizado aos proprietários de piscinas com grandes volumes de água, como piscinas olímpicas e semiolímpicas, entre outras."
-                    articleParagraphTwo="Sua criação remonta ao ano de 2003, mas seus idealizadores têm ligação com esse segmento há pelo menos 45 anos, contando assim com vasta experiência no atendimento diferenciado que esse tipo de negócio exige."
-                    articleParagraphThree="A missão da empresa é se aprimorar a cada dia, subir degrau por degrau, avançar sempre no sentido de cumprir objetivos, entregar ao cliente exatamente o que foi negociado com ele na sua plenitude e, ao final de tudo, ter a certeza de ter proporcionado a ele uma boa experiência de compra. E para que tudo isso aconteça, a empresa tem a clara convicção de que precisa contar sempre com você, cliente! Junte-se à MPA Piscinas!"
+                    articleSubtitle="A definir."
+                    articleTitle="A definir."
+                    articleParagraphOne="A definir."
+                    articleParagraphTwo="A definir."
+                    articleParagraphThree="A definir."
                   />
                 </MotionDivLeftToRight>
               </div>
