@@ -1,14 +1,14 @@
 import SectionHeader from "../sectionElements/SectionHeader";
 import SectionContent from "../sectionElements/SectionContent";
 import ImgAndButtonsCard from "../cards/ImgAndButtonsCard";
-import hthLogo from "../../assets/imgs/brands/hthLogo.webp";
-import gencoLogo from "../../assets/imgs/brands/gencoLogo.webp";
-import domclorLogo from "../../assets/imgs/brands/domclorLogo.webp";
-import hidroazulLogo from "../../assets/imgs/brands/hidroazulLogo.webp";
-import neoclorLogo from "../../assets/imgs/brands/neoclorLogo.webp";
-import netunoLogo from "../../assets/imgs/brands/netunoLogo.webp";
-import sodramarLogo from "../../assets/imgs/brands/sodramarLogo.webp";
-import suallLogo from "../../assets/imgs/brands/suallLogo.webp";
+import hthLogo from "../../assets/imgs/brands/hthLogo.jpg";
+import gencoLogo from "../../assets/imgs/brands/gencoLogo.jpg";
+import domclorLogo from "../../assets/imgs/brands/domclorLogo.jpg";
+import hidroazulLogo from "../../assets/imgs/brands/hidroazulLogo.jpg";
+import neoclorLogo from "../../assets/imgs/brands/neoclorLogo.jpg";
+import netunoLogo from "../../assets/imgs/brands/netunoLogo.jpg";
+import sodramarLogo from "../../assets/imgs/brands/sodramarLogo.jpg";
+import suallLogo from "../../assets/imgs/brands/suallLogo.jpg";
 
 export default function OurProducts() {
   return (

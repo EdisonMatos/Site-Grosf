@@ -1,8 +1,8 @@
 import SectionHeader from "../sectionElements/SectionHeader";
 import SectionContent from "../sectionElements/SectionContent";
-import hthLogo from "../../assets/imgs/brands/hthLogo.webp";
-import gencoLogo from "../../assets/imgs/brands/gencoLogo.webp";
-import hidroazulLogo from "../../assets/imgs/brands/hidroazulLogo.webp";
+import hthLogo from "../../assets/imgs/brands/hthLogo.jpg";
+import gencoLogo from "../../assets/imgs/brands/gencoLogo.jpg";
+import hidroazulLogo from "../../assets/imgs/brands/hidroazulLogo.jpg";
 import ImgTextAndButtonsCard from "../cards/ImgTextAndButtonsCard";
 
 export default function Courses() {
