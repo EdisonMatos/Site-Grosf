@@ -15,14 +15,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Router>
         <Routes>
           <Route path="/" element={<ImportPage />} />
-          <Route path="/hth" element={<HthPage />} />
+          {/* <Route path="/hth" element={<HthPage />} />
           <Route path="/genco" element={<GencoPage />} />
           <Route path="/domclor" element={<DomclorPage />} />
           <Route path="/hidroazul" element={<HidroazulPage />} />
           <Route path="/neoclor" element={<NeoclorPage />} />
           <Route path="/netuno" element={<NetunoPage />} />
           <Route path="/sodramar" element={<SodramarPage />} />
-          <Route path="/suall" element={<SuallPage />} />
+          <Route path="/suall" element={<SuallPage />} /> */}
         </Routes>
       </Router>
 );
