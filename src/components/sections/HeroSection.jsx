@@ -29,16 +29,14 @@ export default function HeroSection() {
               <div className="desktop1:w-[650px] flex flex-col gap-8">
                 <MotionDivLeftToRight>
                   <div className="font-black leading-none text-center desktop1:text-left text-title3 phone1:text-title5 phone3:text-title6 tablet1:text-title7 desktop1:text-[40px]">
-                    <h1>BEM VINDO AO MUNDO DAS PISCINAS!</h1>
+                    <h1>A definir.</h1>
                   </div>
                 </MotionDivLeftToRight>
                 <MotionDivLeftToRight>
                   <div className="text-center desktop1:text-left phone1:w-full phone1:font-medium phone1:text-paragraph4">
                     <p>
-                      Aqui você será atendido de forma humanizada por
-                      profissionais qualificados e preparados para esclarecer
-                      suas dúvidas.
-                      <br /> Continue navegando e encontre o que você procura.
+                    A definir.
+                      <br /> A definir.
                     </p>
                   </div>
                 </MotionDivLeftToRight>
@@ -58,7 +56,7 @@ export default function HeroSection() {
                             alt="WhatsApp Icon"
                           />
                           <p className="flex items-center leading-none text-white text-title1">
-                            Fale com um consultor
+                          A definir.
                           </p>
                         </div>
                       </button>
