@@ -1,6 +1,6 @@
 import SectionContent from "../sectionElements/SectionContent";
 import imgCta from "../../assets/importAssets/CtaWhatsapp.jpg";
-import imgBackground from "../../assets/importAssets/bg2.webp";
+import imgBackground from "../../assets/importAssets/bg2.jpg";
 import WhatsAppIcon from "../../assets/importAssets/WhatsAppIcon.webp";
 import MotionDivUpToDown from "../animation/MotionDivUpToDown";
 import MotionDivDownToUp from "../animation/MotionDivDownToUp";
