@@ -2,13 +2,12 @@ import MotionDivUpToDown from "../animation/MotionDivUpToDown";
 import PropTypes from "prop-types";
 
 export default function ResultsCard(props) {
-  const { number, text, icon, children } = props;
+  const { number, text, icon } = props;
 
   ResultsCard.propTypes = {
     number: PropTypes.any,
     text: PropTypes.any,
     icon: PropTypes.any,
-    children: PropTypes.node, // adiciona suporte ao children
   };
 
   return (
@@ -17,20 +16,11 @@ export default function ResultsCard(props) {
         {icon}
       </div>
       <div className="flex flex-col justify-center flex-1 ml-[5%] font-mainFont">
-        <div className="flex flex-row items-end font-extrabold leading-none text-white text-title2 phone1:text-title4 phone2:text-title5 desktop1:text-title4">
-          <MotionDivUpToDown>
-            {number}
-            {children && (
-              <MotionDivUpToDown>
-                <span className="ml-1">{children}</span>
-              </MotionDivUpToDown>
-            )}
-          </MotionDivUpToDown>
+        <div className="flex flex-col justify-start font-extrabold leading-none text-white text-title2 phone1:text-title4 phone2:text-title5 desktop1:text-title4">
+          <MotionDivUpToDown>{number}</MotionDivUpToDown>
         </div>
         <div className="text-left text-white text-paragraph1 phone1:text-paragraph3 phone2:text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-          <MotionDivUpToDown>
-            <p>{text}</p>
-          </MotionDivUpToDown>
+          <MotionDivUpToDown><p>{text}</p></MotionDivUpToDown>
         </div>
       </div>
     </div>

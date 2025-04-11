@@ -24,7 +24,6 @@ export default function AboutModal() {
         idade.
       </p>
       <br />
-      <br />
       <p>
         Trajava calça e camisa bastante desbotadas pelo uso intenso na lida
         diária lá na roça, nos pés um par de chinelos com solado também
@@ -32,7 +31,6 @@ export default function AboutModal() {
         e estreita feita de sobras de tecidos de costura com uma alça comprida
         que lhe servia como apoio ao ombro.
       </p>
-      <br />
       <br />
       <p>
         Bastante utilizado na roça, esse utensílio caipira servia principalmente
@@ -43,7 +41,6 @@ export default function AboutModal() {
         os pais e irmãos que por lá ficaram.
       </p>
       <br />
-      <br />
       <p>
         Logo após o desembarque, seus olhos brilharam ao olhar para a cobertura
         colorida da linda rodoviária, composta por milhares de pequenos
@@ -53,14 +50,12 @@ export default function AboutModal() {
         gigantesca edificação.
       </p>
       <br />
-      <br />
       <p>
         Nunca havia visto antes algo parecido, silencioso observava um tanto
         assustado o movimento de pessoas e veículos que iam e vinham naquele
         horário por aquelas estreitas ruas e isso o deixava um tanto apreensivo
         e pensativo.
       </p>
-      <br />
       <br />
       <p>
         Pega então sua pouca bagagem, se enche de esperança foco e fé e promete
@@ -70,7 +65,6 @@ export default function AboutModal() {
         cumprida.
       </p>
       <br />
-      <br />
       <p>
         Tão logo chegou foi vai morar provisoriamente com a mesma tia que o
         trouxera, a sua saudosa e querida Tia Tereza (in memoriam) que nesse
@@ -78,7 +72,6 @@ export default function AboutModal() {
         sua mãe biológica, Dona Zina a nº 1 (in memoriam) e mais 2 Tias
         diferentes, a Tia Quita a nº 2 e a Tia Nhá a nº 3 (todas in memoriam).
       </p>
-      <br />
       <br />
       <p>
         Dois dias após sua chegada, começou trabalhar numa padaria como
@@ -95,14 +88,12 @@ export default function AboutModal() {
         convencido pela Tia a aceitar esse novo emprego.
       </p>
       <br />
-      <br />
       <p>
         No final do primeiro trimestre daquele longínquo ano de 1980, começou
         então a nova função que lhe foi confiada pelo empresário espanhol que
         passou a partir de então ser o seu novo patrão, nasceu uma boa empatia e
         confiança entre os dois e ali ele ficou por seis anos.
       </p>
-      <br />
       <br />
       <p>
         Nesse ano de 1980 um fato totalmente fora do previsto aconteceu, ele foi
@@ -116,14 +107,12 @@ export default function AboutModal() {
         memoriam) e essa passou a ser então a sua mãe nº 5.
       </p>
       <br />
-      <br />
       <p>
         Nota: Um detalhe que esse narrador não pode deixar passar despercebido
         trata-se da sua mãe nº 6, a sua querida Tia Juraci que vive em nosso
         meio, foi aos seus cuidados que esteve do ano de 1982 até o início de
         1986 quando se casou.
       </p>
-      <br />
       <br />
       <p>
         Voltando à história, cerca de menos de 2 anos depois, seu empenho e
@@ -134,7 +123,6 @@ export default function AboutModal() {
         conheceu muitos clientes e fornecedores do ramo, mas não tinha noção de
         onde isso poderia chegar.
       </p>
-      <br />
       <br />
       <p>
         Após seis anos de trabalho nessa fábrica de acessórios de piscinas mais
@@ -153,7 +141,6 @@ export default function AboutModal() {
         paulista por ocasião da sua chegada, o momento finalmente havia chegado.
       </p>
       <br />
-      <br />
       <p>
         O tempo passou depressa, parece ter voado, lá se foram 15 anos desde a
         sua chegada, o ano era 1994, ano da criação da nova moeda, o Real e
@@ -165,7 +152,6 @@ export default function AboutModal() {
         sua empresa, a <strong>Comercial Grosfestilo.</strong>
       </p>
       <br />
-      <br />
       <p>
         A primeira venda foi realizada já no dia 4 de setembro daquele ano, o
         cliente que realizou essa primeira compra continua com sua loja aberta e
@@ -176,7 +162,6 @@ export default function AboutModal() {
         máquina de escrever manual da marca Olivetti.
       </p>
       <br />
-      <br />
       <p>
         A parceria com a marca HTH aconteceu pouco tempo depois ainda no
         primeiro semestre do ano de 1996, a ansiedade por ver as coisas
@@ -185,7 +170,6 @@ export default function AboutModal() {
         existia crédito disponível, pq ninguém queria, e com toda a razão
         apostar no potencial de uma empresa recém criada.
       </p>
-      <br />
       <br />
       <p>
         Um dia foi convidado para um almoço com o Vice Presidente da HTH, essa a
@@ -201,7 +185,6 @@ export default function AboutModal() {
         mes, esse foi o primeiro desafio a ser enfrentado e precisou ser rápido.
       </p>
       <br />
-      <br />
       <p>
         A empresa começou crescer de forma lenta mas sustentável, já no ano de
         2008 atingiu a marca de 400 toneladas de produtos comercializados e não
@@ -209,7 +192,6 @@ export default function AboutModal() {
         suficiente para armazenar tanto produto, a casa ao lado foi alugada e o
         problema parecia ter sido resolvido.
       </p>
-      <br />
       <br />
       <p>
         Pouco tempo depois as duas casas já se tornaram pequenas, uma terceira
@@ -224,7 +206,6 @@ export default function AboutModal() {
         precisava ser feito novamente e de forma rápida.
       </p>
       <br />
-      <br />
       <p>
         Antes disso, no ano de 2009, diante da necessidade de agilizar seus
         processos e aprimorar seus controles, a empresa adquiriu um complexo
@@ -236,7 +217,6 @@ export default function AboutModal() {
         aprimorada, e a empresa continuou a alcançar números bastante robustos.
       </p>
       <br />
-      <br />
       <p>
         No ano de 2013 adquiriu um imóvel com 2.000m² de área construída, um
         prédio imponente, arrojado, espaçoso que conta inclusive com
@@ -247,7 +227,6 @@ export default function AboutModal() {
         pouco mais de 1.000 toneladas.
       </p>
       <br />
-      <br />
       <p>
         Em 2024, a empresa completou 30 anos de existência, já está na segunda
         geração, mas o seu fundador, aquele migrante paranaense que desembarcou
@@ -255,7 +234,6 @@ export default function AboutModal() {
         janeiro de 1979 trazendo consigo um sonho, continua trabalhando e
         participando diretamente das decisões mais importantes.
       </p>
-      <br />
       <br />
       <p>
         A empresa tem projetos de governança ambiental já implantados e também
