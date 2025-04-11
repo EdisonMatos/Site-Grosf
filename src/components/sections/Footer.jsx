@@ -49,15 +49,19 @@ function Footer() {
         <MotionDivUpToDown>
           <div className="flex flex-col gap-y-[16px] desktop1:w-[290px]">
             <h1 className="font-medium text-title2 desktop1:text-title5 desktop1:h-[115px] flex items-center">
-              A definir.
+              SOBRE
             </h1>
-            <p>A definir.</p>
+            <p>
+              {" "}
+              Agradecemos sua visita! Esperamos que em breve você se torne nosso
+              cliente e desfrute de todos os benefícios que oferecemos.
+            </p>
           </div>
         </MotionDivUpToDown>
         <MotionDivRightToLeft>
           <div className="flex flex-col gap-y-[16px] desktop1:w-[290px]">
             <h1 className="font-medium text-title2 desktop1:text-title5 desktop1:h-[115px] flex items-center">
-              A definir.
+              NAVEGAÇÃO
             </h1>
             <div className="flex justify-between full">
               <div className="w-[46%] flex flex-col gap-y-[16px] text-paragraph3 font-semibold ">
@@ -71,7 +75,7 @@ function Footer() {
                     offset={-100}
                     href="#"
                   >
-                    A definir.
+                    Início
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -84,7 +88,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    A definir.
+                    Sobre nós
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -97,7 +101,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    A definir.
+                    Produtos e Acessórios{" "}
                   </Link>
                 </div>
               </div>
@@ -112,7 +116,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    A definir.
+                    Cursos e Palestras{" "}
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -125,7 +129,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    A definir.
+                    Perguntas Frequentes{" "}
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -138,7 +142,7 @@ function Footer() {
                     offset={-190}
                     href="#"
                   >
-                    A definir.
+                    Contato
                   </Link>
                 </div>
               </div>
