@@ -41,7 +41,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            A definir.
+            Início
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -61,7 +61,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            A definir.
+            Sobre nós
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -90,7 +90,7 @@ export default function ListGroup() {
                 scrolling ? "hover:text-primary" : ""
               }`}
             >
-              A definir.
+              Produtos e Acessórios
             </span>
           </Link>
           <div
@@ -180,7 +180,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            A definir.
+            Cursos e Palestras
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -200,7 +200,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            A definir.
+            Perguntas Frequentes
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -220,7 +220,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            A definir.
+            Contato
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
