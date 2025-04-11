@@ -44,6 +44,7 @@ export default function AboutUs({ modal }) {
                     articleSubtitle="A definir."
                     articleTitle="NOSSA HISTÓRIA!"
                     articleParagraphOne="No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã, desembarcava na rodoviária Júlio Prestes no centro da capital paulista, trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de idade."
+                    articleParagraphTwo="Trajava calça e camisa bastante desbotadas pelo uso intenso na lida diária lá na roça, nos pés um par de chinelos com solado também desgastados, no ombro esquerdo um embornal, uma espécie de sacola funda e estreita feita de sobras de tecidos de costura com uma alça comprida que lhe servia como apoio ao ombro."
                   />
                   <MotionDivDownToUp>
                     {modal ? <ParagraphWithFading /> : <ParagraphSemFading />}

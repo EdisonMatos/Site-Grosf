@@ -1,5 +1,5 @@
 import SectionContent from "../sectionElements/SectionContent";
-import imgCta from "../../assets/importAssets/CtaWhatsapp.jpg";
+import imgCta from "../../assets/importAssets/CtaWhatsapp.png";
 import imgBackground from "../../assets/importAssets/bg2.jpg";
 import WhatsAppIcon from "../../assets/importAssets/WhatsAppIcon.webp";
 import MotionDivUpToDown from "../animation/MotionDivUpToDown";
@@ -30,7 +30,7 @@ export default function CtaWhatsapp() {
               <h1 className="text-left text-white text-paragraph1 phone1:text-paragraph4 phone3:text-paragraph5 max-w-32 phone3:max-w-none font-poppins tablet1:text-title2 tablet2:text-title4 desktop1:text-title5 desktop2:text-title6">
                 <MotionDivUpToDown>
                   <p>
-                    A definir <strong>A definir.</strong>
+                    Contate-nos através do <strong>Whatsapp</strong>
                   </p>
                 </MotionDivUpToDown>
               </h1>
@@ -49,7 +49,7 @@ export default function CtaWhatsapp() {
                         alt="WhatsApp Icon"
                       ></img>
                       <p className="text-white text-center text-paragraph1 phone3:text-paragraph2 phone3:pr-[5px] tablet1:pr-[3%] tablet1:text-title1">
-                        A definir.
+                        Fale com um consultor
                       </p>
                     </a>
                   </button>
