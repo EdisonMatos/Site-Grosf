@@ -43,7 +43,7 @@ export default function ImportPage() {
     <div>
       <NavbarSection />
       <HeroSection />
-      <AboutUs />
+      <AboutUs  modal={true}/>
       <Numbers />
       <OurProducts />
       <AvoidAccidents />

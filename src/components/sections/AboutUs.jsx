@@ -7,8 +7,14 @@ import ArticleComponent from "../sectionElements/ArticleComponent";
 import SectionArticle from "../sectionElements/SectionArticle";
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
+import React, { useState } from "react";
+import AboutModal from "../sectionElements/about/AboutModal";
+import ParagraphSemFading from "../sectionElements/about/ParagraphSemFading";
+import ParagraphWithFading from "../sectionElements/about/ParagraphWithFading";
+import AboutFading from "../sectionElements/about/AboutFading";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
-export default function AboutUs() {
+export default function AboutUs({ modal }) {
   return (
     <div className="flex justify-center full">
       <div
@@ -16,8 +22,8 @@ export default function AboutUs() {
         id="about"
       >
         <SectionHeader
-          sectionHeaderTitleSecond="A definir."
-          sectionHeaderDescription="A definir."
+          sectionHeaderTitleSecond="Sobre nós"
+          sectionHeaderDescription=""
         />
 
         <div>
@@ -27,11 +33,13 @@ export default function AboutUs() {
                 <MotionDivLeftToRight>
                   <SectionArticle
                     articleSubtitle="A definir."
-                    articleTitle="A definir."
-                    articleParagraphOne="A definir."
-                    articleParagraphTwo="A definir."
-                    articleParagraphThree="A definir."
+                    articleTitle="NOSSA HISTÓRIA!"
+                    articleParagraphOne="No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã, desembarcava na rodoviária Júlio Prestes no centro da capital paulista trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de idade…"
                   />
+                  <MotionDivDownToUp>
+                    {modal ? <ParagraphWithFading /> : <ParagraphSemFading />}
+                    {modal && <AboutModal />}
+                  </MotionDivDownToUp>
                 </MotionDivLeftToRight>
               </div>
 
