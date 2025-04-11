@@ -13,11 +13,11 @@ function Footer() {
     <footer className="bg-secondary full gap-y-[42px]  text-white font-mainFont text-left text-paragraph3 flex flex-col py-[26px] phone3:py-[48px] justify-between items-center">
       <div className=" w-[88%] max-w-[1110px] flex flex-col gap-y-[42px]  desktop1:flex-row desktop1:justify-between">
         <MotionDivLeftToRight>
-          <div className="flex flex-col gap-y-[16px] desktop1:w-[290px]">
+          <div className="flex flex-col gap-y-[16px] desktop1:w-auto">
             <img
               alt="Logo MPA Piscinas"
               src={mpaLogo}
-              className="w-[109px] h-[115px]"
+              className="w-full h-[115px]"
             ></img>
             <p className="full">A definir.</p>
             <div className="flex full gap-x-[8px] items-center">
