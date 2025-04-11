@@ -2,14 +2,14 @@ import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
 import WhatsAppIcon from "../../assets/importAssets/WhatsAppIcon.webp";
 import ImagesGalleryHero from "../interactives/ImagesGalleryHero";
 import MotionDivDownToUp from "../animation/MotionDivDownToUp";
-import slide1 from "../../assets/banners/hero/slide1.jpg";
-import slide2 from "../../assets/banners/hero/slide2.jpg";
-import slide3 from "../../assets/banners/hero/slide3.jpg";
-import slide4 from "../../assets/banners/hero/slide4.jpg";
-import slide5 from "../../assets/banners/hero/slide5.jpg";
-import slide6 from "../../assets/banners/hero/slide6.jpg";
-import slide7 from "../../assets/banners/hero/slide7.jpg";
-import slide8 from "../../assets/banners/hero/slide8.jpg";
+// import slide1 from "../../assets/banners/hero/slide1.jpg";
+// import slide2 from "../../assets/banners/hero/slide2.jpg";
+// import slide3 from "../../assets/banners/hero/slide3.jpg";
+// import slide4 from "../../assets/banners/hero/slide4.jpg";
+// import slide5 from "../../assets/banners/hero/slide5.jpg";
+// import slide6 from "../../assets/banners/hero/slide6.jpg";
+// import slide7 from "../../assets/banners/hero/slide7.jpg";
+// import slide8 from "../../assets/banners/hero/slide8.jpg";
 import bgImage from "../../assets/importAssets/bg2.jpg";
 import whatsappNumber from "../../abstractions/whats";
 
@@ -17,12 +17,15 @@ const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function HeroSection() {
   return (
-    <div className="font-mainFont" id="home">
+    <div className="font-mainFont " id="home">
       <div
-        className="w-full bg-center bg-cover"
+        className="relative w-full bg-center bg-cover"
         style={{ backgroundImage: "url(" + bgImage + ")" }}
       >
-        <div className="flex items-center">
+        <div className="absolute inset-0 z-0 bg-black/50" />
+
+        <div className="relative z-10 flex items-center w-full text-white justify-evenly">
+          {" "}
           <div className="w-full text-white justify-evenly">
             <div className="h-40 desktop3:h-46" />
             <div className="flex flex-col desktop1:flex-row mx-auto mb-[40px] w-[88%] max-w-[1110px] items-center gap-10 tablet2:gap-14 desktop3:gap-20">
