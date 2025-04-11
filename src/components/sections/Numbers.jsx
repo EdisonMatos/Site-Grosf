@@ -8,7 +8,7 @@ export default function Numbers() {
   const [yearsOfService, setYearsOfService] = useState(0);
 
   useEffect(() => {
-    const startDate = new Date("2003-01-01");
+    const startDate = new Date("1995-04-11");
     const currentDate = new Date();
     const differenceInYears =
       currentDate.getFullYear() - startDate.getFullYear();
@@ -46,7 +46,19 @@ export default function Numbers() {
                 />
               }
               number={<AnimatedCounter endValue={yearsOfService} />}
-              text="A definir."
+              text="Tempo de serviço prestado em anos"
+            />
+            <ResultsCard
+              icon={
+                <Box
+                  size={32}
+                  strokeWidth={1}
+                  aria-label="Ícone de Caixa de itens"
+                  className="text-white"
+                />
+              }
+              number={<AnimatedCounter endValue={900} />}
+              text="Volume de produtos movimentado anualmente em kilo/litro"
             />
             <ResultsCard
               icon={
@@ -68,18 +80,6 @@ export default function Numbers() {
                   aria-label="Ícone de Caixa de itens"
                   className="text-white"
                 />
-              }
-              number={<AnimatedCounter endValue={0} />}
-              text='A definir.'
-            />
-            <ResultsCard
-              icon={
-                <Box
-                size={32}
-                strokeWidth={1}
-                aria-label="Ícone de Caixa de itens"
-                className="text-white"
-              />
               }
               number={<AnimatedCounter endValue={0} />}
               text="A definir."

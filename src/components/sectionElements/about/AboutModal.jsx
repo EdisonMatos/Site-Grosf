@@ -248,9 +248,6 @@ export default function AboutModal() {
       </p>
       <br />
       <br />
-      <p></p>
-      <br />
-      <br />
       <p>
         Em 2024, a empresa completou 30 anos de existência, já está na segunda
         geração, mas o seu fundador, aquele migrante paranaense que desembarcou
@@ -270,7 +267,6 @@ export default function AboutModal() {
         consigo esse conceito, continuará a contar sua linda e empolgante
         história!
       </p>
-      <br />
       <br />
     </div>
   );
