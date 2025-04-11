@@ -19,7 +19,7 @@ function Footer() {
               src={mpaLogo}
               className="w-full h-[115px]"
             ></img>
-            <p className="full">A definir.</p>
+            <p className="full">Mergulhe na magia desse nosso vasto oceano.</p>
             <div className="flex full gap-x-[8px] items-center">
               <Phone
                 size={24}
@@ -32,7 +32,7 @@ function Footer() {
                 target="_blank"
                 className="hover:underline"
               >
-                (00) 00000-0000
+                (11) 4173-1175
               </a>
             </div>
             <div className="flex full gap-x-[8px] items-center">
@@ -42,7 +42,7 @@ function Footer() {
                 strokeWidth={1}
                 className="text-white"
               />
-              <p>contato@adefinir.com.br</p>
+              <p>vendas@grosfestilo.com.br</p>
             </div>
           </div>
         </MotionDivLeftToRight>
