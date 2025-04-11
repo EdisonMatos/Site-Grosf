@@ -71,10 +71,10 @@ export default function Numbers() {
                   className="text-white"
                 />
               }
-              number={<AnimatedCounter endValue={0} />}
-              text="A definir."
+              number={<AnimatedCounter endValue={2100} />}
+              text="Capacidade de armazenagem em metros cúbico"
             />
-            <ResultsCard
+            {/* <ResultsCard
               icon={
                 <Box
                   size={32}
@@ -85,7 +85,7 @@ export default function Numbers() {
               }
               number={<AnimatedCounter endValue={0} />}
               text="A definir."
-            />
+            /> */}
           </h1>
         </div>
       </div>
