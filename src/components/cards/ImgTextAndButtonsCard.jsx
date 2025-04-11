@@ -23,7 +23,7 @@ export default function ImgTextAndButtonsCard(props) {
         <MotionDivLeftToRight><p>{text}</p></MotionDivLeftToRight>
       </p>
       <a href={button1Link} target="_blank" className="w-full">
-        <button className="text-white bg-red-700 rounded-[10px] py-[8px] px-[31px] font-mainFont font-medium text-paragraph3 w-full transition hover:bg-red-900">
+        <button className="text-white bg-primary rounded-[10px] py-[8px] px-[31px] font-mainFont font-medium text-paragraph3 w-full transition hover:bg-blue-600">
           <MotionDivLeftToRight><p>{button1Label}</p></MotionDivLeftToRight>
         </button>
       </a> 

@@ -1,7 +1,7 @@
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
 import SectionHeader from "../sectionElements/SectionHeader";
 import Acordion from "../interactives/Acordion";
-import faqImg from "../../assets/imgs/faq/faq.webp";
+import faqImg from "../../assets/imgs/faq/faq.png";
 
 export default function FrequentlyAskedQuestions() {
   return (
@@ -9,8 +9,7 @@ export default function FrequentlyAskedQuestions() {
       <div className="w-[88%] max-w-[1110px] py-[26px] phone3:py-[48px]">
         <SectionHeader
           sectionHeaderTitleSecond="Perguntas Frequentes"
-          sectionHeaderDescription="Ficou com alguma dúvida? Clique na pergunta abaixo e obtenha a resposta. 
-        Caso não tenha encontrado a resposta que precisa, entre em contato conosco."
+          sectionHeaderDescription="Aqui você encontra respostas para as perguntas mais  frequentes, caso ainda continue com alguma dúvida, entre em contato com um dos nossos atendentes."
         />
         <div className="flex items-center">
           <div className=" w-full desktop1:w-[100%] desktop2:w-[100%]">

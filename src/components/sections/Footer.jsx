@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import mpaLogo from "../../assets/importAssets/Logo.webp";
+import mpaLogo from "../../assets/importAssets/Logo.png";
 import { Phone, Mail } from "lucide-react";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
 import MotionDivUpToDown from "../animation/MotionDivUpToDown";
@@ -13,13 +13,13 @@ function Footer() {
     <footer className="bg-secondary full gap-y-[42px]  text-white font-mainFont text-left text-paragraph3 flex flex-col py-[26px] phone3:py-[48px] justify-between items-center">
       <div className=" w-[88%] max-w-[1110px] flex flex-col gap-y-[42px]  desktop1:flex-row desktop1:justify-between">
         <MotionDivLeftToRight>
-          <div className="flex flex-col gap-y-[16px] desktop1:w-[290px]">
+          <div className="flex flex-col gap-y-[16px] desktop1:w-auto">
             <img
               alt="Logo MPA Piscinas"
               src={mpaLogo}
-              className="w-[109px] h-[115px]"
+              className="w-[85%] h-[105px] bg-white p-3 rounded-md"
             ></img>
-            <p className="full">Na sua piscinas fazemos tudo, você nada!</p>
+            <p className="full">Mergulhe na magia desse nosso vasto oceano.</p>
             <div className="flex full gap-x-[8px] items-center">
               <Phone
                 size={24}
@@ -32,7 +32,7 @@ function Footer() {
                 target="_blank"
                 className="hover:underline"
               >
-                (11) 99488-9426
+                (11) 4173-1175
               </a>
             </div>
             <div className="flex full gap-x-[8px] items-center">
@@ -42,7 +42,7 @@ function Footer() {
                 strokeWidth={1}
                 className="text-white"
               />
-              <p>contato@mpapiscinas.com.br</p>
+              <p>vendas@grosfestilo.com.br</p>
             </div>
           </div>
         </MotionDivLeftToRight>
@@ -52,6 +52,7 @@ function Footer() {
               SOBRE
             </h1>
             <p>
+              {" "}
               Agradecemos sua visita! Esperamos que em breve você se torne nosso
               cliente e desfrute de todos os benefícios que oferecemos.
             </p>
@@ -100,7 +101,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Produtos e Acessórios
+                    Produtos e Acessórios{" "}
                   </Link>
                 </div>
               </div>
@@ -115,7 +116,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Cursos e Palestras
+                    Cursos e Palestras{" "}
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -128,7 +129,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Perguntas Frequentes
+                    Perguntas Frequentes{" "}
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -155,7 +156,7 @@ function Footer() {
       <div className="text-center w-[88%] max-w-[1110px] flex flex-col mb-[48px] phone2:mb-[80px] tablet1:mb-0">
         <MotionDivUpToDown>
           <p className="w-full">
-            2024 - MPA Piscinas - Todos os direitos reservados
+            2025 - A definir. - Todos os direitos reservados
           </p>
           <p>
             <a

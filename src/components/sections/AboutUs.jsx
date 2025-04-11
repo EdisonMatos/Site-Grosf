@@ -1,14 +1,29 @@
 import SectionHeader from "../sectionElements/SectionHeader";
 import ImagesGallery3Slides from "../interactives/ImagesGallery3Slides";
-import slide1 from "../../assets/banners/aboutUs/slide1bigPool.webp";
-import slide2 from "../../assets/banners/aboutUs/slide2smallPool.webp";
-import slide3 from "../../assets/banners/aboutUs/slide3cleanWater.webp";
+import slide1 from "../../assets/banners/aboutUs/slide1.jpg";
+import slide2 from "../../assets/banners/aboutUs/slide2.jpg";
+import slide3 from "../../assets/banners/aboutUs/slide3.jpg";
+import slide4 from "../../assets/banners/aboutUs/slide4.jpg";
+import slide5 from "../../assets/banners/aboutUs/slide5.jpg";
+import slide6 from "../../assets/banners/aboutUs/slide6.jpg";
+import slide7 from "../../assets/banners/aboutUs/slide7.jpg";
+import slide8 from "../../assets/banners/aboutUs/slide8.jpg";
+import slide9 from "../../assets/banners/aboutUs/slide9.jpg";
+import slide10 from "../../assets/banners/aboutUs/slide10.jpg";
+import slide11 from "../../assets/banners/aboutUs/slide11.jpg";
+
 import ArticleComponent from "../sectionElements/ArticleComponent";
 import SectionArticle from "../sectionElements/SectionArticle";
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
+import React, { useState } from "react";
+import AboutModal from "../sectionElements/about/AboutModal";
+import ParagraphSemFading from "../sectionElements/about/ParagraphSemFading";
+import ParagraphWithFading from "../sectionElements/about/ParagraphWithFading";
+import AboutFading from "../sectionElements/about/AboutFading";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
-export default function AboutUs() {
+export default function AboutUs({ modal }) {
   return (
     <div className="flex justify-center full">
       <div
@@ -17,7 +32,7 @@ export default function AboutUs() {
       >
         <SectionHeader
           sectionHeaderTitleSecond="Sobre nós"
-          sectionHeaderDescription="A MPA destaca-se no mercado pela excelência no atendimento personalizado e sua vasta experiência em piscinas com grandes volumes de água."
+          sectionHeaderDescription=""
         />
 
         <div>
@@ -26,12 +41,15 @@ export default function AboutUs() {
               <div className=" desktop1:w-[60%] desktop3:w-[55%]">
                 <MotionDivLeftToRight>
                   <SectionArticle
-                    articleSubtitle="Nossa História"
-                    articleTitle="Experiência em piscinas olímpicas e semiolímpicas."
-                    articleParagraphOne="A MPA é uma empresa familiar criada especialmente para oferecer um atendimento exclusivo e personalizado aos proprietários de piscinas com grandes volumes de água, como piscinas olímpicas e semiolímpicas, entre outras."
-                    articleParagraphTwo="Sua criação remonta ao ano de 2003, mas seus idealizadores têm ligação com esse segmento há pelo menos 45 anos, contando assim com vasta experiência no atendimento diferenciado que esse tipo de negócio exige."
-                    articleParagraphThree="A missão da empresa é se aprimorar a cada dia, subir degrau por degrau, avançar sempre no sentido de cumprir objetivos, entregar ao cliente exatamente o que foi negociado com ele na sua plenitude e, ao final de tudo, ter a certeza de ter proporcionado a ele uma boa experiência de compra. E para que tudo isso aconteça, a empresa tem a clara convicção de que precisa contar sempre com você, cliente! Junte-se à MPA Piscinas!"
+                    articleSubtitle="A definir."
+                    articleTitle="NOSSA HISTÓRIA!"
+                    articleParagraphOne="No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã, desembarcava na rodoviária Júlio Prestes no centro da capital paulista, trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de idade."
+                    articleParagraphTwo="Trajava calça e camisa bastante desbotadas pelo uso intenso na lida diária lá na roça, nos pés um par de chinelos com solado também desgastados, no ombro esquerdo um embornal, uma espécie de sacola funda e estreita feita de sobras de tecidos de costura com uma alça comprida que lhe servia como apoio ao ombro."
                   />
+                  <MotionDivDownToUp>
+                    {modal ? <ParagraphWithFading /> : <ParagraphSemFading />}
+                    {modal && <AboutModal />}
+                  </MotionDivDownToUp>
                 </MotionDivLeftToRight>
               </div>
 
@@ -41,6 +59,14 @@ export default function AboutUs() {
                     slide1={slide1}
                     slide2={slide2}
                     slide3={slide3}
+                    slide4={slide4}
+                    slide5={slide5}
+                    slide6={slide6}
+                    slide7={slide7}
+                    slide8={slide8}
+                    slide9={slide9}
+                    slide10={slide10}
+                    slide11={slide11}
                   />
                 </MotionDivRightToLeft>
               </div>

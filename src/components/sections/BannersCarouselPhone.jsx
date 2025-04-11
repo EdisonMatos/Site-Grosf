@@ -1,6 +1,6 @@
 import ImagesGallery2Slides from "../interactives/ImagesGallery2Slides";
-import imgAtendimentoPhone from "../../assets/banners/bannersCarousel/atendimento-phone.webp";
-import imgEntregasPhone from "../../assets/banners/bannersCarousel/entregas-phone.webp";
+import imgAtendimentoPhone from "../../assets/banners/bannersCarousel/atendimento-phone.jpg";
+import imgEntregasPhone from "../../assets/banners/bannersCarousel/entregas-phone.jpg";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
 
 export default function PhoneBannersCarousel() {

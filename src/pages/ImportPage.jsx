@@ -43,13 +43,13 @@ export default function ImportPage() {
     <div>
       <NavbarSection />
       <HeroSection />
-      <AboutUs />
+      <AboutUs  modal={true}/>
       <Numbers />
-      <OurProducts />
-      <AvoidAccidents />
+      {/* <OurProducts /> */}
+      {/* <AvoidAccidents /> */}
       <CtaWhatsapp />
-      <Courses />
-      {carouselComponent}
+      {/* <Courses />
+      {carouselComponent} */}
       <FrequentlyAskedQuestions />
       <BackToTopButton />
       <FloatingWhatsappButton />

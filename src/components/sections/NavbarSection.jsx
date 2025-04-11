@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "../sectionElements/Navbar";
-import Logo from "../../assets/importAssets/Logo.webp";
+import Logo from "../../assets/importAssets/Logo.png";
 import ListGroup from "../sectionElements/ListGroup";
 import Sidebar from "../sectionElements/Sidebar";
 import { Menu, X } from "lucide-react";
@@ -102,7 +102,7 @@ export default function NavbarSection() {
             <img
               src={Logo}
               alt="Logo MPA Piscinas"
-              className={`mr-[80px] h-[80px] ${
+              className={`mr-[80px] h-[80px] p-3 bg-white rounded-md ${
                 scrolling
                   ? "h-[56px] max-h-[56px] transition-all duration-1000"
                   : "h-[112px] max-h-[112px] transition-all duration-1000"

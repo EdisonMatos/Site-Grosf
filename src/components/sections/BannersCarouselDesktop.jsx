@@ -1,6 +1,6 @@
 import ImagesGallery2Slides from "../interactives/ImagesGallery2Slides";
-import imgAtendimentoDesktop from "../../assets/banners/bannersCarousel/atendimento-desktop.webp";
-import imgEntregasDesktop from "../../assets/banners/bannersCarousel/entregas-desktop.webp";
+import imgAtendimentoDesktop from "../../assets/banners/bannersCarousel/atendimento-desktop.jpg";
+import imgEntregasDesktop from "../../assets/banners/bannersCarousel/entregas-desktop.jpg";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
 
 export default function BannersCarousel() {

@@ -40,7 +40,9 @@ export default function ListGroup() {
           offset={-100}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>INÍCIO</span>
+          <span className={scrolling ? "hover:text-primary" : ""}>
+            Início
+          </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
               scrolling ? "bg-primary" : "bg-white"
@@ -59,7 +61,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            SOBRE NÓS
+            Sobre nós
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -88,7 +90,7 @@ export default function ListGroup() {
                 scrolling ? "hover:text-primary" : ""
               }`}
             >
-              PRODUTOS E ACESSÓRIOS
+              Produtos e Acessórios
             </span>
           </Link>
           <div
@@ -178,7 +180,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            CURSOS E PALESTRAS
+            Cursos e Palestras
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -198,7 +200,7 @@ export default function ListGroup() {
           href="#"
         >
           <span className={scrolling ? "hover:text-primary" : ""}>
-            PERGUNTAS FREQUENTES
+            Perguntas Frequentes
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -217,7 +219,9 @@ export default function ListGroup() {
           offset={-190}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>CONTATO</span>
+          <span className={scrolling ? "hover:text-primary" : ""}>
+            Contato
+          </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
               scrolling ? "bg-primary" : "bg-white"
