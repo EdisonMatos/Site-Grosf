@@ -58,12 +58,14 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A definir.
+              A empresa abre nos finais de semana e nos feriados?
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              A definir.
+              Não, nosso horário de funcionamento é de segunda a sexta feira das
+              8h até as 18h com um intervalo de 1 hora das 12h até as 13h para
+              descanso e refeição{" "}
             </p>
           </AccordionDetails>
         </Accordion>
@@ -73,12 +75,13 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A definir.
+              A empresa conta com atendimento presencial?{" "}
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              A definir.
+              Não, nosso atendimento é somente pelo whatsapp, por telefone ou
+              por email.{" "}
             </p>
           </AccordionDetails>
         </Accordion>
@@ -88,12 +91,15 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A definir.
+              A empresa oferece cursos de capacitação ou treinamento para
+              profissionais ou proprietários de piscinas?{" "}
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              A definir.
+              Não, os curtos e treinamentos são oferecidos pelos nossos
+              parceiros comerciais, caso haja interesse nesses cursos, escolha a
+              marca desejada e entre no site do fabricante escolhido.{" "}
             </p>
           </AccordionDetails>
         </Accordion>
@@ -103,12 +109,14 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A definir.
+              A empresa exige valor mínimo por pedido? Se sim qual o valor o
+              prazo de pagamento oferecido?{" "}
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              A definir.
+              Sim, o valor mínimo por pedido é de R$300,00 e o prazo para
+              pagamento é de 21 dias com boleto bancário.{" "}
             </p>
           </AccordionDetails>
         </Accordion>
@@ -118,12 +126,13 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A definir.
+              Existe um valor mínimo para entrega gratuita do pedido?{" "}
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              A definir.
+              Sim, o valor mínimo para entrega grátis dentro do nosso território
+              de atuação é de R$1.200,00 por pedido.{" "}
             </p>
           </AccordionDetails>
         </Accordion>
@@ -133,12 +142,15 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel6d-content" id="panel6d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A definir.
+              Quais os territórios de atuação da empresa?{" "}
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              A definir.
+              Atuamos em 3 territórios específicos no estado de São Paulo:{" "}
+              <br /> RT1 - Vale do Paraíba <br />
+              RT2 - Litoral Paulista <br /> RT3 - Circuito das Águas Paulista e
+              Grande ABC
             </p>
           </AccordionDetails>
         </Accordion>
@@ -148,12 +160,54 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel7d-content" id="panel7d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A definir.
+              Qual o procedimento para compras a partir de um CNPJ novo?{" "}
             </h1>
           </AccordionSummary>
           <AccordionDetails>
             <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              A definir.
+              Para CNPJ novo as três primeiras compras obrigatoriamente terão
+              que ser à vista com pagamento antecipado. (Entende-se por CNPJ
+              novo aquele cuja data de emissão seja inferior a 3 anos){" "}
+            </p>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion
+          expanded={expanded === "panel8"}
+          onChange={handleChange("panel8")}
+        >
+          <AccordionSummary aria-controls="panel8d-content" id="panel8d-header">
+            <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
+              Quais os canais de vendas da empresa?
+            </h1>
+          </AccordionSummary>
+          <AccordionDetails>
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
+              Email: vendas@grosfestilo.com.br <br /> WhatsApp: (11) 989598507{" "}
+              <br />
+              Telefone: (11) 41731175 <br /> Outros assuntos consulte um dos
+              nossos atendentes.
+            </p>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion
+          expanded={expanded === "panel9"}
+          onChange={handleChange("panel9")}
+        >
+          <AccordionSummary aria-controls="panel9d-content" id="panel9d-header">
+            <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
+              Quais as regiões que compõem cada RT e suas respectivas cidades?
+            </h1>
+          </AccordionSummary>
+          <AccordionDetails>
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
+              RT1 - Todo o Vale do Paraíba desde a cidade de Arujá até a cidade
+              de Queluz incluindo a região de serra. <br /> RT2 - Todo o litoral
+              paulista desde a cidade de Cananéia até a cidade de Ubatuba mais a
+              região serrana.
+              <br /> RT3 - Todo o Circuito das Águas Paulista incluindo o Grande
+              ABC Paulista e a Capital São Paulo.
             </p>
           </AccordionDetails>
         </Accordion>
