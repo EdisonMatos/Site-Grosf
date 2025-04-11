@@ -12,7 +12,7 @@ const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 export default function CtaWhatsapp() {
   return (
     <div
-      className="mt-12 phone1:mt-[15%] phone2:mt-[20%] phone3:mt-[20%] bg-center bg-cover tablet1:mt-28"
+      className="relative mt-12 phone1:mt-[15%] phone2:mt-[20%] phone3:mt-[20%] bg-center bg-cover tablet1:mt-28"
       style={{
         backgroundImage: `url(${imgBackground})`,
         backgroundRepeat: "no-repeat",
@@ -21,8 +21,10 @@ export default function CtaWhatsapp() {
       }}
       id="contact"
     >
+      <div className="absolute inset-0 z-0 bg-black/50" />
+
       <SectionContent>
-        <div className="flex justify-center w-full font-mainFont">
+        <div className="relative z-10 flex justify-center w-full font-mainFont">
           <div className="w-[88%] max-w-[1110px] flex flex-row items-end justify-between h-28 phone1:h-40 phone3:h-48 desktop1:h-60">
             <div className="flex flex-col w-full  justify-evenly items-left h-28 phone1:h-40 phone3:h-48 desktop1:h-52 desktop1:mb-[24px]">
               <h1 className="text-left text-white text-paragraph1 phone1:text-paragraph4 phone3:text-paragraph5 max-w-32 phone3:max-w-none font-poppins tablet1:text-title2 tablet2:text-title4 desktop1:text-title5 desktop2:text-title6">

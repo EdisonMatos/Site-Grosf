@@ -26,14 +26,16 @@ export default function Numbers() {
 
   return (
     <div
-      className="flex justify-center bg-center bg-cover"
+      className="relative flex justify-center bg-center bg-cover"
       style={{
         backgroundImage: `url(${imgOfficeGreenBackground})`,
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="w-[88%] max-w-[1110px]">
+      <div className="absolute inset-0 z-0 bg-black/50" />
+
+      <div className="relative z-10 w-[88%] max-w-[1110px]">
         <div className="py-[26px] phone3:py-[48px]">
           <h1 className="flex flex-col items-center w-full tablet1:flex-row tablet1:justify-between tablet1:flex-wrap desktop1:flex-nowrap">
             <ResultsCard
