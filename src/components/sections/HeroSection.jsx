@@ -67,9 +67,9 @@ export default function HeroSection() {
                 </div>
               </div>
               <div className="desktop1:w-[510px]  desktop1:h-[350px] flex items-center">
-                <MotionDivDownToUp>
+                {/* <MotionDivDownToUp>
                   <ImagesGalleryHero slide1={slide1} slide2={slide2} />
-                </MotionDivDownToUp>
+                </MotionDivDownToUp> */}
               </div>
             </div>
           </div>

@@ -9,6 +9,9 @@ import slide6 from "../../assets/banners/aboutUs/slide6.jpg";
 import slide7 from "../../assets/banners/aboutUs/slide7.jpg";
 import slide8 from "../../assets/banners/aboutUs/slide8.jpg";
 import slide9 from "../../assets/banners/aboutUs/slide9.jpg";
+import slide10 from "../../assets/banners/aboutUs/slide10.jpg";
+import slide11 from "../../assets/banners/aboutUs/slide11.jpg";
+
 
 
 import ArticleComponent from "../sectionElements/ArticleComponent";
@@ -63,6 +66,8 @@ export default function AboutUs({ modal }) {
                     slide7={slide7}
                     slide8={slide8}
                     slide9={slide9}
+                    slide10={slide10}
+                    slide11={slide11}
                   />
                 </MotionDivRightToLeft>
               </div>
