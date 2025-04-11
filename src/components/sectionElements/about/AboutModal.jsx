@@ -19,9 +19,9 @@ export default function AboutModal() {
     <div>
       <p>
         No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã,
-        desembarcava na rodoviária Júlio Prestes no centro da capital paulista
+        desembarcava na rodoviária Júlio Prestes no centro da capital paulista,
         trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de
-        idade
+        idade.
       </p>
       <br />
       <br />
@@ -170,10 +170,10 @@ export default function AboutModal() {
         A primeira venda foi realizada já no dia 4 de setembro daquele ano, o
         cliente que realizou essa primeira compra continua com sua loja aberta e
         atuante até os dias de hoje e atualmente já está na segunda geração. Os
-        primeiros desafios começaram chegar, a primeira compra de acessórios tb
-        foi realizada, tratava-se de uma caixa de papelão contendo 30 peneiras
-        cata folhas, além disso comprou também um aparelho de fax e uma máquina
-        de escrever manual da marca Olivetti.
+        primeiros desafios começaram chegar, a primeira compra de acessórios
+        também foi realizada, tratava-se de uma caixa de papelão contendo 30
+        peneiras cata folhas, além disso comprou também um aparelho de fax e uma
+        máquina de escrever manual da marca Olivetti.
       </p>
       <br />
       <br />
@@ -183,7 +183,7 @@ export default function AboutModal() {
         acontecerem parecia ser seu principal estado emocional naquele momento,
         mas entendeu que precisava ir devagar, a empresa era nova demais, não
         existia crédito disponível, pq ninguém queria, e com toda a razão
-        apostar no potencial de uma empresa recém criada..
+        apostar no potencial de uma empresa recém criada.
       </p>
       <br />
       <br />
@@ -191,7 +191,7 @@ export default function AboutModal() {
         Um dia foi convidado para um almoço com o Vice Presidente da HTH, essa a
         maior empresa do segmento de tratamento de águas de piscinas do Brasil,
         após relutar bastante por conta do sua timidez, o convite finalmente foi
-        aceito, o almoço aconteceu numa churrascaria da região de nome{" "}
+        aceito, o almoço aconteceu numa churrascaria da região de nome
         <strong>Galeto na Brasa</strong>, houve uma boa empatia entre os
         participantes desse almoço, ganhou a confiança do então Vice Presidente
         cujo nome era <strong>Arnaldo Machado</strong>, e a partir de então as

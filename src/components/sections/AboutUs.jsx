@@ -12,8 +12,6 @@ import slide9 from "../../assets/banners/aboutUs/slide9.jpg";
 import slide10 from "../../assets/banners/aboutUs/slide10.jpg";
 import slide11 from "../../assets/banners/aboutUs/slide11.jpg";
 
-
-
 import ArticleComponent from "../sectionElements/ArticleComponent";
 import SectionArticle from "../sectionElements/SectionArticle";
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
@@ -45,7 +43,7 @@ export default function AboutUs({ modal }) {
                   <SectionArticle
                     articleSubtitle="A definir."
                     articleTitle="NOSSA HISTÓRIA!"
-                    articleParagraphOne="No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã, desembarcava na rodoviária Júlio Prestes no centro da capital paulista trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de idade…"
+                    articleParagraphOne="No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã, desembarcava na rodoviária Júlio Prestes no centro da capital paulista, trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de idade."
                   />
                   <MotionDivDownToUp>
                     {modal ? <ParagraphWithFading /> : <ParagraphSemFading />}
