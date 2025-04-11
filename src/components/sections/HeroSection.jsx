@@ -29,14 +29,16 @@ export default function HeroSection() {
               <div className="desktop1:w-[650px] flex flex-col gap-8">
                 <MotionDivLeftToRight>
                   <div className="font-black leading-none text-center desktop1:text-left text-title3 phone1:text-title5 phone3:text-title6 tablet1:text-title7 desktop1:text-[40px]">
-                    <h1>A definir.</h1>
+                    <h1>Seja bem vindo ao mundo Grosfestilo!</h1>
                   </div>
                 </MotionDivLeftToRight>
                 <MotionDivLeftToRight>
                   <div className="text-center desktop1:text-left phone1:w-full phone1:font-medium phone1:text-paragraph4">
                     <p>
-                    A definir.
-                      <br /> A definir.
+                      Nossos profissionais são preparados para atendê-lo de
+                      forma objetiva, técnica, transparente e humanizada, siga
+                      navegando e surpreenda-se!
+                      <br />
                     </p>
                   </div>
                 </MotionDivLeftToRight>
@@ -49,14 +51,14 @@ export default function HeroSection() {
                         }
                         className="flex flex-row items-center justify-around w-auto h-16 transition rounded-[40px] p-6 bg-primary hover:bg-blue-600"
                       >
-                        <div className="flex p-4 text-center items-center">
+                        <div className="flex items-center p-4 text-center">
                           <img
                             src={WhatsAppIcon}
                             className="h-[36px] w-[36px] mr-[24px]"
                             alt="WhatsApp Icon"
                           />
                           <p className="flex items-center leading-none text-white text-title1">
-                          A definir.
+                            Fale com um consultor
                           </p>
                         </div>
                       </button>
@@ -66,16 +68,7 @@ export default function HeroSection() {
               </div>
               <div className="desktop1:w-[510px]  desktop1:h-[350px] flex items-center">
                 <MotionDivDownToUp>
-                  <ImagesGalleryHero
-                    slide1={slide1}
-                    slide2={slide2}
-                    slide3={slide3}
-                    slide4={slide4}
-                    slide5={slide5}
-                    slide6={slide6}
-                    slide7={slide7}
-                    slide8={slide8}
-                  />
+                  <ImagesGalleryHero slide1={slide1} slide2={slide2} />
                 </MotionDivDownToUp>
               </div>
             </div>
