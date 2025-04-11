@@ -1,7 +1,7 @@
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
 import SectionHeader from "../sectionElements/SectionHeader";
 import Acordion from "../interactives/Acordion";
-import faqImg from "../../assets/imgs/faq/faq.jpg";
+import faqImg from "../../assets/imgs/faq/faq.png";
 
 export default function FrequentlyAskedQuestions() {
   return (
