@@ -45,11 +45,11 @@ export default function ImportPage() {
       <HeroSection />
       <AboutUs  modal={true}/>
       <Numbers />
-      {/* <OurProducts /> */}
-      {/* <AvoidAccidents /> */}
+      <OurProducts />
+      <AvoidAccidents />
       <CtaWhatsapp />
-      {/* <Courses />
-      {carouselComponent} */}
+      <Courses />
+      {carouselComponent}
       <FrequentlyAskedQuestions />
       <BackToTopButton />
       <FloatingWhatsappButton />
