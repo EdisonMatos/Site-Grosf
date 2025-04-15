@@ -272,16 +272,25 @@ export default function AboutModal() {
 
   return (
     <div>
-      <Buttons/>
+      {/* <Button
+        className="my-[20px] text-black"
+        label="Continuar lendo"
+        onClick={onClick}
+        removeAnchor={true}
+        removeTarget={true}
+        animation={true}
+        icon={<MoveRight />}
+      /> */}
+      <Buttons onClick={() => setVisible(true)} title="Ver História" />
+
       <Dialog
-        className="font-secondFont"
-        header={modalTitle}
+        header={titleModal}
         visible={visible}
         onHide={() => setVisible(false)}
-        style={{ width: "50vw" }}
-        breakpoints={{ "4000px": "60vw", "1024px": "70vw", "641px": "85vw" }}
+        style={{ width: "90vw", maxWidth: "800px" }}
+        modal
       >
-        {modalContent}
+        {subtitleModal}
       </Dialog>
     </div>
   );
