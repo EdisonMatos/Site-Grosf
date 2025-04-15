@@ -281,7 +281,7 @@ export default function AboutModal() {
         animation={true}
         icon={<MoveRight />}
       /> */}
-      <Buttons onClick={() => setVisible(true)} title="Ver História" />
+      <Buttons onClick={() => setVisible(true)} name="Continue lendo" />
 
       <Dialog
         header={titleModal}

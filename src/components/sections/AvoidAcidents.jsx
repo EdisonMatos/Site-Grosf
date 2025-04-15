@@ -16,6 +16,10 @@ import Button from "../interactives/Button";
 import ImagesGallery2Slides from "../interactives/ImagesGallery2Slides";
 import slide1 from "../../assets/imgs/avoidAccidents/slide1.jpg";
 import slide2 from "../../assets/imgs/avoidAccidents/slide2.jpg";
+import Buttons from "../interactives/Buttons";
+import whatsappNumber from "../../abstractions/whats";
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
+
 
 export default function AboutUs() {
   const [visible, setVisible] = useState(false);
@@ -148,13 +152,7 @@ export default function AboutUs() {
         </MotionDivRightToLeft>
         <p className="my-[20px]">Quer saber mais? Clique abaixo 👇</p>
         <div>
-          <Button
-            aria-label="Botão de contato"
-            label="Fale com um consultor"
-            animation={false}
-            className="hover:scale-105"
-            icon={<FaWhatsapp size={24} />}
-          />
+          <Buttons href={whatsappContactLink}/>
         </div>
       </div>
     );
@@ -181,7 +179,7 @@ export default function AboutUs() {
                 convivência pacífica?
               </h1>
               <div className=" text-quaternary phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] desktop3:w-[100%]">
-                <p>
+                <p className="mb-4">
                   A resposta é sim.
                   <br />
                   <br />
@@ -192,7 +190,7 @@ export default function AboutUs() {
                 </p>
 
                 <MotionDivDownToUp>
-                  <Button
+                  {/* <Button
                     className="my-[20px] text-black"
                     label="Continuar lendo"
                     onClick={onClick}
@@ -200,7 +198,8 @@ export default function AboutUs() {
                     removeTarget={true}
                     animation={true}
                     icon={<MoveRight />}
-                  />
+                  /> */}
+                  <Buttons onClick={onClick} name="Continue lendo"/>
                 </MotionDivDownToUp>
               </div>
             </MotionDivLeftToRight>
@@ -234,12 +233,11 @@ export default function AboutUs() {
       </div>
       <div>
         <Dialog
-          className="font-secondFont"
           header={modalTitle}
           visible={visible}
           onHide={() => setVisible(false)}
-          style={{ width: "50vw" }}
-          breakpoints={{ "4000px": "60vw", "1024px": "70vw", "641px": "85vw" }}
+          style={{ width: "90vw", maxWidth: "800px" }}
+          modal
         >
           {modalContent}
         </Dialog>
