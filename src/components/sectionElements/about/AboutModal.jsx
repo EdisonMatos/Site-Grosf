@@ -7,6 +7,7 @@ import { MoveRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Button from "../../interactives/Button";
+import Buttons from "../../interactives/Buttons";
 
 export default function AboutModal() {
   const [visible, setVisible] = useState(false);
@@ -271,15 +272,7 @@ export default function AboutModal() {
 
   return (
     <div>
-      <Button
-        className="my-[20px] text-black"
-        label="Continuar lendo"
-        onClick={onClick}
-        removeAnchor={true}
-        removeTarget={true}
-        animation={true}
-        icon={<MoveRight />}
-      />
+      <Buttons/>
       <Dialog
         className="font-secondFont"
         header={modalTitle}

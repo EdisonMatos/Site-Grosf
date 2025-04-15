@@ -12,6 +12,7 @@ import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 // import slide8 from "../../assets/banners/hero/slide8.jpg";
 import bgImage from "../../assets/importAssets/bg2.jpg";
 import whatsappNumber from "../../abstractions/whats";
+import Buttons from "../interactives/Buttons";
 
 const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
@@ -48,7 +49,8 @@ export default function HeroSection() {
                 <div className="w-full phone2:w-full tablet2:w-auto">
                   <MotionDivLeftToRight>
                     <div className="flex justify-center w-full desktop1:justify-start">
-                      <button
+                      <Buttons type="" href={whatsappContactLink}/>
+                      {/* <button
                         onClick={() =>
                           window.open(whatsappContactLink, "_blank")
                         }
@@ -64,7 +66,7 @@ export default function HeroSection() {
                             Fale com um consultor
                           </p>
                         </div>
-                      </button>
+                      </button> */}
                     </div>
                   </MotionDivLeftToRight>
                 </div>
