@@ -49,7 +49,11 @@ export default function HeroSection() {
                 <div className="w-full phone2:w-full tablet2:w-auto">
                   <MotionDivLeftToRight>
                     <div className="flex justify-center w-full desktop1:justify-start">
-                      <Buttons type="" href={whatsappContactLink} name="WhatsApp"/>
+                      <Buttons
+                        type=""
+                        href={whatsappContactLink}
+                        name="WhatsApp"
+                      />
                       {/* <button
                         onClick={() =>
                           window.open(whatsappContactLink, "_blank")

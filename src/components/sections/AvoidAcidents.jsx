@@ -20,7 +20,6 @@ import Buttons from "../interactives/Buttons";
 import whatsappNumber from "../../abstractions/whats";
 const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
-
 export default function AboutUs() {
   const [visible, setVisible] = useState(false);
   const [modalContent, setModalContent] = useState("");
@@ -152,7 +151,7 @@ export default function AboutUs() {
         </MotionDivRightToLeft>
         <p className="my-[20px]">Quer saber mais? Clique abaixo 👇</p>
         <div>
-          <Buttons href={whatsappContactLink}/>
+          <Buttons href={whatsappContactLink} name="WhatsApp" />
         </div>
       </div>
     );
@@ -199,7 +198,27 @@ export default function AboutUs() {
                     animation={true}
                     icon={<MoveRight />}
                   /> */}
-                  <Buttons onClick={onClick} name="Continue lendo"/>
+                  <Buttons
+                    onClick={onClick}
+                    name="Continue lendo"
+                    icon={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-corner-down-right-icon lucide-corner-down-right"
+                      >
+                        <polyline points="15 10 20 15 15 20" />
+                        <path d="M4 4v7a4 4 0 0 0 4 4h12" />
+                      </svg>
+                    }
+                  />
                 </MotionDivDownToUp>
               </div>
             </MotionDivLeftToRight>
