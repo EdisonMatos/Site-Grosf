@@ -14,9 +14,8 @@ import { FaWhatsapp } from "react-icons/fa";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Button from "../interactives/Button";
 import ImagesGallery2Slides from "../interactives/ImagesGallery2Slides";
-import slide1 from "../../assets/imgs/avoidAccidents/slide1.jpg"
-import slide2 from "../../assets/imgs/avoidAccidents/slide2.jpg"
-
+import slide1 from "../../assets/imgs/avoidAccidents/slide1.jpg";
+import slide2 from "../../assets/imgs/avoidAccidents/slide2.jpg";
 
 export default function AboutUs() {
   const [visible, setVisible] = useState(false);
@@ -170,15 +169,11 @@ export default function AboutUs() {
           sectionHeaderDescription=""
         />
         <div className=" desktop1:flex desktop1:flex-row-reverse desktop1:justify-between desktop1:pb-[54px] desktop3:pb-[48px]">
-          <div className=" pb-[28px] desktop1:w-[48%] desktop1:py-0 desktop3:w-[46.3%]">
-            <MotionDivRightToLeft>
-              <img
-                className=" flex phone1:w-[100%] phone1:h-[100%]"
-                src={imgPastilhaCloro}
-                alt="imagem de cuidados"
-              />
-            </MotionDivRightToLeft>
-          </div>
+          <div
+            className="pb-[28px] desktop1:w-[48%] desktop1:py-0 desktop3:w-[46.3%] bg-no-repeat rounded-lg bg-cover bg-top phone1:w-[100%] phone1:h-[100%] desktop1:h-auto"
+            style={{ backgroundImage: `url(${slide1})` }}
+          ></div>
+
           <div className="desktop1:w-[48.5%] desktop3:w-[46.3%]">
             <MotionDivLeftToRight>
               <h1 className="  text-primary flex items-center phone1:w-[100%] phone1:font-medium phone1:text-title2 phone3:text-title2 phone1:pb-[10px] tablet1:text-title2 desktop1:text-title4">
