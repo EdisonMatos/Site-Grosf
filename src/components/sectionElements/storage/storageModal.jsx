@@ -8,6 +8,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Button from "../../interactives/Button";
 import Buttons from "../../interactives/Buttons";
+import whatsappNumber from "../../../abstractions/whats";
+
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function StorageModal() {
   const [visible, setVisible] = useState(false);
@@ -116,16 +119,21 @@ export default function StorageModal() {
         de 4 a 5 por pilha.{" "}
       </p>
       <br />
+      <br />
+      <Buttons
+        type=""
+        href={whatsappContactLink}
+        name="WhatsApp"
+        icon={<FaWhatsapp className="size-[25px]" />}
+      />
     </div>
   );
-
-  
 
   return (
     <div>
       <Buttons
         onClick={() => setVisible(true)}
-        className="mt-4"
+        className="mt-6"
         name="Saiba mais"
         icon={
           <svg

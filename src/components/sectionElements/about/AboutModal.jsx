@@ -8,6 +8,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Button from "../../interactives/Button";
 import Buttons from "../../interactives/Buttons";
+import whatsappNumber from "../../../abstractions/whats";
+
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function AboutModal() {
   const [visible, setVisible] = useState(false);
@@ -247,43 +250,22 @@ export default function AboutModal() {
         história!
       </p>
       <br />
+      <br />
+      <Buttons
+        type=""
+        href={whatsappContactLink}
+        name="WhatsApp"
+        icon={<FaWhatsapp className="size-[25px]" />}
+      />
     </div>
   );
 
-  const onClick = () => {
-    setModalTitle(titleModal);
-    setModalContent(
-      <div className="text-paragraph3">
-        <p className="mb-[20px]">{subtitleModal}</p>
-        <p className="mb-[20px]">Quer saber mais? Clique abaixo 👇</p>
-        <div>
-          <Button
-            aria-label="Botão de contato"
-            label="Fale com um consultor"
-            animation={false}
-            className="hover:scale-105"
-            icon={<FaWhatsapp size={24} />}
-          />
-        </div>
-      </div>
-    );
-    setVisible(true);
-  };
-
   return (
     <div>
-      {/* <Button
-        className="my-[20px] text-black"
-        label="Continuar lendo"
-        onClick={onClick}
-        removeAnchor={true}
-        removeTarget={true}
-        animation={true}
-        icon={<MoveRight />}
-      /> */}
       <Buttons
         onClick={() => setVisible(true)}
         name="Continue lendo"
+        className="mt-6"
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"

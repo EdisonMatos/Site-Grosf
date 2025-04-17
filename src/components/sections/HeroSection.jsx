@@ -11,6 +11,8 @@ import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 // import slide7 from "../../assets/banners/hero/slide7.jpg";
 // import slide8 from "../../assets/banners/hero/slide8.jpg";
 import bgImage from "../../assets/importAssets/bg2.jpg";
+import { FaWhatsapp } from "react-icons/fa";
+
 import whatsappNumber from "../../abstractions/whats";
 import Buttons from "../interactives/Buttons";
 
@@ -53,6 +55,7 @@ export default function HeroSection() {
                         type=""
                         href={whatsappContactLink}
                         name="WhatsApp"
+                        icon={<FaWhatsapp className="size-[25px]"/>}
                       />
                       {/* <button
                         onClick={() =>
