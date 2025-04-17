@@ -1,6 +1,8 @@
 import SectionHeader from "../sectionElements/SectionHeader";
 import SectionContent from "../sectionElements/SectionContent";
 import SectionArticle from "../sectionElements/SectionArticle";
+import SquareCalculator from "../interactives/SquareCalculator";
+import RoundCalculator from "../interactives/RoundCalculator";
 
 export default function Ecalc() {
   return (
@@ -12,15 +14,20 @@ export default function Ecalc() {
         />
         <SectionContent>
           <div className="flex justify-between w-full">
-            <p>
-              Para piscinas retangulares: <br /> Comprimento x Largura x
-              Profundidade = Volume em 1000L
-            </p>
-
-            <p>
-              Para piscinas redondas: <br /> Diâmetro x Diâmetro x Profundidade
-              = Volume em 1000L
-            </p>
+            <div>
+              <p className="text-center text-black/60">
+                Para piscinas retangulares: <br /> Comprimento x Largura x
+                Profundidade = Volume em 1000L
+              </p>
+              <SquareCalculator />
+            </div>
+            <div>
+              <p className="text-center text-black/60">
+                Para piscinas redondas: <br /> Diâmetro x Diâmetro x
+                Profundidade = Volume em 1000L
+              </p>
+              <RoundCalculator />
+            </div>
           </div>
         </SectionContent>
       </div>
