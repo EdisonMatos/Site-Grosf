@@ -31,7 +31,7 @@ export default function Storage({ modal }) {
         id="about"
       >
         <SectionHeader
-          sectionHeaderTitleSecond="Nossa história!"
+          sectionHeaderTitleSecond="Armazenamento"
           sectionHeaderDescription=""
         />
 

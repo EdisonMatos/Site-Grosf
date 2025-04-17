@@ -31,7 +31,7 @@ export default function AboutUs({ modal }) {
         id="about"
       >
         <SectionHeader
-          sectionHeaderTitleSecond="Nossa história!"
+          sectionHeaderTitleSecond="Nossa história"
           sectionHeaderDescription=""
         />
 
