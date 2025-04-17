@@ -7,6 +7,8 @@ import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 import whatsappNumber from "../../abstractions/whats";
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
 import Buttons from "../interactives/Buttons";
+import { FaWhatsapp } from "react-icons/fa";
+
 
 const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
@@ -54,7 +56,12 @@ export default function CtaWhatsapp() {
                       </p>
                     </a>
                   </button> */}
-                  <Buttons type="" href={whatsappContactLink} name="WhatsApp" />
+                  <Buttons
+                    type=""
+                    href={whatsappContactLink}
+                    name="WhatsApp"
+                    icon={<FaWhatsapp className="size-[25px]" />}
+                  />
                 </div>
               </MotionDivDownToUp>
             </div>
