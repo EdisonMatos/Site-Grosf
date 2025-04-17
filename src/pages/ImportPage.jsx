@@ -14,6 +14,7 @@ import CtaWhatsapp from "../components/sections/CtaWhatsapp";
 import Footer from "../components/sections/Footer";
 import PhoneBannersCarousel from "../components/sections/BannersCarouselPhone";
 import TabletBannersCarousel from "../components/sections/BannersCarouselTablet";
+import Storage from "../components/sections/Storage";
 
 export default function ImportPage() {
   const [carouselComponent, setCarouselComponent] = useState(null);
@@ -43,8 +44,9 @@ export default function ImportPage() {
     <div>
       <NavbarSection />
       <HeroSection />
-      <AboutUs modal={true}/>
+      <AboutUs modal={true} />
       <Numbers />
+      <Storage modal={true} />
       <OurProducts />
       <AvoidAccidents />
       <CtaWhatsapp />
