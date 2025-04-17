@@ -14,7 +14,7 @@ module.exports = {
       boxShadow: (theme) => ({
         button: `0 10px 0 0 ${theme("colors.primary")}, 0 15px 0 0 ${theme(
           "colors.primary"
-        )}40`,
+        )}90`,
         buttonActive: `0 0px 0 0 ${theme("colors.primary")}, 0 0px 0 0 ${theme(
           "colors.primary"
         )}40`,

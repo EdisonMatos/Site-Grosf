@@ -156,7 +156,7 @@ function Footer() {
       <div className="text-center w-[88%] max-w-[1110px] flex flex-col mb-[48px] phone2:mb-[80px] tablet1:mb-0">
         <MotionDivUpToDown>
           <p className="w-full">
-            2025 - A definir. - Todos os direitos reservados
+            2025 - Grosf Estilo - Todos os direitos reservados
           </p>
           <p>
             <a

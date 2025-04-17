@@ -1,6 +1,13 @@
 import React from "react";
 
-function Buttons({ type = "retangular", onClick, href, name, icon, className: customClassName = "" }) {
+function Buttons({
+  type = "retangular",
+  onClick,
+  href,
+  name,
+  icon,
+  className: customClassName = "",
+}) {
   const getButtonConfig = () => {
     switch (type) {
       case "retanguloRedondo":
@@ -20,7 +27,7 @@ function Buttons({ type = "retangular", onClick, href, name, icon, className: cu
       default:
         return {
           className:
-            "w-auto px-6 h-14 bg-primary rounded-lg cursor-pointer select-none border-b border-white/30 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150",
+            "w-auto px-6 h-14 bg-primary rounded-lg cursor-pointer select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841]",
           label: name || "Active",
           icon: icon,
         };
