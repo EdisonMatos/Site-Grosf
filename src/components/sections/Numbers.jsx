@@ -59,9 +59,14 @@ export default function Numbers() {
                   className="text-white"
                 />
               }
-              number={<AnimatedCounter endValue={900} />}
+              number={
+                <span className="flex items-center gap-1">
+                  <AnimatedCounter endValue={900} /> mil
+                </span>
+              }
               text="Volume de produtos movimentado anualmente em kilo/litro"
             />
+
             <ResultsCard
               icon={
                 <Box
@@ -71,7 +76,12 @@ export default function Numbers() {
                   className="text-white"
                 />
               }
-              number={<AnimatedCounter endValue={2100} />}
+              number={
+                <span className="flex items-center gap-1">
+                  <AnimatedCounter endValue={2100} />
+                  m³
+                </span>
+              }
               text="Capacidade de armazenagem em metros cúbico"
             />
             {/* <ResultsCard
