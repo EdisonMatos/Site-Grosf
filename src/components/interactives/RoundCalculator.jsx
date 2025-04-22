@@ -28,18 +28,16 @@ export default function RoundCalculator() {
       conversaoFeita = true;
     }
 
-    const volumeMetrosCubicos = 0.785 * Math.pow(d, 2) * p;
+    const volumeMetrosCubicos = 0.185 * Math.pow(d, 2) * p;
     const volumeLitros = volumeMetrosCubicos * 1000;
 
-    setResultado(`Volume: ${volumeLitros.toFixed(2)} litros`);
-
-    if (conversaoFeita) {
-      setMensagemConversao(
-        "* A profundidade foi convertida automaticamente de centímetros para metros."
-      );
-    } else {
-      setMensagemConversao("");
-    }
+    setResultado(
+      <div>
+        Resultado: <br />
+        Volume: {volumeLitros.toFixed(2)} litros (
+        {volumeLitros.toFixed(2) / 1000} m³)
+      </div>
+    );
   };
 
   return (
@@ -52,22 +50,26 @@ export default function RoundCalculator() {
       <input
         type="number"
         value={diametro}
+        min="0"
+        onKeyDown={(e) => {
+          if (e.key === "-" || e.key === "e") {
+            e.preventDefault();
+          }
+        }}
         onChange={(e) => setDiametro(e.target.value)}
         className="w-full p-2 mb-4 border border-gray-300 rounded-md"
       />
-
-      {/* <label className="block mb-2 text-gray-700">Diâmetro (m):</label>
-      <input
-        type="number"
-        value={diametro2}
-        readOnly
-        className="w-full p-2 mb-4 bg-gray-100 border border-gray-300 rounded-md"
-      /> */}
 
       <label className="block mb-2 text-gray-700">Profundidade (m):</label>
       <input
         type="number"
         value={profundidade}
+        min="0"
+        onKeyDown={(e) => {
+          if (e.key === "-" || e.key === "e") {
+            e.preventDefault();
+          }
+        }}
         onChange={(e) => setProfundidade(e.target.value)}
         className="w-full p-2 mb-4 border border-gray-300 rounded-md"
       />

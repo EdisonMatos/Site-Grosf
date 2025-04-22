@@ -22,7 +22,13 @@ export default function SquareCalculator() {
     // Convertendo de metros cúbicos para litros
     const volumeLitros = volumeM3 * 1000;
 
-    setResultado(`Volume: ${volumeLitros.toFixed(2)} litros`);
+    setResultado(
+      <div>
+        Resultado: <br />
+        Volume: {volumeLitros.toFixed(2)} litros (
+        {volumeLitros.toFixed(2) / 1000} m³)
+      </div>
+    );
   };
 
   return (
@@ -58,8 +64,8 @@ export default function SquareCalculator() {
       <Buttons
         onClick={calcularVolume}
         className="w-full py-2 text-white transition bg-blue-600 rounded-md hover:bg-blue-700"
-      
-        Calcular Volume
+        Calcular
+        Volume
       />
 
       {resultado && (
