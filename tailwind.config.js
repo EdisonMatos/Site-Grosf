@@ -4,13 +4,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#0189BB", // Com primária (clara)
-        secondary: "#00131B", // Cor primária (escura)
+        primary: "#0189BB", // Cor primária (clara)
+        secondary: "#00131B", // Cor primária escura
         tertiary: "#014E6B", // Opcional
         quaternary: "#737373", // Cinza neutro -> Parágrafos
-        quinary: "#EAEAEA ", // Com primária bem clara ou cinza -> Bg de seções
-        verylighter: "#21A202",
+        quinary: "#EAEAEA", // Cor clara ou cinza -> Bg de seções
+        verylighter: "#21A202", // Verde para destaques ou botões positivos
       },
+      boxShadow: (theme) => ({
+        button: `0 10px 0 0 ${theme("colors.primary")}, 0 15px 0 0 ${theme(
+          "colors.primary"
+        )}90`,
+        buttonActive: `0 0px 0 0 ${theme("colors.primary")}, 0 0px 0 0 ${theme(
+          "colors.primary"
+        )}40`,
+      }),
       fontFamily: {
         mainFont: ["Poppins", "sans-serif"],
       },

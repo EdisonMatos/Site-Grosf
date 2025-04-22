@@ -6,6 +6,8 @@ import MotionDivUpToDown from "../animation/MotionDivUpToDown";
 import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 import whatsappNumber from "../../abstractions/whats";
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
+import Buttons from "../interactives/Buttons";
+import { FaWhatsapp } from "react-icons/fa";
 
 const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
@@ -36,7 +38,7 @@ export default function CtaWhatsapp() {
               </h1>
               <MotionDivDownToUp>
                 <div className="w-full">
-                  <button className="w-full">
+                  {/* <button className="w-full">
                     <a
                       href={whatsappContactLink}
                       className="flex flex-row items-center justify-around w-[90%] h-[32px] phone1:h-[48px] px-[8px] phone3:px-[16px] tablet1:px-[20px] transition rounded-[10px] phone3:rounded-[30px] tablet1:rounded-[40px] max-w-[128px] tablet1:h-[64px] phone3:max-w-[192px] tablet1:max-w-[380px] phone3:w-[90%] bg-primary hover:bg-blue-600"
@@ -52,11 +54,18 @@ export default function CtaWhatsapp() {
                         Fale com um consultor
                       </p>
                     </a>
-                  </button>
+                  </button> */}
+                  <Buttons
+                    className="mb-2"
+                    type=""
+                    href={whatsappContactLink}
+                    name="Falar com Atendente"
+                    icon={<FaWhatsapp className="size-[25px]" />}
+                  />
                 </div>
               </MotionDivDownToUp>
             </div>
-            <div className="phone1:min-h-[197px] phone1:max-h-[229.39px] phone2:min-h-[229.40px] phone2:max-h-[261px] phone3:min-h-[262px] phone3:max-h-[334px] tablet1:min-h-[235px] tablet1:max-h-[292px] tablet2:min-h-[292px] tablet2:max-h-[335px] desktop1:min-h-[335px] desktop3:max-h-[335px] w-[90%] max-w-40 phone1:w-[100%] phone1:max-w-none phone3:max-w-60 tablet1:w-[45%]">
+            <div className=" phone1:max-h-[229.39px] phone2:min-h-[229.40px] phone2:max-h-[261px] phone3:min-h-[262px] phone3:max-h-[334px] tablet1:min-h-[235px] tablet1:max-h-[292px] tablet2:min-h-[292px] tablet2:max-h-[335px] desktop1:min-h-[335px] desktop3:max-h-[335px] w-[90%] max-w-40 phone1:w-[100%] phone1:max-w-none phone3:max-w-60 tablet1:w-[45%]">
               <MotionDivRightToLeft>
                 <img alt="Foto Pessoa" src={imgCta} />
               </MotionDivRightToLeft>

@@ -17,13 +17,13 @@ import SectionArticle from "../sectionElements/SectionArticle";
 import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
 import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
 import React, { useState } from "react";
-import AboutModal from "../sectionElements/about/AboutModal";
+import StorageModal from "../sectionElements/storage/storageModal";
 import ParagraphSemFading from "../sectionElements/about/ParagraphSemFading";
 import ParagraphWithFading from "../sectionElements/about/ParagraphWithFading";
 import AboutFading from "../sectionElements/about/AboutFading";
 import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
-export default function AboutUs({ modal }) {
+export default function Storage({ modal }) {
   return (
     <div className="flex justify-center full">
       <div
@@ -31,7 +31,7 @@ export default function AboutUs({ modal }) {
         id="about"
       >
         <SectionHeader
-          sectionHeaderTitleSecond="Nossa história"
+          sectionHeaderTitleSecond="Armazenamento"
           sectionHeaderDescription=""
         />
 
@@ -42,13 +42,14 @@ export default function AboutUs({ modal }) {
                 <MotionDivLeftToRight>
                   <SectionArticle
                     articleSubtitle="A definir."
-                    articleTitle="Entenda a trajetória da Grosf Estilo"
-                    articleParagraphOne="No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã, desembarcava na rodoviária Júlio Prestes no centro da capital paulista, trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de idade."
-                    articleParagraphTwo="Trajava calça e camisa bastante desbotadas pelo uso intenso na lida diária lá na roça, nos pés um par de chinelos com solado também desgastados, no ombro esquerdo um embornal, uma espécie de sacola funda e estreita feita de sobras de tecidos de costura com uma alça comprida que lhe servia como apoio ao ombro."
+                    articleTitle="Estocagem de armazenamento"
+                    articleParagraphOne="Produtos químicos em geral não podem ser misturados. Veja abaixo dicas e orientações para armazenagem correta dos produtos para piscinas que ficarão por alguns dias no almoxarifado da sua loja."
+                    articleParagraphTwo="Via de regra, todo produto químico,  inclusive aqueles utilizados  no tratamento diário de piscinas, devem ser armazenados em lugar seco e fresco totalmente livre de umidade, fungos ou mofo."
+                    articleParagraphThree="No caso dos produtos de piscinas os cuidados a estocagem precisa seguir algumas regras básicas, os cuidados precisam ser redobrados, são produtos usados diariamente por profissionais do ramo como balconistas, estoquistas entre outros, mas às vezes são manuseados por pessoas sem o conhecimento necessário dos cuidados que precisa ter com esse procedimento."
                   />
                   <MotionDivDownToUp>
                     {modal ? <ParagraphWithFading /> : <ParagraphSemFading />}
-                    {modal && <AboutModal />}
+                    {modal && <StorageModal />}
                   </MotionDivDownToUp>
                 </MotionDivLeftToRight>
               </div>

@@ -48,7 +48,7 @@ export default function Numbers() {
                 />
               }
               number={<AnimatedCounter endValue={yearsOfService} />}
-              text="Tempo de serviço prestado em anos"
+              text="Anos no mercado"
             />
             <ResultsCard
               icon={
@@ -59,9 +59,14 @@ export default function Numbers() {
                   className="text-white"
                 />
               }
-              number={<AnimatedCounter endValue={900} />}
-              text="Volume de produtos movimentado anualmente em kilo/litro"
+              number={
+                <span className="flex items-center gap-1">
+                  <AnimatedCounter endValue={900} /> mil
+                </span>
+              }
+              text="Kilos/litros de produtos movimentados anualmente"
             />
+
             <ResultsCard
               icon={
                 <Box
@@ -71,8 +76,13 @@ export default function Numbers() {
                   className="text-white"
                 />
               }
-              number={<AnimatedCounter endValue={2100} />}
-              text="Capacidade de armazenagem em metros cúbico"
+              number={
+                <span className="flex items-center gap-1">
+                  <AnimatedCounter endValue={2100} />
+                  m³
+                </span>
+              }
+              text="De capacidade de armazenamento"
             />
             {/* <ResultsCard
               icon={

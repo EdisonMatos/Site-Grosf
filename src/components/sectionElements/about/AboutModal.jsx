@@ -7,6 +7,10 @@ import { MoveRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import "react-image-gallery/styles/css/image-gallery.css";
 import Button from "../../interactives/Button";
+import Buttons from "../../interactives/Buttons";
+import whatsappNumber from "../../../abstractions/whats";
+
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function AboutModal() {
   const [visible, setVisible] = useState(false);
@@ -246,49 +250,49 @@ export default function AboutModal() {
         história!
       </p>
       <br />
+      <br />
+      <Buttons
+        type=""
+        href={whatsappContactLink}
+        name="WhatsApp"
+        icon={<FaWhatsapp className="size-[25px]" />}
+      />
     </div>
   );
 
-  const onClick = () => {
-    setModalTitle(titleModal);
-    setModalContent(
-      <div className="text-paragraph3">
-        <p className="mb-[20px]">{subtitleModal}</p>
-        <p className="mb-[20px]">Quer saber mais? Clique abaixo 👇</p>
-        <div>
-          <Button
-            aria-label="Botão de contato"
-            label="Fale com um consultor"
-            animation={false}
-            className="hover:scale-105"
-            icon={<FaWhatsapp size={24} />}
-          />
-        </div>
-      </div>
-    );
-    setVisible(true);
-  };
-
   return (
     <div>
-      <Button
-        className="my-[20px] text-black"
-        label="Continuar lendo"
-        onClick={onClick}
-        removeAnchor={true}
-        removeTarget={true}
-        animation={true}
-        icon={<MoveRight />}
+      <Buttons
+        onClick={() => setVisible(true)}
+        name="Continue lendo"
+        className="mt-6 mb-8 desktop1:mb-0"
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-corner-down-right-icon lucide-corner-down-right"
+          >
+            <polyline points="15 10 20 15 15 20" />
+            <path d="M4 4v7a4 4 0 0 0 4 4h12" />
+          </svg>
+        }
       />
+
       <Dialog
-        className="font-secondFont"
-        header={modalTitle}
+        header={titleModal}
         visible={visible}
         onHide={() => setVisible(false)}
-        style={{ width: "50vw" }}
-        breakpoints={{ "4000px": "60vw", "1024px": "70vw", "641px": "85vw" }}
+        style={{ width: "90vw", maxWidth: "800px" }}
+        modal
       >
-        {modalContent}
+        {subtitleModal}
       </Dialog>
     </div>
   );
