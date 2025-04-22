@@ -54,7 +54,7 @@ export default function HeroSection() {
                       <Buttons
                         type=""
                         href={whatsappContactLink}
-                        name="WhatsApp"
+                        name="Falar com Atendente"
                         icon={<FaWhatsapp className="size-[25px]"/>}
                       />
                       {/* <button

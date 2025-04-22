@@ -18,7 +18,7 @@ export default function StorageModal() {
   const [modalTitle, setModalTitle] = useState("");
 
   // 🔧 Adiciona essas variáveis:
-  const titleModal = "NOSSA HISTÓRIA!";
+  const titleModal = "Estocagem de armazenamento!";
   const subtitleModal = (
     <div>
       <p>

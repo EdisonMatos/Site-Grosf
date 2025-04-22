@@ -9,7 +9,6 @@ import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
 import Buttons from "../interactives/Buttons";
 import { FaWhatsapp } from "react-icons/fa";
 
-
 const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function CtaWhatsapp() {
@@ -57,6 +56,7 @@ export default function CtaWhatsapp() {
                     </a>
                   </button> */}
                   <Buttons
+                    className="mb-2"
                     type=""
                     href={whatsappContactLink}
                     name="WhatsApp"
@@ -65,7 +65,7 @@ export default function CtaWhatsapp() {
                 </div>
               </MotionDivDownToUp>
             </div>
-            <div className="phone1:min-h-[197px] phone1:max-h-[229.39px] phone2:min-h-[229.40px] phone2:max-h-[261px] phone3:min-h-[262px] phone3:max-h-[334px] tablet1:min-h-[235px] tablet1:max-h-[292px] tablet2:min-h-[292px] tablet2:max-h-[335px] desktop1:min-h-[335px] desktop3:max-h-[335px] w-[90%] max-w-40 phone1:w-[100%] phone1:max-w-none phone3:max-w-60 tablet1:w-[45%]">
+            <div className=" phone1:max-h-[229.39px] phone2:min-h-[229.40px] phone2:max-h-[261px] phone3:min-h-[262px] phone3:max-h-[334px] tablet1:min-h-[235px] tablet1:max-h-[292px] tablet2:min-h-[292px] tablet2:max-h-[335px] desktop1:min-h-[335px] desktop3:max-h-[335px] w-[90%] max-w-40 phone1:w-[100%] phone1:max-w-none phone3:max-w-60 tablet1:w-[45%]">
               <MotionDivRightToLeft>
                 <img alt="Foto Pessoa" src={imgCta} />
               </MotionDivRightToLeft>

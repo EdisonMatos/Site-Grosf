@@ -32,7 +32,7 @@ export default function RoundCalculator() {
       conversaoFeita = true;
     }
 
-    const volumeMetrosCubicos = 0.185 * Math.pow(d, 2) * p;
+    const volumeMetrosCubicos = 0.785 * Math.pow(d, 2) * p;
     const volumeLitros = volumeMetrosCubicos * 1000;
 
     setResultado(

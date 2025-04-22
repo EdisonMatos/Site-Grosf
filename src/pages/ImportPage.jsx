@@ -48,11 +48,11 @@ export default function ImportPage() {
       <AboutUs modal={true} />
       <Numbers />
       <Storage modal={true} />
-      <OurProducts />
+      {/* <OurProducts /> */}
       <Ecalc/>
       <AvoidAccidents />
       <CtaWhatsapp />
-      <Courses />
+      {/* <Courses /> */}
       {carouselComponent}
       <FrequentlyAskedQuestions />
       <BackToTopButton />
