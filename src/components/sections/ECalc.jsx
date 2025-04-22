@@ -24,7 +24,7 @@ export default function Ecalc() {
             <div>
               <p className="text-center text-black/60">
                 Para piscinas redondas: <br /> Diâmetro x Diâmetro x
-                Profundidade = Volume em 1000L
+                Profundidade x 0,185 = Volume em 1000L
               </p>
               <RoundCalculator />
             </div>

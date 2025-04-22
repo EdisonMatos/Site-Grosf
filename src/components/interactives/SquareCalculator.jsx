@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Buttons from "./Buttons";
 
 export default function SquareCalculator() {
   const [comprimento, setComprimento] = useState("");
@@ -54,12 +55,12 @@ export default function SquareCalculator() {
         className="w-full p-2 mb-4 border border-gray-300 rounded-md"
       />
 
-      <button
+      <Buttons
         onClick={calcularVolume}
         className="w-full py-2 text-white transition bg-blue-600 rounded-md hover:bg-blue-700"
-      >
+      
         Calcular Volume
-      </button>
+      />
 
       {resultado && (
         <div className="mt-4 text-lg font-semibold text-center text-gray-800">

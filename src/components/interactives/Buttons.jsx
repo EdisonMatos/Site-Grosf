@@ -27,7 +27,7 @@ function Buttons({
       default:
         return {
           className:
-            "w-auto px-6 h-14 bg-primary rounded-lg cursor-pointer select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841]",
+            "w-auto px-6 h-14 bg-primary rounded-lg cursor-pointer select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#01435C] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#006489]",
           label: name || "Active",
           icon: icon,
         };

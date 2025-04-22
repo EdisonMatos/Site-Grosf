@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Buttons from "./Buttons";
 
 export default function RoundCalculator() {
   const [diametro, setDiametro] = useState("");
@@ -55,13 +56,13 @@ export default function RoundCalculator() {
         className="w-full p-2 mb-4 border border-gray-300 rounded-md"
       />
 
-      <label className="block mb-2 text-gray-700">Diâmetro (m):</label>
+      {/* <label className="block mb-2 text-gray-700">Diâmetro (m):</label>
       <input
         type="number"
         value={diametro2}
         readOnly
         className="w-full p-2 mb-4 bg-gray-100 border border-gray-300 rounded-md"
-      />
+      /> */}
 
       <label className="block mb-2 text-gray-700">Profundidade (m):</label>
       <input
@@ -71,12 +72,12 @@ export default function RoundCalculator() {
         className="w-full p-2 mb-4 border border-gray-300 rounded-md"
       />
 
-      <button
+      <Buttons
         onClick={calcularVolume}
         className="w-full py-2 text-white transition bg-blue-600 rounded-md hover:bg-blue-700"
-      >
-        Calcular Volume
-      </button>
+        Calcular
+        Volume
+      />
 
       {resultado && (
         <div className="mt-4 text-lg font-semibold text-center text-gray-800">
