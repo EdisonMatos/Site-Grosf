@@ -59,7 +59,7 @@ export default function CtaWhatsapp() {
                     className="mb-2"
                     type=""
                     href={whatsappContactLink}
-                    name="WhatsApp"
+                    name="Falar com Atendente"
                     icon={<FaWhatsapp className="size-[25px]" />}
                   />
                 </div>
