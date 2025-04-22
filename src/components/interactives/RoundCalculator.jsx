@@ -106,7 +106,7 @@ export default function RoundCalculator() {
             <path d="M8 18h.01" />
           </svg>
         }
-        className="w-full py-2 text-white transition rounded-md bg-bluscale-105 hover:scale-105"
+        className="w-full py-2 text-white transition rounded-md"
         Calcular
         Volume
       />

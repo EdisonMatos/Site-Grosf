@@ -93,7 +93,7 @@ export default function SquareCalculator() {
             <path d="M8 18h.01" />
           </svg>
         }
-        className="w-full text-white transition rounded-md bg-bluscale-105 hover:scale-105"
+        className="w-full text-white rounded-md"
         Calcular
         Volume
       />
