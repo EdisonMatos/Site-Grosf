@@ -133,7 +133,7 @@ export default function StorageModal() {
     <div>
       <Buttons
         onClick={() => setVisible(true)}
-        className="mt-6"
+        className="mt-6 mb-8 desktop1:mb-0"
         name="Saiba mais"
         icon={
           <svg

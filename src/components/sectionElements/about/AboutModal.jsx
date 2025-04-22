@@ -265,7 +265,7 @@ export default function AboutModal() {
       <Buttons
         onClick={() => setVisible(true)}
         name="Continue lendo"
-        className="mt-6"
+        className="mt-6 mb-8 desktop1:mb-0"
         icon={
           <svg
             xmlns="http://www.w3.org/2000/svg"

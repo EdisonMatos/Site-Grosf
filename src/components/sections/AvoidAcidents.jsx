@@ -167,9 +167,11 @@ export default function AboutUs() {
         />
         <div className=" desktop1:flex desktop1:flex-row-reverse desktop1:justify-between desktop1:pb-[54px] desktop3:pb-[48px]">
           <div
-            className="pb-[28px] desktop1:w-[48%] desktop1:py-0 desktop3:w-[46.3%] bg-no-repeat rounded-lg bg-cover bg-top phone1:w-[100%] phone1:h-[100%] desktop1:h-auto"
+            className="h-[400px] desktop1:h-auto desktop1:w-[48%] desktop3:w-[46.3%] bg-no-repeat rounded-lg bg-cover bg-top mb-6 desktop1:pb-0 phone1:w-full"
             style={{ backgroundImage: `url(${slide1})` }}
-          ></div>
+          >
+            {/* Se precisar, adicione conteúdo aqui para testar o h-auto */}
+          </div>
 
           <div className="desktop1:w-[48.5%] desktop3:w-[46.3%]">
             <MotionDivLeftToRight>
