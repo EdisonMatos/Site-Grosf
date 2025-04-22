@@ -13,7 +13,11 @@ export default function SquareCalculator() {
     const p = parseFloat(profundidade);
 
     if (isNaN(c) || isNaN(l) || isNaN(p)) {
-      setResultado(<div className="text-red-500">Preencha todos os campos com valores válidos.</div>);
+      setResultado(
+        <div className="text-red-500">
+          Preencha todos os campos com valores válidos.
+        </div>
+      );
       return;
     }
 
@@ -33,8 +37,8 @@ export default function SquareCalculator() {
 
   return (
     <div className="max-w-md p-6 mx-auto mt-10 bg-white shadow-md rounded-xl">
-      <h2 className="mb-4 text-2xl font-bold text-center text-gray-800">
-        Calculadora de Volume (Piscina Quadrada/Retangular)
+      <h2 className="mb-12 text-2xl font-bold text-center text-gray-800">
+        Piscina Quadrada/Retangular
       </h2>
 
       <label className="block mb-2 text-gray-700">Comprimento (m):</label>

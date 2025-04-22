@@ -9,11 +9,11 @@ export default function Ecalc() {
     <div className="flex justify-center full bg-quinary" id="products">
       <div className="w-[88%] max-w-[1110px] py-[26px] phone3:py-[48px]">
         <SectionHeader
-          sectionHeaderTitleSecond="e-Calculadora"
+          sectionHeaderTitleSecond="Calculadora de volume de água"
           sectionHeaderDescription="Calcule você mesmo o volume da água da sua piscina e a quantidade de produtos a ser adicionada na água."
         />
         <SectionContent>
-          <div className="flex justify-between w-full">
+          <div className="flex flex-col justify-between w-full gap-8 desktop1:flex-row">
             <div>
               <p className="text-center text-black/60">
                 Para piscinas retangulares: <br /> Comprimento x Largura x

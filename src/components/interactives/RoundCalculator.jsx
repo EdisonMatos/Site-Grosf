@@ -46,8 +46,8 @@ export default function RoundCalculator() {
 
   return (
     <div className="max-w-md p-6 mx-auto mt-10 bg-white shadow-md rounded-xl">
-      <h2 className="mb-4 text-2xl font-bold text-center text-gray-800">
-        Calculadora de Volume (Piscina Circular)
+      <h2 className="mb-12 text-2xl font-bold text-center text-gray-800">
+        Piscina Circular
       </h2>
 
       <label className="block mb-2 text-gray-700">Diâmetro (m):</label>
