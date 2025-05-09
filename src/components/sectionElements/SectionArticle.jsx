@@ -24,7 +24,7 @@ function SectionArticle(props) {
         <h1 className=" flex pb-[10px] items-center phone1:w-[100%] phone1:font-medium text-title2 phone1:leading-[34px] tablet1:text-title4 tablet1:leading-[45px] text-primary">
           {articleTitle}
         </h1>
-        <div className="phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] text-quaternary desktop3:w-full">
+        <div className="text-justify phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] text-quaternary desktop3:w-full">
           <p className="">{articleParagraphOne}</p>
           <p className="pt-[2%]">{articleParagraphTwo}</p>
           <p className="pt-[2%]">{articleParagraphThree}</p>

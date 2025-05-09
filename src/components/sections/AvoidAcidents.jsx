@@ -50,11 +50,12 @@ export default function AboutUs() {
 
           <div className="desktop1:w-[48.5%] desktop3:w-[46.3%]">
             <MotionDivLeftToRight>
-              <h1 className="  text-primary flex items-center phone1:w-[100%] phone1:font-medium phone1:text-title2 phone3:text-title2 phone1:pb-[10px] tablet1:text-title2 desktop1:text-title4">
+              <h1 className="text-primary flex items-center phone1:w-[100%] phone1:font-medium phone1:text-title2 phone3:text-title2 phone1:pb-[10px] tablet1:text-title2 desktop1:text-title4">
                 Negócios corporativos x meio ambiente. É possível uma
                 convivência pacífica?
               </h1>
-              <div className=" text-quaternary phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] desktop3:w-[100%]">
+
+              <div className="text-quaternary phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] desktop3:w-[100%] text-justify">
                 <p className="mb-4">
                   A resposta é sim.
                   <br />
@@ -66,15 +67,6 @@ export default function AboutUs() {
                 </p>
 
                 <MotionDivDownToUp>
-                  {/* <Button
-                    className="my-[20px] text-black"
-                    label="Continuar lendo"
-                    onClick={onClick}
-                    removeAnchor={true}
-                    removeTarget={true}
-                    animation={true}
-                    icon={<MoveRight />}
-                  /> */}
                   <Buttons
                     onClick={onClick}
                     name="Continue lendo"
@@ -89,7 +81,8 @@ export default function AboutUs() {
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="lucide lucide-corner-down-right-icon lucide-corner-down-right"
+                        className="lucide lucide-corner-down-right-icon lucide-corner-down-right"
+                        aria-label="Continue lendo"
                       >
                         <polyline points="15 10 20 15 15 20" />
                         <path d="M4 4v7a4 4 0 0 0 4 4h12" />
