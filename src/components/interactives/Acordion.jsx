@@ -105,7 +105,6 @@ export default function CustomizedAccordions() {
             </p>
           </AccordionDetails>
         </Accordion>
-
         <Accordion
           expanded={expanded === "panel4"}
           onChange={handleChange("panel4")}

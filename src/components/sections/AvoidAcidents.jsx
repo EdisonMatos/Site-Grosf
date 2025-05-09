@@ -133,19 +133,15 @@ export default function AboutUs() {
               Nesses mais de 30 anos de operação ininterrupta, nossa empresa tem
               se dedicado e operado com o que há de mais sagrado e importante no
               nosso planeta, “a água”! Sagrado porque é fonte de vida,
-              importante porque mantém a vida.
+              importante porque mantém a vida. Toda água pode ser recuperada se
+              tratada adequadamente e esse é o grande desafio.
             </p>
-            <br />
-            <p>
-              Toda água pode ser recuperada se tratada adequadamente e esse é o
-              grande desafio.
-            </p>{" "}
             <br />
             <p>
               Água servida, água barrenta, água contaminada, água de reuso, água
               de rios e lagos, água suja, essa tem sido nossa luta constante
               embora não seja nossa atividade fim.
-            </p>
+            </p>{" "}
             <br />
             <p>
               Recuperar e nunca jogar fora águas de piscinas, essa sim é a nossa
@@ -182,13 +178,10 @@ export default function AboutUs() {
               região durante o período do verão, essa água é distribuída por uma
               rede com 4 pontos espalhados estrategicamente por várias partes do
               edifício e serve para lavar veículos da nossa frota, lavar
-              quintais e calçadas, nosso estacionamento entre outros.
-            </p>
-            <br />
-            <p>
-              Como se trata de rede pressurizada, qualquer dos pontos quando
-              abertos, aciona a bomba principal e jorra água em abundância para
-              o cumprimento do objetivo principal.
+              quintais e calçadas, nosso estacionamento entre outros.Como se
+              trata de rede pressurizada, qualquer dos pontos quando abertos,
+              aciona a bomba principal e jorra água em abundância para o
+              cumprimento do objetivo principal.
             </p>
             <br />
             <p>
@@ -200,7 +193,7 @@ export default function AboutUs() {
             </p>
             <br />
             <p>
-              No ano de 2020 acabamos de forma definitiva com o uso de
+              No ano de 2020 abolimos de forma definitiva com o uso de
               utensílios descartáveis na nossa empresa e adotamos a utilização
               de utensílios reutilizáveis no nosso dia a dia, são pratos,
               talheres, copos para água e café, taças, canecas, jarras entre
@@ -211,22 +204,22 @@ export default function AboutUs() {
             <br />
             <p>
               Para o futuro mas a curto prazo, pois já está em fase de estudo,
-              estaremos implantando uma usina solar para geração de energia
-              elétrica, a usina funcionará como uma espécie de fazenda solar e a
-              sua capacidade instalada será suficiente para gerar toda a energia
-              consumida em nossos processos diariamente, dessa forma nos
-              tornarmos auto sustentáveis no consumo de água pluvial para reuso
-              e também no consumo de energia elétrica, esse será um dos mais
-              importantes passos que nossa empresa estará dando no sentido de
-              contribuir para um planeta melhor e mais sustentável, porém ainda
-              não será esse o mais importante de todos.
+              estaremos implantando uma usina fotovoltaica para geração de
+              energia elétrica, a usina funcionará como uma espécie de fazenda
+              solar e a sua capacidade instalada será suficiente para gerar toda
+              a energia consumida em nossos processos diariamente, dessa forma
+              nos tornarmos auto sustentáveis também no consumo de energia
+              elétrica, esse será um dos mais importantes passos que nossa
+              empresa estará dando no sentido de contribuir para um planeta
+              melhor e mais sustentável, porém ainda não será esse o mais
+              importante de todos.
             </p>
             <br />
             <p>
               Como projeto de longo prazo, temos a substituição gradativa da
               nossa atual frota de veículos utilitários movidos a diesel, um
               combustível altamente poluente, por veículos movidos 100% a
-              energia elétrica produzida em nossa usina solar.
+              energia elétrica produzida em nossa usina fotovoltaica.
             </p>
             <br />
             <p>
