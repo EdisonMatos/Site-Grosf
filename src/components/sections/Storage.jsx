@@ -43,8 +43,8 @@ export default function Storage({ modal }) {
                   <SectionArticle
                     articleSubtitle="A definir."
                     articleTitle="Estocagem de armazenamento"
-                    articleParagraphOne="Produtos químicos em geral não podem ser misturados. Veja abaixo dicas e orientações para armazenagem correta dos produtos para piscinas que ficarão por alguns dias no almoxarifado da sua loja."
-                    articleParagraphTwo="Via de regra, todo produto químico,  inclusive aqueles utilizados  no tratamento diário de piscinas, devem ser armazenados em lugar seco e fresco totalmente livre de umidade, fungos ou mofo."
+                    articleParagraphOne="Veja abaixo dicas e orientações para armazenagem correta dos produtos para piscinas que ficarão por alguns dias no almoxarifado da sua loja."
+                    articleParagraphTwo="Via de regra, todo produto químico, inclusive aqueles utilizados no tratamento diário de piscinas, devem ser armazenados em lugar seco e fresco totalmente livre de umidade, fungos ou mofo."
                     articleParagraphThree="No caso dos produtos de piscinas os cuidados a estocagem precisa seguir algumas regras básicas, os cuidados precisam ser redobrados, são produtos usados diariamente por profissionais do ramo como balconistas, estoquistas entre outros, mas às vezes são manuseados por pessoas sem o conhecimento necessário dos cuidados que precisa ter com esse procedimento."
                   />
                   <MotionDivDownToUp>

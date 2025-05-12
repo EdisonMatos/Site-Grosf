@@ -62,13 +62,14 @@ export default function CustomizedAccordions() {
             </h1>
           </AccordionSummary>
           <AccordionDetails>
-            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Não, nosso horário de funcionamento é de segunda a sexta feira das
-              8h até as 18h com um intervalo de 1 hora das 12h até as 13h para
-              descanso e refeição{" "}
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3 text-justify">
+              Não, nosso horário de funcionamento é de segunda a sexta-feira,
+              das 8h até as 18h, com um intervalo de 1 hora das 12h até as 13h
+              para descanso e refeição.
             </p>
           </AccordionDetails>
         </Accordion>
+
         <Accordion
           expanded={expanded === "panel2"}
           onChange={handleChange("panel2")}
@@ -79,12 +80,13 @@ export default function CustomizedAccordions() {
             </h1>
           </AccordionSummary>
           <AccordionDetails>
-            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Não, nosso atendimento é somente pelo whatsapp, por telefone ou
-              por email.{" "}
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3 text-justify">
+              Não, nosso atendimento é somente pelo WhatsApp, por telefone ou
+              por email.
             </p>
           </AccordionDetails>
         </Accordion>
+
         <Accordion
           expanded={expanded === "panel3"}
           onChange={handleChange("panel3")}
@@ -96,10 +98,10 @@ export default function CustomizedAccordions() {
             </h1>
           </AccordionSummary>
           <AccordionDetails>
-            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
-              Não, os curtos e treinamentos são oferecidos pelos nossos
-              parceiros comerciais, caso haja interesse nesses cursos, escolha a
-              marca desejada e entre no site do fabricante escolhido.{" "}
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3 text-justify">
+              Não, os cursos e treinamentos são oferecidos pelos nossos
+              parceiros comerciais. Caso haja interesse, escolha a marca
+              desejada e acesse o site do fabricante.
             </p>
           </AccordionDetails>
         </Accordion>
@@ -109,17 +111,18 @@ export default function CustomizedAccordions() {
         >
           <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
             <h1 className="font-mainFont text-paragraph3 phone3:text-paragraph4">
-              A empresa exige valor mínimo por pedido? Se sim qual o valor o
+              A empresa exige valor mínimo por pedido? Se sim, qual o valor e o
               prazo de pagamento oferecido?{" "}
             </h1>
           </AccordionSummary>
           <AccordionDetails>
-            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3 text-justify">
               Sim, o valor mínimo por pedido é de R$300,00 e o prazo para
-              pagamento é de 21 dias com boleto bancário.{" "}
+              pagamento é de 21 dias com boleto bancário.
             </p>
           </AccordionDetails>
         </Accordion>
+
         <Accordion
           expanded={expanded === "panel5"}
           onChange={handleChange("panel5")}
@@ -130,12 +133,13 @@ export default function CustomizedAccordions() {
             </h1>
           </AccordionSummary>
           <AccordionDetails>
-            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3 text-justify">
               Sim, o valor mínimo para entrega grátis dentro do nosso território
-              de atuação é de R$1.200,00 por pedido.{" "}
+              de atuação é de R$1.200,00 por pedido.
             </p>
           </AccordionDetails>
         </Accordion>
+
         <Accordion
           expanded={expanded === "panel6"}
           onChange={handleChange("panel6")}
@@ -146,14 +150,16 @@ export default function CustomizedAccordions() {
             </h1>
           </AccordionSummary>
           <AccordionDetails>
-            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3">
+            <p className="font-mainFont text-quaternary text-paragraph3 phone3:text-paragraph4 tablet1:text-paragraph3 desktop1:text-paragraph2 desktop2:text-paragraph3 text-justify">
               Atuamos em 3 territórios específicos no estado de São Paulo:{" "}
-              <br /> RT1 - Vale do Paraíba <br />
-              RT2 - Litoral Paulista <br /> RT3 - Circuito das Águas Paulista e
-              Grande ABC
+              <br />
+              RT1 - Vale do Paraíba <br />
+              RT2 - Litoral Paulista <br />
+              RT3 - Circuito das Águas Paulista e Grande ABC
             </p>
           </AccordionDetails>
         </Accordion>
+
         <Accordion
           expanded={expanded === "panel7"}
           onChange={handleChange("panel7")}

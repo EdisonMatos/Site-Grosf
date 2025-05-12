@@ -65,6 +65,10 @@ module.exports = {
         "slide-down": "slideDown 1s ease",
         "slide-up": "slideUp 1s ease",
       },
+      rotate: {
+        "y-[-160deg]": "rotateY(-160deg)",
+        "y-0": "rotateY(0deg)",
+      },
     },
   },
   plugins: [],

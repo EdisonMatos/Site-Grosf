@@ -39,12 +39,11 @@ export default function HeroSection() {
                   </div>
                 </MotionDivLeftToRight>
                 <MotionDivLeftToRight>
-                  <div className="text-center desktop1:text-left phone1:w-full phone1:font-medium phone1:text-paragraph4">
+                  <div className="text-justify phone1:w-full phone1:font-medium phone1:text-paragraph4">
                     <p>
                       Nossos profissionais são preparados para atendê-lo de
                       forma objetiva, técnica, transparente e humanizada, siga
                       navegando e surpreenda-se!
-                      <br />
                     </p>
                   </div>
                 </MotionDivLeftToRight>
@@ -55,7 +54,7 @@ export default function HeroSection() {
                         type=""
                         href={whatsappContactLink}
                         name="Falar com Atendente"
-                        icon={<FaWhatsapp className="size-[25px]"/>}
+                        icon={<FaWhatsapp className="size-[25px]" />}
                       />
                       {/* <button
                         onClick={() =>
