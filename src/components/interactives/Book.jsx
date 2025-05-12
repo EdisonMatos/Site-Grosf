@@ -16,8 +16,8 @@ export default function BookAccordion({ chapters }) {
   };
 
   return (
-    <div className="flex flex-col items-center p-4">
-      <div className="relative w-auto h-auto bg-yellow-100 border-2 border-yellow-600 shadow-lg p-6 transition-all duration-500">
+    <div className="flex flex-col items-center p-">
+      <div className="relative w-auto h-auto bg-primary border-2 border-secondary text-white shadow-lg p-6 transition-all duration-500">
         <h2 className="text-xl font-bold mb-4">
           {chapters[currentPage].title}
         </h2>
@@ -28,14 +28,14 @@ export default function BookAccordion({ chapters }) {
         <button
           onClick={prevPage}
           disabled={currentPage === 0}
-          className="bg-yellow-500 text-white px-4 py-2 rounded disabled:opacity-50"
+          className="bg-primary text-white px-4 py-2 rounded disabled:opacity-50"
         >
           Página anterior
         </button>
         <button
           onClick={nextPage}
           disabled={currentPage === chapters.length - 1}
-          className="bg-yellow-500 text-white px-4 py-2 rounded disabled:opacity-50"
+          className="bg-primary text-white px-4 py-2 rounded disabled:opacity-50"
         >
           Próxima página
         </button>

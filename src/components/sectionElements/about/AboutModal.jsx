@@ -21,15 +21,16 @@ export default function AboutModal() {
       title: "Capítulo 1",
       content: (
         <div>
-          {" "}
-          <p>
+          <p className="text-justify">
+            {" "}
             No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã,
             desembarcava na rodoviária Júlio Prestes no centro da capital
             paulista, trazido por uma tia, um jovem migrante paranaense com
             apenas 17 anos de idade.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
+            {" "}
             Trajava calça e camisa bastante desbotadas pelo uso intenso na lida
             diária lá na roça, nos pés um par de chinelos com solado também
             desgastados, no ombro esquerdo um embornal, uma espécie de sacola
@@ -44,29 +45,8 @@ export default function AboutModal() {
       title: "Capítulo 2",
       content: (
         <div>
-          <p>
-            No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã,
-            desembarcava na rodoviária Júlio Prestes no centro da capital
-            paulista, trazido por uma tia, um jovem migrante paranaense com
-            apenas 17 anos de idade.
-          </p>
-          <br />
-          <p>
-            Trajava calça e camisa bastante desbotadas pelo uso intenso na lida
-            diária lá na roça, nos pés um par de chinelos com solado também
-            desgastados, no ombro esquerdo um embornal, uma espécie de sacola
-            funda e estreita feita de sobras de tecidos de costura com uma alça
-            comprida que lhe servia como apoio ao ombro.
-          </p>
-          <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 3",
-      content: (
-        <div>
-          <p>
+          <p className="text-justify">
+            {" "}
             Bastante utilizado na roça, esse utensílio caipira servia
             principalmente para levar comida para os trabalhadores nas lavouras
             de café, mas o embornal que trazia, sua única bagagem de mão,
@@ -81,7 +61,8 @@ export default function AboutModal() {
             ganhar dinheiro para ajudar os pais e irmãos que por lá ficaram.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
+            {" "}
             Logo após o desembarque, seus olhos brilharam ao olhar para a
             cobertura colorida da linda rodoviária, composta por milhares de
             pequenos quadrados acrílico com fundo ligeiramente ovalado no
@@ -94,17 +75,18 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 4",
+      title: "Capítulo 3",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
+            {" "}
             Nunca havia visto antes algo parecido, silencioso observava um tanto
             assustado o movimento de pessoas e veículos que iam e vinham naquele
             horário por aquelas estreitas ruas e isso o deixava um tanto
             apreensivo e pensativo.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
             Pega então sua pouca bagagem, se enche de esperança foco e fé e
             promete a si mesmo com o coração cheio de alegria e entusiasmo de um
             dia ser dono do seu próprio negócio, a vida anda, o tempo passa
@@ -116,10 +98,10 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 5",
+      title: "Capítulo 4",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
             Tão logo chegou foi vai morar provisoriamente com a mesma tia que o
             trouxera, a sua saudosa e querida Tia Tereza (in memoriam) que nesse
             momento passou a ser a sua mãe nº 4 já que antes disso, havia morado
@@ -128,7 +110,7 @@ export default function AboutModal() {
             memoriam).
           </p>
           <br />
-          <p>
+          <p className="text-justify">
             Dois dias após sua chegada, começou trabalhar numa padaria como
             balconista ao lado de um tio muito querido, ali conheceu seu Moisés,
             um funcionário antigo que ensinou a ele tudo que precisava aprender
@@ -148,11 +130,11 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 6",
+      title: "Capítulo 5",
       content: (
         <div>
           {" "}
-          <p>
+          <p className="text-justify">
             No final do primeiro trimestre daquele longínquo ano de 1980,
             começou então a nova função que lhe foi confiada pelo empresário
             espanhol que passou a partir de então ser o seu novo patrão, nasceu
@@ -160,7 +142,7 @@ export default function AboutModal() {
             anos.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
             Nesse ano de 1980 um fato totalmente fora do previsto aconteceu, ele
             foi convocado para servir o Tiro de Guerra do Exército Brasileiro, a
             princípio fez de tudo pra não servir já que se apresentou à Junta
@@ -176,17 +158,17 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 7",
+      title: "Capítulo 6",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
             Nota: Um detalhe que esse narrador não pode deixar passar
             despercebido trata-se da sua mãe nº 6, a sua querida Tia Juraci que
             vive em nosso meio, foi aos seus cuidados que esteve do ano de 1982
             até o início de 1986 quando se casou.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
             Voltando à história, cerca de menos de 2 anos depois, seu empenho e
             habilidade chamou novamente a atenção do empresário espanhol que
             havia contratado, e esse concedeu a ele por mérito, uma nova
@@ -200,10 +182,10 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 8",
+      title: "Capítulo 7",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
             Após seis anos de trabalho nessa fábrica de acessórios de piscinas
             mais uma oportunidade lhe bateu à porta, recebeu o convite para
             trabalhar numa loja de produtos e acessórios de piscinas que ficava
@@ -221,7 +203,8 @@ export default function AboutModal() {
             ocasião da sua chegada, o momento finalmente havia chegado.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
+            {" "}
             O tempo passou depressa, parece ter voado, lá se foram 15 anos desde
             a sua chegada, o ano era 1994, ano da criação da nova moeda, o Real
             e também ano da morte de Airton Sena, dois acontecimentos bastante
@@ -237,10 +220,10 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 9",
+      title: "Capítulo 8",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
             A primeira venda foi realizada já no dia 4 de setembro daquele ano,
             o cliente que realizou essa primeira compra continua com sua loja
             aberta e atuante até os dias de hoje e atualmente já está na segunda
@@ -251,7 +234,7 @@ export default function AboutModal() {
             Olivetti.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
             A parceria com a marca HTH aconteceu pouco tempo depois ainda no
             primeiro semestre do ano de 1996, a ansiedade por ver as coisas
             acontecerem parecia ser seu principal estado emocional naquele
@@ -264,10 +247,11 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 10",
+      title: "Capítulo 9",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
+            {" "}
             Um dia foi convidado para um almoço com o Vice Presidente da HTH,
             essa a maior empresa do segmento de tratamento de águas de piscinas
             do Brasil, após relutar bastante por conta do sua timidez, o convite
@@ -283,7 +267,8 @@ export default function AboutModal() {
             rápido.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
+            {" "}
             A empresa começou crescer de forma lenta mas sustentável, já no ano
             de 2008 atingiu a marca de 400 toneladas de produtos comercializados
             e não parou por aí, continuou a crescer, a garagem da sua casa já
@@ -295,10 +280,11 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 11",
+      title: "Capítulo 10",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
+            {" "}
             Pouco tempo depois as duas casas já se tornaram pequenas, uma
             terceira casa foi adquirida e ali foi instalado o escritório e toda
             a administração da empresa, pouco tempo depois as três casas também
@@ -312,7 +298,8 @@ export default function AboutModal() {
             forma rápida.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
+            {" "}
             Antes disso, no ano de 2009, diante da necessidade de agilizar seus
             processos e aprimorar seus controles, a empresa adquiriu um complexo
             programa de gestão que começou rodar de forma definitiva a partir de
@@ -329,10 +316,11 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 12",
+      title: "Capítulo 11",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
+            {" "}
             No ano de 2013 adquiriu um imóvel com 2.000m² de área construída, um
             prédio imponente, arrojado, espaçoso que conta inclusive com
             estacionamento para colaboradores e visitantes, modernas salas
@@ -342,7 +330,8 @@ export default function AboutModal() {
             movimentado atingiu pouco mais de 1.000 toneladas.
           </p>
           <br />
-          <p>
+          <p className="text-justify">
+            {" "}
             Em 2024, a empresa completou 30 anos de existência, já está na
             segunda geração, mas o seu fundador, aquele migrante paranaense que
             desembarcou na rodoviária Julio Prestes lá no centro da Capital
@@ -355,10 +344,11 @@ export default function AboutModal() {
       ),
     },
     {
-      title: "Capítulo 13",
+      title: "Capítulo 12",
       content: (
         <div>
-          <p>
+          <p className="text-justify">
+            {" "}
             A empresa tem projetos de governança ambiental já implantados e
             também outros projetos de longo prazo a serem implantados no futuro.
             Pensando e focando sempre na melhoria dos processos internos, a
