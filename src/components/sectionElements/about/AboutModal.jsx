@@ -27,16 +27,23 @@ export default function AboutModal() {
             desembarcava na rodoviária Júlio Prestes no centro da capital
             paulista, trazido por uma tia, um jovem migrante paranaense com
             apenas 17 anos de idade.
-          </p>
-          <br />
-          <p className="text-justify">
-            {" "}
+            <br />
+            <br />
             Trajava calça e camisa bastante desbotadas pelo uso intenso na lida
             diária lá na roça, nos pés um par de chinelos com solado também
             desgastados, no ombro esquerdo um embornal, uma espécie de sacola
             funda e estreita feita de sobras de tecidos de costura com uma alça
             comprida que lhe servia como apoio ao ombro.
+            <br />
+            <br />
+            Bastante utilizado na roça, esse utensílio caipira servia
+            principalmente para levar comida para os trabalhadores nas lavouras
+            de café, mas o embornal que trazia, sua única bagagem de mão,
+            guardava dentro dele apenas alguns poucos pertences, já o coração
+            desembarca na metrópole cheio de esperança e fé de vencer um dia, e
+            ganhar dinheiro para ajudar os pais e irmãos que por lá ficaram.
           </p>
+          <br />
           <br />
         </div>
       ),
@@ -47,28 +54,20 @@ export default function AboutModal() {
         <div>
           <p className="text-justify">
             {" "}
-            Bastante utilizado na roça, esse utensílio caipira servia
-            principalmente para levar comida para os trabalhadores nas lavouras
-            de café, mas o embornal que trazia, sua única bagagem de mão,
-            guardava dentro dele apenas alguns poucos pertences, já o coração
-            desembarca na metrópole cheio de esperança e fé de vencer um dia, e
-            ganhar dinheiro para ajudar os pais e irmãos que por lá
-            ficaram.Bastante utilizado na roça, esse utensílio caipira servia
-            principalmente para levar comida para os trabalhadores nas lavouras
-            de café, mas o embornal que trazia, sua única bagagem de mão,
-            guardava dentro dele apenas alguns poucos pertences, já o coração
-            desembarca na metrópole cheio de esperança e fé de vencer um dia, e
-            ganhar dinheiro para ajudar os pais e irmãos que por lá ficaram.
-          </p>
-          <br />
-          <p className="text-justify">
-            {" "}
             Logo após o desembarque, seus olhos brilharam ao olhar para a
             cobertura colorida da linda rodoviária, composta por milhares de
             pequenos quadrados acrílico com fundo ligeiramente ovalado no
             formato de diamante que com várias cores cobriam o teto e desciam em
             forma de “L” invertido de cima para baixo por cerca de mais de um
             metro nas laterais daquela gigantesca edificação.
+          </p>
+          <br />
+          <p className="text-justify">
+            {" "}
+            Nunca havia visto antes algo parecido, silencioso observava um tanto
+            assustado o movimento de pessoas e veículos que iam e vinham naquele
+            horário por aquelas estreitas ruas e isso o deixava um tanto
+            apreensivo e pensativo.
           </p>
           <br />
         </div>
@@ -80,13 +79,6 @@ export default function AboutModal() {
         <div>
           <p className="text-justify">
             {" "}
-            Nunca havia visto antes algo parecido, silencioso observava um tanto
-            assustado o movimento de pessoas e veículos que iam e vinham naquele
-            horário por aquelas estreitas ruas e isso o deixava um tanto
-            apreensivo e pensativo.
-          </p>
-          <br />
-          <p className="text-justify">
             Pega então sua pouca bagagem, se enche de esperança foco e fé e
             promete a si mesmo com o coração cheio de alegria e entusiasmo de um
             dia ser dono do seu próprio negócio, a vida anda, o tempo passa
@@ -94,13 +86,6 @@ export default function AboutModal() {
             missão a ser cumprida.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 4",
-      content: (
-        <div>
           <p className="text-justify">
             Tão logo chegou foi vai morar provisoriamente com a mesma tia que o
             trouxera, a sua saudosa e querida Tia Tereza (in memoriam) que nesse
@@ -110,6 +95,13 @@ export default function AboutModal() {
             memoriam).
           </p>
           <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 4",
+      content: (
+        <div>
           <p className="text-justify">
             Dois dias após sua chegada, começou trabalhar numa padaria como
             balconista ao lado de um tio muito querido, ali conheceu seu Moisés,
@@ -126,14 +118,6 @@ export default function AboutModal() {
             emprego.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 5",
-      content: (
-        <div>
-          {" "}
           <p className="text-justify">
             No final do primeiro trimestre daquele longínquo ano de 1980,
             começou então a nova função que lhe foi confiada pelo empresário
@@ -142,6 +126,14 @@ export default function AboutModal() {
             anos.
           </p>
           <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 5",
+      content: (
+        <div>
+          {" "}
           <p className="text-justify">
             Nesse ano de 1980 um fato totalmente fora do previsto aconteceu, ele
             foi convocado para servir o Tiro de Guerra do Exército Brasileiro, a
@@ -154,13 +146,6 @@ export default function AboutModal() {
             Tia Amélia (in memoriam) e essa passou a ser então a sua mãe nº 5.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 6",
-      content: (
-        <div>
           <p className="text-justify">
             Nota: Um detalhe que esse narrador não pode deixar passar
             despercebido trata-se da sua mãe nº 6, a sua querida Tia Juraci que
@@ -168,6 +153,13 @@ export default function AboutModal() {
             até o início de 1986 quando se casou.
           </p>
           <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 6",
+      content: (
+        <div>
           <p className="text-justify">
             Voltando à história, cerca de menos de 2 anos depois, seu empenho e
             habilidade chamou novamente a atenção do empresário espanhol que
@@ -178,13 +170,6 @@ export default function AboutModal() {
             do ramo, mas não tinha noção de onde isso poderia chegar.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 7",
-      content: (
-        <div>
           <p className="text-justify">
             Após seis anos de trabalho nessa fábrica de acessórios de piscinas
             mais uma oportunidade lhe bateu à porta, recebeu o convite para
@@ -203,8 +188,14 @@ export default function AboutModal() {
             ocasião da sua chegada, o momento finalmente havia chegado.
           </p>
           <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 7",
+      content: (
+        <div>
           <p className="text-justify">
-            {" "}
             O tempo passou depressa, parece ter voado, lá se foram 15 anos desde
             a sua chegada, o ano era 1994, ano da criação da nova moeda, o Real
             e também ano da morte de Airton Sena, dois acontecimentos bastante
@@ -212,18 +203,11 @@ export default function AboutModal() {
             sinal de esperança de que dias melhores estavam por vir, o segundo é
             terrível, lamentável e triste, o Brasil perdeu um dos seus maiores
             ídolos senão o maior, mas a hora era chegada, ele sentiu que estava
-            preparado e criou a sua empresa, a{" "}
-            <strong>Comercial Grosfestilo.</strong>
+            preparado e criou a sua empresa, a Comercial Grosfestilo.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 8",
-      content: (
-        <div>
           <p className="text-justify">
+            {" "}
             A primeira venda foi realizada já no dia 4 de setembro daquele ano,
             o cliente que realizou essa primeira compra continua com sua loja
             aberta e atuante até os dias de hoje e atualmente já está na segunda
@@ -234,6 +218,13 @@ export default function AboutModal() {
             Olivetti.
           </p>
           <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 8",
+      content: (
+        <div>
           <p className="text-justify">
             A parceria com a marca HTH aconteceu pouco tempo depois ainda no
             primeiro semestre do ano de 1996, a ansiedade por ver as coisas
@@ -241,6 +232,21 @@ export default function AboutModal() {
             momento, mas entendeu que precisava ir devagar, a empresa era nova
             demais, não existia crédito disponível, pq ninguém queria, e com
             toda a razão apostar no potencial de uma empresa recém criada.
+          </p>
+          <br />
+          <p className="text-justify">
+            Um dia foi convidado para um almoço com o Vice Presidente da HTH,
+            essa a maior empresa do segmento de tratamento de águas de piscinas
+            do Brasil, após relutar bastante por conta do sua timidez, o convite
+            finalmente foi aceito, o almoço aconteceu numa churrascaria da
+            região de nome <strong>Galeto na Brasa</strong>, houve uma boa
+            empatia entre os participantes desse almoço, ganhou a confiança do
+            então Vice Presidente cujo nome era <strong>Arnaldo Machado</strong>
+            , e a partir de então as portas dessa grande empresa se abriram,
+            nesse momento as coisas começaram acontecer de fato. O depósito
+            improvisado na garagem da sua residência passou a não suportar o
+            volume de cargas que crescia mes a mes, esse foi o primeiro desafio
+            a ser enfrentado e precisou ser rápido.
           </p>
           <br />
         </div>
@@ -252,23 +258,6 @@ export default function AboutModal() {
         <div>
           <p className="text-justify">
             {" "}
-            Um dia foi convidado para um almoço com o Vice Presidente da HTH,
-            essa a maior empresa do segmento de tratamento de águas de piscinas
-            do Brasil, após relutar bastante por conta do sua timidez, o convite
-            finalmente foi aceito, o almoço aconteceu numa churrascaria da
-            região de nome <strong>Galeto na Brasa,</strong> houve uma boa
-            empatia entre os participantes desse almoço, ganhou a confiança do
-            então Vice Presidente cujo nome era{" "}
-            <strong>Arnaldo Machado,</strong> e a partir de então as portas
-            dessa grande empresa se abriram, nesse momento as coisas começaram
-            acontecer de fato. O depósito improvisado na garagem da sua
-            residência passou a não suportar o volume de cargas que crescia mes
-            a mes, esse foi o primeiro desafio a ser enfrentado e precisou ser
-            rápido.
-          </p>
-          <br />
-          <p className="text-justify">
-            {" "}
             A empresa começou crescer de forma lenta mas sustentável, já no ano
             de 2008 atingiu a marca de 400 toneladas de produtos comercializados
             e não parou por aí, continuou a crescer, a garagem da sua casa já
@@ -276,13 +265,6 @@ export default function AboutModal() {
             foi alugada e o problema parecia ter sido resolvido.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 10",
-      content: (
-        <div>
           <p className="text-justify">
             {" "}
             Pouco tempo depois as duas casas já se tornaram pequenas, uma
@@ -298,27 +280,27 @@ export default function AboutModal() {
             forma rápida.
           </p>
           <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 10",
+      content: (
+        <div>
           <p className="text-justify">
             {" "}
             Antes disso, no ano de 2009, diante da necessidade de agilizar seus
             processos e aprimorar seus controles, a empresa adquiriu um complexo
             programa de gestão que começou rodar de forma definitiva a partir de
             01 de julho daquele ano, trata-se do{" "}
-            <strong>SIGNUS SOFTWARE ERP,</strong> um produto da empresa{" "}
-            <strong>NOVA SOLUÇÕES,</strong> os processos melhoraram
+            <strong>SIGNUS SOFTWARE ERP</strong>, um produto da empresa{" "}
+            <strong>NOVA SOLUÇÕES</strong>, os processos melhoraram
             significativamente a partir desse momento, ganharam velocidade, as
             vendas cresceram, uma nova equipe comercial foi montada e
             aprimorada, e a empresa continuou a alcançar números bastante
             robustos.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 11",
-      content: (
-        <div>
           <p className="text-justify">
             {" "}
             No ano de 2013 adquiriu um imóvel com 2.000m² de área construída, um
@@ -330,6 +312,13 @@ export default function AboutModal() {
             movimentado atingiu pouco mais de 1.000 toneladas.
           </p>
           <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 11",
+      content: (
+        <div>
           <p className="text-justify">
             {" "}
             Em 2024, a empresa completou 30 anos de existência, já está na
@@ -340,13 +329,6 @@ export default function AboutModal() {
             importantes.
           </p>
           <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 12",
-      content: (
-        <div>
           <p className="text-justify">
             {" "}
             A empresa tem projetos de governança ambiental já implantados e
@@ -357,20 +339,39 @@ export default function AboutModal() {
             nunca deixará para trás as suas raízes e o seu conceito de
             humanidade, e carregando sempre consigo esse conceito, continuará a
             contar sua linda e empolgante história!
-            <br />
-            <br />A empresa tem projetos de governança ambiental já implantados
-            e também outros projetos de longo prazo a serem implantados no
-            futuro. Pensando e focando sempre na melhoria dos processos
-            internos, a empresa continua firme e preparada para as mudanças
-            tecnológicas que parecem chegar a passos largos, mas uma coisa é
-            certa, essa empresa nunca deixará para trás as suas raízes e o seu
-            conceito de humanidade, e carregando sempre consigo esse conceito,
-            continuará a contar sua linda e empolgante história!
           </p>
           <br />
         </div>
       ),
     },
+    // {
+    //   title: "Capítulo 12",
+    //   content: (
+    //     <div>
+    //       <p className="text-justify">
+    //         {" "}
+    //         A empresa tem projetos de governança ambiental já implantados e
+    //         também outros projetos de longo prazo a serem implantados no futuro.
+    //         Pensando e focando sempre na melhoria dos processos internos, a
+    //         empresa continua firme e preparada para as mudanças tecnológicas que
+    //         parecem chegar a passos largos, mas uma coisa é certa, essa empresa
+    //         nunca deixará para trás as suas raízes e o seu conceito de
+    //         humanidade, e carregando sempre consigo esse conceito, continuará a
+    //         contar sua linda e empolgante história!
+    //         <br />
+    //         <br />A empresa tem projetos de governança ambiental já implantados
+    //         e também outros projetos de longo prazo a serem implantados no
+    //         futuro. Pensando e focando sempre na melhoria dos processos
+    //         internos, a empresa continua firme e preparada para as mudanças
+    //         tecnológicas que parecem chegar a passos largos, mas uma coisa é
+    //         certa, essa empresa nunca deixará para trás as suas raízes e o seu
+    //         conceito de humanidade, e carregando sempre consigo esse conceito,
+    //         continuará a contar sua linda e empolgante história!
+    //       </p>
+    //       <br />
+    //     </div>
+    //   ),
+    // },
   ];
 
   // 🔧 Adiciona essas variáveis:
