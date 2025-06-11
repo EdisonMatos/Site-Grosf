@@ -10,6 +10,8 @@ import SodramarPage from "./pages/SodramarPage.jsx"
 import SuallPage from "./pages/SuallPage.jsx"
 import "./index.css";
 
+// subir código
+
 ReactDOM.createRoot(document.getElementById("root")).render(
       <Router>
         <Routes>
