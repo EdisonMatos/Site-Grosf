@@ -138,14 +138,6 @@ export default function ListGroupProducts() {
               </li>
               <li>
                 <a
-                  href="/hidroazul"
-                  className="block w-[80%] mx-auto px-4 py-2 text-center text-tertiary transition duration-500 border-b cursor-pointer hover:text-primary hover:bg-quinary border-neutral-300"
-                >
-                  Hidroazul
-                </a>
-              </li>
-              <li>
-                <a
                   href="/domclor"
                   className="block w-[80%] mx-auto px-4 py-2 text-center text-tertiary transition duration-500 border-b cursor-pointer hover:text-primary hover:bg-quinary border-neutral-300"
                 >

@@ -40,9 +40,7 @@ export default function ListGroup() {
           offset={-100}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>
-            Início
-          </span>
+          <span className={scrolling ? "hover:text-primary" : ""}>Início</span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
               scrolling ? "bg-primary" : "bg-white"
@@ -122,14 +120,6 @@ export default function ListGroup() {
                     className="block w-[80%] mx-auto px-4 py-2 text-center text-tertiary transition duration-500 border-b cursor-pointer hover:text-primary hover:bg-quinary border-neutral-300"
                   >
                     Neoclor
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/hidroazul"
-                    className="block w-[80%] mx-auto px-4 py-2 text-center text-tertiary transition duration-500 border-b cursor-pointer hover:text-primary hover:bg-quinary border-neutral-300"
-                  >
-                    Hidroazul
                   </a>
                 </li>
                 <li>
@@ -219,9 +209,7 @@ export default function ListGroup() {
           offset={-190}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>
-            Contato
-          </span>
+          <span className={scrolling ? "hover:text-primary" : ""}>Contato</span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
               scrolling ? "bg-primary" : "bg-white"
