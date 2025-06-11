@@ -4,7 +4,6 @@ import ImgAndButtonsCard from "../cards/ImgAndButtonsCard";
 import hthLogo from "../../assets/imgs/brands/hthLogo.jpg";
 import gencoLogo from "../../assets/imgs/brands/gencoLogo.jpg";
 import domclorLogo from "../../assets/imgs/brands/domclorLogo.jpg";
-import hidroazulLogo from "../../assets/imgs/brands/hidroazulLogo.jpg";
 import neoclorLogo from "../../assets/imgs/brands/neoclorLogo.jpg";
 import netunoLogo from "../../assets/imgs/brands/netunoLogo.jpg";
 import sodramarLogo from "../../assets/imgs/brands/sodramarLogo.jpg";
@@ -36,12 +35,6 @@ export default function OurProducts() {
             button1Label="Consultar Produtos"
             button1Link="/neoclor"
             alt="Logo da marca Neoclor"
-          />
-          <ImgAndButtonsCard
-            img={hidroazulLogo}
-            button1Label="Consultar Produtos"
-            button1Link="/hidroazul"
-            alt="Logo da marca Hidroazul"
           />
           <ImgAndButtonsCard
             img={domclorLogo}

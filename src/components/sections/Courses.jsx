@@ -2,7 +2,6 @@ import SectionHeader from "../sectionElements/SectionHeader";
 import SectionContent from "../sectionElements/SectionContent";
 import hthLogo from "../../assets/imgs/brands/hthLogo.jpg";
 import gencoLogo from "../../assets/imgs/brands/gencoLogo.jpg";
-import hidroazulLogo from "../../assets/imgs/brands/hidroazulLogo.jpg";
 import ImgTextAndButtonsCard from "../cards/ImgTextAndButtonsCard";
 
 export default function Courses() {
@@ -28,13 +27,6 @@ export default function Courses() {
             button1Label="A definir."
             // button1Link="https://www.genco.com.br/escola-da-piscina/"
             alt="Logo da marca Genco"
-          />
-          <ImgTextAndButtonsCard
-            img={hidroazulLogo}
-            text="A definir."
-            button1Label="A definir."
-            // button1Link="https://hidroazul.com.br/universidade-da-piscina/"
-            alt="Logo da marca Hidroazul"
           />
         </SectionContent>
       </div>
