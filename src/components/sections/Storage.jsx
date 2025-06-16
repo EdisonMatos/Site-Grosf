@@ -3,13 +3,11 @@ import ImagesGallery3Slides from "../interactives/ImagesGallery3Slides";
 import slide1 from "../../assets/banners/aboutUs/slide1.jpg";
 import slide2 from "../../assets/banners/aboutUs/slide2.jpg";
 import slide3 from "../../assets/banners/aboutUs/slide3.jpg";
-import slide4 from "../../assets/banners/aboutUs/slide4.jpg";
 import slide5 from "../../assets/banners/aboutUs/slide5.jpg";
 import slide6 from "../../assets/banners/aboutUs/slide6.jpg";
 import slide7 from "../../assets/banners/aboutUs/slide7.jpg";
 import slide8 from "../../assets/banners/aboutUs/slide8.jpg";
 import slide9 from "../../assets/banners/aboutUs/slide9.jpg";
-import slide10 from "../../assets/banners/aboutUs/slide10.jpg";
 import slide11 from "../../assets/banners/aboutUs/slide11.jpg";
 
 import ArticleComponent from "../sectionElements/ArticleComponent";
@@ -60,13 +58,11 @@ export default function Storage({ modal }) {
                     slide1={slide1}
                     slide2={slide2}
                     slide3={slide3}
-                    slide4={slide4}
                     slide5={slide5}
                     slide6={slide6}
                     slide7={slide7}
                     slide8={slide8}
                     slide9={slide9}
-                    slide10={slide10}
                     slide11={slide11}
                   />
                 </MotionDivRightToLeft>
