@@ -2,7 +2,6 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import PropTypes from "prop-types";
 import "react-image-gallery/styles/css/image-gallery.css";
-// sobe codigo
 
 export default function ImagesGallery3Slides(props) {
   const {
