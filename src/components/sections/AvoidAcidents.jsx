@@ -57,13 +57,10 @@ export default function AboutUs() {
 
               <div className="text-quaternary phone1:w-[100%] phone1:font-normal phone1:text-paragraph3 phone1:leading-[21px] desktop3:w-[100%] text-justify">
                 <p className="mb-4">
-                  A resposta é sim.
-                  <br />
-                  <br />
-                  Aprendemos nas últimas décadas que é possível obter maior
-                  lucratividade quando se respeita leis e práticas ambientais.
-                  Nosso planeta tem pressa, não é possível esperar, amanhã é
-                  agora no nosso planeta!
+                  A resposta é sim, aprendemos nas últimas décadas que é
+                  possível obter maior lucratividade quando se respeita leis e
+                  práticas ambientais. Nosso planeta tem pressa, não é possível
+                  esperar, amanhã é agora no nosso planeta!
                 </p>
 
                 <MotionDivDownToUp>

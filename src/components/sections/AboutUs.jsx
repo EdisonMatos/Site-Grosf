@@ -41,8 +41,7 @@ export default function AboutUs({ modal }) {
               <div className=" desktop1:w-[60%] desktop3:w-[55%]">
                 <MotionDivLeftToRight>
                   <SectionArticle
-                    articleSubtitle="A definir."
-                    articleTitle="Entenda a trajetória da Grosf Estilo"
+                    articleTitle="Conheça a linda e empolgante história da Grosfestilo"
                     articleParagraphOne="No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã, desembarcava na rodoviária Júlio Prestes no centro da capital paulista, trazido por uma tia, um jovem migrante paranaense com apenas 17 anos de idade."
                   />
                   <MotionDivDownToUp>

@@ -16,14 +16,14 @@ export default function Ecalc() {
           <div className="flex flex-col justify-between w-full gap-8 desktop1:flex-row">
             <div>
               <p className="text-justify text-black/60">
-                Para piscinas retangulares: <br /> Comprimento x Largura x
-                Profundidade = Volume em 1000L
+                Piscinas Quadrada ou Retangulares: <br /> Comprimento x Largura
+                x Profundidade = Volume em 1000L
               </p>
               <SquareCalculator />
             </div>
             <div>
               <p className="text-justify text-black/60">
-                Para piscinas redondas: <br /> Diâmetro x Diâmetro x
+                Piscina Circular ou Oval: <br /> Diâmetro x Diâmetro x
                 Profundidade x 0,785 = Volume em 1000L
               </p>
               <RoundCalculator />
