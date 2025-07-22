@@ -3,6 +3,7 @@ import SectionContent from "../sectionElements/SectionContent";
 import SectionArticle from "../sectionElements/SectionArticle";
 import SquareCalculator from "../interactives/SquareCalculator";
 import RoundCalculator from "../interactives/RoundCalculator";
+import ChatBot from "../interactives/ChatComponent";
 
 export default function Ecalc() {
   return (
@@ -13,7 +14,7 @@ export default function Ecalc() {
           sectionHeaderDescription="Calcule você mesmo o volume da água da sua piscina e a quantidade de produtos a ser adicionada na água."
         />
         <SectionContent>
-          <div className="flex flex-col justify-between w-full gap-8 desktop1:flex-row">
+          {/* <div className="flex flex-col justify-between w-full gap-8 desktop1:flex-row">
             <div>
               <p className="text-justify text-black/60">
                 Piscinas Quadrada ou Retangulares: <br /> Comprimento x Largura
@@ -28,7 +29,8 @@ export default function Ecalc() {
               </p>
               <RoundCalculator />
             </div>
-          </div>
+          </div> */}
+          <ChatBot />
         </SectionContent>
       </div>
     </div>
