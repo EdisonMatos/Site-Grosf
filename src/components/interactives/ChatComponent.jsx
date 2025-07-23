@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Buttons from "./Buttons";
 
 export default function ChatPiscina() {
   const [step, setStep] = useState(0);
@@ -152,13 +153,13 @@ export default function ChatPiscina() {
   };
 
   return (
-    <div className="max-w-xl mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
+    <div className=" phone1:w-[90%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-center text-primary uppercase tracking-wide">
         Calculadora
       </h2>
 
       {/* Caixa de mensagens */}
-      <div className="space-y-3 max-h-96 overflow-y-auto  pr-2">
+      <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
         {mensagens.map((msg, i) => (
           <div
             key={i}
@@ -173,234 +174,222 @@ export default function ChatPiscina() {
         ))}
       </div>
 
+      <hr className="my-6 border-t border-gray-300" />
+
       {/* Etapas do chat */}
-      <div className="space-y-4">
-        {step === 0 && (
-          <>
-            <p className="text-lg font-medium text-gray-700">
-              O que você deseja calcular?
-            </p>
-            <div className="space-y-2">
-              <button
-                onClick={() => {
-                  adicionarMensagem(
-                    "Quero calcular o volume da água da piscina",
-                    "user"
-                  );
-                  setStep(1);
-                }}
-                className="w-full bg-blue-50 hover:bg-blue-100 p-3 rounded-lg border border-blue-200"
-              >
-                💧 Calcular o volume da piscina
-              </button>
-              <button
-                onClick={() => {
-                  adicionarMensagem(
-                    "Quero saber a quantidade de produtos que devo utilizar na piscina",
-                    "user"
-                  );
-                  setStep(2);
-                }}
-                className="w-full bg-blue-50 hover:bg-blue-100 p-3 rounded-lg border border-blue-200"
-              >
-                🧪 Calcular produtos necessários
-              </button>
-            </div>
-          </>
-        )}
+      {step === 0 && (
+        <>
+          <p className="text-lg h-10 font-medium text-gray-700">
+            O que você deseja calcular?
+          </p>
+          <div className=" flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center ">
+            <Buttons
+              name="💧 Calcular o volume da piscina"
+              onClick={() => {
+                adicionarMensagem(
+                  "Quero calcular o volume da água da piscina",
+                  "user"
+                );
+                setStep(1);
+              }}
+              textSize="text-paragraph3"
+            />
+            <Buttons
+              name="🧪 Calcular produtos necessários"
+              onClick={() => {
+                adicionarMensagem(
+                  "Quero saber a quantidade de produtos que devo utilizar na piscina",
+                  "user"
+                );
+                setStep(2);
+              }}
+              textSize="text-paragraph3"
+            />
+          </div>
+        </>
+      )}
 
-        {step === 1 && (
-          <>
-            <p className="text-lg font-medium text-gray-700">
-              Qual o formato da sua piscina?
-            </p>
-            <div className="space-y-2">
-              <button
-                onClick={() => {
-                  setFormato("reta");
-                  adicionarMensagem(
-                    "A minha piscina é retangular ou quadrada",
-                    "user"
-                  );
-                  setStep(3);
-                }}
-                className="w-full bg-blue-50 hover:bg-blue-100 p-3 rounded-lg border border-blue-200"
-              >
-                📏 Retangular ou quadrada
-              </button>
-              <button
-                onClick={() => {
-                  setFormato("redonda");
-                  adicionarMensagem(
-                    "A minha piscina é redonda ou oval",
-                    "user"
-                  );
-                  setStep(3);
-                }}
-                className="w-full bg-blue-50 hover:bg-blue-100 p-3 rounded-lg border border-blue-200"
-              >
-                ⚪ Redonda ou oval
-              </button>
-            </div>
-          </>
-        )}
+      {step === 1 && (
+        <>
+          <p className="text-lg font-medium text-gray-700">
+            Qual o formato da sua piscina?
+          </p>
+          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
+            <Buttons
+              name="📏 Retangular ou quadrada"
+              onClick={() => {
+                setFormato("reta");
+                adicionarMensagem(
+                  "A minha piscina é retangular ou quadrada",
+                  "user"
+                );
+                setStep(3);
+              }}
+              textSize="text-paragraph3"
+            />
+            <Buttons
+              name="⚪ Redonda ou oval"
+              onClick={() => {
+                setFormato("redonda");
+                adicionarMensagem("A minha piscina é redonda ou oval", "user");
+                setStep(3);
+              }}
+              textSize="text-paragraph3"
+            />
+          </div>
+        </>
+      )}
 
-        {step === 2 && (
-          <>
-            <p className="text-lg font-medium text-gray-700">
-              Qual o tipo de tratamento?
-            </p>
-            <div className="space-y-2">
-              <button
-                onClick={() => {
-                  setTratamentoTipo("primeiro");
-                  adicionarMensagem("Primeiro tratamento ou abandono", "user");
-                  setStep(1);
-                }}
-                className="w-full bg-blue-50 hover:bg-blue-100 p-3 rounded-lg border border-blue-200"
-              >
-                🧼 Primeiro tratamento ou abandono
-              </button>
-              <button
-                onClick={() => {
-                  setTratamentoTipo("manutencao");
-                  adicionarMensagem("Manutenção ou preventivo", "user");
-                  setStep(1);
-                }}
-                className="w-full bg-blue-50 hover:bg-blue-100 p-3 rounded-lg border border-blue-200"
-              >
-                🔄 Manutenção ou preventivo
-              </button>
-            </div>
-          </>
-        )}
+      {step === 2 && (
+        <>
+          <p className="text-lg font-medium text-gray-700">
+            Qual o tipo de tratamento?
+          </p>
+          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
+            <Buttons
+              name="🧼 Primeiro tratamento ou abandono"
+              onClick={() => {
+                setTratamentoTipo("primeiro");
+                adicionarMensagem("Primeiro tratamento ou abandono", "user");
+                setStep(1);
+              }}
+              textSize="text-paragraph3"
+            />
+            <Buttons
+              name="🔄 Manutenção ou preventivo"
+              onClick={() => {
+                setTratamentoTipo("manutencao");
+                adicionarMensagem("Manutenção ou preventivo", "user");
+                setStep(1);
+              }}
+              textSize="text-paragraph3"
+            />
+          </div>
+        </>
+      )}
 
-        {step === 3 && (
-          <>
-            <p className="text-lg font-medium text-gray-700">
-              Informe as medidas:
-            </p>
-            <div className="space-y-3">
-              {formato === "reta" && (
-                <>
-                  <div>
-                    <label className="block text-sm font-semibold">
-                      Comprimento (m)
-                    </label>
-                    <input
-                      type="number"
-                      value={dimensoes.comprimento}
-                      onChange={(e) =>
-                        setDimensoes({
-                          ...dimensoes,
-                          comprimento: e.target.value,
-                        })
-                      }
-                      className="w-full border border-gray-300 rounded-lg p-2"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold">
-                      Largura (m)
-                    </label>
-                    <input
-                      type="number"
-                      value={dimensoes.largura}
-                      onChange={(e) =>
-                        setDimensoes({
-                          ...dimensoes,
-                          largura: e.target.value,
-                        })
-                      }
-                      className="w-full border border-gray-300 rounded-lg p-2"
-                    />
-                  </div>
-                </>
-              )}
-              {formato === "redonda" && (
+      {step === 3 && (
+        <>
+          <p className="text-lg font-medium text-gray-700">
+            Informe as medidas:
+          </p>
+          <div className="space-y-3">
+            {formato === "reta" && (
+              <>
                 <div>
                   <label className="block text-sm font-semibold">
-                    Diâmetro (m)
+                    Comprimento (m)
                   </label>
                   <input
                     type="number"
-                    value={dimensoes.diametro}
+                    value={dimensoes.comprimento}
                     onChange={(e) =>
                       setDimensoes({
                         ...dimensoes,
-                        diametro: e.target.value,
+                        comprimento: e.target.value,
                       })
                     }
                     className="w-full border border-gray-300 rounded-lg p-2"
                   />
                 </div>
-              )}
+                <div>
+                  <label className="block text-sm font-semibold">
+                    Largura (m)
+                  </label>
+                  <input
+                    type="number"
+                    value={dimensoes.largura}
+                    onChange={(e) =>
+                      setDimensoes({
+                        ...dimensoes,
+                        largura: e.target.value,
+                      })
+                    }
+                    className="w-full border border-gray-300 rounded-lg p-2"
+                  />
+                </div>
+              </>
+            )}
+            {formato === "redonda" && (
               <div>
                 <label className="block text-sm font-semibold">
-                  Profundidade (m)
+                  Diâmetro (m)
                 </label>
                 <input
                   type="number"
-                  value={dimensoes.profundidade}
+                  value={dimensoes.diametro}
                   onChange={(e) =>
                     setDimensoes({
                       ...dimensoes,
-                      profundidade: e.target.value,
+                      diametro: e.target.value,
                     })
                   }
                   className="w-full border border-gray-300 rounded-lg p-2"
                 />
               </div>
-              <button
-                onClick={() => {
-                  adicionarMensagem(
-                    `Profundidade: ${dimensoes.profundidade}m`,
-                    "user"
-                  );
-                  calcularVolumePiscina();
-                }}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg font-semibold"
-              >
-                Calcular Volume
-              </button>
+            )}
+            <div>
+              <label className="block text-sm font-semibold">
+                Profundidade (m)
+              </label>
+              <input
+                type="number"
+                value={dimensoes.profundidade}
+                onChange={(e) =>
+                  setDimensoes({
+                    ...dimensoes,
+                    profundidade: e.target.value,
+                  })
+                }
+                className="w-full border border-gray-300 rounded-lg p-2"
+              />
             </div>
-          </>
-        )}
+            <Buttons
+              name="Calcular Volume"
+              onClick={() => {
+                adicionarMensagem(
+                  `Profundidade: ${dimensoes.profundidade}m`,
+                  "user"
+                );
+                calcularVolumePiscina();
+              }}
+            />
+          </div>
+        </>
+      )}
 
-        {step === 4 && (
-          <div className="space-y-3">
-            <p className="text-lg font-medium text-gray-700">
-              Gostaria de saber sobre outros produtos?
-            </p>
-            <button
+      {step === 4 && (
+        <div className="space-y-3">
+          <p className="text-lg font-medium text-gray-700">
+            Gostaria de saber sobre outros produtos?
+          </p>
+          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
+            <Buttons
+              name="✅ Sim, mostrar produtos"
               onClick={() => {
                 adicionarMensagem("Sim", "user");
                 mostrarProdutosExtras();
               }}
-              className="w-full bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg font-semibold"
-            >
-              ✅ Sim, mostrar produtos
-            </button>
-            <button
+              textSize="text-paragraph3"
+            />
+            <Buttons
+              name="🔁 Não, reiniciar diálogo"
               onClick={resetar}
-              className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
-            >
-              🔁 Não, reiniciar diálogo
-            </button>
+              textSize="text-paragraph3"
+            />
           </div>
-        )}
+        </div>
+      )}
 
-        {step === 5 && (
-          <div className="pt-4">
-            <button
-              onClick={resetar}
-              className="w-full bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg font-semibold"
-            >
-              🔁 Reiniciar Diálogo
-            </button>
-          </div>
-        )}
-      </div>
+      {step === 5 && (
+        <div className="pt-4">
+          <Buttons
+            name="🔁 Reiniciar Diálogo"
+            onClick={resetar}
+            textSize="text-paragraph3"
+          />
+        </div>
+      )}
     </div>
   );
 }
