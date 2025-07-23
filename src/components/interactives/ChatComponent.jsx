@@ -21,7 +21,7 @@ export default function ChatPiscina() {
       setTimeout(() => {
         setMensagens((prev) => [...prev, { texto, tipo }]);
         setDigitando(false);
-      }, 10000); // tempo de digitação simulado
+      }, 5000); // tempo de digitação simulado
     } else {
       setMensagens((prev) => [...prev, { texto, tipo }]);
     }
@@ -358,17 +358,19 @@ export default function ChatPiscina() {
                 const { comprimento, largura, profundidade, diametro } =
                   dimensoes;
 
+                // Verifica se campos obrigatórios estão preenchidos
                 if (
                   (formato === "reta" &&
                     (!comprimento || !largura || !profundidade)) ||
                   (formato === "redonda" && (!diametro || !profundidade))
                 ) {
-                  adicionarMensagem(
+                  alert(
                     "Por favor, preencha todas as medidas antes de continuar."
                   );
-                  return;
+                  return; // Interrompe aqui se estiver faltando algo
                 }
 
+                // Se chegou aqui, tudo está preenchido e válido
                 let texto =
                   formato === "reta"
                     ? `Comprimento: ${comprimento}m, Largura: ${largura}m, Profundidade: ${profundidade}m`
