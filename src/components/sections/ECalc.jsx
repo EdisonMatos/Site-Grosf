@@ -4,6 +4,7 @@ import SectionArticle from "../sectionElements/SectionArticle";
 import SquareCalculator from "../interactives/SquareCalculator";
 import RoundCalculator from "../interactives/RoundCalculator";
 import ChatBot from "../interactives/ChatComponent";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
 export default function Ecalc() {
   return (
@@ -30,7 +31,9 @@ export default function Ecalc() {
               <RoundCalculator />
             </div>
           </div> */}
-          <ChatBot />
+          <MotionDivDownToUp className="w-full">
+            <ChatBot />
+          </MotionDivDownToUp>
         </SectionContent>
       </div>
     </div>

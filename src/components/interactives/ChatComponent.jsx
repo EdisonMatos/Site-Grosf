@@ -45,7 +45,6 @@ export default function ChatPiscina() {
     }
 
     setTimeout(() => {
-      adicionarMensagem("Gostaria de saber sobre outros produtos?");
       setStep(4);
     }, 500);
   };
@@ -153,7 +152,7 @@ export default function ChatPiscina() {
   };
 
   return (
-    <div className="max-w-xl mx-auto font-mainFont bg-white p-6 shadow-xl rounded-xl space-y-6 border border-gray-200">
+    <div className="max-w-xl mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-center text-primary uppercase tracking-wide">
         Calculadora
       </h2>
@@ -371,7 +370,7 @@ export default function ChatPiscina() {
         {step === 4 && (
           <div className="space-y-3">
             <p className="text-lg font-medium text-gray-700">
-              Gostaria de ver produtos adicionais?
+              Gostaria de saber sobre outros produtos?
             </p>
             <button
               onClick={() => {
