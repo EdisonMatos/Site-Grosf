@@ -86,20 +86,20 @@ export default function BannerCarouselComponent() {
           {/* Botões de navegação */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-20"
+            className="relative top-1/2 left-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronLeft />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-20"
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronRight />
           </button>
 
           {/* Indicadores */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
             {banners.map((_, index) => (
               <div
                 key={index}
