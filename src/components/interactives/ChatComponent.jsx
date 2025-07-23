@@ -13,9 +13,18 @@ export default function ChatPiscina() {
     profundidade: "",
     diametro: "",
   });
+  const [digitando, setDigitando] = useState(false);
 
-  const adicionarMensagem = (texto, tipo = "bot") => {
-    setMensagens((prev) => [...prev, { texto, tipo }]);
+  const adicionarMensagem = (texto, tipo = "bot", delay = true) => {
+    if (tipo === "bot" && delay) {
+      setDigitando(true);
+      setTimeout(() => {
+        setMensagens((prev) => [...prev, { texto, tipo }]);
+        setDigitando(false);
+      }, 10000); // tempo de digitação simulado
+    } else {
+      setMensagens((prev) => [...prev, { texto, tipo }]);
+    }
   };
 
   const calcularVolumePiscina = () => {
@@ -58,42 +67,36 @@ export default function ChatPiscina() {
       return;
     }
 
+    const format = (v) => ((v * litros) / 1000).toFixed(1);
+
     if (tratamentoTipo === "primeiro") {
       adicionarMensagem("Produtos para Primeiro Tratamento:");
       adicionarMensagem(
-        `- Cloro Granulado Tradicional ou Dicloro: ${(10 * litros) / 1000}g`
+        `- Cloro Granulado Tradicional ou Dicloro: ${format(10)}g`
       );
-      adicionarMensagem(
-        `- Dicloro puro ou multifunções: ${(10 * litros) / 1000}g`
-      );
-      adicionarMensagem(`- Cloro Granulado 10 em 1: ${(18 * litros) / 1000}g`);
-      adicionarMensagem(`- Algicida de manutenção: ${(10 * litros) / 1000}ml`);
-      adicionarMensagem(`- Clarificante: ${(6 * litros) / 1000}ml`);
-      adicionarMensagem(`- Elimina Óleo: ${(14 * litros) / 1000}ml`);
+      adicionarMensagem(`- Dicloro puro ou multifunções: ${format(10)}g`);
+      adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(18)}g`);
+      adicionarMensagem(`- Algicida de manutenção: ${format(10)}ml`);
+      adicionarMensagem(`- Clarificante: ${format(6)}ml`);
+      adicionarMensagem(`- Elimina Óleo: ${format(14)}ml`);
     } else {
       adicionarMensagem("Produtos para Manutenção:");
       adicionarMensagem(
-        `- Cloro Granulado Tradicional ou Dicloro: ${
-          (5 * litros) / 1000
-        }g (3x por semana)`
+        `- Cloro Granulado Tradicional ou Dicloro: ${format(
+          5
+        )}g (3x por semana)`
       );
       adicionarMensagem(
-        `- Dicloro puro ou multifunções: ${
-          (5 * litros) / 1000
-        }g (3x por semana)`
+        `- Dicloro puro ou multifunções: ${format(5)}g (3x por semana)`
       );
       adicionarMensagem(
-        `- Cloro Granulado 10 em 1: ${(10 * litros) / 1000}g (3x por semana)`
+        `- Cloro Granulado 10 em 1: ${format(10)}g (3x por semana)`
       );
       adicionarMensagem(
-        `- Algicida de manutenção: ${(5 * litros) / 1000}ml (1x por semana)`
+        `- Algicida de manutenção: ${format(5)}ml (1x por semana)`
       );
-      adicionarMensagem(
-        `- Clarificante: ${(1.5 * litros) / 1000}ml (1x por semana)`
-      );
-      adicionarMensagem(
-        `- Elimina Óleo: ${(7 * litros) / 1000}ml (quando necessário)`
-      );
+      adicionarMensagem(`- Clarificante: ${format(1.5)}ml (1x por semana)`);
+      adicionarMensagem(`- Elimina Óleo: ${format(7)}ml (quando necessário)`);
     }
   };
 
@@ -101,39 +104,39 @@ export default function ChatPiscina() {
     const litros = parseFloat(volume);
     if (isNaN(litros) || litros <= 0) return;
 
+    const format = (v) => ((v * litros) / 1000).toFixed(1);
+
     adicionarMensagem("Produtos adicionais baseados no volume da piscina:");
     adicionarMensagem(
-      `1) Redutor de pH: 5ml/1000L → ${(5 * litros) / 1000}ml | 8ml/1000L → ${
-        (8 * litros) / 1000
-      }ml`
+      `1) Redutor de pH: 5ml/1000L → ${format(5)}ml | 8ml/1000L → ${format(
+        8
+      )}ml`
     );
     adicionarMensagem(
-      `2) Elevador de pH pó: 5ml/1000L → ${
-        (5 * litros) / 1000
-      }ml | 10ml/1000L → ${(10 * litros) / 1000}ml`
+      `2) Elevador de pH pó: 5ml/1000L → ${format(5)}ml | 10ml/1000L → ${format(
+        10
+      )}ml`
     );
     adicionarMensagem(
-      `3) Elevador de pH líquido: 15ml/1000L → ${
-        (15 * litros) / 1000
-      }ml | 20ml/1000L → ${(20 * litros) / 1000}ml`
+      `3) Elevador de pH líquido: 15ml/1000L → ${format(
+        15
+      )}ml | 20ml/1000L → ${format(20)}ml`
     );
     adicionarMensagem(
-      `4) Elevador de alcalinidade: 17ml/1000L → ${(17 * litros) / 1000}ml`
+      `4) Elevador de alcalinidade: 17ml/1000L → ${format(17)}ml`
+    );
+    adicionarMensagem(`5) Reduz aspiração: 6ml/1000L → ${format(6)}ml`);
+    adicionarMensagem(
+      `6) Água turva ou manchas: 15ml/1000L → ${format(
+        15
+      )}ml | 50ml/1000L → ${format(50)}ml`
     );
     adicionarMensagem(
-      `5) Reduz aspiração: 6ml/1000L → ${(6 * litros) / 1000}ml`
+      `7) Água de poço: 15ml/1000L → ${format(15)}ml | 50ml/1000L → ${format(
+        50
+      )}ml`
     );
-    adicionarMensagem(
-      `6) Água turva ou manchas: 15ml/1000L → ${
-        (15 * litros) / 1000
-      }ml | 50ml/1000L → ${(50 * litros) / 1000}ml`
-    );
-    adicionarMensagem(
-      `7) Água de poço: 15ml/1000L → ${(15 * litros) / 1000}ml | 50ml/1000L → ${
-        (50 * litros) / 1000
-      }ml`
-    );
-    adicionarMensagem(`8) Ultraclear: 10ml/1000L → ${(10 * litros) / 1000}ml`);
+    adicionarMensagem(`8) Ultraclear: 10ml/1000L → ${format(10)}ml`);
 
     setStep(5);
   };
@@ -173,6 +176,11 @@ export default function ChatPiscina() {
           </div>
         ))}
       </div>
+      {digitando && (
+        <div className="text-sm text-gray-400 animate-pulse px-3">
+          Digitando...
+        </div>
+      )}
 
       <hr className="my-6 border-t border-gray-300" />
 
@@ -347,10 +355,26 @@ export default function ChatPiscina() {
             <Buttons
               name="Calcular Volume"
               onClick={() => {
-                adicionarMensagem(
-                  `Profundidade: ${dimensoes.profundidade}m`,
-                  "user"
-                );
+                const { comprimento, largura, profundidade, diametro } =
+                  dimensoes;
+
+                if (
+                  (formato === "reta" &&
+                    (!comprimento || !largura || !profundidade)) ||
+                  (formato === "redonda" && (!diametro || !profundidade))
+                ) {
+                  adicionarMensagem(
+                    "Por favor, preencha todas as medidas antes de continuar."
+                  );
+                  return;
+                }
+
+                let texto =
+                  formato === "reta"
+                    ? `Comprimento: ${comprimento}m, Largura: ${largura}m, Profundidade: ${profundidade}m`
+                    : `Diâmetro: ${diametro}m, Profundidade: ${profundidade}m`;
+
+                adicionarMensagem(texto, "user", false);
                 calcularVolumePiscina();
               }}
             />
