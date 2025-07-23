@@ -158,7 +158,7 @@ export default function ChatPiscina() {
       </h2>
 
       {/* Caixa de mensagens */}
-      <div className="space-y-3  pr-2">
+      <div className="space-y-3 max-h-96 overflow-y-auto  pr-2">
         {mensagens.map((msg, i) => (
           <div
             key={i}
