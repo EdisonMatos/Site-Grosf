@@ -7,6 +7,7 @@ function Buttons({
   name,
   icon,
   className: customClassName = "",
+  textSize = "text-base", // 👈 nova prop para controlar o tamanho do texto
 }) {
   const getButtonConfig = () => {
     switch (type) {
@@ -35,8 +36,6 @@ function Buttons({
   };
 
   const { className, label } = getButtonConfig();
-
-  // Mescla a className personalizada com a padrão
   const finalClassName = `${className} ${customClassName}`;
 
   const handleClick = () => {
@@ -50,9 +49,10 @@ function Buttons({
   return (
     <div className="flex">
       <div className={`button ${finalClassName}`} onClick={handleClick}>
-        <span className="flex items-center justify-center h-full gap-3 font-normal text-center text-white phone2:text-lg phone1:text-paragraph4">
-          {icon}
-          {label}
+        <span
+          className={`flex items-center justify-center h-full gap-3 font-normal text-center text-white ${textSize}`}
+        >
+          {icon} {label}
         </span>
       </div>
     </div>

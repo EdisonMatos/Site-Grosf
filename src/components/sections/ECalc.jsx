@@ -3,17 +3,22 @@ import SectionContent from "../sectionElements/SectionContent";
 import SectionArticle from "../sectionElements/SectionArticle";
 import SquareCalculator from "../interactives/SquareCalculator";
 import RoundCalculator from "../interactives/RoundCalculator";
+import ChatBot from "../interactives/ChatComponent";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import whatsappNumber from "../../abstractions/whats";
+
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function Ecalc() {
   return (
     <div className="flex justify-center full bg-quinary" id="products">
       <div className="w-[88%] max-w-[1110px] py-[26px] phone3:py-[48px]">
         <SectionHeader
-          sectionHeaderTitleSecond="Calculadora de volume de água"
-          sectionHeaderDescription="Calcule você mesmo o volume da água da sua piscina e a quantidade de produtos a ser adicionada na água."
+          sectionHeaderTitleSecond="Calcule Fácil Grosf"
+          sectionHeaderDescription="Calcule você mesmo o volume da água da sua piscina, e baseado no resultado descubra a quantidade de produtos a ser adicionada na água, utilizando nossa tabela de cálculos."
         />
         <SectionContent>
-          <div className="flex flex-col justify-between w-full gap-8 desktop1:flex-row">
+          {/* <div className="flex flex-col justify-between w-full gap-8 desktop1:flex-row">
             <div>
               <p className="text-justify text-black/60">
                 Piscinas Quadrada ou Retangulares: <br /> Comprimento x Largura
@@ -28,7 +33,22 @@ export default function Ecalc() {
               </p>
               <RoundCalculator />
             </div>
-          </div>
+          </div> */}
+          <MotionDivDownToUp className="w-full">
+            <ChatBot />
+          </MotionDivDownToUp>
+          <MotionDivDownToUp className=" w-[800px] m-auto">
+            <a
+              href={whatsappContactLink}
+              className="underline hover:text-primary"
+            >
+              <p className="w-full hover:text-primary transition-colors tablet1:w-[79%] text-quaternary font-mainFont text-paragraph3 phone3:text-paragraph4 text-center m-auto mt-6">
+                Para piscinas fora do padrão tradicional de medidas, ou seja, as
+                piscinas de medidas irregulares, consulte um dos nossos
+                atendentes.
+              </p>
+            </a>
+          </MotionDivDownToUp>
         </SectionContent>
       </div>
     </div>
