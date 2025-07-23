@@ -33,6 +33,11 @@ export default function Ecalc() {
           </div> */}
           <MotionDivDownToUp className="w-full">
             <ChatBot />
+            <p className="full tablet1:w-[79%] text-quaternary font-mainFont text-paragraph3 phone3:text-paragraph4 text-center m-auto mt-6">
+              Para piscinas fora do padrão tradicional de medidas, ou seja, as
+              piscinas de medidas irregulares, consulte um dos nossos
+              atendentes.
+            </p>
           </MotionDivDownToUp>
         </SectionContent>
       </div>
