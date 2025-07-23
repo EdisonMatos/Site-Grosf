@@ -21,7 +21,7 @@ export default function ChatPiscina() {
       setTimeout(() => {
         setMensagens((prev) => [...prev, { texto, tipo }]);
         setDigitando(false);
-      }, 5000); // tempo de digitação simulado
+      }, 5000);
     } else {
       setMensagens((prev) => [...prev, { texto, tipo }]);
     }
@@ -38,6 +38,10 @@ export default function ChatPiscina() {
     } else if (formato === "redonda") {
       const d = parseFloat(dimensoes.diametro);
       litros = 0.785 * d * d * p * 1000;
+    } else if (formato === "oval") {
+      const c = parseFloat(dimensoes.comprimento);
+      const l = parseFloat(dimensoes.largura);
+      litros = c * l * p * 0.785 * 1000;
     }
 
     if (isNaN(litros) || litros <= 0) {
@@ -156,12 +160,11 @@ export default function ChatPiscina() {
   };
 
   return (
-    <div className=" phone1:w-[95%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
+    <div className="phone1:w-[95%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-center text-primary uppercase tracking-wide">
         Calculadora
       </h2>
 
-      {/* Caixa de mensagens */}
       <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
         {mensagens.map((msg, i) => (
           <div
@@ -184,13 +187,12 @@ export default function ChatPiscina() {
 
       <hr className="my-6 border-t border-gray-300" />
 
-      {/* Etapas do chat */}
       {step === 0 && (
         <>
           <p className="text-lg h-10 font-medium text-gray-700">
             O que você deseja calcular?
           </p>
-          <div className=" flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center ">
+          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
             <Buttons
               name="💧 Calcular o volume da piscina"
               onClick={() => {
@@ -236,10 +238,19 @@ export default function ChatPiscina() {
               textSize="text-paragraph3"
             />
             <Buttons
-              name="⚪ Redonda ou oval"
+              name="⚪ Redonda"
               onClick={() => {
                 setFormato("redonda");
-                adicionarMensagem("A minha piscina é redonda ou oval", "user");
+                adicionarMensagem("A minha piscina é redonda", "user");
+                setStep(3);
+              }}
+              textSize="text-paragraph3"
+            />
+            <Buttons
+              name="🌀 Oval"
+              onClick={() => {
+                setFormato("oval");
+                adicionarMensagem("A minha piscina é oval", "user");
                 setStep(3);
               }}
               textSize="text-paragraph3"
@@ -282,7 +293,7 @@ export default function ChatPiscina() {
             Informe as medidas:
           </p>
           <div className="space-y-3">
-            {formato === "reta" && (
+            {(formato === "reta" || formato === "oval") && (
               <>
                 <div>
                   <label className="block text-sm font-semibold">
@@ -308,10 +319,7 @@ export default function ChatPiscina() {
                     type="number"
                     value={dimensoes.largura}
                     onChange={(e) =>
-                      setDimensoes({
-                        ...dimensoes,
-                        largura: e.target.value,
-                      })
+                      setDimensoes({ ...dimensoes, largura: e.target.value })
                     }
                     className="w-full border border-gray-300 rounded-lg p-2"
                   />
@@ -327,10 +335,7 @@ export default function ChatPiscina() {
                   type="number"
                   value={dimensoes.diametro}
                   onChange={(e) =>
-                    setDimensoes({
-                      ...dimensoes,
-                      diametro: e.target.value,
-                    })
+                    setDimensoes({ ...dimensoes, diametro: e.target.value })
                   }
                   className="w-full border border-gray-300 rounded-lg p-2"
                 />
@@ -344,10 +349,7 @@ export default function ChatPiscina() {
                 type="number"
                 value={dimensoes.profundidade}
                 onChange={(e) =>
-                  setDimensoes({
-                    ...dimensoes,
-                    profundidade: e.target.value,
-                  })
+                  setDimensoes({ ...dimensoes, profundidade: e.target.value })
                 }
                 className="w-full border border-gray-300 rounded-lg p-2"
               />
@@ -357,9 +359,10 @@ export default function ChatPiscina() {
               onClick={() => {
                 const { comprimento, largura, profundidade, diametro } =
                   dimensoes;
-
                 if (
                   (formato === "reta" &&
+                    (!comprimento || !largura || !profundidade)) ||
+                  (formato === "oval" &&
                     (!comprimento || !largura || !profundidade)) ||
                   (formato === "redonda" && (!diametro || !profundidade))
                 ) {
@@ -370,7 +373,7 @@ export default function ChatPiscina() {
                 }
 
                 let texto =
-                  formato === "reta"
+                  formato === "reta" || formato === "oval"
                     ? `Comprimento: ${comprimento}m, Largura: ${largura}m, Profundidade: ${profundidade}m`
                     : `Diâmetro: ${diametro}m, Profundidade: ${profundidade}m`;
 
