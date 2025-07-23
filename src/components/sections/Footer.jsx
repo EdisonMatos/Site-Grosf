@@ -17,7 +17,7 @@ function Footer() {
             <img
               alt="Logo MPA Piscinas"
               src={mpaLogo}
-              className="w-[85%] h-[105px] bg-white p-3 rounded-md"
+              className="w-full tablet1:w-[40%] desktop1:w-[80%] h-[105px] bg-white p-3 rounded-md"
             ></img>
             <p className="full">Mergulhe na magia desse nosso vasto oceano.</p>
             <div className="flex full gap-x-[8px] items-center">
