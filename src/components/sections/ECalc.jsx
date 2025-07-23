@@ -5,6 +5,9 @@ import SquareCalculator from "../interactives/SquareCalculator";
 import RoundCalculator from "../interactives/RoundCalculator";
 import ChatBot from "../interactives/ChatComponent";
 import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import whatsappNumber from "../../abstractions/whats";
+
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function Ecalc() {
   return (
@@ -33,11 +36,18 @@ export default function Ecalc() {
           </div> */}
           <MotionDivDownToUp className="w-full">
             <ChatBot />
-            <p className="full tablet1:w-[79%] text-quaternary font-mainFont text-paragraph3 phone3:text-paragraph4 text-center m-auto mt-6">
-              Para piscinas fora do padrão tradicional de medidas, ou seja, as
-              piscinas de medidas irregulares, consulte um dos nossos
-              atendentes.
-            </p>
+          </MotionDivDownToUp>
+          <MotionDivDownToUp className=" w-[800px] m-auto">
+            <a
+              href={whatsappContactLink}
+              className="underline hover:text-primary"
+            >
+              <p className="w-full hover:text-primary transition-colors tablet1:w-[79%] text-quaternary font-mainFont text-paragraph3 phone3:text-paragraph4 text-center m-auto mt-6">
+                Para piscinas fora do padrão tradicional de medidas, ou seja, as
+                piscinas de medidas irregulares, consulte um dos nossos
+                atendentes.
+              </p>
+            </a>
           </MotionDivDownToUp>
         </SectionContent>
       </div>
