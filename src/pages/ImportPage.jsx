@@ -16,6 +16,7 @@ import PhoneBannersCarousel from "../components/sections/BannersCarouselPhone";
 import TabletBannersCarousel from "../components/sections/BannersCarouselTablet";
 import Storage from "../components/sections/Storage";
 import Ecalc from "../components/sections/ECalc";
+import BannerCarouselComponent from "../components/sections/BannersComponent";
 
 export default function ImportPage() {
   const [carouselComponent, setCarouselComponent] = useState(null);
@@ -49,11 +50,12 @@ export default function ImportPage() {
       <Numbers />
       <Storage modal={true} />
       {/* <OurProducts /> */}
-      <Ecalc/>
+      <Ecalc />
       <AvoidAccidents />
       <CtaWhatsapp />
       {/* <Courses /> */}
-      {carouselComponent}
+      {/* {carouselComponent} */}
+      <BannerCarouselComponent/>
       <FrequentlyAskedQuestions />
       <BackToTopButton />
       <FloatingWhatsappButton />
