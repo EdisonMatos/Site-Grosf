@@ -153,7 +153,7 @@ export default function ChatPiscina() {
   };
 
   return (
-    <div className=" phone1:w-[90%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
+    <div className=" phone1:w-[95%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-center text-primary uppercase tracking-wide">
         Calculadora
       </h2>
