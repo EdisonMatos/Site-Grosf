@@ -18,360 +18,376 @@ export default function AboutModal() {
 
   const chapters = [
     {
-      title: "Capítulo 1",
+      title: "Capítulo 1 - A chegada à capital",
       content: (
         <div>
           <p className="text-justify">
             {" "}
-            No dia 6 de janeiro do ano de 1979, por volta de 6h da manhã,
-            desembarcava na rodoviária Júlio Prestes no centro da capital
-            paulista, trazido por uma tia, um jovem migrante paranaense com
-            apenas 17 anos de idade.
+            No dia 6 de janeiro de 1979, por volta das 6h da manhã, desembarcava
+            na rodoviária Júlio Prestes, no centro da capital paulista, trazido
+            por uma tia, um jovem migrante paranaense com apenas 17 anos de
+            idade.
             <br />
             <br />
             Trajava calça e camisa bastante desbotadas pelo uso intenso na lida
-            diária lá na roça, nos pés um par de chinelos com solado também
-            desgastados, no ombro esquerdo um embornal, uma espécie de sacola
-            funda e estreita feita de sobras de tecidos de costura com uma alça
-            comprida que lhe servia como apoio ao ombro.
+            diária da roça; nos pés, um par de chinelos com solado já
+            desgastado; e, no ombro esquerdo, um embornal — uma espécie de
+            sacola funda e estreita feita de sobras de tecidos de costura, com
+            uma alça comprida que servia de apoio.
             <br />
             <br />
             Bastante utilizado na roça, esse utensílio caipira servia
-            principalmente para levar comida para os trabalhadores nas lavouras
-            de café, mas o embornal que trazia, sua única bagagem de mão,
-            guardava dentro dele apenas alguns poucos pertences, já o coração
-            desembarca na metrópole cheio de esperança e fé de vencer um dia, e
-            ganhar dinheiro para ajudar os pais e irmãos que por lá ficaram.
-          </p>
-          <br />
-          <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 2",
-      content: (
-        <div>
-          <p className="text-justify">
-            {" "}
+            principalmente para levar comida aos trabalhadores nas lavouras de
+            café. Mas, no embornal que trazia — sua única bagagem de mão —
+            guardava apenas alguns poucos pertences. Já o coração desembarcara
+            na metrópole cheio de esperança e fé de vencer um dia e ganhar
+            dinheiro para ajudar os pais e irmãos que lá ficaram.
+            <br />
+            <br />
             Logo após o desembarque, seus olhos brilharam ao olhar para a
             cobertura colorida da linda rodoviária, composta por milhares de
-            pequenos quadrados acrílico com fundo ligeiramente ovalado no
-            formato de diamante que com várias cores cobriam o teto e desciam em
-            forma de “L” invertido de cima para baixo por cerca de mais de um
-            metro nas laterais daquela gigantesca edificação.
+            pequenos quadrados de acrílico com fundo ligeiramente ovalado, no
+            formato de diamante. Em várias cores, cobriam o teto e desciam em
+            forma de “L” invertido, de cima para baixo, por cerca de um metro
+            nas laterais daquela gigantesca edificação.
+            <br />
+            <br />
+            Nunca havia visto antes algo parecido. Silencioso, observava um
+            tanto assustado o movimento de pessoas e veículos que iam e vinham
+            naquele horário pelas estreitas ruas, o que o deixava apreensivo e
+            pensativo.
+            <br />
+            <br />
+            Do lado de fora, um primo os esperava com seu fusca cor de café com
+            leite, encostado no meio-fio da calçada. Tratava-se do primo Moisés,
+            primo de primeiro grau, que viria a ser seu irmão substituto na
+            capital.
+            <br />
+            <br />
+            Ele sai em arrancada, dirige em forma de zigue-zague pelas ruas
+            estreitas e ganha ainda mais velocidade ao entrar numa rodovia larga
+            e de alta velocidade, que só depois de muito tempo viria a saber
+            tratar-se da Via Anchieta.
           </p>
           <br />
-          <p className="text-justify">
-            {" "}
-            Nunca havia visto antes algo parecido, silencioso observava um tanto
-            assustado o movimento de pessoas e veículos que iam e vinham naquele
-            horário por aquelas estreitas ruas e isso o deixava um tanto
-            apreensivo e pensativo.
-          </p>
-          <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 3",
-      content: (
-        <div>
-          <p className="text-justify">
-            {" "}
-            Pega então sua pouca bagagem, se enche de esperança foco e fé e
-            promete a si mesmo com o coração cheio de alegria e entusiasmo de um
-            dia ser dono do seu próprio negócio, a vida anda, o tempo passa
-            rápido e a promessa passa a ser perseguida como se fosse a única
-            missão a ser cumprida.
-          </p>
-          <br />
-          <p className="text-justify">
-            Tão logo chegou foi vai morar provisoriamente com a mesma tia que o
-            trouxera, a sua saudosa e querida Tia Tereza (in memoriam) que nesse
-            momento passou a ser a sua mãe nº 4 já que antes disso, havia morado
-            com sua mãe biológica, Dona Zina a nº 1 (in memoriam) e mais 2 Tias
-            diferentes, a Tia Quita a nº 2 e a Tia Nhá a nº 3 (todas in
-            memoriam).
-          </p>
           <br />
         </div>
       ),
     },
     {
-      title: "Capítulo 4",
+      title: "Capítulo 2 - O primeiro emprego e as mães substitutas",
       content: (
         <div>
           <p className="text-justify">
-            Dois dias após sua chegada, começou trabalhar numa padaria como
-            balconista ao lado de um tio muito querido, ali conheceu seu Moisés,
-            um funcionário antigo que ensinou a ele tudo que precisava aprender
-            para se tornar um bom balconista, nessa padaria trabalhou por 1 ano
-            e 3 meses, e foi nesse intervalo de tempo q conheceu um empresário
-            espanhol proprietário de uma fábrica de acessórios para piscinas,
-            esse empresário, de nome Emilio Trinidad Mancha, passava todos os
-            dias na tal padaria para tomar uma cerveja exatamente na horario do
-            almoço, o seu jeito simples de atender os clientes e esperteza para
-            trabalhar, chamou a atenção do empresário que o convidou para
-            trabalhar na sua fábrica como office-boy, ele relutou num primeiro
-            momento mas acabou sendo convencido pela Tia a aceitar esse novo
-            emprego.
-          </p>
-          <br />
-          <p className="text-justify">
+            Pega então sua pouca bagagem, embarca no velho fusca, enche-se de
+            esperança, foco e fé, e promete a si mesmo, com o coração cheio de
+            alegria e entusiasmo, que um dia seria dono do próprio negócio. A
+            vida anda, o tempo passa rápido e a promessa passa a ser perseguida
+            como se fosse a única missão a ser cumprida.
+            <br />
+            <br />
+            Tão logo chegou, foi morar provisoriamente com a mesma tia que o
+            trouxera, a saudosa e querida Tia Tereza (in memoriam), que naquele
+            momento passou a ser sua mãe substituta nº 4. Antes disso, havia
+            morado com sua mãe biológica, Dona Zina (in memoriam), a nº 1; com a
+            Tia Quita (in memoriam), a nº 2; e com a Tia Nhá (in memoriam), a nº
+            3, todas residentes na região norte do Estado do Paraná naquela
+            ocasião.
+            <br />
+            <br />
+            Um detalhe que este narrador não pode deixar passar despercebido
+            trata-se da mãe substituta nº 6, a querida Tia Juraci, que vive em
+            nosso meio. Foi aos seus cuidados que esteve de 1982 até o início de
+            1986, quando se casou.
+            <br />
+            <br />
+            Dois dias após sua chegada, começou a trabalhar numa padaria como
+            balconista, ao lado de um tio muito querido. Ali conheceu seu
+            Moisés, um funcionário antigo, que lhe ensinou tudo o que precisava
+            para se tornar um bom balconista.
+            <br />
+            <br />
+            Nessa padaria trabalhou por 1 ano e 3 meses. Nesse intervalo de
+            tempo conheceu um empresário espanhol, proprietário de uma fábrica
+            de acessórios para piscinas. Esse empresário, de nome Emilio
+            Trinidad Mancha, passava todos os dias na padaria para tomar meia
+            cerveja exatamente no horário do almoço. O jeito simples de atender
+            clientes e a esperteza para trabalhar chamaram a atenção do
+            empresário, que o convidou para trabalhar em sua fábrica como
+            office-boy. Ele relutou num primeiro momento, mas acabou sendo
+            convencido pela tia a aceitar o novo emprego.
+            <br />
+            <br />
             No final do primeiro trimestre daquele longínquo ano de 1980,
             começou então a nova função que lhe foi confiada pelo empresário
-            espanhol que passou a partir de então ser o seu novo patrão, nasceu
-            uma boa empatia e confiança entre os dois e ali ele ficou por seis
-            anos.
+            espanhol. Nasceu uma boa empatia e confiança entre os dois, e ali
+            ele ficou por seis anos.
           </p>
-          <br />
         </div>
       ),
     },
     {
-      title: "Capítulo 5",
+      title: "Capítulo 3 - O Tiro de Guerra",
+      content: (
+        <div>
+          <p className="text-justify">
+            Nesse ano de 1980, um fato totalmente fora do previsto aconteceu:
+            ele foi convocado para servir no Tiro de Guerra do Exército
+            Brasileiro. A princípio fez de tudo para não servir, já que se
+            apresentou à Junta Militar da cidade de São Bernardo do Campo, SP,
+            ainda em 1979, ano em que completou 18 anos, conforme prevê a lei.
+            Mas não teve alternativa: foi convocado, e os próximos 6 meses foram
+            difíceis e de muito sacrifício. Nesse período passou a morar com
+            outra tia, a saudosa Tia Amélia (in memoriam), que se tornou sua mãe
+            substituta nº 5.
+            <br />
+            <br />
+            Menos de 2 anos depois, seu empenho e habilidade chamaram novamente
+            a atenção do empresário espanhol que o contratara. Por mérito,
+            foi-lhe concedida uma nova oportunidade na empresa, passando a
+            exercer a função de atendente de vendas. Nessa nova atribuição
+            adquiriu mais experiência, conheceu muitos clientes e fornecedores
+            do ramo, mas ainda não tinha noção de onde isso poderia chegar.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 4 - O novo trabalho",
+      content: (
+        <div>
+          <p className="text-justify">
+            Após seis anos de trabalho na fábrica de acessórios de piscinas, uma
+            nova oportunidade lhe bateu à porta. Recebeu o convite para
+            trabalhar numa loja de produtos e acessórios para piscinas, situada
+            no bairro do Itaim Bibi, em São Paulo.
+            <br />
+            <br />
+            Essa loja era um misto de venda no varejo e no atacado. Ele agarrou
+            a oportunidade, cresceu na nova empresa de forma vertiginosa mesmo
+            sem possuir nenhum diploma ou formação profissional. Ali se tornou
+            uma espécie de gerente geral. Esse novo cargo aumentou sua
+            responsabilidade, mas ampliou seu horizonte de conhecimento na área
+            comercial e administrativa, dando-lhe larga experiência no ramo.
+            Conheceu novos parceiros comerciais e ali ficou até o dia 31 de
+            agosto de 1994.
+            <br />
+            <br />
+            Foi nesse momento que sentiu estar preparado para começar aquilo que
+            era o grande sonho que desembarcara com ele na rodoviária da capital
+            paulista em 1979. O momento finalmente havia chegado. Pediu então
+            orientação a um contador sobre a abertura de uma empresa, contratou
+            seus serviços e seguiu em frente sem olhar para os lados.
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 5 - A criação da empresa e a primeira venda",
       content: (
         <div>
           {" "}
           <p className="text-justify">
-            Nesse ano de 1980 um fato totalmente fora do previsto aconteceu, ele
-            foi convocado para servir o Tiro de Guerra do Exército Brasileiro, a
-            princípio fez de tudo pra não servir já que se apresentou à Junta
-            Militar da cidade de São Bernardo do Campo, SP., ainda no ano de
-            1979 exatamente no ano que completou 18 anos conforme prevê a lei,
-            mas não teve alternativa, foi sim convocado e os próximos 6 meses
-            que se seguiram foram difíceis e de muito sacrifício, e foi nesse
-            período de tempo que passou a morar c/ uma outra Tia, a sua saudosa
-            Tia Amélia (in memoriam) e essa passou a ser então a sua mãe nº 5.
+            O tempo passou depressa, parecia voar. Lá se foram 15 anos desde a
+            chegada. O ano era 1994, ano da criação da nova moeda, o Real, e
+            também o ano da morte de Ayrton Senna — dois acontecimentos
+            distintos, mas que se entrelaçam: o primeiro, importante e sinal de
+            esperança de que dias melhores estavam por vir; o segundo, terrível
+            e triste, pois o Brasil perdera um de seus maiores ídolos, senão o
+            maior.
+            <br />
+            <br />
+            Mas a hora havia chegado. Ele sentiu-se preparado e criou sua
+            empresa: a Comercial Grosfestilo.
+            <br />
+            <br />
+            A primeira venda foi realizada já no dia 4 de setembro daquele ano.
+            O cliente que realizou essa primeira compra foi a Pav Piscinas, da
+            cidade de Embu das Artes, que continua aberta e atuante até os dias
+            de hoje, atualmente já sob o comando da segunda geração da família.
+            <br />
+            <br />O cheque pré-datado que recebeu para a quitação dessa venda
+            foi cuidadosamente guardado dentro das páginas de uma bíblia, que se
+            transformou a partir de então numa espécie de cofre, onde ficou
+            juntamente com outros que vieram depois, à espera do dia do depósito
+            e da demorada compensação que o sistema bancário exigia naquela
+            época.
           </p>
-          <br />
+        </div>
+      ),
+    },
+    {
+      title: "Capítulo 6 - A origem do nome",
+      content: (
+        <div>
           <p className="text-justify">
-            Nota: Um detalhe que esse narrador não pode deixar passar
-            despercebido trata-se da sua mãe nº 6, a sua querida Tia Juraci que
-            vive em nosso meio, foi aos seus cuidados que esteve do ano de 1982
-            até o início de 1986 quando se casou.
+            A origem do nome Grosfestilo se deu num contexto não muito comum.
+            Ele queria um nome arrojado, estiloso e diferente do que existia na
+            época — esse era o primeiro desafio.
+            <br />
+            <br />
+            No final da década de 1980 e início da de 1990, começaram a fazer
+            sucesso no Brasil os móveis de piscina feitos em plástico:
+            resistentes, duráveis, fáceis de manusear, de armazenar e com design
+            bonito. Até então, esses móveis eram fabricados em fibra de vidro ou
+            madeira.
+            <br />
+            <br />
+            Foi nessa ocasião que aportou no Brasil a Grosfillex, empresa
+            francesa fabricante desse tipo de móvel. Havia, na cidade de São
+            Carlos, uma loja de produtos para piscinas que também distribuía
+            móveis da Marfinite. O nome da loja era Marfiestilo.
+            <br />
+            <br />
+            Como havia grande admiração pelo trabalho do proprietário dessa loja
+            e de sua esposa, veio daí a inspiração: a união do nome Grosfillex +
+            Estilo, nascendo assim a Grosfiestilo, que depois virou Grosfestilo.
+            <br />
+            <br />O projeto inicial era ser revendedor da marca, mas não
+            prosperou. A empresa se firmou na distribuição de produtos e
+            acessórios para piscinas, ficando apenas o nome, que resiste ao
+            tempo até hoje.
           </p>
           <br />
         </div>
       ),
     },
     {
-      title: "Capítulo 6",
+      title: "Capítulo 7 - A primeira compra e a parceria com a HTH",
       content: (
         <div>
           <p className="text-justify">
-            Voltando à história, cerca de menos de 2 anos depois, seu empenho e
-            habilidade chamou novamente a atenção do empresário espanhol que
-            havia contratado, e esse concedeu a ele por mérito, uma nova
-            oportunidade na então empresa, a partir daquele momento passou a
-            exercer a função de atendente de vendas, nessa nova atribuição
-            adquiriu mais experiência, conheceu muitos clientes e fornecedores
-            do ramo, mas não tinha noção de onde isso poderia chegar.
-          </p>
-          <br />
-          <p className="text-justify">
-            Após seis anos de trabalho nessa fábrica de acessórios de piscinas
-            mais uma oportunidade lhe bateu à porta, recebeu o convite para
-            trabalhar numa loja de produtos e acessórios de piscinas que ficava
-            situada no bairro do Itaim Bibi na capital paulista, essa loja era
-            um misto de venda de varejo e atacado, ele agarrou a oportunidade,
-            cresceu na nova empresa de forma vertiginosa mesmo não tendo em seu
-            currículo nenhum diploma de alguma formação profissional, ali se
-            tornou uma espécie de gerente geral, esse novo cargo aumentou sua
-            responsabilidade mas ampliou seu horizonte de conhecimento na área
-            comercial e administrativa, o que deu a ele uma larga experiência no
-            ramo, conheceu novos parceiros comerciais e ali ficou trabalhando
-            até o dia 31 de agosto do ano de 1994, e foi nesse momento que
-            sentiu estar preparado para começar aquilo que seria o grande sonho
-            que desembarcara com ele naquela rodoviária da capital paulista por
-            ocasião da sua chegada, o momento finalmente havia chegado.
+            Os primeiros desafios começaram a chegar. A primeira compra de
+            acessórios foi uma caixa de papelão contendo 30 peneiras
+            cata-folhas. Além disso, comprou também um aparelho de fax e uma
+            máquina de escrever manual Olivetti, ambos usados. Esses dois
+            últimos, que compunham os primeiros ativos da empresa, foram
+            trocados por produtos de piscina.
+            <br />
+            <br />
+            A parceria com a marca HTH aconteceu pouco tempo depois, ainda no
+            primeiro semestre de 1996. A ansiedade por ver as coisas acontecerem
+            parecia ser seu principal estado emocional naquele momento, mas ele
+            entendeu que precisava ir devagar. A empresa era nova demais, não
+            havia crédito disponível, e ninguém queria — com razão — apostar em
+            uma empresa recém-criada.
+            <br />
+            <br />
+            Um dia, foi convidado para um almoço com o vice-presidente da HTH, a
+            maior empresa de tratamento de águas de piscinas do Brasil. Após
+            relutar bastante por conta da timidez, o convite finalmente foi
+            aceito.
+            <br />
+            <br />
+            O almoço aconteceu numa churrascaria chamada Galeto na Brasa. Houve
+            boa empatia entre os participantes, e ele ganhou a confiança do
+            vice-presidente, Arnaldo Machado. A partir daí, as portas dessa
+            grande empresa se abriram e, nesse momento, as coisas começaram a
+            acontecer de fato.
+            <br />
+            <br />O depósito improvisado na garagem de sua residência passou a
+            não suportar o volume de cargas, que crescia mês a mês. Esse foi o
+            primeiro grande desafio a ser enfrentado — e precisou ser rápido.
           </p>
           <br />
         </div>
       ),
     },
     {
-      title: "Capítulo 7",
+      title: "Capítulo 8 - O crescimento rápido",
       content: (
         <div>
           <p className="text-justify">
-            O tempo passou depressa, parece ter voado, lá se foram 15 anos desde
-            a sua chegada, o ano era 1994, ano da criação da nova moeda, o Real
-            e também ano da morte de Airton Sena, dois acontecimentos bastante
-            distintos mas que se entrelaçam, o primeiro muito importante e um
-            sinal de esperança de que dias melhores estavam por vir, o segundo é
-            terrível, lamentável e triste, o Brasil perdeu um dos seus maiores
-            ídolos senão o maior, mas a hora era chegada, ele sentiu que estava
-            preparado e criou a sua empresa, a Comercial Grosfestilo.
+            A empresa começou a crescer de forma lenta, mas sustentável. Já em
+            2008 atingiu a marca de 400 toneladas de produtos comercializados.
+            <br />
+            <br />
+            A garagem da casa já não era mais suficiente. A casa ao lado foi
+            alugada e o problema parecia resolvido. Pouco tempo depois, as duas
+            casas já eram pequenas. Uma terceira foi adquirida, onde foi
+            instalado o escritório e toda a administração da empresa.
+            <br />
+            <br />
+            Logo em seguida, uma quarta casa foi alugada na mesma rua. Agora,
+            com uma área total de 1.000 metros quadrados, parecia que o problema
+            de espaço havia ficado para trás.
+            <br />
+            <br />
+            Mas pouco tempo depois as quatro casas também não foram mais
+            suficientes. Em 2012, a movimentação de produtos alcançou a marca de
+            800 toneladas, e o espaço já não atendia às necessidades. Algo
+            precisava ser feito — novamente, e de forma rápida.
           </p>
-          <br />
-          <p className="text-justify">
-            {" "}
-            A primeira venda foi realizada já no dia 4 de setembro daquele ano,
-            o cliente que realizou essa primeira compra continua com sua loja
-            aberta e atuante até os dias de hoje e atualmente já está na segunda
-            geração. Os primeiros desafios começaram chegar, a primeira compra
-            de acessórios também foi realizada, tratava-se de uma caixa de
-            papelão contendo 30 peneiras cata folhas, além disso comprou também
-            um aparelho de fax e uma máquina de escrever manual da marca
-            Olivetti.
-          </p>
-          <br />
         </div>
       ),
     },
     {
-      title: "Capítulo 8",
+      title: "Capítulo 9 - A aquisição do programa de gestão",
       content: (
         <div>
           <p className="text-justify">
-            A parceria com a marca HTH aconteceu pouco tempo depois ainda no
-            primeiro semestre do ano de 1996, a ansiedade por ver as coisas
-            acontecerem parecia ser seu principal estado emocional naquele
-            momento, mas entendeu que precisava ir devagar, a empresa era nova
-            demais, não existia crédito disponível, pq ninguém queria, e com
-            toda a razão apostar no potencial de uma empresa recém criada.
+            {" "}
+            No ano de 2009, diante da necessidade de agilizar processos e
+            aprimorar controles, a empresa adquiriu um programa de gestão que
+            começou a rodar definitivamente em 1º de julho daquele ano: o Signus
+            Software ERP, da empresa Nova Soluções.
+            <br />
+            <br />
+            Os processos melhoraram significativamente. Ganharam velocidade, as
+            vendas cresceram, uma nova equipe comercial foi estruturada e a
+            empresa continuou a alcançar números bastante robustos.
           </p>
-          <br />
-          <p className="text-justify">
-            Um dia foi convidado para um almoço com o Vice Presidente da HTH,
-            essa a maior empresa do segmento de tratamento de águas de piscinas
-            do Brasil, após relutar bastante por conta do sua timidez, o convite
-            finalmente foi aceito, o almoço aconteceu numa churrascaria da
-            região de nome <strong>Galeto na Brasa</strong>, houve uma boa
-            empatia entre os participantes desse almoço, ganhou a confiança do
-            então Vice Presidente cujo nome era <strong>Arnaldo Machado</strong>
-            , e a partir de então as portas dessa grande empresa se abriram,
-            nesse momento as coisas começaram acontecer de fato. O depósito
-            improvisado na garagem da sua residência passou a não suportar o
-            volume de cargas que crescia mes a mes, esse foi o primeiro desafio
-            a ser enfrentado e precisou ser rápido.
-          </p>
-          <br />
         </div>
       ),
     },
     {
-      title: "Capítulo 9",
+      title: "Capítulo 10 - A aquisição do novo edifício-sede",
       content: (
         <div>
           <p className="text-justify">
-            {" "}
-            A empresa começou crescer de forma lenta mas sustentável, já no ano
-            de 2008 atingiu a marca de 400 toneladas de produtos comercializados
-            e não parou por aí, continuou a crescer, a garagem da sua casa já
-            não era mais suficiente para armazenar tanto produto, a casa ao lado
-            foi alugada e o problema parecia ter sido resolvido.
-          </p>
-          <br />
-          <p className="text-justify">
-            {" "}
-            Pouco tempo depois as duas casas já se tornaram pequenas, uma
-            terceira casa foi adquirida e ali foi instalado o escritório e toda
-            a administração da empresa, pouco tempo depois as três casas também
-            já não eram mais suficientes, uma quarta casa foi alugada na mesma
-            rua, agora com uma área total de 1.000m² o problema de espaço
-            parecia ter ficado pra trás, mas pouco tempo depois as quatro casas
-            já não são eram mais suficientes para suportar os processos de carga
-            e descarga, no ano de 2012, a movimentação de produtos já alcançou a
-            marca das 800 toneladas e o espaço disponível para armazenamento já
-            não era mais suficiente, algo precisava ser feito novamente e de
-            forma rápida.
-          </p>
-          <br />
-        </div>
-      ),
-    },
-    {
-      title: "Capítulo 10",
-      content: (
-        <div>
-          <p className="text-justify">
-            {" "}
-            Antes disso, no ano de 2009, diante da necessidade de agilizar seus
-            processos e aprimorar seus controles, a empresa adquiriu um complexo
-            programa de gestão que começou rodar de forma definitiva a partir de
-            01 de julho daquele ano, trata-se do{" "}
-            <strong>SIGNUS SOFTWARE ERP</strong>, um produto da empresa{" "}
-            <strong>NOVA SOLUÇÕES</strong>, os processos melhoraram
-            significativamente a partir desse momento, ganharam velocidade, as
-            vendas cresceram, uma nova equipe comercial foi montada e
-            aprimorada, e a empresa continuou a alcançar números bastante
-            robustos.
-          </p>
-          <br />
-          <p className="text-justify">
-            {" "}
-            No ano de 2013 adquiriu um imóvel com 2.000m² de área construída, um
-            prédio imponente, arrojado, espaçoso que conta inclusive com
+            Em 2013, foi adquirido um imóvel com 2.000 metros quadrados de área
+            construída: um prédio imponente, arrojado e espaçoso, com
             estacionamento para colaboradores e visitantes, modernas salas
-            destinadas a administração, rampa de acesso para carga e descarga,
-            amplo espaço para armazenamento com capacidade útil de mais de 300
-            toneladas de produtos e foi exatamente nesse ano que o volume
-            movimentado atingiu pouco mais de 1.000 toneladas.
+            administrativas, rampa de acesso para carga e descarga e amplo
+            espaço de armazenamento, com capacidade útil para mais de 300
+            toneladas de produtos.
+            <br />
+            <br />
+            Exatamente nesse ano, o volume movimentado atingiu pouco mais de
+            1.000 toneladas.
           </p>
-          <br />
         </div>
       ),
     },
     {
-      title: "Capítulo 11",
+      title: "Capítulo 11 - 2024, ano da comemoração dos 30 anos",
       content: (
         <div>
           <p className="text-justify">
-            {" "}
-            Em 2024, a empresa completou 30 anos de existência, já está na
-            segunda geração, mas o seu fundador, aquele migrante paranaense que
-            desembarcou na rodoviária Julio Prestes lá no centro da Capital
-            Paulista no dia 6 de janeiro de 1979 trazendo consigo um sonho,
+            Em 2024, a empresa completou 30 anos de existência. Já está na
+            segunda geração, mas o fundador — aquele imigrante paranaense que
+            desembarcou na rodoviária Júlio Prestes, no centro da capital
+            paulista, no dia 6 de janeiro de 1979, trazendo consigo um sonho —
             continua trabalhando e participando diretamente das decisões mais
             importantes.
+            <br />
+            <br />
+            A empresa já implantou projetos de governança ambiental e tem
+            outros, de longo prazo, a serem implementados.
+            <br />
+            <br />
+            Sempre pensando na melhoria dos processos internos, a empresa segue
+            firme e preparada para as mudanças tecnológicas que chegam a passos
+            largos.
+            <br />
+            <br />
+            Mas uma coisa é certa: nunca deixará para trás suas raízes e seu
+            conceito de humanidade. E, carregando sempre esse conceito,
+            continuará a contar sua linda e empolgante história!
           </p>
-          <br />
-          <p className="text-justify">
-            {" "}
-            A empresa tem projetos de governança ambiental já implantados e
-            também outros projetos de longo prazo a serem implantados no futuro.
-            Pensando e focando sempre na melhoria dos processos internos, a
-            empresa continua firme e preparada para as mudanças tecnológicas que
-            parecem chegar a passos largos, mas uma coisa é certa, essa empresa
-            nunca deixará para trás as suas raízes e o seu conceito de
-            humanidade, e carregando sempre consigo esse conceito, continuará a
-            contar sua linda e empolgante história!
-          </p>
-          <br />
         </div>
       ),
     },
-    // {
-    //   title: "Capítulo 12",
-    //   content: (
-    //     <div>
-    //       <p className="text-justify">
-    //         {" "}
-    //         A empresa tem projetos de governança ambiental já implantados e
-    //         também outros projetos de longo prazo a serem implantados no futuro.
-    //         Pensando e focando sempre na melhoria dos processos internos, a
-    //         empresa continua firme e preparada para as mudanças tecnológicas que
-    //         parecem chegar a passos largos, mas uma coisa é certa, essa empresa
-    //         nunca deixará para trás as suas raízes e o seu conceito de
-    //         humanidade, e carregando sempre consigo esse conceito, continuará a
-    //         contar sua linda e empolgante história!
-    //         <br />
-    //         <br />A empresa tem projetos de governança ambiental já implantados
-    //         e também outros projetos de longo prazo a serem implantados no
-    //         futuro. Pensando e focando sempre na melhoria dos processos
-    //         internos, a empresa continua firme e preparada para as mudanças
-    //         tecnológicas que parecem chegar a passos largos, mas uma coisa é
-    //         certa, essa empresa nunca deixará para trás as suas raízes e o seu
-    //         conceito de humanidade, e carregando sempre consigo esse conceito,
-    //         continuará a contar sua linda e empolgante história!
-    //       </p>
-    //       <br />
-    //     </div>
-    //   ),
-    // },
   ];
 
   // 🔧 Adiciona essas variáveis:
