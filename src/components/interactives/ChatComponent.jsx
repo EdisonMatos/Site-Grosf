@@ -388,6 +388,7 @@ export default function ChatPiscina() {
               />
             </div>
             <Buttons
+            className="m-auto"
               textSize="text-paragraph1"
               name="Calcular Volume"
               onClick={() => {
