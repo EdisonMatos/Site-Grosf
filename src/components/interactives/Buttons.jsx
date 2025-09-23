@@ -50,7 +50,7 @@ function Buttons({
     <div className="flex">
       <div className={`button ${finalClassName}`} onClick={handleClick}>
         <span
-          className={`flex items-center justify-center h-full gap-3 font-normal text-center text-white ${textSize}`}
+          className={`flex w-full items-center justify-center h-full gap-3 font-normal text-center text-white ${textSize}`}
         >
           {icon} {label}
         </span>

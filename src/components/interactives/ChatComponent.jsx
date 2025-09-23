@@ -232,7 +232,8 @@ export default function ChatPiscina() {
                 );
                 setStep(1);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
+              className=""
             />
             <Buttons
               name="O volume de água e a quantidade de produtos a serem utilizados na minha piscina"
@@ -243,7 +244,7 @@ export default function ChatPiscina() {
                 );
                 setStep(6);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
           </div>
         </>
@@ -266,7 +267,7 @@ export default function ChatPiscina() {
                 );
                 setStep(3);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
             <Buttons
               name="Sua piscina é redonda?"
@@ -275,7 +276,7 @@ export default function ChatPiscina() {
                 adicionarMensagem("A minha piscina é redonda", "user");
                 setStep(3);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
             <Buttons
               name="Sua piscina é oval?"
@@ -284,7 +285,7 @@ export default function ChatPiscina() {
                 adicionarMensagem("A minha piscina é oval", "user");
                 setStep(3);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
           </div>
         </>
@@ -297,22 +298,22 @@ export default function ChatPiscina() {
           </p>
           <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
             <Buttons
-              name="🧼 Primeiro tratamento ou abandono"
+              name="Primeiro tratamento ou abandono"
               onClick={() => {
                 setTratamentoTipo("primeiro");
                 adicionarMensagem("Primeiro tratamento ou abandono", "user");
                 calcularProdutos();
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
             <Buttons
-              name="🔄 Manutenção ou preventivo"
+              name="Manutenção ou preventivo"
               onClick={() => {
                 setTratamentoTipo("manutencao");
                 adicionarMensagem("Manutenção ou preventivo", "user");
                 calcularProdutos();
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
           </div>
         </>
@@ -387,6 +388,7 @@ export default function ChatPiscina() {
               />
             </div>
             <Buttons
+              textSize="text-paragraph1"
               name="Calcular Volume"
               onClick={() => {
                 const { comprimento, largura, profundidade, diametro } =
@@ -431,7 +433,7 @@ export default function ChatPiscina() {
                 // mostrarProdutosExtras();
                 setStep(2);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
             <Buttons
               name="🔁 Não, era somente isso"
@@ -442,7 +444,7 @@ export default function ChatPiscina() {
                 );
                 setStep(5);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
           </div>
         </div>
@@ -454,7 +456,7 @@ export default function ChatPiscina() {
           <Buttons
             name="🔁 Reiniciar Diálogo"
             onClick={resetar}
-            textSize="text-paragraph3"
+            textSize="text-paragraph1"
             className="flex m-auto"
           />
         </div>
@@ -468,22 +470,22 @@ export default function ChatPiscina() {
           </p>
           <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
             <Buttons
-              name="🧼 Primeiro tratamento ou abandono"
+              name="Primeiro tratamento ou abandono"
               onClick={() => {
                 setTratamentoTipo("primeiro");
                 adicionarMensagem("Primeiro tratamento ou abandono", "user");
                 setStep(7);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
             <Buttons
-              name="🔄 Manutenção ou preventivo"
+              name="Manutenção ou preventivo"
               onClick={() => {
                 setTratamentoTipo("manutencao");
                 adicionarMensagem("Manutenção ou preventivo", "user");
                 setStep(7);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
           </div>
         </>
@@ -506,7 +508,7 @@ export default function ChatPiscina() {
                 );
                 setStep(8);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
             <Buttons
               name="Sua piscina é redonda?"
@@ -515,7 +517,7 @@ export default function ChatPiscina() {
                 adicionarMensagem("A minha piscina é redonda", "user");
                 setStep(8);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
             <Buttons
               name="Sua piscina é oval?"
@@ -524,7 +526,7 @@ export default function ChatPiscina() {
                 adicionarMensagem("A minha piscina é oval", "user");
                 setStep(8);
               }}
-              textSize="text-paragraph3"
+              textSize="text-paragraph1"
             />
           </div>
         </>
@@ -599,6 +601,8 @@ export default function ChatPiscina() {
               />
             </div>
             <Buttons
+              className="m-auto"
+              textSize="text-paragraph1"
               name="Calcular Volume e Produtos"
               onClick={() => {
                 const {
@@ -666,7 +670,7 @@ export default function ChatPiscina() {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
                       <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos caso, além do que já foi mostrado, é
+                        Em qualquer dos casos, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
                     );
@@ -816,7 +820,7 @@ export default function ChatPiscina() {
                   } else if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
                       <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos caso, além do que já foi mostrado, é
+                        Em qualquer dos casos, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
                     );
@@ -966,7 +970,7 @@ export default function ChatPiscina() {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
                       <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos caso, além do que já foi mostrado, é
+                        Em qualquer dos casos, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
                     );
@@ -1116,7 +1120,7 @@ export default function ChatPiscina() {
                   } else if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
                       <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos caso, além do que já foi mostrado, é
+                        Em qualquer dos casos, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
                     );
@@ -1267,7 +1271,7 @@ export default function ChatPiscina() {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
                       <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos caso, além do que já foi mostrado, é
+                        Em qualquer dos casos, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
                     );
@@ -1415,7 +1419,7 @@ export default function ChatPiscina() {
                   } else if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
                       <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos caso, além do que já foi mostrado, é
+                        Em qualquer dos casos, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
                     );
