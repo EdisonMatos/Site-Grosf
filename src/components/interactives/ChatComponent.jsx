@@ -665,7 +665,7 @@ export default function ChatPiscina() {
                 if (formato === "reta") {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
-                      <h1 className="text-[16px] text-yellow-700 font-bold">
+                      <h1 className="text-[16px] text-primary font-bold">
                         Em qualquer dos caso, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
@@ -815,7 +815,7 @@ export default function ChatPiscina() {
                     );
                   } else if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
-                      <h1 className="text-[16px] text-red-900 font-bold">
+                      <h1 className="text-[16px] text-primary font-bold">
                         Em qualquer dos caso, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
@@ -965,7 +965,7 @@ export default function ChatPiscina() {
                 if (formato === "redonda") {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
-                      <h1 className="text-[16px] text-green-900 font-bold">
+                      <h1 className="text-[16px] text-primary font-bold">
                         Em qualquer dos caso, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
@@ -1115,7 +1115,7 @@ export default function ChatPiscina() {
                     );
                   } else if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
-                      <h1 className="text-[16px] text-blue-500 font-bold">
+                      <h1 className="text-[16px] text-primary font-bold">
                         Em qualquer dos caso, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
@@ -1266,7 +1266,7 @@ export default function ChatPiscina() {
                 if (formato === "oval") {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
-                      <h1 className="text-[16px] text-pink-400 font-bold">
+                      <h1 className="text-[16px] text-primary font-bold">
                         Em qualquer dos caso, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
@@ -1414,7 +1414,7 @@ export default function ChatPiscina() {
                     );
                   } else if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
-                      <h1 className="text-[16px] text-amber-700 font-bold">
+                      <h1 className="text-[16px] text-primary font-bold">
                         Em qualquer dos caso, além do que já foi mostrado, é
                         preciso adicionar:
                       </h1>
