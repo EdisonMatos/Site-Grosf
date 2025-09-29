@@ -77,6 +77,19 @@ export default function CalculaFacilGrosf() {
   };
 
   const calcularVolume = () => {
+    // Verifica se todos os campos necessários foram preenchidos
+    if (
+      (format === "Quadrada ou retangular" || format === "Oval") &&
+      (!inputs.comprimento || !inputs.largura || !inputs.profundidade)
+    ) {
+      alert("Por favor insira as medidas para prosseguirmos com o cálculo");
+      return; // impede continuar
+    }
+
+    if (format === "Redonda" && (!inputs.diametro || !inputs.profundidade)) {
+      alert("Por favor insira as medidas para prosseguirmos com o cálculo");
+      return; // impede continuar
+    }
     let v = 0;
     if (format === "Quadrada ou retangular") {
       const { comprimento, largura, profundidade } = inputs;
@@ -337,7 +350,7 @@ export default function CalculaFacilGrosf() {
           <p>
             Gostaria de saber os produtos a serem utilizados na sua piscina?
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-2">
             <Buttons
               className="px-6 py-2 bg-primary text-white rounded-lg"
               onClick={() => {
@@ -377,7 +390,7 @@ export default function CalculaFacilGrosf() {
       {step === "askCircunstancial" && (
         <div className="space-y-2">
           <p>Gostaria de saber também os produtos circunstanciais?</p>
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-2">
             <Buttons
               className="px-6 py-2 bg-primary text-white rounded-lg"
               onClick={() => handleCircunstancial()}
