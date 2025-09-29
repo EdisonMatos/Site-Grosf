@@ -28,7 +28,7 @@ function Buttons({
       default:
         return {
           className:
-            "w-auto px-6 h-14 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#01435C] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#006489]",
+            "w-full mb-3 px-6 h-14 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#01435C] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#006489]",
           label: name || "Active",
           icon: icon,
         };
@@ -52,7 +52,7 @@ function Buttons({
         <span
           className={`flex w-full items-center justify-center h-full gap-3 font-normal text-center text-white ${textSize}`}
         >
-          {icon} {label}
+          {icon} {name}
         </span>
       </div>
     </div>

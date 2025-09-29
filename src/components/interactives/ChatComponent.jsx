@@ -1,1579 +1,425 @@
 import { useState } from "react";
-import Buttons from "./Buttons";
+import Buttons from "../interactives/Buttons";
 
-export default function ChatPiscina() {
-  const [step, setStep] = useState(0);
-  const [formato, setFormato] = useState("");
-  const [tratamentoTipo, setTratamentoTipo] = useState("");
-  const [mensagens, setMensagens] = useState([]);
-  const [volume, setVolume] = useState("");
-  const [dimensoes, setDimensoes] = useState({
+export default function CalculaFacilGrosf() {
+  const [messages, setMessages] = useState([
+    { from: "bot", text: "Olá! O que você deseja calcular?" },
+  ]);
+  const [step, setStep] = useState("start"); // start, format, measures, productOption, circum
+  const [userChoice, setUserChoice] = useState(null);
+  const [format, setFormat] = useState(null);
+  const [inputs, setInputs] = useState({
     comprimento: "",
     largura: "",
     profundidade: "",
     diametro: "",
   });
-  const [digitando, setDigitando] = useState(false);
+  const [volume, setVolume] = useState(null);
+  const [treatmentOption, setTreatmentOption] = useState(null);
+  const [phValue, setPhValue] = useState(7.5);
+  const [fundoVisivel, setFundoVisivel] = useState(true);
 
-  const adicionarMensagem = (texto, tipo = "bot", delay = true) => {
-    if (tipo === "bot" && delay) {
-      setDigitando(true);
-      setTimeout(() => {
-        setMensagens((prev) => [...prev, { texto, tipo }]);
-        setDigitando(false);
-      }, 5000);
-    } else {
-      setMensagens((prev) => [...prev, { texto, tipo }]);
-    }
-  };
-
-  const calcularVolumePiscina = () => {
-    let litros = 0;
-    const p = parseFloat(dimensoes.profundidade);
-
-    if (formato === "reta") {
-      // comprimento x largura x a profundidade,
-      const c = parseFloat(dimensoes.comprimento);
-      const l = parseFloat(dimensoes.largura);
-      litros = c * l * p;
-    } else if (formato === "redonda") {
-      const d = parseFloat(dimensoes.diametro);
-      litros = d * d * p * 0.785;
-    } else if (formato === "oval") {
-      const c = parseFloat(dimensoes.comprimento);
-      const l = parseFloat(dimensoes.largura);
-      litros = c * l * p * 0.785;
-    }
-
-    if (isNaN(litros) || litros <= 0) {
-      adicionarMensagem("Por favor, insira medidas válidas.");
-      return;
-    }
-
-    setVolume(litros.toFixed(3));
-    adicionarMensagem(
-      `${litros.toFixed(3)} mil litros é o volume de água da sua piscina.`
-    );
-
-    // Função de calcular produtos
-    if (tratamentoTipo) {
-      calcularProdutos(litros);
-    }
+  const delayResponse = (text, callback) => {
+    setMessages((prev) => [...prev, { from: "bot", text: "..." }]);
     setTimeout(() => {
-      setStep(4);
-    }, 500);
+      setMessages((prev) => [...prev.slice(0, -1), { from: "bot", text }]);
+      if (callback) callback();
+    }, 3000); // 3 segundos de delay para exemplo
   };
 
-  const calcularProdutos = (litrosCalculado = null) => {
-    const litros = parseFloat(litrosCalculado || volume);
-
-    if (isNaN(litros) || litros <= 0) {
-      adicionarMensagem("Por favor, insira um volume válido.");
-      return;
-    }
-
-    const format = (v) => ((v * litros) / 1000).toFixed(1);
-
-    if (tratamentoTipo === "primeiro") {
-      adicionarMensagem("Produtos para Primeiro Tratamento:");
-
-      if (formato === "reta") {
-        adicionarMensagem(`- Cloro Granulado Tradicional: ${format(14)}g`);
-        adicionarMensagem(`- Dicloro Puro ou Multifuncões: ${format(10)}g`);
-        adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(18)}g`);
-        adicionarMensagem(`- Algicida de choque: ${format(5)}ml`);
-        adicionarMensagem(`- Clarificante: ${format(6)}ml`);
-        adicionarMensagem(`- Elimina Óleo: ${format(14)}ml`);
-      } else if (formato === "redonda") {
-        adicionarMensagem(`- Cloro Granulado Tradicional: ${format(14)}g`);
-        adicionarMensagem(`- Dicloro Puro ou Multifuncões: ${format(10)}g`);
-        adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(18)}g`);
-        adicionarMensagem(`- Algicida de choque: ${format(5)}ml`);
-        adicionarMensagem(`- Clarificante: ${format(6)}ml`);
-        adicionarMensagem(`- Elimina Óleo: ${format(14)}ml`);
-      } else if (formato === "oval") {
-        adicionarMensagem(`- Cloro Granulado Tradicional: ${format(14)}g`);
-        adicionarMensagem(`- Dicloro Puro ou Multifuncões: ${format(10)}g`);
-        adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(18)}g`);
-        adicionarMensagem(`- Algicida de choque: ${format(5)}ml`);
-        adicionarMensagem(`- Clarificante: ${format(6)}ml`);
-        adicionarMensagem(`- Elimina Óleo: ${format(14)}ml`);
-      }
+  const handleStartChoice = (choice) => {
+    setMessages((prev) => [...prev, { from: "user", text: choice }]);
+    setUserChoice(choice);
+    if (choice === "Somente o volume da piscina") {
+      setStep("format");
+      delayResponse("Qual o formato da sua piscina?", null);
     } else {
-      adicionarMensagem("Produtos para Manutenção:");
-
-      if (formato === "reta") {
-        adicionarMensagem(
-          `- Cloro Granulado Tradicional ou Dicloro: ${format(5)}g `
-        );
-        adicionarMensagem(`- Dicloro puro ou multifunções: ${format(5)}g `);
-        adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(9)}g `);
-        adicionarMensagem(`- Algicida de manutenção: ${format(5)}ml `);
-        adicionarMensagem(`- Clarificante: ${format(3)}ml `);
-        adicionarMensagem(`- Elimina Óleo: ${format(7)}ml`);
-      } else if (formato === "redonda") {
-        adicionarMensagem(
-          `- Cloro Granulado Tradicional ou Dicloro: ${format(5)}g `
-        );
-        adicionarMensagem(`- Dicloro puro ou multifunções: ${format(5)}g `);
-        adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(9)}g `);
-        adicionarMensagem(`- Algicida de manutenção: ${format(5)}ml `);
-        adicionarMensagem(`- Clarificante: ${format(3)}ml `);
-        adicionarMensagem(`- Elimina Óleo: ${format(7)}ml`);
-      } else if (formato === "oval") {
-        adicionarMensagem(
-          `- Cloro Granulado Tradicional ou Dicloro: ${format(5)}g `
-        );
-        adicionarMensagem(`- Dicloro puro ou multifunções: ${format(5)}g `);
-        adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(9)}g `);
-        adicionarMensagem(`- Algicida de manutenção: ${format(5)}ml `);
-        adicionarMensagem(`- Clarificante: ${format(3)}ml `);
-        adicionarMensagem(`- Elimina Óleo: ${format(7)}ml`);
-      }
+      setStep("productOption");
+      delayResponse("Você deseja qual tipo de tratamento?", null);
     }
   };
 
-  // const mostrarProdutosExtras = () => {
-  //   const litros = parseFloat(volume);
-  //   if (isNaN(litros) || litros <= 0) return;
+  const handleTreatmentOption = (option) => {
+    setMessages((prev) => [...prev, { from: "user", text: option }]);
+    setTreatmentOption(option);
 
-  //   const format = (v) => ((v * litros) / 1000).toFixed(1);
+    if (volume) {
+      // Primeiro mostra a mensagem de delay
+      setMessages((prev) => [
+        ...prev,
+        {
+          from: "bot",
+          text: `Usando o volume calculado: ${volume.toFixed(
+            2
+          )} litros. Calculando produtos...`,
+        },
+      ]);
 
-  //   adicionarMensagem("Produtos adicionais baseados no volume da piscina:");
-  //   adicionarMensagem(
-  //     `1) Redutor de pH: 5ml/1000L → ${format(5)}ml | 8ml/1000L → ${format(
-  //       8
-  //     )}ml`
-  //   );
-  //   adicionarMensagem(
-  //     `2) Elevador de pH pó: 5ml/1000L → ${format(5)}ml | 10ml/1000L → ${format(
-  //       10
-  //     )}ml`
-  //   );
-  //   adicionarMensagem(
-  //     `3) Elevador de pH líquido: 15ml/1000L → ${format(
-  //       15
-  //     )}ml | 20ml/1000L → ${format(20)}ml`
-  //   );
-  //   adicionarMensagem(
-  //     `4) Elevador de alcalinidade: 17ml/1000L → ${format(17)}ml`
-  //   );
-  //   adicionarMensagem(`5) Reduz aspiração: 6ml/1000L → ${format(6)}ml`);
-  //   adicionarMensagem(
-  //     `6) Água turva ou manchas: 15ml/1000L → ${format(
-  //       15
-  //     )}ml | 50ml/1000L → ${format(50)}ml`
-  //   );
-  //   adicionarMensagem(
-  //     `7) Água de poço: 15ml/1000L → ${format(15)}ml | 50ml/1000L → ${format(
-  //       50
-  //     )}ml`
-  //   );
-  //   adicionarMensagem(`8) Ultraclear: 10ml/1000L → ${format(10)}ml`);
+      setTimeout(() => {
+        // Depois mostra os produtos
+        calcularProdutos(volume);
+      }, 2000); // tempo de espera antes de exibir os produtos
+    } else {
+      // Volume ainda não calculado, pedimos medidas
+      setStep("format");
+      delayResponse("Qual o formato da sua piscina?", null);
+    }
+  };
 
-  //   setStep(5);
-  // };
+  const handleFormatChoice = (fmt) => {
+    setMessages((prev) => [...prev, { from: "user", text: fmt }]);
+    setFormat(fmt);
+    setStep("measures");
+  };
 
-  const resetar = () => {
-    setStep(0);
-    setFormato("");
-    setTratamentoTipo("");
-    setVolume("");
-    setDimensoes({
-      comprimento: "",
-      largura: "",
-      profundidade: "",
-      diametro: "",
+  const handleInputChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const calcularVolume = () => {
+    // Verifica se todos os campos necessários foram preenchidos
+    if (
+      (format === "Quadrada ou retangular" || format === "Oval") &&
+      (!inputs.comprimento || !inputs.largura || !inputs.profundidade)
+    ) {
+      alert("Por favor insira as medidas para prosseguirmos com o cálculo");
+      return; // impede continuar
+    }
+
+    if (format === "Redonda" && (!inputs.diametro || !inputs.profundidade)) {
+      alert("Por favor insira as medidas para prosseguirmos com o cálculo");
+      return; // impede continuar
+    }
+    let v = 0;
+    if (format === "Quadrada ou retangular") {
+      const { comprimento, largura, profundidade } = inputs;
+      v = comprimento * largura * profundidade;
+    } else if (format === "Redonda") {
+      const { diametro, profundidade } = inputs;
+      v = diametro * diametro * profundidade * 0.785;
+    } else if (format === "Oval") {
+      const { comprimento, largura, profundidade } = inputs;
+      v = comprimento * largura * profundidade * 0.785;
+    }
+    setVolume(v);
+
+    if (userChoice === "Somente o volume da piscina") {
+      delayResponse(`O volume da piscina é ${v.toFixed(2)} litros.`, () =>
+        setStep("askProducts")
+      );
+    } else {
+      // Option2: calcular produtos
+      delayResponse(
+        `O volume da piscina é ${v.toFixed(2)} litros. Calculando produtos...`,
+        () => calcularProdutos(v)
+      );
+    }
+  };
+
+  const calcularProdutos = (vol) => {
+    const volumeM3 = vol / 1000;
+    const produtos = [];
+
+    if (format === "Quadrada ou retangular") {
+      produtos.push(
+        `Cloro Granulado Tradicional: ${(14 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(
+        `Dicloro Puro ou Multifunções: ${(10 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(`Cloro Granulado 10 em 1: ${(18 * volumeM3).toFixed(2)} g`);
+      produtos.push(`Algicida de choque: ${(5 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Clarificante: ${(6 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Elimina óleo: ${(14 * volumeM3).toFixed(2)} ml`);
+    } else if (format === "Oval") {
+      produtos.push(
+        `Cloro Granulado Tradicional: ${(14 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(
+        `OU Dicloro Puro ou Multifunções: ${(10 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(
+        `OU Cloro Granulado 10 em 1: ${(18 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(`Algicida de choque: ${(5 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Clarificante: ${(6 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Elimina óleo: ${(14 * volumeM3).toFixed(2)} ml`);
+    } else if (format === "Redonda") {
+      produtos.push(
+        `Cloro Granulado Tradicional: ${(12 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(
+        `OU Dicloro Puro ou Multifunções: ${(9 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(
+        `OU Cloro Granulado 10 em 1: ${(16 * volumeM3).toFixed(2)} g`
+      );
+      produtos.push(`Algicida de choque: ${(4 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Clarificante: ${(5 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Elimina óleo: ${(12 * volumeM3).toFixed(2)} ml`);
+    }
+
+    // Adiciona produtos na mensagem
+    setMessages((prev) => [
+      ...prev,
+      {
+        from: "bot",
+        text: produtos.join("\n"), // \n será interpretado no JSX com whitespace-pre-line
+      },
+    ]);
+
+    // Passa para perguntar sobre produtos circunstanciais
+    setStep("askCircunstancial");
+  };
+
+  const handleCircunstancial = () => {
+    const volumeM3 = volume / 1000;
+    const circ = [];
+
+    if (phValue >= 7 && phValue <= 8)
+      circ.push(`Redutor de pH: ${(5 * volumeM3).toFixed(2)} ml`);
+    else if (phValue > 8)
+      circ.push(`Redutor de pH: ${(8 * volumeM3).toFixed(2)} ml`);
+
+    circ.push(
+      `Elevador de alcalinidade em pó: ${(17 * volumeM3).toFixed(2)} g`
+    );
+    circ.push(`Auxiliar de aspiração: ${(6 * volumeM3).toFixed(2)} ml`);
+
+    if (fundoVisivel)
+      circ.push(`Água turva/elimina manchas: ${(15 * volumeM3).toFixed(2)} ml`);
+    else
+      circ.push(`Água turva/elimina manchas: ${(50 * volumeM3).toFixed(2)} ml`);
+
+    if (fundoVisivel)
+      circ.push(`Eliminador de metais: ${(15 * volumeM3).toFixed(2)} ml`);
+    else circ.push(`Eliminador de metais: ${(50 * volumeM3).toFixed(2)} ml`);
+
+    circ.push(`Eliminador de algas: ${(10 * volumeM3).toFixed(2)} ml`);
+    circ.push(`Limpa bordas: utilize quantidade razoável numa esponja`);
+
+    // Juntando com \n e renderizando com whitespace-pre-line
+    const circText = circ.join("\n");
+
+    delayResponse(<div className="whitespace-pre-line">{circText}</div>, () => {
+      setStep("reset");
+      setMessages((prev) => [
+        ...prev,
+        {
+          from: "bot",
+          text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
+        },
+      ]);
     });
-    setMensagens([]);
+  };
+
+  const handleReset = () => {
+    setMessages([{ from: "bot", text: "Olá! O que você deseja calcular?" }]);
+    setStep("start");
+    setUserChoice(null);
+    setFormat(null);
+    setInputs({ comprimento: "", largura: "", profundidade: "", diametro: "" });
+    setVolume(null);
+    setTreatmentOption(null);
   };
 
   return (
-    <div className="phone1:w-[95%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
-      <h2 className="text-2xl font-bold text-center text-primary uppercase tracking-wide">
-        Calculadora
-      </h2>
-
-      <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
-        {mensagens.map((msg, i) => (
+    <div className="flex flex-col max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white">
+      <div className="flex flex-col space-y-4 h-96 overflow-y-auto mb-4 border-2 p-2 rounded-md">
+        {messages.map((msg, idx) => (
           <div
-            key={i}
-            className={`text-sm max-w-[80%] p-3 rounded-lg shadow-sm ${
-              msg.tipo === "user"
-                ? "bg-blue-100 ml-auto text-right"
-                : "bg-gray-100 text-left"
+            key={idx}
+            className={`p-2 rounded ${
+              msg.from === "bot"
+                ? "bg-gray-200 self-start whitespace-pre-line" // <--- aqui
+                : "bg-primary text-white self-end"
             }`}
           >
-            {msg.texto}
+            {msg.text}
           </div>
         ))}
       </div>
-      {digitando && (
-        <div className="text-sm text-gray-400 animate-pulse px-3">
-          Digitando...
+
+      {step === "start" && (
+        <div className="flex flex-col space-y-2">
+          <Buttons
+            onClick={() => handleStartChoice("Somente o volume da piscina")}
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Somente o volume da piscina"
+            size="small"
+          ></Buttons>
+          <Buttons
+            onClick={() => handleStartChoice("Volume + produtos")}
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name=" Volume + produtos"
+          ></Buttons>
         </div>
       )}
 
-      <hr className="my-6 border-t border-gray-300" />
-
-      {/* Lógica de Pergunta inicial */}
-      {step === 0 && (
-        <>
-          <p className="text-lg h-10 font-medium text-gray-700">
-            O que você deseja calcular?
-          </p>
-          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
-            <Buttons
-              name="Somente o volume de água da minha piscina"
-              onClick={() => {
-                adicionarMensagem(
-                  "Quero calcular o volume da água da piscina",
-                  "user"
-                );
-                setStep(1);
-              }}
-              textSize="text-paragraph1"
-              className=""
-            />
-            <Buttons
-              name="O volume de água e a quantidade de produtos a serem utilizados na minha piscina"
-              onClick={() => {
-                adicionarMensagem(
-                  "Quero saber a quantidade de produtos que devo utilizar na piscina",
-                  "user"
-                );
-                setStep(6);
-              }}
-              textSize="text-paragraph1"
-            />
-          </div>
-        </>
+      {step === "productOption" && (
+        <div className="flex flex-col space-y-2">
+          <Buttons
+            onClick={() =>
+              handleTreatmentOption(
+                "Primeiro tratamento ou longo período de abandono"
+              )
+            }
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Primeiro tratamento ou longo período de abandono"
+          ></Buttons>
+          <Buttons
+            onClick={() =>
+              handleTreatmentOption("Apenas manutenção ou preventivo")
+            }
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Apenas manutenção ou preventivo"
+          ></Buttons>
+        </div>
       )}
 
-      {/* Lógica de Pergunta para formato da piscina */}
-      {step === 1 && (
-        <>
-          <p className="text-lg font-medium text-gray-700">
-            Qual o formato da sua piscina?
-          </p>
-          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
-            <Buttons
-              name="Sua piscina é quadrada ou retangula?"
-              onClick={() => {
-                setFormato("reta");
-                adicionarMensagem(
-                  "A minha piscina é retangular ou quadrada",
-                  "user"
-                );
-                setStep(3);
-              }}
-              textSize="text-paragraph1"
-            />
-            <Buttons
-              name="Sua piscina é redonda?"
-              onClick={() => {
-                setFormato("redonda");
-                adicionarMensagem("A minha piscina é redonda", "user");
-                setStep(3);
-              }}
-              textSize="text-paragraph1"
-            />
-            <Buttons
-              name="Sua piscina é oval?"
-              onClick={() => {
-                setFormato("oval");
-                adicionarMensagem("A minha piscina é oval", "user");
-                setStep(3);
-              }}
-              textSize="text-paragraph1"
-            />
-          </div>
-        </>
-      )}
-      {/* Lógica de tratamento ou abandono */}
-      {step === 2 && (
-        <>
-          <p className="text-lg font-medium text-gray-700">
-            Qual o tipo de tratamento?
-          </p>
-          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
-            <Buttons
-              name="Primeiro tratamento ou abandono"
-              onClick={() => {
-                setTratamentoTipo("primeiro");
-                adicionarMensagem("Primeiro tratamento ou abandono", "user");
-                calcularProdutos();
-              }}
-              textSize="text-paragraph1"
-            />
-            <Buttons
-              name="Manutenção ou preventivo"
-              onClick={() => {
-                setTratamentoTipo("manutencao");
-                adicionarMensagem("Manutenção ou preventivo", "user");
-                calcularProdutos();
-              }}
-              textSize="text-paragraph1"
-            />
-          </div>
-        </>
+      {step === "format" && (
+        <div className="flex flex-col space-y-2">
+          <Buttons
+            onClick={() => handleFormatChoice("Quadrada ou retangular")}
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Quadrada ou retangular"
+          ></Buttons>
+          <Buttons
+            onClick={() => handleFormatChoice("Redonda")}
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Redonda"
+          ></Buttons>
+          <Buttons
+            onClick={() => handleFormatChoice("Oval")}
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Oval"
+          ></Buttons>
+        </div>
       )}
 
-      {/* Lógica de Medidas inseridas pelo Usuáo */}
-      {step === 3 && (
-        <>
-          <p className="text-lg font-medium text-gray-700">
-            Informe as medidas:
-          </p>
-          <div className="space-y-3">
-            {(formato === "reta" || formato === "oval") && (
-              <>
-                <div>
-                  <label className="block text-sm font-semibold">
-                    Comprimento (m)
-                  </label>
-                  <input
-                    type="number"
-                    value={dimensoes.comprimento}
-                    onChange={(e) =>
-                      setDimensoes({
-                        ...dimensoes,
-                        comprimento: e.target.value,
-                      })
-                    }
-                    className="w-full border border-gray-300 rounded-lg p-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold">
-                    Largura (m)
-                  </label>
-                  <input
-                    type="number"
-                    value={dimensoes.largura}
-                    onChange={(e) =>
-                      setDimensoes({ ...dimensoes, largura: e.target.value })
-                    }
-                    className="w-full border border-gray-300 rounded-lg p-2"
-                  />
-                </div>
-              </>
-            )}
-            {formato === "redonda" && (
-              <div>
-                <label className="block text-sm font-semibold">
-                  Diâmetro (m)
-                </label>
-                <input
-                  type="number"
-                  value={dimensoes.diametro}
-                  onChange={(e) =>
-                    setDimensoes({ ...dimensoes, diametro: e.target.value })
-                  }
-                  className="w-full border border-gray-300 rounded-lg p-2"
-                />
-              </div>
-            )}
-            <div>
-              <label className="block text-sm font-semibold">
-                Profundidade (m)
-              </label>
+      {step === "measures" && (
+        <div className="flex flex-col space-y-2 mt-2">
+          {format !== "Redonda" && (
+            <>
               <input
                 type="number"
-                value={dimensoes.profundidade}
-                onChange={(e) =>
-                  setDimensoes({ ...dimensoes, profundidade: e.target.value })
-                }
-                className="w-full border border-gray-300 rounded-lg p-2"
+                name="comprimento"
+                placeholder="Comprimento (m)"
+                value={inputs.comprimento}
+                onChange={handleInputChange}
+                className="input-field border-2 rounded-md p-2 outline-none"
               />
-            </div>
-            <Buttons
-            className="m-auto"
-              textSize="text-paragraph1"
-              name="Calcular Volume"
-              onClick={() => {
-                const { comprimento, largura, profundidade, diametro } =
-                  dimensoes;
-                if (
-                  (formato === "reta" &&
-                    (!comprimento || !largura || !profundidade)) ||
-                  (formato === "oval" &&
-                    (!comprimento || !largura || !profundidade)) ||
-                  (formato === "redonda" && (!diametro || !profundidade))
-                ) {
-                  alert(
-                    "Por favor, preencha todas as medidas antes de continuar."
-                  );
-                  return;
-                }
-
-                let texto =
-                  formato === "reta" || formato === "oval"
-                    ? `Comprimento: ${comprimento}m, Largura: ${largura}m, Profundidade: ${profundidade}m`
-                    : `Diâmetro: ${diametro}m, Profundidade: ${profundidade}m`;
-
-                adicionarMensagem(texto, "user", false);
-                calcularVolumePiscina();
-              }}
+              <input
+                type="number"
+                name="largura"
+                placeholder="Largura (m)"
+                value={inputs.largura}
+                onChange={handleInputChange}
+                className="input-field border-2 rounded-md p-2 outline-none"
+              />
+            </>
+          )}
+          {format === "Redonda" && (
+            <input
+              type="number"
+              name="diametro"
+              placeholder="Diâmetro (m)"
+              value={inputs.diametro}
+              onChange={handleInputChange}
+              className="input-field border-2 rounded-md p-2 outline-none"
             />
-          </div>
-        </>
+          )}
+          <input
+            type="number"
+            name="profundidade"
+            placeholder="Profundidade média (m)"
+            value={inputs.profundidade}
+            onChange={handleInputChange}
+            className="input-field border-2 rounded-md p-2 outline-none"
+          />
+          <Buttons
+            onClick={calcularVolume}
+            className="btn-primary mt-2 bg-primary rounded-md p-2 outline-none text-white"
+            name="Calcular volume e produtos"
+          ></Buttons>
+        </div>
       )}
 
-      {/* Lógica de Pergunta para cálculo dos produtos */}
-      {step === 4 && (
-        <div className="space-y-3">
-          <p className="text-lg font-medium text-gray-700">
+      {step === "askProducts" && (
+        <div className="space-y-2">
+          <p>
             Gostaria de saber os produtos a serem utilizados na sua piscina?
           </p>
-          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
+          <div className="flex flex-col gap-2">
             <Buttons
-              name="✅ Sim, mostrar produtos"
+              className="px-6 py-2 bg-primary text-white rounded-lg"
               onClick={() => {
-                adicionarMensagem("Sim", "user");
-                // mostrarProdutosExtras();
-                setStep(2);
+                setStep("productOption");
+                delayResponse("Você deseja qual tipo de tratamento?", null);
               }}
-              textSize="text-paragraph1"
-            />
+              name="Sim"
+            ></Buttons>
             <Buttons
-              name="🔁 Não, era somente isso"
+              className="px-6 py-2 bg-gray-400 text-white rounded-lg"
               onClick={() => {
-                adicionarMensagem("Não", "user");
-                adicionarMensagem(
-                  "Então aqui finalizamos o cálculo, obrigado."
-                );
-                setStep(5);
+                setStep("reset");
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    from: "bot",
+                    text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
+                  },
+                ]);
               }}
-              textSize="text-paragraph1"
-            />
+              name="Não"
+            ></Buttons>
           </div>
         </div>
       )}
 
-      {/* Lógica de Reset */}
-      {step === 5 && (
-        <div className=" m-auto w-full">
+      {step === "circum" && (
+        <div className="flex flex-col space-y-2 mt-2">
           <Buttons
-            name="🔁 Reiniciar Diálogo"
-            onClick={resetar}
-            textSize="text-paragraph1"
-            className="flex m-auto"
-          />
+            onClick={handleCircunstancial}
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Calcular produtos circunstanciais"
+          ></Buttons>
         </div>
       )}
 
-      {/* Lógica de tratamento ou abandono para botão inicial secundário */}
-      {step === 6 && (
-        <>
-          <p className="text-lg font-medium text-gray-700">
-            Qual o tipo de tratamento?
-          </p>
-          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
+      {step === "askCircunstancial" && (
+        <div className="space-y-2">
+          <p>Gostaria de saber também os produtos circunstanciais?</p>
+          <div className="flex flex-col gap-2">
             <Buttons
-              name="Primeiro tratamento ou abandono"
-              onClick={() => {
-                setTratamentoTipo("primeiro");
-                adicionarMensagem("Primeiro tratamento ou abandono", "user");
-                setStep(7);
-              }}
-              textSize="text-paragraph1"
-            />
+              className="px-6 py-2 bg-primary text-white rounded-lg"
+              onClick={() => handleCircunstancial()}
+              name="Sim"
+            ></Buttons>
             <Buttons
-              name="Manutenção ou preventivo"
+              className="px-6 py-2 bg-gray-400 text-white rounded-lg"
               onClick={() => {
-                setTratamentoTipo("manutencao");
-                adicionarMensagem("Manutenção ou preventivo", "user");
-                setStep(7);
+                setStep("reset");
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    from: "bot",
+                    text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
+                  },
+                ]);
               }}
-              textSize="text-paragraph1"
-            />
+              name="Não"
+            ></Buttons>
           </div>
-        </>
+        </div>
       )}
 
-      {/* Lógica de Pergunta para formato da piscina */}
-      {step === 7 && (
-        <>
-          <p className="text-lg font-medium text-gray-700">
-            Qual o formato da sua piscina?
-          </p>
-          <div className="flex phone1:flex-col tablet1:flex-row gap-4 justify-between items-center">
-            <Buttons
-              name="Sua piscina é quadrada ou retangula?"
-              onClick={() => {
-                setFormato("reta");
-                adicionarMensagem(
-                  "A minha piscina é retangular ou quadrada",
-                  "user"
-                );
-                setStep(8);
-              }}
-              textSize="text-paragraph1"
-            />
-            <Buttons
-              name="Sua piscina é redonda?"
-              onClick={() => {
-                setFormato("redonda");
-                adicionarMensagem("A minha piscina é redonda", "user");
-                setStep(8);
-              }}
-              textSize="text-paragraph1"
-            />
-            <Buttons
-              name="Sua piscina é oval?"
-              onClick={() => {
-                setFormato("oval");
-                adicionarMensagem("A minha piscina é oval", "user");
-                setStep(8);
-              }}
-              textSize="text-paragraph1"
-            />
-          </div>
-        </>
-      )}
-
-      {/* Lógica de Medidas inseridas pelo Usuáo sobre Tratamento */}
-      {step === 8 && (
-        <>
-          <p className="text-lg font-medium text-gray-700">
-            Informe as medidas:
-          </p>
-          <div className="space-y-3">
-            {(formato === "reta" || formato === "oval") && (
-              <>
-                <div>
-                  <label className="block text-sm font-semibold">
-                    Comprimento (m)
-                  </label>
-                  <input
-                    type="number"
-                    value={dimensoes.comprimento}
-                    onChange={(e) =>
-                      setDimensoes({
-                        ...dimensoes,
-                        comprimento: e.target.value,
-                      })
-                    }
-                    className="w-full border border-gray-300 rounded-lg p-2"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold">
-                    Largura (m)
-                  </label>
-                  <input
-                    type="number"
-                    value={dimensoes.largura}
-                    onChange={(e) =>
-                      setDimensoes({ ...dimensoes, largura: e.target.value })
-                    }
-                    className="w-full border border-gray-300 rounded-lg p-2"
-                  />
-                </div>
-              </>
-            )}
-            {formato === "redonda" && (
-              <div>
-                <label className="block text-sm font-semibold">
-                  Diâmetro (m)
-                </label>
-                <input
-                  type="number"
-                  value={dimensoes.diametro}
-                  onChange={(e) =>
-                    setDimensoes({ ...dimensoes, diametro: e.target.value })
-                  }
-                  className="w-full border border-gray-300 rounded-lg p-2"
-                />
-              </div>
-            )}
-            <div>
-              <label className="block text-sm font-semibold">
-                Profundidade (m)
-              </label>
-              <input
-                type="number"
-                value={dimensoes.profundidade}
-                onChange={(e) =>
-                  setDimensoes({ ...dimensoes, profundidade: e.target.value })
-                }
-                className="w-full border border-gray-300 rounded-lg p-2"
-              />
-            </div>
-            <Buttons
-              className="m-auto"
-              textSize="text-paragraph1"
-              name="Calcular Volume e Produtos"
-              onClick={() => {
-                const {
-                  comprimento,
-                  largura,
-                  profundidade,
-                  diametro,
-                  ph,
-                  fundo,
-                } = dimensoes;
-                if (
-                  (formato === "reta" &&
-                    (!comprimento || !largura || !profundidade)) ||
-                  (formato === "oval" &&
-                    (!comprimento || !largura || !profundidade)) ||
-                  (formato === "redonda" && (!diametro || !profundidade))
-                ) {
-                  alert(
-                    "Por favor, preencha todas as medidas antes de continuar."
-                  );
-                  return;
-                }
-
-                adicionarMensagem(
-                  formato === "reta" || formato === "oval"
-                    ? `Comprimento: ${comprimento}m, Largura: ${largura}m, Profundidade: ${profundidade}m`
-                    : `Diâmetro: ${diametro}m, Profundidade: ${profundidade}m`,
-                  "user",
-                  false
-                );
-
-                // Calcula o volume
-                let litros = 0;
-                const p = parseFloat(profundidade);
-
-                if (formato === "reta") {
-                  litros = parseFloat(comprimento) * parseFloat(largura) * p;
-                } else if (formato === "redonda") {
-                  litros =
-                    parseFloat(diametro) * parseFloat(diametro) * p * 0.785;
-                } else if (formato === "oval") {
-                  litros =
-                    parseFloat(comprimento) * parseFloat(largura) * p * 0.785;
-                }
-
-                if (isNaN(litros) || litros <= 0) {
-                  adicionarMensagem("Por favor, insira medidas válidas.");
-                  return;
-                }
-
-                setVolume(litros.toFixed(3));
-
-                // Exibe o volume antes dos produtos
-                adicionarMensagem(
-                  `${litros.toFixed(
-                    3
-                  )} mil litros é o volume de água da sua piscina.`
-                );
-
-                // Calcula e mostra os produtos
-                calcularProdutos(litros);
-
-                // --- Adiciona produtos circunstanciais ---
-                if (formato === "reta") {
-                  if (tratamentoTipo === "primeiro") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade em pó{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17g pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de metais
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de metais
-                        </h1>
-                        <br />
-
-                        <p>
-                          Eliminador de metais (remove metal que reage com o
-                          cloro, deixando a água escura):
-                          <br />
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas{" "}
-                        </h1>
-                        <br />
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  } else if (tratamentoTipo === "manutencao") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade em líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  }
-                }
-                if (formato === "redonda") {
-                  if (tratamentoTipo === "primeiro") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de metais
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de metais
-                        </h1>
-                        <br />
-
-                        <p>
-                          Eliminador de metais (remove metal que reage com o
-                          cloro, deixando a água escura):
-                          <br />
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  } else if (tratamentoTipo === "manutencao") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade em líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  }
-                }
-
-                if (formato === "oval") {
-                  if (tratamentoTipo === "primeiro") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  } else if (tratamentoTipo === "manutencao") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade em líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  }
-                }
-
-                // Vai para o step final
-                setStep(5);
-              }}
-            />
-          </div>
-        </>
+      {step === "reset" && (
+        <Buttons
+          onClick={handleReset}
+          className="btn-primary mt-4 bg-primary p-2 rounded-md text-white"
+          name="Reiniciar cálculo"
+        ></Buttons>
       )}
     </div>
   );
