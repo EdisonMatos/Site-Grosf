@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Buttons from "../interactives/Buttons";
 
 export default function CalculaFacilGrosf() {
   const [messages, setMessages] = useState([
@@ -211,7 +212,7 @@ export default function CalculaFacilGrosf() {
 
   return (
     <div className="flex flex-col max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white">
-      <div className="flex flex-col space-y-4 h-96 overflow-y-auto mb-4">
+      <div className="flex flex-col space-y-4 h-96 overflow-y-auto mb-4 border-2 p-2 rounded-md">
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -228,64 +229,58 @@ export default function CalculaFacilGrosf() {
 
       {step === "start" && (
         <div className="flex flex-col space-y-2">
-          <button
+          <Buttons
             onClick={() => handleStartChoice("Somente o volume da piscina")}
             className="btn-primary bg-primary p-2 rounded-md text-white"
-          >
-            Somente o volume da piscina
-          </button>
-          <button
+            name="Somente o volume da piscina"
+            size="small"
+          ></Buttons>
+          <Buttons
             onClick={() => handleStartChoice("Volume + produtos")}
             className="btn-primary bg-primary p-2 rounded-md text-white"
-          >
-            Volume + produtos
-          </button>
+            name=" Volume + produtos"
+          ></Buttons>
         </div>
       )}
 
       {step === "productOption" && (
         <div className="flex flex-col space-y-2">
-          <button
+          <Buttons
             onClick={() =>
               handleTreatmentOption(
                 "Primeiro tratamento ou longo período de abandono"
               )
             }
             className="btn-primary bg-primary p-2 rounded-md text-white"
-          >
-            Primeiro tratamento ou longo período de abandono
-          </button>
-          <button
+            name="Primeiro tratamento ou longo período de abandono"
+          ></Buttons>
+          <Buttons
             onClick={() =>
               handleTreatmentOption("Apenas manutenção ou preventivo")
             }
             className="btn-primary bg-primary p-2 rounded-md text-white"
-          >
-            Apenas manutenção ou preventivo
-          </button>
+            name="Apenas manutenção ou preventivo"
+          ></Buttons>
         </div>
       )}
 
       {step === "format" && (
         <div className="flex flex-col space-y-2">
-          <button
+          <Buttons
             onClick={() => handleFormatChoice("Quadrada ou retangular")}
             className="btn-primary bg-primary p-2 rounded-md text-white"
-          >
-            Quadrada ou retangular
-          </button>
-          <button
+            name="Quadrada ou retangular"
+          ></Buttons>
+          <Buttons
             onClick={() => handleFormatChoice("Redonda")}
             className="btn-primary bg-primary p-2 rounded-md text-white"
-          >
-            Redonda
-          </button>
-          <button
+            name="Redonda"
+          ></Buttons>
+          <Buttons
             onClick={() => handleFormatChoice("Oval")}
             className="btn-primary bg-primary p-2 rounded-md text-white"
-          >
-            Oval
-          </button>
+            name="Oval"
+          ></Buttons>
         </div>
       )}
 
@@ -299,7 +294,7 @@ export default function CalculaFacilGrosf() {
                 placeholder="Comprimento (m)"
                 value={inputs.comprimento}
                 onChange={handleInputChange}
-                className="input-field"
+                className="input-field border-2 rounded-md p-2 outline-none"
               />
               <input
                 type="number"
@@ -307,7 +302,7 @@ export default function CalculaFacilGrosf() {
                 placeholder="Largura (m)"
                 value={inputs.largura}
                 onChange={handleInputChange}
-                className="input-field"
+                className="input-field border-2 rounded-md p-2 outline-none"
               />
             </>
           )}
@@ -318,7 +313,7 @@ export default function CalculaFacilGrosf() {
               placeholder="Diâmetro (m)"
               value={inputs.diametro}
               onChange={handleInputChange}
-              className="input-field"
+              className="input-field border-2 rounded-md p-2 outline-none"
             />
           )}
           <input
@@ -327,11 +322,13 @@ export default function CalculaFacilGrosf() {
             placeholder="Profundidade média (m)"
             value={inputs.profundidade}
             onChange={handleInputChange}
-            className="input-field"
+            className="input-field border-2 rounded-md p-2 outline-none"
           />
-          <button onClick={calcularVolume} className="btn-primary mt-2">
-            Calcular volume e produtos
-          </button>
+          <Buttons
+            onClick={calcularVolume}
+            className="btn-primary mt-2 bg-primary rounded-md p-2 outline-none text-white"
+            name="Calcular volume e produtos"
+          ></Buttons>
         </div>
       )}
 
@@ -340,72 +337,76 @@ export default function CalculaFacilGrosf() {
           <p>
             Gostaria de saber os produtos a serem utilizados na sua piscina?
           </p>
-          <button
-            className="px-4 py-2 bg-primary text-white rounded-lg"
-            onClick={() => {
-              setStep("productOption");
-              delayResponse("Você deseja qual tipo de tratamento?", null);
-            }}
-          >
-            Sim
-          </button>
-          <button
-            className="px-4 py-2 bg-gray-400 text-white rounded-lg"
-            onClick={() => {
-              setStep("reset");
-              setMessages((prev) => [
-                ...prev,
-                {
-                  from: "bot",
-                  text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
-                },
-              ]);
-            }}
-          >
-            Não
-          </button>
+          <div className="flex gap-4">
+            <Buttons
+              className="px-6 py-2 bg-primary text-white rounded-lg"
+              onClick={() => {
+                setStep("productOption");
+                delayResponse("Você deseja qual tipo de tratamento?", null);
+              }}
+              name="Sim"
+            ></Buttons>
+            <Buttons
+              className="px-6 py-2 bg-gray-400 text-white rounded-lg"
+              onClick={() => {
+                setStep("reset");
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    from: "bot",
+                    text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
+                  },
+                ]);
+              }}
+              name="Não"
+            ></Buttons>
+          </div>
         </div>
       )}
 
       {step === "circum" && (
         <div className="flex flex-col space-y-2 mt-2">
-          <button onClick={handleCircunstancial} className="btn-primary bg-primary p-2 rounded-md text-white">
-            Calcular produtos circunstanciais
-          </button>
+          <Buttons
+            onClick={handleCircunstancial}
+            className="btn-primary bg-primary p-2 rounded-md text-white"
+            name="Calcular produtos circunstanciais"
+          ></Buttons>
         </div>
       )}
 
       {step === "askCircunstancial" && (
         <div className="space-y-2">
           <p>Gostaria de saber também os produtos circunstanciais?</p>
-          <button
-            className="px-4 py-2 bg-primary text-white rounded-lg"
-            onClick={() => handleCircunstancial()}
-          >
-            Sim
-          </button>
-          <button
-            className="px-4 py-2 bg-gray-400 text-white rounded-lg"
-            onClick={() => {
-              setStep("reset");
-              setMessages((prev) => [
-                ...prev,
-                {
-                  from: "bot",
-                  text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
-                },
-              ]);
-            }}
-          >
-            Não
-          </button>
+          <div className="flex gap-4">
+            <Buttons
+              className="px-6 py-2 bg-primary text-white rounded-lg"
+              onClick={() => handleCircunstancial()}
+              name="Sim"
+            ></Buttons>
+            <Buttons
+              className="px-6 py-2 bg-gray-400 text-white rounded-lg"
+              onClick={() => {
+                setStep("reset");
+                setMessages((prev) => [
+                  ...prev,
+                  {
+                    from: "bot",
+                    text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
+                  },
+                ]);
+              }}
+              name="Não"
+            ></Buttons>
+          </div>
         </div>
       )}
 
       {step === "reset" && (
-        <button onClick={handleReset} className="btn-primary mt-4">
-          Reiniciar cálculo
-        </button>
+        <Buttons
+          onClick={handleReset}
+          className="btn-primary mt-4 bg-primary p-2 rounded-md text-white"
+          name="Reiniciar cálculo"
+        ></Buttons>
       )}
     </div>
   );
