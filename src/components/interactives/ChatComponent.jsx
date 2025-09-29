@@ -103,27 +103,21 @@ export default function ChatPiscina() {
       adicionarMensagem("Produtos para Manutenção:");
 
       if (formato === "reta") {
-        adicionarMensagem(
-          `- Cloro Granulado Tradicional ou Dicloro: ${format(5)}g `
-        );
+        adicionarMensagem(`- Cloro Granulado Tradicional: ${format(5)}g `);
         adicionarMensagem(`- Dicloro puro ou multifunções: ${format(5)}g `);
         adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(9)}g `);
         adicionarMensagem(`- Algicida de manutenção: ${format(5)}ml `);
         adicionarMensagem(`- Clarificante: ${format(3)}ml `);
         adicionarMensagem(`- Elimina Óleo: ${format(7)}ml`);
       } else if (formato === "redonda") {
-        adicionarMensagem(
-          `- Cloro Granulado Tradicional ou Dicloro: ${format(5)}g `
-        );
+        adicionarMensagem(`- Cloro Granulado Tradicional: ${format(5)}g `);
         adicionarMensagem(`- Dicloro puro ou multifunções: ${format(5)}g `);
         adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(9)}g `);
         adicionarMensagem(`- Algicida de manutenção: ${format(5)}ml `);
         adicionarMensagem(`- Clarificante: ${format(3)}ml `);
         adicionarMensagem(`- Elimina Óleo: ${format(7)}ml`);
       } else if (formato === "oval") {
-        adicionarMensagem(
-          `- Cloro Granulado Tradicional ou Dicloro: ${format(5)}g `
-        );
+        adicionarMensagem(`- Cloro Granulado Tradicional: ${format(5)}g `);
         adicionarMensagem(`- Dicloro puro ou multifunções: ${format(5)}g `);
         adicionarMensagem(`- Cloro Granulado 10 em 1: ${format(9)}g `);
         adicionarMensagem(`- Algicida de manutenção: ${format(5)}ml `);
@@ -187,6 +181,13 @@ export default function ChatPiscina() {
     });
     setMensagens([]);
   };
+
+  function calcularDosagem(volumeLitros, dosagemPor1000L) {
+    // volumeLitros deve ser número puro, em litros
+    return ((volumeLitros / 1000) * dosagemPor1000L).toFixed(2);
+  }
+
+  // Função para converter volume para número em litros
 
   return (
     <div className="phone1:w-[95%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
@@ -388,7 +389,7 @@ export default function ChatPiscina() {
               />
             </div>
             <Buttons
-            className="m-auto"
+              className="m-auto"
               textSize="text-paragraph1"
               name="Calcular Volume"
               onClick={() => {
@@ -606,14 +607,8 @@ export default function ChatPiscina() {
               textSize="text-paragraph1"
               name="Calcular Volume e Produtos"
               onClick={() => {
-                const {
-                  comprimento,
-                  largura,
-                  profundidade,
-                  diametro,
-                  ph,
-                  fundo,
-                } = dimensoes;
+                const { comprimento, largura, profundidade, diametro } =
+                  dimensoes;
                 if (
                   (formato === "reta" &&
                     (!comprimento || !largura || !profundidade)) ||
@@ -676,297 +671,127 @@ export default function ChatPiscina() {
                       </h1>
                     );
 
-                    // Redutor de pH
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Redutor de pH
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
+                          Se pH estiver entre 7ppm e 8ppm:{" "}
+                          {calcularDosagem(volume, 5)} ml <br />
+                          Se pH estiver acima de 8ppm:{" "}
+                          {calcularDosagem(volume, 8)} ml
                         </p>
                       </div>
                     );
 
-                    // Elevador de pH em pó
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Elevador de pH em pó
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
+                          Se pH estiver entre 6,8ppm e 7ppm:{" "}
+                          {calcularDosagem(volume, 5)} g <br />
+                          Se pH estiver abaixo de 6,8ppm:{" "}
+                          {calcularDosagem(volume, 10)} g
                         </p>
                       </div>
                     );
 
-                    // Elevador de pH líquido
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Elevador de pH líquido
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
+                          Se pH estiver entre 6,8ppm e 7ppm:{" "}
+                          {calcularDosagem(volume, 15)} ml <br />
+                          Se pH estiver abaixo de 6,8ppm:{" "}
+                          {calcularDosagem(volume, 20)} ml
                         </p>
                       </div>
                     );
 
-                    // Elevador de alcalinidade em pó
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade em pó{" "}
+                          Elevador de alcalinidade em pó
                         </h1>
-                        <br />
-
                         <p>
-                          - 17g pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
+                          - {calcularDosagem(volume, 17)} g até elevar a
+                          alcalinidade
                         </p>
                       </div>
                     );
 
-                    // Auxiliar de aspiração
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
+                          Auxiliar de aspiração
                         </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
+                        <p>- {calcularDosagem(volume, 6)} ml</p>
                       </div>
                     );
 
-                    // Água turva, elimina manchas ou inibidor de manchas
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
+                          Água turva / manchas
                         </h1>
-                        <br />
                         <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
+                          Fundo visível: {calcularDosagem(volume, 15)} ml <br />
+                          Fundo invisível: {calcularDosagem(volume, 50)} ml
                         </p>
                       </div>
                     );
 
-                    // Eliminador de metais
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Eliminador de metais
                         </h1>
-                        <br />
-
                         <p>
-                          Eliminador de metais (remove metal que reage com o
-                          cloro, deixando a água escura):
-                          <br />
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
+                          Fundo visível: {calcularDosagem(volume, 15)} ml <br />
+                          Fundo invisível: {calcularDosagem(volume, 50)} ml
                         </p>
                       </div>
                     );
 
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas{" "}
-                        </h1>
-                        <br />
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  } else if (tratamentoTipo === "manutencao") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade em líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Eliminador de algas
                         </h1>
-                        <br />
                         <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
+                          - {calcularDosagem(volume, 10)} ml sempre que
+                          necessário
                         </p>
                       </div>
                     );
 
-                    // Limpa bordas
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Limpa bordas
                         </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
+                        <p>Usar quantidade razoável em esponja</p>
+                      </div>
+                    );
+                  }
+
+                  if (tratamentoTipo === "manutencao") {
+                    adicionarMensagem(
+                      <div>
+                        <h1 className="font-medium text-primary">
+                          Cloro granulado
+                        </h1>
+                        <p>- {calcularDosagem(volume, 4)} g diariamente</p>
                       </div>
                     );
                   }
                 }
+
                 if (formato === "redonda") {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
@@ -976,293 +801,65 @@ export default function ChatPiscina() {
                       </h1>
                     );
 
-                    // Redutor de pH
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Redutor de pH
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
+                          Se pH estiver entre 7ppm e 8ppm:{" "}
+                          {calcularDosagem(volume, 5)} ml <br />
+                          Se pH estiver acima de 8ppm:{" "}
+                          {calcularDosagem(volume, 8)} ml
                         </p>
                       </div>
                     );
 
-                    // Elevador de pH em pó
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Elevador de pH em pó
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
+                          Se pH estiver entre 6,8ppm e 7ppm:{" "}
+                          {calcularDosagem(volume, 5)} g <br />
+                          Se pH estiver abaixo de 6,8ppm:{" "}
+                          {calcularDosagem(volume, 10)} g
                         </p>
                       </div>
                     );
 
-                    // Elevador de pH líquido
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Elevador de pH líquido
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
+                          Se pH estiver entre 6,8ppm e 7ppm:{" "}
+                          {calcularDosagem(volume, 15)} ml <br />
+                          Se pH estiver abaixo de 6,8ppm:{" "}
+                          {calcularDosagem(volume, 20)} ml
                         </p>
                       </div>
                     );
 
-                    // Elevador de alcalinidade líquido
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
+                          Auxiliar de aspiração
                         </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
+                        <p>- {calcularDosagem(volume, 6)} ml</p>
                       </div>
                     );
+                  }
 
-                    // Auxiliar de aspiração
+                  if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
+                          Cloro granulado
                         </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de metais
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de metais
-                        </h1>
-                        <br />
-
-                        <p>
-                          Eliminador de metais (remove metal que reage com o
-                          cloro, deixando a água escura):
-                          <br />
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  } else if (tratamentoTipo === "manutencao") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade em líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
+                        <p>- {calcularDosagem(volume, 4)} g diariamente</p>
                       </div>
                     );
                   }
@@ -1277,292 +874,65 @@ export default function ChatPiscina() {
                       </h1>
                     );
 
-                    // Redutor de pH
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Redutor de pH
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
+                          Se pH estiver entre 7ppm e 8ppm:{" "}
+                          {calcularDosagem(volume, 5)} ml <br />
+                          Se pH estiver acima de 8ppm:{" "}
+                          {calcularDosagem(volume, 8)} ml
                         </p>
                       </div>
                     );
 
-                    // Elevador de pH em pó
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Elevador de pH em pó
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
+                          Se pH estiver entre 6,8ppm e 7ppm:{" "}
+                          {calcularDosagem(volume, 5)} g <br />
+                          Se pH estiver abaixo de 6,8ppm:{" "}
+                          {calcularDosagem(volume, 10)} g
                         </p>
                       </div>
                     );
 
-                    // Elevador de pH líquido
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
                           Elevador de pH líquido
                         </h1>
-                        <br />
                         <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
+                          Se pH estiver entre 6,8ppm e 7ppm:{" "}
+                          {calcularDosagem(volume, 15)} ml <br />
+                          Se pH estiver abaixo de 6,8ppm:{" "}
+                          {calcularDosagem(volume, 20)} ml
                         </p>
                       </div>
                     );
 
-                    // Elevador de alcalinidade líquido
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
+                          Auxiliar de aspiração
                         </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
+                        <p>- {calcularDosagem(volume, 6)} ml</p>
                       </div>
                     );
+                  }
 
-                    // Auxiliar de aspiração
+                  if (tratamentoTipo === "manutencao") {
                     adicionarMensagem(
                       <div>
                         <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
+                          Cloro granulado
                         </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
-                      </div>
-                    );
-                  } else if (tratamentoTipo === "manutencao") {
-                    adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
-                    );
-
-                    // Redutor de pH
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Redutor de pH
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 7ppm e 8ppm: <br />
-                          - 5ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver acima de 8ppm: <br />- 8ml pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH em pó
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH em pó
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br /> - 5g pra
-                          cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br /> - 10g pra cada
-                          1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de pH líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de pH líquido
-                        </h1>
-                        <br />
-                        <p>
-                          Se pH estiver entre 6,8ppm e 7ppm: <br />
-                          - 15ml pra cada 1.000L
-                          <br />
-                          <br />
-                          Se pH estiver abaixo de 6,8ppm: <br />- 20ml pra cada
-                        </p>
-                      </div>
-                    );
-
-                    // Elevador de alcalinidade em líquido
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Elevador de alcalinidade líquido{" "}
-                        </h1>
-                        <br />
-
-                        <p>
-                          - 17ml pra cada 1.000L até elevar a alcalinidade para
-                          100ppm
-                        </p>
-                      </div>
-                    );
-
-                    // Auxiliar de aspiração
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Auxiliar de aspiração{" "}
-                        </h1>
-                        <br />
-                        <p> - 6ml pra cada 1.000L</p>
-                      </div>
-                    );
-
-                    // Água turva, elimina manchas ou inibidor de manchas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água turva, elimina manchas ou inibidor de manchas
-                        </h1>
-                        <br />
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Água de poço
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Água de poço
-                        </h1>
-                        <br />
-
-                        <p>
-                          - Se o fundo da piscina estiver visível: 15ml pra cada
-                          1.000L
-                          <br />- Se o fundo da piscina estiver invisível: 50ml
-                          pra cada 1.000L
-                        </p>
-                      </div>
-                    );
-
-                    // Eliminador de algas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Eliminador de algas
-                        </h1>
-                        <br />
-
-                        <p>
-                          Eliminador de algas (previne surgimento de algas):
-                          <br />- 10ml pra cada 1.000L sempre que necessário
-                        </p>
-                      </div>
-                    );
-
-                    // Limpa bordas
-                    adicionarMensagem(
-                      <div>
-                        <h1 className="font-medium text-primary">
-                          Limpa bordas
-                        </h1>
-                        <br />
-                        <p>
-                          Utilizar quantidade razoável numa esponja de limpeza
-                          na sua parte menos agressiva
-                        </p>
+                        <p>- {calcularDosagem(volume, 4)} g diariamente</p>
                       </div>
                     );
                   }
