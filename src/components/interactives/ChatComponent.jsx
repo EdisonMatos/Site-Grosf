@@ -188,6 +188,11 @@ export default function ChatPiscina() {
     setMensagens([]);
   };
 
+  // Função para calcular a quantidade de produto
+  const calcularQuantidade = (quantidadePor1000L, volumePiscina) => {
+    return (quantidadePor1000L * volumePiscina) / 1000;
+  };
+
   return (
     <div className="phone1:w-[95%] desktop1:w-[60%] h-auto mx-auto font-mainFont bg-white p-6 rounded-xl space-y-6 border border-gray-200">
       <h2 className="text-2xl font-bold text-center text-primary uppercase tracking-wide">
@@ -388,7 +393,7 @@ export default function ChatPiscina() {
               />
             </div>
             <Buttons
-            className="m-auto"
+              className="m-auto"
               textSize="text-paragraph1"
               name="Calcular Volume"
               onClick={() => {
@@ -670,10 +675,20 @@ export default function ChatPiscina() {
                 if (formato === "reta") {
                   if (tratamentoTipo === "primeiro") {
                     adicionarMensagem(
-                      <h1 className="text-[16px] text-primary font-bold">
-                        Em qualquer dos casos, além do que já foi mostrado, é
-                        preciso adicionar:
-                      </h1>
+                      <div>
+                        <h1 className="font-medium text-primary">
+                          Redutor de pH
+                        </h1>
+                        <br />
+                        <p>
+                          Se pH estiver entre 7ppm e 8ppm: <br />-{" "}
+                          {calcularQuantidade(5, volumePiscina)}ml
+                          <br />
+                          <br />
+                          Se pH estiver acima de 8ppm: <br />-{" "}
+                          {calcularQuantidade(8, volumePiscina)}ml
+                        </p>
+                      </div>
                     );
 
                     // Redutor de pH
