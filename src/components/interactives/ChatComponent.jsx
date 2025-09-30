@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Buttons from "../interactives/Buttons";
 
 export default function CalculaFacilGrosf() {
@@ -104,13 +104,13 @@ export default function CalculaFacilGrosf() {
     setVolume(v);
 
     if (userChoice === "Somente o volume da piscina") {
-      delayResponse(`O volume da piscina é ${v.toFixed(2)} litros.`, () =>
+      delayResponse(`O volume da piscina é ${v.toFixed(2)} mil litros.`, () =>
         setStep("askProducts")
       );
     } else {
       // Option2: calcular produtos
       delayResponse(
-        `O volume da piscina é ${v.toFixed(2)} litros. Calculando produtos...`,
+        `O volume da piscina é ${v.toFixed(2)} mil litros. Calculando produtos...`,
         () => calcularProdutos(v)
       );
     }
@@ -223,15 +223,29 @@ export default function CalculaFacilGrosf() {
     setTreatmentOption(null);
   };
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({
+        top: containerRef.current.scrollHeight,
+        behavior: "smooth", // rolagem suave
+      });
+    }
+  }, [messages]);
+
   return (
-    <div className="flex flex-col max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white">
-      <div className="flex flex-col space-y-4 h-96 overflow-y-auto mb-4 border-2 p-2 rounded-md">
+    <div className="flex flex-col max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
+      <div
+        ref={containerRef}
+        className="flex flex-col space-y-4 h-72 overflow-y-auto phone1:pt-[280px] phone2:pt-[230px] mb-4 border-2 p-2 rounded-md"
+      >
         {messages.map((msg, idx) => (
           <div
             key={idx}
             className={`p-2 rounded ${
               msg.from === "bot"
-                ? "bg-gray-200 self-start whitespace-pre-line" // <--- aqui
+                ? "bg-gray-200 self-start whitespace-pre-line"
                 : "bg-primary text-white self-end"
             }`}
           >
@@ -244,13 +258,13 @@ export default function CalculaFacilGrosf() {
         <div className="flex flex-col space-y-2">
           <Buttons
             onClick={() => handleStartChoice("Somente o volume da piscina")}
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Somente o volume da piscina"
             size="small"
           ></Buttons>
           <Buttons
             onClick={() => handleStartChoice("Volume + produtos")}
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name=" Volume + produtos"
           ></Buttons>
         </div>
@@ -264,14 +278,14 @@ export default function CalculaFacilGrosf() {
                 "Primeiro tratamento ou longo período de abandono"
               )
             }
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Primeiro tratamento ou longo período de abandono"
           ></Buttons>
           <Buttons
             onClick={() =>
               handleTreatmentOption("Apenas manutenção ou preventivo")
             }
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Apenas manutenção ou preventivo"
           ></Buttons>
         </div>
@@ -281,17 +295,17 @@ export default function CalculaFacilGrosf() {
         <div className="flex flex-col space-y-2">
           <Buttons
             onClick={() => handleFormatChoice("Quadrada ou retangular")}
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Quadrada ou retangular"
           ></Buttons>
           <Buttons
             onClick={() => handleFormatChoice("Redonda")}
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Redonda"
           ></Buttons>
           <Buttons
             onClick={() => handleFormatChoice("Oval")}
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Oval"
           ></Buttons>
         </div>
@@ -339,7 +353,7 @@ export default function CalculaFacilGrosf() {
           />
           <Buttons
             onClick={calcularVolume}
-            className="btn-primary mt-2 bg-primary rounded-md p-2 outline-none text-white"
+            className="btn-primary w-full mt-2 bg-primary rounded-md p-2 outline-none text-white"
             name="Calcular volume e produtos"
           ></Buttons>
         </div>
@@ -352,7 +366,7 @@ export default function CalculaFacilGrosf() {
           </p>
           <div className="flex flex-col gap-2">
             <Buttons
-              className="px-6 py-2 bg-primary text-white rounded-lg"
+              className="px-6 py-2 w-full bg-primary text-white rounded-lg"
               onClick={() => {
                 setStep("productOption");
                 delayResponse("Você deseja qual tipo de tratamento?", null);
@@ -360,7 +374,7 @@ export default function CalculaFacilGrosf() {
               name="Sim"
             ></Buttons>
             <Buttons
-              className="px-6 py-2 bg-gray-400 text-white rounded-lg"
+              className="px-6 py-2 w-full bg-gray-400 text-white rounded-lg"
               onClick={() => {
                 setStep("reset");
                 setMessages((prev) => [
@@ -381,7 +395,7 @@ export default function CalculaFacilGrosf() {
         <div className="flex flex-col space-y-2 mt-2">
           <Buttons
             onClick={handleCircunstancial}
-            className="btn-primary bg-primary p-2 rounded-md text-white"
+            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Calcular produtos circunstanciais"
           ></Buttons>
         </div>
@@ -392,12 +406,12 @@ export default function CalculaFacilGrosf() {
           <p>Gostaria de saber também os produtos circunstanciais?</p>
           <div className="flex flex-col gap-2">
             <Buttons
-              className="px-6 py-2 bg-primary text-white rounded-lg"
+              className="px-6 py-2 w-full bg-primary text-white rounded-lg"
               onClick={() => handleCircunstancial()}
               name="Sim"
             ></Buttons>
             <Buttons
-              className="px-6 py-2 bg-gray-400 text-white rounded-lg"
+              className="px-6 py-2 w-full bg-gray-400 text-white rounded-lg"
               onClick={() => {
                 setStep("reset");
                 setMessages((prev) => [
@@ -417,7 +431,7 @@ export default function CalculaFacilGrosf() {
       {step === "reset" && (
         <Buttons
           onClick={handleReset}
-          className="btn-primary mt-4 bg-primary p-2 rounded-md text-white"
+          className="btn-primary w-full mt-4 bg-primary p-2 rounded-md text-white"
           name="Reiniciar cálculo"
         ></Buttons>
       )}
