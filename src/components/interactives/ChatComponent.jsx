@@ -104,13 +104,13 @@ export default function CalculaFacilGrosf() {
     setVolume(v);
 
     if (userChoice === "Somente o volume da piscina") {
-      delayResponse(`O volume da piscina é ${v.toFixed(2)} litros.`, () =>
+      delayResponse(`O volume da piscina é ${v.toFixed(2)} mil litros.`, () =>
         setStep("askProducts")
       );
     } else {
       // Option2: calcular produtos
       delayResponse(
-        `O volume da piscina é ${v.toFixed(2)} litros. Calculando produtos...`,
+        `O volume da piscina é ${v.toFixed(2)} mil litros. Calculando produtos...`,
         () => calcularProdutos(v)
       );
     }
