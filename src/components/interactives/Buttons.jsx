@@ -7,28 +7,29 @@ function Buttons({
   name,
   icon,
   className: customClassName = "",
-  textSize = "text-base", // 👈 nova prop para controlar o tamanho do texto
+  textSize = "text-base", // controla tamanho do texto
+  width = "w-auto", // 👈 nova prop para controlar a largura
 }) {
   const getButtonConfig = () => {
     switch (type) {
       case "retanguloRedondo":
         return {
           className:
-            "w-16 h-16 bg-red-500 cursor-pointer select-none rounded-full border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150",
+            "h-16 bg-red-500 cursor-pointer select-none rounded-full border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150",
           label: name || "Love Me",
           icon: icon,
         };
       case "esfera":
         return {
           className:
-            "w-16 h-16 bg-red-500 rounded-full cursor-pointer select-none border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150",
+            "h-16 bg-red-500 rounded-full cursor-pointer select-none border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150",
           label: name || "?",
         };
       case "retangular":
       default:
         return {
           className:
-            "w-full mb-3 px-6 h-14 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#01435C] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#006489]",
+            "mb-3 px-6 h-14 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#01435C] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#006489]",
           label: name || "Active",
           icon: icon,
         };
@@ -36,7 +37,7 @@ function Buttons({
   };
 
   const { className, label } = getButtonConfig();
-  const finalClassName = `${className} ${customClassName}`;
+  const finalClassName = `${width} ${className} ${customClassName}`;
 
   const handleClick = () => {
     if (onClick) {
@@ -52,7 +53,7 @@ function Buttons({
         <span
           className={`flex w-full items-center justify-center h-full gap-3 font-normal text-center text-white ${textSize}`}
         >
-          {icon} {name}
+          {icon} {label}
         </span>
       </div>
     </div>
