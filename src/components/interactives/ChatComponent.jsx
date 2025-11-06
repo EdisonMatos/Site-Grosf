@@ -104,59 +104,63 @@ export default function CalculaFacilGrosf() {
     setVolume(v);
 
     if (userChoice === "Somente o volume da piscina") {
-      delayResponse(`O volume da piscina é ${v.toFixed(2)} mil litros.`, () =>
+      delayResponse(`O volume da piscina é ${v.toFixed(3)} mil litros.`, () =>
         setStep("askProducts")
       );
     } else {
       // Option2: calcular produtos
       delayResponse(
-        `O volume da piscina é ${v.toFixed(2)} mil litros. Calculando produtos...`,
+        `O volume da piscina é ${v.toFixed(
+          2
+        )} mil litros. Calculando produtos...`,
         () => calcularProdutos(v)
       );
     }
   };
 
   const calcularProdutos = (vol) => {
-    const volumeM3 = vol / 1000;
+    const volumeM3 = vol;
     const produtos = [];
 
     if (format === "Quadrada ou retangular") {
       produtos.push(
-        `Cloro Granulado Tradicional: ${(14 * volumeM3).toFixed(2)} g`
+        `- Cloro Granulado Tradicional: ${Math.round(14 * volumeM3)} g`
       );
       produtos.push(
-        `Dicloro Puro ou Multifunções: ${(10 * volumeM3).toFixed(2)} g`
+        `- Dicloro Puro ou Multifunções: ${Math.round(10 * volumeM3)} g`
       );
-      produtos.push(`Cloro Granulado 10 em 1: ${(18 * volumeM3).toFixed(2)} g`);
-      produtos.push(`Algicida de choque: ${(5 * volumeM3).toFixed(2)} ml`);
-      produtos.push(`Clarificante: ${(6 * volumeM3).toFixed(2)} ml`);
-      produtos.push(`Elimina óleo: ${(14 * volumeM3).toFixed(2)} ml`);
+      produtos.push(
+        `- Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3)} g`
+      );
+      produtos.push(`- Algicida de choque: ${Math.round(5 * volumeM3)} ml`);
+      produtos.push(`- Clarificante: ${Math.round(6 * volumeM3)} ml`);
+      produtos.push(`- Elimina óleo: ${Math.round(14 * volumeM3)} ml`);
     } else if (format === "Oval") {
       produtos.push(
-        `Cloro Granulado Tradicional: ${(14 * volumeM3).toFixed(2)} g`
+        `- Cloro Granulado Tradicional: ${Math.round(14 * volumeM3)} g`
       );
       produtos.push(
-        `OU Dicloro Puro ou Multifunções: ${(10 * volumeM3).toFixed(2)} g`
+        `OU Dicloro Puro ou Multifunções: ${Math.round(10 * volumeM3)} g`
       );
       produtos.push(
-        `OU Cloro Granulado 10 em 1: ${(18 * volumeM3).toFixed(2)} g`
+        `OU Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3)} g`
       );
-      produtos.push(`Algicida de choque: ${(5 * volumeM3).toFixed(2)} ml`);
-      produtos.push(`Clarificante: ${(6 * volumeM3).toFixed(2)} ml`);
-      produtos.push(`Elimina óleo: ${(14 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Algicida de choque: ${Math.round(5 * volumeM3)} ml`);
+      produtos.push(`Clarificante: ${Math.round(6 * volumeM3)} ml`);
+      produtos.push(`Elimina óleo: ${Math.round(14 * volumeM3)} ml`);
     } else if (format === "Redonda") {
       produtos.push(
-        `Cloro Granulado Tradicional: ${(12 * volumeM3).toFixed(2)} g`
+        `- Cloro Granulado Tradicional: ${Math.round(12 * volumeM3)} g`
       );
       produtos.push(
-        `OU Dicloro Puro ou Multifunções: ${(9 * volumeM3).toFixed(2)} g`
+        `OU Dicloro Puro ou Multifunções: ${Math.round(9 * volumeM3)} g`
       );
       produtos.push(
-        `OU Cloro Granulado 10 em 1: ${(16 * volumeM3).toFixed(2)} g`
+        `OU Cloro Granulado 10 em 1: ${Math.round(16 * volumeM3)} g`
       );
-      produtos.push(`Algicida de choque: ${(4 * volumeM3).toFixed(2)} ml`);
-      produtos.push(`Clarificante: ${(5 * volumeM3).toFixed(2)} ml`);
-      produtos.push(`Elimina óleo: ${(12 * volumeM3).toFixed(2)} ml`);
+      produtos.push(`Algicida de choque: ${Math.round(4 * volumeM3)} ml`);
+      produtos.push(`Clarificante: ${Math.round(5 * volumeM3)} ml`);
+      produtos.push(`Elimina óleo: ${Math.round(12 * volumeM3)} ml`);
     }
 
     // Adiciona produtos na mensagem
@@ -173,30 +177,34 @@ export default function CalculaFacilGrosf() {
   };
 
   const handleCircunstancial = () => {
-    const volumeM3 = volume / 1000;
+    const volumeM3 = volume;
     const circ = [];
 
     if (phValue >= 7 && phValue <= 8)
-      circ.push(`Redutor de pH: ${(5 * volumeM3).toFixed(2)} ml`);
+      circ.push(`- Redutor de pH: ${Math.round(5 * volumeM3)} ml`);
     else if (phValue > 8)
-      circ.push(`Redutor de pH: ${(8 * volumeM3).toFixed(2)} ml`);
+      circ.push(`- Redutor de pH: ${Math.round(8 * volumeM3)} ml`);
 
     circ.push(
-      `Elevador de alcalinidade em pó: ${(17 * volumeM3).toFixed(2)} g`
+      `- Elevador de alcalinidade em pó: ${Math.round(17 * volumeM3)} g`
     );
-    circ.push(`Auxiliar de aspiração: ${(6 * volumeM3).toFixed(2)} ml`);
+    circ.push(`- Auxiliar de aspiração: ${Math.round(6 * volumeM3)} ml`);
 
     if (fundoVisivel)
-      circ.push(`Água turva/elimina manchas: ${(15 * volumeM3).toFixed(2)} ml`);
+      circ.push(
+        `- Água turva/elimina manchas: ${Math.round(15 * volumeM3)} ml`
+      );
     else
-      circ.push(`Água turva/elimina manchas: ${(50 * volumeM3).toFixed(2)} ml`);
+      circ.push(
+        `- Água turva/elimina manchas: ${Math.round(50 * volumeM3)} ml`
+      );
 
     if (fundoVisivel)
-      circ.push(`Eliminador de metais: ${(15 * volumeM3).toFixed(2)} ml`);
-    else circ.push(`Eliminador de metais: ${(50 * volumeM3).toFixed(2)} ml`);
+      circ.push(`- Eliminador de metais: ${Math.round(15 * volumeM3)} ml`);
+    else circ.push(`- Eliminador de metais: ${Math.round(50 * volumeM3)} ml`);
 
-    circ.push(`Eliminador de algas: ${(10 * volumeM3).toFixed(2)} ml`);
-    circ.push(`Limpa bordas: utilize quantidade razoável numa esponja`);
+    circ.push(`- Eliminador de algas: ${Math.round(10 * volumeM3)} ml`);
+    circ.push(`- Limpa bordas: utilize quantidade razoável numa esponja`);
 
     // Juntando com \n e renderizando com whitespace-pre-line
     const circText = circ.join("\n");
