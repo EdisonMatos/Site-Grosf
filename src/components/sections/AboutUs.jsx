@@ -38,7 +38,7 @@ export default function AboutUs({ modal }) {
         <div>
           <ArticleComponent>
             <div className=" desktop1:flex desktop1:flex-row desktop1:items-start desktop1:justify-between desktop1:gap-[0%]">
-              <div className=" desktop1:w-[60%] desktop3:w-[55%]">
+              <div className=" desktop1:w-[55%] desktop3:w-[55%]">
                 <MotionDivLeftToRight>
                   <SectionArticle
                     articleTitle="Conheça a linda e empolgante história da Grosfestilo"
