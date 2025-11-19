@@ -50,8 +50,8 @@ export default function CalculaFacilGrosf() {
         {
           from: "bot",
           text: `Usando o volume calculado: ${volume.toFixed(
-            2
-          )} litros. Calculando produtos...`,
+            3
+          )} lts. Calculando produtos...`,
         },
       ]);
 
@@ -104,15 +104,13 @@ export default function CalculaFacilGrosf() {
     setVolume(v);
 
     if (userChoice === "Somente o volume da piscina") {
-      delayResponse(`O volume da piscina é ${v.toFixed(3)} mil litros.`, () =>
+      delayResponse(`O volume da piscina é ${v.toFixed(3)} lts.`, () =>
         setStep("askProducts")
       );
     } else {
       // Option2: calcular produtos
       delayResponse(
-        `O volume da piscina é ${v.toFixed(
-          2
-        )} mil litros. Calculando produtos...`,
+        `O volume da piscina é ${v.toFixed(2)} lts. Calculando produtos...`,
         () => calcularProdutos(v)
       );
     }
@@ -124,39 +122,57 @@ export default function CalculaFacilGrosf() {
 
     if (format === "Quadrada ou retangular") {
       produtos.push(
-        `- Cloro Granulado Tradicional: ${Math.round(14 * volumeM3)} g`
+        `- Cloro Granulado Tradicional: ${Math.round(
+          14 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `- Dicloro Puro ou Multifunções: ${Math.round(10 * volumeM3)} g`
+        `- Dicloro Puro ou Multifunções: ${Math.round(
+          10 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `- Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3)} g`
+        `- Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} gramas`
       );
       produtos.push(`- Algicida de choque: ${Math.round(5 * volumeM3)} ml`);
       produtos.push(`- Clarificante: ${Math.round(6 * volumeM3)} ml`);
       produtos.push(`- Elimina óleo: ${Math.round(14 * volumeM3)} ml`);
     } else if (format === "Oval") {
       produtos.push(
-        `- Cloro Granulado Tradicional: ${Math.round(14 * volumeM3)} g`
+        `- Cloro Granulado Tradicional: ${Math.round(
+          14 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Dicloro Puro ou Multifunções: ${Math.round(10 * volumeM3)} g`
+        `OU Dicloro Puro ou Multifunções: ${Math.round(
+          10 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3)} g`
+        `OU Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} gramas`
       );
       produtos.push(`Algicida de choque: ${Math.round(5 * volumeM3)} ml`);
       produtos.push(`Clarificante: ${Math.round(6 * volumeM3)} ml`);
       produtos.push(`Elimina óleo: ${Math.round(14 * volumeM3)} ml`);
     } else if (format === "Redonda") {
       produtos.push(
-        `- Cloro Granulado Tradicional: ${Math.round(12 * volumeM3)} g`
+        `- Cloro Granulado Tradicional: ${Math.round(
+          12 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Dicloro Puro ou Multifunções: ${Math.round(9 * volumeM3)} g`
+        `OU Dicloro Puro ou Multifunções: ${Math.round(
+          9 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Cloro Granulado 10 em 1: ${Math.round(16 * volumeM3)} g`
+        `OU Cloro Granulado 10 em 1: ${Math.round(16 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} gramas`
       );
       produtos.push(`Algicida de choque: ${Math.round(4 * volumeM3)} ml`);
       produtos.push(`Clarificante: ${Math.round(5 * volumeM3)} ml`);
