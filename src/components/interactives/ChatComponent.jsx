@@ -202,7 +202,7 @@ export default function CalculaFacilGrosf() {
       circ.push(`- Redutor de pH: ${Math.round(8 * volumeM3)} ml`);
 
     circ.push(
-      `- Elevador de alcalinidade em pó: ${Math.round(17 * volumeM3)} g`
+      `- Elevador de alcalinidade em pó: ${Math.round(17 * volumeM3)} gramas`
     );
     circ.push(`- Auxiliar de aspiração: ${Math.round(6 * volumeM3)} ml`);
 
