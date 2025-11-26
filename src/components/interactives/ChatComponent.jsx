@@ -122,61 +122,87 @@ export default function CalculaFacilGrosf() {
 
     if (format === "Quadrada ou retangular") {
       produtos.push(
-        `- Cloro Granulado Tradicional: ${Math.round(
+        `- Se usar Cloro Granulado Tradicional: ${Math.round(
           14 * volumeM3
         ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `- Dicloro Puro ou Multifunções: ${Math.round(
+        `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
           10 * volumeM3
         ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `- Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3).toLocaleString(
-          "pt-BR"
-        )} gramas`
+        `- Se usar Cloro Granulado 10 em 1: ${Math.round(
+          18 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
-      produtos.push(`- Algicida de choque: ${Math.round(5 * volumeM3)} ml`);
-      produtos.push(`- Clarificante: ${Math.round(6 * volumeM3)} ml`);
-      produtos.push(`- Elimina óleo: ${Math.round(14 * volumeM3)} ml`);
+      produtos.push(
+        `- Algicida de choque: ${Math.round(5 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
+      produtos.push(
+        `- Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml`
+      );
+      produtos.push(
+        `- Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
     } else if (format === "Oval") {
       produtos.push(
-        `- Cloro Granulado Tradicional: ${Math.round(
+        `- Se usar Cloro Granulado Tradicional: ${Math.round(
           14 * volumeM3
         ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Dicloro Puro ou Multifunções: ${Math.round(
+        `Se usar Dicloro Puro ou Multifunções: ${Math.round(
           10 * volumeM3
         ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Cloro Granulado 10 em 1: ${Math.round(18 * volumeM3).toLocaleString(
-          "pt-BR"
-        )} gramas`
+        `Se usar Cloro Granulado 10 em 1: ${Math.round(
+          18 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
-      produtos.push(`Algicida de choque: ${Math.round(5 * volumeM3)} ml`);
-      produtos.push(`Clarificante: ${Math.round(6 * volumeM3)} ml`);
-      produtos.push(`Elimina óleo: ${Math.round(14 * volumeM3)} ml`);
+      produtos.push(
+        `Algicida de choque: ${Math.round(5 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
+      produtos.push(
+        `Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml`
+      );
+      produtos.push(
+        `Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString("pt-BR")} ml`
+      );
     } else if (format === "Redonda") {
       produtos.push(
-        `- Cloro Granulado Tradicional: ${Math.round(
+        `- Se usar Cloro Granulado Tradicional: ${Math.round(
           12 * volumeM3
         ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Dicloro Puro ou Multifunções: ${Math.round(
+        `Se usar Dicloro Puro ou Multifunções: ${Math.round(
           9 * volumeM3
         ).toLocaleString("pt-BR")} gramas`
       );
       produtos.push(
-        `OU Cloro Granulado 10 em 1: ${Math.round(16 * volumeM3).toLocaleString(
-          "pt-BR"
-        )} gramas`
+        `Se usar Cloro Granulado 10 em 1: ${Math.round(
+          16 * volumeM3
+        ).toLocaleString("pt-BR")} gramas`
       );
-      produtos.push(`Algicida de choque: ${Math.round(4 * volumeM3)} ml`);
-      produtos.push(`Clarificante: ${Math.round(5 * volumeM3)} ml`);
-      produtos.push(`Elimina óleo: ${Math.round(12 * volumeM3)} ml`);
+      produtos.push(
+        `Algicida de choque: ${Math.round(4 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
+      produtos.push(
+        `Clarificante: ${Math.round(5 * volumeM3).toLocaleString("pt-BR")} ml`
+      );
+      produtos.push(
+        `Elimina óleo: ${Math.round(12 * volumeM3).toLocaleString("pt-BR")} ml`
+      );
     }
 
     // Adiciona produtos na mensagem
@@ -197,29 +223,60 @@ export default function CalculaFacilGrosf() {
     const circ = [];
 
     if (phValue >= 7 && phValue <= 8)
-      circ.push(`- Redutor de pH: ${Math.round(5 * volumeM3)} ml`);
+      circ.push(
+        `- Redutor de pH: ${Math.round(5 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
     else if (phValue > 8)
-      circ.push(`- Redutor de pH: ${Math.round(8 * volumeM3)} ml`);
+      circ.push(
+        `- Redutor de pH: ${Math.round(8 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
 
     circ.push(
-      `- Elevador de alcalinidade em pó: ${Math.round(17 * volumeM3)} gramas`
+      `- Elevador de alcalinidade em pó: ${Math.round(
+        17 * volumeM3
+      ).toLocaleString("pt-BR")} gramas`
     );
-    circ.push(`- Auxiliar de aspiração: ${Math.round(6 * volumeM3)} ml`);
+    circ.push(
+      `- Auxiliar de aspiração: ${Math.round(6 * volumeM3).toLocaleString(
+        "pt-BR"
+      )} ml`
+    );
 
     if (fundoVisivel)
       circ.push(
-        `- Água turva/elimina manchas: ${Math.round(15 * volumeM3)} ml`
+        `- Água turva/elimina manchas: ${Math.round(
+          15 * volumeM3
+        ).toLocaleString("pt-BR")} ml`
       );
     else
       circ.push(
-        `- Água turva/elimina manchas: ${Math.round(50 * volumeM3)} ml`
+        `- Água turva/elimina manchas: ${Math.round(
+          50 * volumeM3
+        ).toLocaleString("pt-BR")} ml`
       );
 
     if (fundoVisivel)
-      circ.push(`- Eliminador de metais: ${Math.round(15 * volumeM3)} ml`);
-    else circ.push(`- Eliminador de metais: ${Math.round(50 * volumeM3)} ml`);
+      circ.push(
+        `- Eliminador de metais: ${Math.round(15 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
+    else
+      circ.push(
+        `- Eliminador de metais: ${Math.round(50 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml`
+      );
 
-    circ.push(`- Eliminador de algas: ${Math.round(10 * volumeM3)} ml`);
+    circ.push(
+      `- Eliminador de algas: ${Math.round(10 * volumeM3).toLocaleString(
+        "pt-BR"
+      )} ml`
+    );
     circ.push(`- Limpa bordas: utilize quantidade razoável numa esponja`);
 
     // Juntando com \n e renderizando com whitespace-pre-line
