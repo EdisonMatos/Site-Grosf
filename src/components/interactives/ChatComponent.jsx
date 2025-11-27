@@ -411,36 +411,36 @@ export default function CalculaFacilGrosf() {
                   `Produtos Circunstanciais:`,
 
                   `Redutor de pH:
-                  Se pH estiver entre 7ppm e 8ppm: ${calc(5)}ml
-                  Se pH estiver acima de 8ppm: ${calc(8)}ml`,
+                  Se pH estiver entre 7ppm e 8ppm: ${calc(5)}ml.
+                  Se pH estiver acima de 8ppm: ${calc(8)}ml.`,
 
                   `Elevador de pH em pó:
-                  Se pH estiver entre 6,8ppm e 7ppm: ${calc(5)}gramas
-                  Se pH estiver abaixo de 6,8ppm: ${calc(10)}gramas`,
+                  Se pH estiver entre 6,8ppm e 7ppm: ${calc(5)}gramas.
+                  Se pH estiver abaixo de 6,8ppm: ${calc(10)}gramas.`,
 
                   `Elevador de pH líquido:
-                  Se pH estiver entre 6,8ppm e 7ppm: ${calc(15)}ml
-                  Se pH estiver abaixo de 6,8ppm: ${calc(20)}ml`,
+                  Se pH estiver entre 6,8ppm e 7ppm: ${calc(15)}ml.
+                  Se pH estiver abaixo de 6,8ppm: ${calc(20)}ml.`,
 
                   `Elevador de alcalinidade em pó:
-                  ${calc(17)}g até elevar a alcalinidade para 100ppm`,
+                  ${calc(17)}g até elevar a alcalinidade para 100ppm.`,
 
                   `Auxiliar de aspiração:
-                  ${calc(6)}ml`,
+                  ${calc(6)}ml.`,
 
                   `Água turva, elimina manchas ou inibidor de manchas:
-                  Se o fundo da piscina estiver visível: ${calc(15)}ml
-                  Se o fundo estiver invisível: ${calc(50)}ml`,
+                  Se o fundo da piscina estiver visível: ${calc(15)}ml.
+                  Se o fundo estiver invisível: ${calc(50)}ml.`,
 
                   `Eliminador de metais:
-                  Se o fundo da piscina estiver visível: ${calc(15)}ml
-                  Se o fundo estiver invisível: ${calc(50)}ml`,
+                  Se o fundo da piscina estiver visível: ${calc(15)}ml.
+                  Se o fundo estiver invisível: ${calc(50)}ml.`,
 
                   `Eliminador de algas (preventivo):
-                  ${calc(10)}ml sempre que necessário`,
+                  ${calc(10)}ml sempre que necessário.`,
 
                   `Limpa bordas:
-                  Utilizar quantidade razoável numa esponja`,
+                  Utilizar quantidade razoável numa esponja.`,
 
                   `Aqui encerramos o cálculo, espero ter ajudado.`,
                 ];
