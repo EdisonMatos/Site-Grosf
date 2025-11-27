@@ -158,12 +158,12 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
-        `Se usar Dicloro Puro ou Multifunções: ${Math.round(
+        `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
           10 * volumeM3
         ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
-        `Se usar Cloro Granulado 10 em 1: ${Math.round(
+        `- Se usar Cloro Granulado 10 em 1: ${Math.round(
           18 * volumeM3
         ).toLocaleString("pt-BR")} gramas.`
       );
@@ -185,12 +185,12 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
-        `Se usar Dicloro Puro ou Multifunções: ${Math.round(
+        `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
           9 * volumeM3
         ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
-        `Se usar Cloro Granulado 10 em 1: ${Math.round(
+        `- Se usar Cloro Granulado 10 em 1: ${Math.round(
           16 * volumeM3
         ).toLocaleString("pt-BR")} gramas.`
       );
