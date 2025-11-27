@@ -124,84 +124,84 @@ export default function CalculaFacilGrosf() {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
           14 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
           10 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Cloro Granulado 10 em 1: ${Math.round(
           18 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Algicida de choque: ${Math.round(5 * volumeM3).toLocaleString(
           "pt-BR"
-        )} ml`
+        )} ml.`
       );
       produtos.push(
-        `- Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml`
+        `- Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
       produtos.push(
         `- Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString(
           "pt-BR"
-        )} ml`
+        )} ml.`
       );
     } else if (format === "Oval") {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
           14 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `Se usar Dicloro Puro ou Multifunções: ${Math.round(
           10 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `Se usar Cloro Granulado 10 em 1: ${Math.round(
           18 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `Algicida de choque: ${Math.round(5 * volumeM3).toLocaleString(
           "pt-BR"
-        )} ml`
+        )} ml.`
       );
       produtos.push(
-        `Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml`
+        `Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
       produtos.push(
-        `Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString("pt-BR")} ml`
+        `Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
     } else if (format === "Redonda") {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
           12 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `Se usar Dicloro Puro ou Multifunções: ${Math.round(
           9 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `Se usar Cloro Granulado 10 em 1: ${Math.round(
           16 * volumeM3
-        ).toLocaleString("pt-BR")} gramas`
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `Algicida de choque: ${Math.round(4 * volumeM3).toLocaleString(
           "pt-BR"
-        )} ml`
+        )} ml.`
       );
       produtos.push(
-        `Clarificante: ${Math.round(5 * volumeM3).toLocaleString("pt-BR")} ml`
+        `Clarificante: ${Math.round(5 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
       produtos.push(
-        `Elimina óleo: ${Math.round(12 * volumeM3).toLocaleString("pt-BR")} ml`
+        `Elimina óleo: ${Math.round(12 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
     }
 
@@ -218,81 +218,9 @@ export default function CalculaFacilGrosf() {
     setStep("askCircunstancial");
   };
 
-  // const handleCircunstancial = () => {
-  //   const volumeM3 = volume;
-  //   const circ = [];
-
-  //   if (phValue >= 7 && phValue <= 8)
-  //     circ.push(
-  //       `- Redutor de pH: ${Math.round(5 * volumeM3).toLocaleString(
-  //         "pt-BR"
-  //       )} ml`
-  //     );
-  //   else if (phValue > 8)
-  //     circ.push(
-  //       `- Redutor de pH: ${Math.round(8 * volumeM3).toLocaleString(
-  //         "pt-BR"
-  //       )} ml`
-  //     );
-
-  //   circ.push(
-  //     `- Elevador de alcalinidade em pó: ${Math.round(
-  //       17 * volumeM3
-  //     ).toLocaleString("pt-BR")} gramas`
-  //   );
-  //   circ.push(
-  //     `- Auxiliar de aspiração: ${Math.round(6 * volumeM3).toLocaleString(
-  //       "pt-BR"
-  //     )} ml`
-  //   );
-
-  //   if (fundoVisivel)
-  //     circ.push(
-  //       `- Água turva/elimina manchas: ${Math.round(
-  //         15 * volumeM3
-  //       ).toLocaleString("pt-BR")} ml`
-  //     );
-  //   else
-  //     circ.push(
-  //       `- Água turva/elimina manchas: ${Math.round(
-  //         50 * volumeM3
-  //       ).toLocaleString("pt-BR")} ml`
-  //     );
-
-  //   if (fundoVisivel)
-  //     circ.push(
-  //       `- Eliminador de metais: ${Math.round(15 * volumeM3).toLocaleString(
-  //         "pt-BR"
-  //       )} ml`
-  //     );
-  //   else
-  //     circ.push(
-  //       `- Eliminador de metais: ${Math.round(50 * volumeM3).toLocaleString(
-  //         "pt-BR"
-  //       )} ml`
-  //     );
-
-  //   circ.push(
-  //     `- Eliminador de algas: ${Math.round(10 * volumeM3).toLocaleString(
-  //       "pt-BR"
-  //     )} ml`
-  //   );
-  //   circ.push(`- Limpa bordas: utilize quantidade razoável numa esponja`);
-
-  //   // Juntando com \n e renderizando com whitespace-pre-line
-  //   const circText = circ.join("\n");
-
-  //   delayResponse(<div className="whitespace-pre-line">{circText}</div>, () => {
-  //     setStep("reset");
-  //     setMessages((prev) => [
-  //       ...prev,
-  //       {
-  //         from: "bot",
-  //         text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
-  //       },
-  //     ]);
-  //   });
-  // };
+  const calc = (quantidadePor1000) => {
+    return (volume * quantidadePor1000).toLocaleString("pt-BR");
+  };
 
   const handleReset = () => {
     setMessages([{ from: "bot", text: "Olá! O que você deseja calcular?" }]);
@@ -472,16 +400,6 @@ export default function CalculaFacilGrosf() {
         </div>
       )}
 
-      {/* {step === "circum" && (
-        <div className="flex flex-col space-y-2 mt-2">
-          <Buttons
-            onClick={handleCircunstancial}
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
-            name="Calcular produtos circunstanciais"
-          ></Buttons>
-        </div>
-      )} */}
-
       {step === "askCircunstancial" && (
         <div className="space-y-2">
           <p>Gostaria de saber também os produtos circunstanciais?</p>
@@ -492,40 +410,41 @@ export default function CalculaFacilGrosf() {
                 const msgs = [
                   `Produtos Circunstanciais:`,
 
-                  ` Redutor de pH:
-                      Se pH estiver entre 7ppm e 8ppm: 5ml pra cada 1.000L
-                      Se pH estiver acima de 8ppm: 8ml pra cada 1.000L`,
+                  `Redutor de pH:
+                  Se pH estiver entre 7ppm e 8ppm: ${calc(5)} ml.
+                  Se pH estiver acima de 8ppm: ${calc(8)} ml.`,
 
                   `Elevador de pH em pó:
-                      Se pH estiver entre 6,8ppm e 7ppm: 5g pra cada 1.000L
-                      Se pH estiver abaixo de 6,8ppm: 10g pra cada 1.000L`,
+                  Se pH estiver entre 6,8ppm e 7ppm: ${calc(5)} gramas.
+                  Se pH estiver abaixo de 6,8ppm: ${calc(10)} gramas.`,
 
-                  ` Elevador de pH líquido:
-                      Se pH estiver entre 6,8ppm e 7ppm: 15ml pra cada 1.000L
-                      Se pH estiver abaixo de 6,8ppm: 20ml pra cada 1.000L`,
+                  `Elevador de pH líquido:
+                  Se pH estiver entre 6,8ppm e 7ppm: ${calc(15)} ml.
+                  Se pH estiver abaixo de 6,8ppm: ${calc(20)} ml.`,
 
-                  ` Elevador de alcalinidade em pó:
-                      17g pra cada 1.000L até elevar a alcalinidade para 100ppm`,
+                  `Elevador de alcalinidade em pó:
+                  ${calc(17)}g até elevar a alcalinidade para 100ppm.`,
 
                   `Auxiliar de aspiração:
-                      6ml pra cada 1.000L`,
+                  ${calc(6)} ml.`,
 
-                  ` Água turva, elimina manchas ou inibidor de manchas:
-                      Se o fundo da piscina estiver visível: 15ml pra cada 1.000L
-                      Se o fundo da piscina estiver invisível: 50ml pra cada 1.000L`,
+                  `Água turva, elimina manchas ou inibidor de manchas:
+                  Se o fundo da piscina estiver visível: ${calc(15)} ml.
+                  Se o fundo estiver invisível: ${calc(50)} ml.`,
 
-                  ` Eliminador de metais:
-                      Se o fundo da piscina estiver visível: 15ml pra cada 1.000L
-                      Se o fundo da piscina estiver invisível: 50ml pra cada 1.000L`,
+                  `Eliminador de metais:
+                  Se o fundo da piscina estiver visível: ${calc(15)} ml.
+                  Se o fundo estiver invisível: ${calc(50)} ml.`,
 
-                  `  Eliminador de algas (previne surgimento de algas):
-                      10ml pra cada 1.000L sempre que necessário`,
+                  `Eliminador de algas (preventivo):
+                  ${calc(10)} ml sempre que necessário.`,
 
-                  `  Limpa bordas:
-                      Utilizar quantidade razoável numa esponja de limpeza na parte menos agressiva`,
+                  `Limpa bordas:
+                  Utilizar quantidade razoável numa esponja.`,
 
                   `Aqui encerramos o cálculo, espero ter ajudado.`,
                 ];
+
                 setMessages((prev) => [
                   ...prev,
                   ...msgs.map((m) => ({
