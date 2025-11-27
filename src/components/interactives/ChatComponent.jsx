@@ -218,81 +218,81 @@ export default function CalculaFacilGrosf() {
     setStep("askCircunstancial");
   };
 
-  const handleCircunstancial = () => {
-    const volumeM3 = volume;
-    const circ = [];
+  // const handleCircunstancial = () => {
+  //   const volumeM3 = volume;
+  //   const circ = [];
 
-    if (phValue >= 7 && phValue <= 8)
-      circ.push(
-        `- Redutor de pH: ${Math.round(5 * volumeM3).toLocaleString(
-          "pt-BR"
-        )} ml`
-      );
-    else if (phValue > 8)
-      circ.push(
-        `- Redutor de pH: ${Math.round(8 * volumeM3).toLocaleString(
-          "pt-BR"
-        )} ml`
-      );
+  //   if (phValue >= 7 && phValue <= 8)
+  //     circ.push(
+  //       `- Redutor de pH: ${Math.round(5 * volumeM3).toLocaleString(
+  //         "pt-BR"
+  //       )} ml`
+  //     );
+  //   else if (phValue > 8)
+  //     circ.push(
+  //       `- Redutor de pH: ${Math.round(8 * volumeM3).toLocaleString(
+  //         "pt-BR"
+  //       )} ml`
+  //     );
 
-    circ.push(
-      `- Elevador de alcalinidade em pó: ${Math.round(
-        17 * volumeM3
-      ).toLocaleString("pt-BR")} gramas`
-    );
-    circ.push(
-      `- Auxiliar de aspiração: ${Math.round(6 * volumeM3).toLocaleString(
-        "pt-BR"
-      )} ml`
-    );
+  //   circ.push(
+  //     `- Elevador de alcalinidade em pó: ${Math.round(
+  //       17 * volumeM3
+  //     ).toLocaleString("pt-BR")} gramas`
+  //   );
+  //   circ.push(
+  //     `- Auxiliar de aspiração: ${Math.round(6 * volumeM3).toLocaleString(
+  //       "pt-BR"
+  //     )} ml`
+  //   );
 
-    if (fundoVisivel)
-      circ.push(
-        `- Água turva/elimina manchas: ${Math.round(
-          15 * volumeM3
-        ).toLocaleString("pt-BR")} ml`
-      );
-    else
-      circ.push(
-        `- Água turva/elimina manchas: ${Math.round(
-          50 * volumeM3
-        ).toLocaleString("pt-BR")} ml`
-      );
+  //   if (fundoVisivel)
+  //     circ.push(
+  //       `- Água turva/elimina manchas: ${Math.round(
+  //         15 * volumeM3
+  //       ).toLocaleString("pt-BR")} ml`
+  //     );
+  //   else
+  //     circ.push(
+  //       `- Água turva/elimina manchas: ${Math.round(
+  //         50 * volumeM3
+  //       ).toLocaleString("pt-BR")} ml`
+  //     );
 
-    if (fundoVisivel)
-      circ.push(
-        `- Eliminador de metais: ${Math.round(15 * volumeM3).toLocaleString(
-          "pt-BR"
-        )} ml`
-      );
-    else
-      circ.push(
-        `- Eliminador de metais: ${Math.round(50 * volumeM3).toLocaleString(
-          "pt-BR"
-        )} ml`
-      );
+  //   if (fundoVisivel)
+  //     circ.push(
+  //       `- Eliminador de metais: ${Math.round(15 * volumeM3).toLocaleString(
+  //         "pt-BR"
+  //       )} ml`
+  //     );
+  //   else
+  //     circ.push(
+  //       `- Eliminador de metais: ${Math.round(50 * volumeM3).toLocaleString(
+  //         "pt-BR"
+  //       )} ml`
+  //     );
 
-    circ.push(
-      `- Eliminador de algas: ${Math.round(10 * volumeM3).toLocaleString(
-        "pt-BR"
-      )} ml`
-    );
-    circ.push(`- Limpa bordas: utilize quantidade razoável numa esponja`);
+  //   circ.push(
+  //     `- Eliminador de algas: ${Math.round(10 * volumeM3).toLocaleString(
+  //       "pt-BR"
+  //     )} ml`
+  //   );
+  //   circ.push(`- Limpa bordas: utilize quantidade razoável numa esponja`);
 
-    // Juntando com \n e renderizando com whitespace-pre-line
-    const circText = circ.join("\n");
+  //   // Juntando com \n e renderizando com whitespace-pre-line
+  //   const circText = circ.join("\n");
 
-    delayResponse(<div className="whitespace-pre-line">{circText}</div>, () => {
-      setStep("reset");
-      setMessages((prev) => [
-        ...prev,
-        {
-          from: "bot",
-          text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
-        },
-      ]);
-    });
-  };
+  //   delayResponse(<div className="whitespace-pre-line">{circText}</div>, () => {
+  //     setStep("reset");
+  //     setMessages((prev) => [
+  //       ...prev,
+  //       {
+  //         from: "bot",
+  //         text: "Está bem, aqui encerramos o cálculo, espero ter ajudado.",
+  //       },
+  //     ]);
+  //   });
+  // };
 
   const handleReset = () => {
     setMessages([{ from: "bot", text: "Olá! O que você deseja calcular?" }]);
@@ -472,7 +472,7 @@ export default function CalculaFacilGrosf() {
         </div>
       )}
 
-      {step === "circum" && (
+      {/* {step === "circum" && (
         <div className="flex flex-col space-y-2 mt-2">
           <Buttons
             onClick={handleCircunstancial}
@@ -480,7 +480,7 @@ export default function CalculaFacilGrosf() {
             name="Calcular produtos circunstanciais"
           ></Buttons>
         </div>
-      )}
+      )} */}
 
       {step === "askCircunstancial" && (
         <div className="space-y-2">
@@ -488,9 +488,56 @@ export default function CalculaFacilGrosf() {
           <div className="flex flex-col gap-2">
             <Buttons
               className="px-6 py-2 w-full bg-primary text-white rounded-lg"
-              onClick={() => handleCircunstancial()}
+              onClick={() => {
+                const msgs = [
+                  `Produtos Circunstanciais:`,
+
+                  ` Redutor de pH:
+                      Se pH estiver entre 7ppm e 8ppm: 5ml pra cada 1.000L
+                      Se pH estiver acima de 8ppm: 8ml pra cada 1.000L`,
+
+                  `Elevador de pH em pó:
+                      Se pH estiver entre 6,8ppm e 7ppm: 5g pra cada 1.000L
+                      Se pH estiver abaixo de 6,8ppm: 10g pra cada 1.000L`,
+
+                  ` Elevador de pH líquido:
+                      Se pH estiver entre 6,8ppm e 7ppm: 15ml pra cada 1.000L
+                      Se pH estiver abaixo de 6,8ppm: 20ml pra cada 1.000L`,
+
+                  ` Elevador de alcalinidade em pó:
+                      17g pra cada 1.000L até elevar a alcalinidade para 100ppm`,
+
+                  `Auxiliar de aspiração:
+                      6ml pra cada 1.000L`,
+
+                  ` Água turva, elimina manchas ou inibidor de manchas:
+                      Se o fundo da piscina estiver visível: 15ml pra cada 1.000L
+                      Se o fundo da piscina estiver invisível: 50ml pra cada 1.000L`,
+
+                  ` Eliminador de metais:
+                      Se o fundo da piscina estiver visível: 15ml pra cada 1.000L
+                      Se o fundo da piscina estiver invisível: 50ml pra cada 1.000L`,
+
+                  `  Eliminador de algas (previne surgimento de algas):
+                      10ml pra cada 1.000L sempre que necessário`,
+
+                  `  Limpa bordas:
+                      Utilizar quantidade razoável numa esponja de limpeza na parte menos agressiva`,
+
+                  `Aqui encerramos o cálculo, espero ter ajudado.`,
+                ];
+                setMessages((prev) => [
+                  ...prev,
+                  ...msgs.map((m) => ({
+                    from: "bot",
+                    text: m,
+                  })),
+                ]);
+
+                setStep("reset");
+              }}
               name="Sim"
-            ></Buttons>
+            />
             <Buttons
               className="px-6 py-2 w-full bg-gray-400 text-white rounded-lg"
               onClick={() => {
