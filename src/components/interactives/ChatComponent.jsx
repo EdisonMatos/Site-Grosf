@@ -142,7 +142,9 @@ export default function CalculaFacilGrosf() {
         )} ml.`
       );
       produtos.push(
-        `- Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml.`
+        `- Clarificante: ${Math.round(6 * volumeM3).toLocaleString(
+          "pt-BR"
+        )} ml.`
       );
       produtos.push(
         `- Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString(
