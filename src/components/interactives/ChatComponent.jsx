@@ -101,6 +101,7 @@ export default function CalculaFacilGrosf() {
       const { comprimento, largura, profundidade } = inputs;
       v = comprimento * largura * profundidade * 0.785;
     }
+    v = 50;
     setVolume(v);
 
     if (userChoice === "Somente o volume da piscina") {
@@ -119,6 +120,7 @@ export default function CalculaFacilGrosf() {
   const calcularProdutos = (vol) => {
     const volumeM3 = vol;
     const produtos = [];
+    const volumeAC = vol;
 
     if (format === "Quadrada ou retangular") {
       produtos.push(
@@ -137,7 +139,7 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
-        `- Algicida de choque: ${Math.round(5 * volumeM3).toLocaleString(
+        `- Algicida de choque: ${Math.round(7 * volumeAC).toLocaleString(
           "pt-BR"
         )} ml.`
       );
@@ -168,7 +170,7 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
-        `Algicida de choque: ${Math.round(5 * volumeM3).toLocaleString(
+        `Algicida de choque: ${Math.round(7 * volumeAC).toLocaleString(
           "pt-BR"
         )} ml.`
       );
@@ -195,7 +197,7 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
-        `Algicida de choque: ${Math.round(4 * volumeM3).toLocaleString(
+        `Algicida de choque: ${Math.round(7 * volumeAC).toLocaleString(
           "pt-BR"
         )} ml.`
       );
@@ -221,7 +223,9 @@ export default function CalculaFacilGrosf() {
   };
 
   const calc = (quantidadePor1000) => {
-    return (volume * quantidadePor1000).toLocaleString("pt-BR");
+    return (((volume * 1000) / 1000) * quantidadePor1000).toLocaleString(
+      "pt-BR"
+    );
   };
 
   const handleReset = () => {
@@ -414,7 +418,7 @@ export default function CalculaFacilGrosf() {
 
                   `Redutor de pH:
                   Se pH estiver entre 7ppm e 8ppm: ${calc(5)} ml.
-                  Se pH estiver acima de 8ppm: ${calc(8)} ml.`,
+                  Se pH estiver acima de 8ppm: ${calc(10)} ml.`,
 
                   `Elevador de pH em pó:
                   Se pH estiver entre 6,8ppm e 7ppm: ${calc(5)} gramas.
