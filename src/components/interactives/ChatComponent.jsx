@@ -101,7 +101,6 @@ export default function CalculaFacilGrosf() {
       const { comprimento, largura, profundidade } = inputs;
       v = comprimento * largura * profundidade * 0.785;
     }
-    v = 50;
     setVolume(v);
 
     if (userChoice === "Somente o volume da piscina") {
