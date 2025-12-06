@@ -429,7 +429,7 @@ export default function CalculaFacilGrosf() {
                   Se pH estiver abaixo de 6,8ppm: ${calc(20)} ml.`,
 
                   `Elevador de alcalinidade em pó:
-                  ${calc(17)}g até elevar a alcalinidade para 100ppm.`,
+                  ${calc(17)}g até elevar a alcalinidade para 100ppm em média.`,
 
                   `Auxiliar de aspiração:
                   ${calc(6)} ml.`,
