@@ -250,7 +250,7 @@ export default function CalculaFacilGrosf() {
 
   return (
     <div className="flex flex-col max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
-      <p className="font-serif flex justify-center pb-4 text-black/50">
+      <p className="font-serif flex justify-center pb-4 text-black">
         Versão_01
       </p>
       <div
