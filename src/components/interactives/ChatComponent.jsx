@@ -255,7 +255,7 @@ export default function CalculaFacilGrosf() {
       </p>
       <div
         ref={containerRef}
-        className="flex flex-col space-y-4 h-72 overflow-y-auto phone1:pt-[280px] phone2:pt-[230px] mb-4 border-2 p-2 rounded-md"
+        className="flex flex-col space-y-4 h-62 overflow-y-auto phone1:pt-[280px] phone2:pt-[230px] mb-4 border-2 p-2 rounded-md"
       >
         {messages.map((msg, idx) => (
           <div
