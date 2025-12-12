@@ -1,63 +1,70 @@
-import React from "react";
+import React from 'react'
 
 function Buttons({
-  type = "retangular",
+  type = 'retangular',
   onClick,
   href,
   name,
   icon,
-  className: customClassName = "",
-  textSize = "text-base", // controla tamanho do texto
-  width = "w-auto", // 👈 nova prop para controlar a largura
+  className: customClassName = '',
+  textSize = 'text-base', // controla tamanho do texto
+  width = 'w-auto', // 👈 nova prop para controlar a largura
+  disabled,
 }) {
   const getButtonConfig = () => {
     switch (type) {
-      case "retanguloRedondo":
+      case 'retanguloRedondo':
         return {
           className:
-            "h-16 bg-red-500 cursor-pointer select-none rounded-full border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150",
-          label: name || "Love Me",
+            'h-16 bg-red-500 cursor-pointer select-none rounded-full border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150',
+          label: name || 'Love Me',
           icon: icon,
-        };
-      case "esfera":
+        }
+      case 'esfera':
         return {
           className:
-            "h-16 bg-red-500 rounded-full cursor-pointer select-none border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150",
-          label: name || "?",
-        };
-      case "retangular":
+            'h-16 bg-red-500 rounded-full cursor-pointer select-none border-[1px] border-blue-400 active:translate-y-2 shadow-button active:shadow-buttonActive active:border-b-0 transition-all duration-150',
+          label: name || '?',
+        }
+      case 'retangular':
       default:
         return {
           className:
-            "mb-3 px-6 h-14 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#01435C] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#006489]",
-          label: name || "Active",
+            'mb-3 px-6 h-14 bg-primary rounded-lg cursor-pointer hover:bg-primary/90 select-none border-b border-white/30 active:translate-y-2 active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#01435C] active:border-b-[0px] transition-all duration-150 [box-shadow:0_10px_0_0_#006489]',
+          label: name || 'Active',
           icon: icon,
-        };
+        }
     }
-  };
+  }
 
-  const { className, label } = getButtonConfig();
-  const finalClassName = `${width} ${className} ${customClassName}`;
+  const { className, label } = getButtonConfig()
+  const finalClassName = `${width} ${className} ${customClassName}`
 
   const handleClick = () => {
     if (onClick) {
-      onClick();
+      onClick()
     } else if (href) {
-      window.open(href, "_blank");
+      window.open(href, '_blank')
     }
-  };
+  }
 
   return (
     <div className="flex">
-      <div className={`button ${finalClassName}`} onClick={handleClick}>
+      <button
+        className={`button ${finalClassName} ${
+          disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''
+        }`}
+        onClick={handleClick}
+        disabled={disabled}
+      >
         <span
           className={`flex w-full items-center justify-center h-full gap-3 font-normal text-center text-white ${textSize}`}
         >
           {icon} {label}
         </span>
-      </div>
+      </button>
     </div>
-  );
+  )
 }
 
-export default Buttons;
+export default Buttons

@@ -18,13 +18,19 @@ export default function CalculaFacilGrosf() {
   const [treatmentOption, setTreatmentOption] = useState(null)
   const [phValue, setPhValue] = useState(7.5)
   const [fundoVisivel, setFundoVisivel] = useState(true)
+  const [optionsDisabled, setOptionsDisabled] = useState(false)
+  const [clicked, setClicked] = useState(false)
 
   const delayResponse = (text, callback) => {
+    setOptionsDisabled(true)
     setMessages((prev) => [...prev, { from: 'bot', text: '...' }])
+
     setTimeout(() => {
       setMessages((prev) => [...prev.slice(0, -1), { from: 'bot', text }])
+      setOptionsDisabled(false)
+
       if (callback) callback()
-    }, 3000) // 3 segundos de delay para exemplo
+    }, 3000)
   }
 
   const handleStartChoice = (choice) => {
@@ -77,7 +83,8 @@ export default function CalculaFacilGrosf() {
   }
 
   const calcularVolume = () => {
-    // Verifica se todos os campos necessários foram preenchidos
+    if (clicked) return // impede o segundo clique
+    setClicked(true) // desabilita
     if (
       (format === 'Quadrada ou retangular' || format === 'Oval') &&
       (!inputs.comprimento || !inputs.largura || !inputs.profundidade)
@@ -110,7 +117,7 @@ export default function CalculaFacilGrosf() {
     } else {
       // Option2: calcular produtos
       delayResponse(
-        `O volume da piscina é ${v.toFixed(2)} lts. Calculando produtos...`,
+        `O volume da piscina é ${v.toFixed(3)} lts. Calculando produtos...`,
         () => calcularProdutos(v)
       )
     }
@@ -235,6 +242,7 @@ export default function CalculaFacilGrosf() {
     setInputs({ comprimento: '', largura: '', profundidade: '', diametro: '' })
     setVolume(null)
     setTreatmentOption(null)
+    setClicked(false)
   }
 
   const containerRef = useRef(null)
@@ -252,7 +260,7 @@ export default function CalculaFacilGrosf() {
     <div className="flex flex-col max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
       <div
         ref={containerRef}
-        className="flex flex-col space-y-4 h-62 overflow-y-auto phone1:pt-[280px] phone2:pt-[230px] mb-4 border-2 p-2 rounded-md"
+        className="flex flex-col space-y-4 h-[350px] overflow-y-scroll phone1:pt-[280px] phone2:pt-[280px] mb-4 border-2 p-2 rounded-md"
       >
         {messages.map((msg, idx) => (
           <div
@@ -268,20 +276,27 @@ export default function CalculaFacilGrosf() {
         ))}
       </div>
       <p className="font-mainFont flex justify-center pb-4 text-black">
-        Versão 1.0{' '}
+        Versão 2.0{' '}
       </p>
 
       {step === 'start' && (
         <div className="flex flex-col space-y-2">
           <Buttons
+            disabled={optionsDisabled}
+            className={`btn-primary w-full p-2 rounded-md text-white 
+            ${
+              optionsDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary'
+            }`}
             onClick={() => handleStartChoice('Somente o volume da piscina')}
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Somente o volume da piscina"
-            size="small"
-          ></Buttons>
+          />
           <Buttons
+            disabled={optionsDisabled}
+            className={`btn-primary w-full p-2 rounded-md text-white 
+            ${
+              optionsDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary'
+            }`}
             onClick={() => handleStartChoice('Volume + produtos')}
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name=" Volume + produtos"
           ></Buttons>
         </div>
@@ -290,19 +305,27 @@ export default function CalculaFacilGrosf() {
       {step === 'productOption' && (
         <div className="flex flex-col space-y-2">
           <Buttons
+            disabled={optionsDisabled}
+            className={`btn-primary w-full p-2 rounded-md text-white 
+            ${
+              optionsDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary'
+            }`}
             onClick={() =>
               handleTreatmentOption(
                 'Primeiro tratamento ou longo período de abandono'
               )
             }
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Primeiro tratamento ou longo período de abandono"
           ></Buttons>
           <Buttons
+            disabled={optionsDisabled}
+            className={`btn-primary w-full p-2 rounded-md text-white 
+            ${
+              optionsDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary'
+            }`}
             onClick={() =>
               handleTreatmentOption('Apenas manutenção ou preventivo')
             }
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Apenas manutenção ou preventivo"
           ></Buttons>
         </div>
@@ -311,18 +334,30 @@ export default function CalculaFacilGrosf() {
       {step === 'format' && (
         <div className="flex flex-col space-y-2">
           <Buttons
+            disabled={optionsDisabled}
+            className={`btn-primary w-full p-2 rounded-md text-white 
+            ${
+              optionsDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary'
+            }`}
             onClick={() => handleFormatChoice('Quadrada ou retangular')}
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Quadrada ou retangular"
           ></Buttons>
           <Buttons
+            disabled={optionsDisabled}
+            className={`btn-primary w-full p-2 rounded-md text-white 
+            ${
+              optionsDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary'
+            }`}
             onClick={() => handleFormatChoice('Redonda')}
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Redonda"
           ></Buttons>
           <Buttons
+            disabled={optionsDisabled}
+            className={`btn-primary w-full p-2 rounded-md text-white 
+            ${
+              optionsDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-primary'
+            }`}
             onClick={() => handleFormatChoice('Oval')}
-            className="btn-primary w-full bg-primary p-2 rounded-md text-white"
             name="Oval"
           ></Buttons>
         </div>
@@ -369,6 +404,7 @@ export default function CalculaFacilGrosf() {
             className="input-field border-2 rounded-md p-2 outline-none"
           />
           <Buttons
+            disabled={clicked}
             onClick={calcularVolume}
             className="btn-primary w-full mt-2 bg-primary rounded-md p-2 outline-none text-white"
             name="Calcular volume e produtos"
