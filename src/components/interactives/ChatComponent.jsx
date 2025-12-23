@@ -472,7 +472,7 @@ export default function CalculaFacilGrosf() {
                   `Elevador de alcalinidade em pó:
                   ${calc(
                     17
-                  )}g até elevar a alcalinidade para 100,0 ppm em média.`,
+                  )} g até elevar a alcalinidade para 100,0 ppm em média.`,
 
                   `Auxiliar de aspiração:
                   ${calc(6)} ml.`,
