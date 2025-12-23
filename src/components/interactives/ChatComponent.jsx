@@ -276,7 +276,7 @@ export default function CalculaFacilGrosf() {
         ))}
       </div>
       <p className="font-mainFont flex justify-center pb-4 text-black">
-        Versão 3.0{' '}
+        Versão 4.0{' '}
       </p>
 
       {step === 'start' && (
@@ -456,21 +456,23 @@ export default function CalculaFacilGrosf() {
 
                   `Redutor de pH:
 
-                 - Se pH estiver entre 7ppm e 8ppm: ${calc(5)} ml.
-                 - Se pH estiver acima de 8ppm: ${calc(10)} ml.`,
+                 - Se pH estiver entre 7,0 ppm e 8,0 ppm: ${calc(5)} ml.
+                 - Se pH estiver acima de 8,0 ppm: ${calc(10)} ml.`,
 
                   `Elevador de pH em pó:
 
-                 - Se pH estiver entre 6,8ppm e 7ppm: ${calc(5)} gramas.
-                 - Se pH estiver abaixo de 6,8ppm: ${calc(10)} gramas.`,
+                 - Se pH estiver entre 6,8 ppm e 7,0 ppm: ${calc(5)} gramas.
+                 - Se pH estiver abaixo de 6,8 ppm: ${calc(10)} gramas.`,
 
                   `Elevador de pH líquido:
 
-                 - Se pH estiver entre 6,8ppm e 7ppm: ${calc(15)} ml.
-                 - Se pH estiver abaixo de 6,8ppm: ${calc(20)} ml.`,
+                 - Se pH estiver entre 6,8 ppm e 7,0 ppm: ${calc(15)} ml.
+                 - Se pH estiver abaixo de 6,8 ppm: ${calc(20)} ml.`,
 
                   `Elevador de alcalinidade em pó:
-                  ${calc(17)}g até elevar a alcalinidade para 100ppm em média.`,
+                  ${calc(
+                    17
+                  )}g até elevar a alcalinidade para 100,0 ppm em média.`,
 
                   `Auxiliar de aspiração:
                   ${calc(6)} ml.`,
