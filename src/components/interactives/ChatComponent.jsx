@@ -63,7 +63,7 @@ export default function CalculaFacilGrosf() {
 
       setTimeout(() => {
         // Depois mostra os produtos
-        calcularProdutos(volume)
+        calcularProdutos(volume, option)
       }, 2000) // tempo de espera antes de exibir os produtos
     } else {
       // Volume ainda não calculado, pedimos medidas
@@ -118,15 +118,22 @@ export default function CalculaFacilGrosf() {
       // Option2: calcular produtos
       delayResponse(
         `O volume da piscina é ${v.toFixed(3)} lts. Calculando produtos...`,
-        () => calcularProdutos(v)
+        () => calcularProdutos(v, treatmentOption)
       )
     }
   }
 
-  const calcularProdutos = (vol) => {
+  const calcularProdutos = (vol, tratamentoEscolhido) => {
     const volumeM3 = vol
     const produtos = []
     const volumeAC = vol
+
+    const isManutencao =
+      tratamentoEscolhido === 'Apenas manutenção ou preventivo'
+
+    const nomeAlgicida = isManutencao
+      ? 'Algicida de manutenção'
+      : 'Algicida de choque'
 
     if (format === 'Quadrada ou retangular') {
       produtos.push(
@@ -145,7 +152,7 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString('pt-BR')} gramas.`
       )
       produtos.push(
-        `- Algicida de choque: ${Math.round(7 * volumeAC).toLocaleString(
+        `- ${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
           'pt-BR'
         )} ml.`
       )
@@ -176,7 +183,7 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString('pt-BR')} gramas.`
       )
       produtos.push(
-        `Algicida de choque: ${Math.round(7 * volumeAC).toLocaleString(
+        `${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
           'pt-BR'
         )} ml.`
       )
@@ -203,7 +210,7 @@ export default function CalculaFacilGrosf() {
         ).toLocaleString('pt-BR')} gramas.`
       )
       produtos.push(
-        `Algicida de choque: ${Math.round(7 * volumeAC).toLocaleString(
+        `${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
           'pt-BR'
         )} ml.`
       )
@@ -276,7 +283,7 @@ export default function CalculaFacilGrosf() {
         ))}
       </div>
       <p className="font-mainFont flex justify-center pb-4 text-black">
-        Versão 4.0{' '}
+        Versão 5.0{' '}
       </p>
 
       {step === 'start' && (
