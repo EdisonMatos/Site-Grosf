@@ -283,7 +283,7 @@ export default function CalculaFacilGrosf() {
         ))}
       </div>
       <p className="font-mainFont flex justify-center pb-4 text-black">
-        Versão 4.0{' '}
+        Versão 5.0{' '}
       </p>
 
       {step === 'start' && (
