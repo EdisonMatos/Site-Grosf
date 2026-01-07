@@ -1,83 +1,149 @@
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import SectionHeader from "../sectionElements/SectionHeader";
+import { useState, useEffect, useRef } from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import SectionHeader from '../sectionElements/SectionHeader'
 
 // Importe as imagens corretamente
-import banner0 from "../../assets/banners/bannersCarousel/banners0.png";
-import banner1 from "../../assets/banners/bannersCarousel/banners1.png";
-import banner3 from "../../assets/banners/bannersCarousel/banners3.png";
-import banner4 from "../../assets/banners/bannersCarousel/banners4.png";
-import banner5 from "../../assets/banners/bannersCarousel/banners5.png";
+import banner0 from '../../assets/banners/bannersCarousel/banners0.webp'
+import banner1 from '../../assets/banners/bannersCarousel/banners1.webp'
+import banner2 from '../../assets/banners/bannersCarousel/banners2.webp'
+import banner3 from '../../assets/banners/bannersCarousel/banners3.webp'
+import banner4 from '../../assets/banners/bannersCarousel/banners4.webp'
+import banner5 from '../../assets/banners/bannersCarousel/banners5.webp'
+
+import banner0Mobile from '../../assets/banners/bannersCarousel/bannersMobile0.webp'
+import banner1Mobile from '../../assets/banners/bannersCarousel/bannersMobile1.webp'
+import banner2Mobile from '../../assets/banners/bannersCarousel/bannersMobile2.webp'
+import banner3Mobile from '../../assets/banners/bannersCarousel/bannersMobile3.webp'
+import banner4Mobile from '../../assets/banners/bannersCarousel/bannersMobile4.webp'
+import banner5Mobile from '../../assets/banners/bannersCarousel/bannersMobile5.webp'
 
 // Array de banners
 const banners = [
   {
     id: 1,
-    title: "Primeiro Banner",
-    description: "Descrição do primeiro banner",
+    title: 'Primeiro Banner',
+    description: 'Descrição do primeiro banner',
     image: banner0,
   },
   {
     id: 2,
-    title: "Segundo Banner",
-    description: "Descrição do segundo banner",
+    title: 'Segundo Banner',
+    description: 'Descrição do segundo banner',
     image: banner1,
   },
   {
     id: 3,
-    title: "Terceiro Banner",
-    description: "Descrição do terceiro banner",
-    image: banner3,
+    title: 'Terceiro Banner',
+    description: 'Descrição do terceiro banner',
+    image: banner2,
   },
   {
     id: 4,
-    title: "Quarto Banner",
-    description: "Descrição do quarto banner",
+    title: 'Quarto Banner',
+    description: 'Descrição do quarto banner',
+    image: banner3,
+  },
+  {
+    id: 5,
+    title: 'Quinto Banner',
+    description: 'Descrição do quinto banner',
     image: banner4,
   },
   {
     id: 5,
-    title: "Quinto Banner",
-    description: "Descrição do quinto banner",
+    title: 'Quinto Banner',
+    description: 'Descrição do quinto banner',
     image: banner5,
   },
-];
+]
+
+const bannersMobile = [
+  {
+    id: 1,
+    title: 'Primeiro Banner',
+    description: 'Descrição do primeiro banner',
+    image: banner0Mobile,
+  },
+  {
+    id: 2,
+    title: 'Segundo Banner',
+    description: 'Descrição do segundo banner',
+    image: banner1Mobile,
+  },
+  {
+    id: 3,
+    title: 'Terceiro Banner',
+    description: 'Descrição do terceiro banner',
+    image: banner2Mobile,
+  },
+  {
+    id: 4,
+    title: 'Quarto Banner',
+    description: 'Descrição do quarto banner',
+    image: banner3Mobile,
+  },
+  {
+    id: 5,
+    title: 'Quinto Banner',
+    description: 'Descrição do quinto banner',
+    image: banner4Mobile,
+  },
+  {
+    id: 6,
+    title: 'Quinto Banner',
+    description: 'Descrição do quinto banner',
+    image: banner5Mobile,
+  },
+]
 
 export default function BannerCarouselComponent() {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0)
+
+  const intervalRef = useRef(null)
+
+  const startInterval = () => {
+    clearInterval(intervalRef.current)
+
+    intervalRef.current = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % banners.length)
+    }, 8000)
+  }
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % banners.length);
-  };
+    setCurrent((prev) => (prev + 1) % banners.length)
+    startInterval()
+  }
 
   const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + banners.length) % banners.length);
-  };
+    setCurrent((prev) => (prev - 1 + banners.length) % banners.length)
+    startInterval()
+  }
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 8000); // muda a cada 5 segundos
-    return () => clearInterval(interval);
-  }, []);
+    startInterval()
+
+    return () => clearInterval(intervalRef.current)
+  }, [])
 
   return (
     <section className="w-full bg-quinary py-12">
       <div className="w-[90%] max-w-[1110px] m-auto">
         <SectionHeader
-          sectionHeaderTitleFirst=" 5 passos simples para cuidar da sua piscina"
-          sectionHeaderDescription="Mantenha a água limpa, segura e cristalina com cuidados práticos no dia a dia."
+          sectionHeaderTitleFirst="Como tratar a sua piscina em 5 passos"
+          sectionHeaderDescription="Veja 5 passos simples, mas importantes para o tratamento adequado da sua piscina."
         />
-        <div className="relative w-[90%] max-w-screen-xl mx-auto overflow-hidden rounded-2xl shadow-lg h-64 md:h-[550px]">
-          {banners.map((banner, index) => (
+        <div className="relative desktop1:hidden w-[90%] max-w-screen-xl mx-auto overflow-hidden aspect-[9/16] rounded-2xl shadow-lg h-auto">
+          {bannersMobile.map((banner, index) => (
             <div
               key={banner.id}
               className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+                index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
               }`}
             >
               <img
                 src={banner.image}
                 alt={banner.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain rounded-2xl"
               />
               <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-4"></div>
             </div>
@@ -86,7 +152,7 @@ export default function BannerCarouselComponent() {
           {/* Botões de navegação */}
           <button
             onClick={prevSlide}
-            className="relative top-1/2 left-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronLeft />
           </button>
@@ -104,7 +170,51 @@ export default function BannerCarouselComponent() {
               <div
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === current ? "bg-primary scale-110" : "bg-white"
+                  index === current ? 'bg-primary scale-110' : 'bg-white'
+                }`}
+              ></div>
+            ))}
+          </div>
+        </div>
+        <div className="relative hidden desktop1:flex w-[90%] max-w-screen-xl mx-auto overflow-hidden rounded-2xl shadow-lg h-auto aspect-[16/9]">
+          {banners.map((banner, index) => (
+            <div
+              key={banner.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+            >
+              <img
+                src={banner.image}
+                alt={banner.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-4"></div>
+            </div>
+          ))}
+
+          {/* Botões de navegação */}
+          <button
+            onClick={prevSlide}
+            className="relative top-1/2 left-4 h-fit transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
+          >
+            <ChevronLeft />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
+          >
+            <ChevronRight />
+          </button>
+
+          {/* Indicadores */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+            {banners.map((_, index) => (
+              <div
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === current ? 'bg-primary scale-110' : 'bg-white'
                 }`}
               ></div>
             ))}
@@ -112,5 +222,5 @@ export default function BannerCarouselComponent() {
         </div>
       </div>
     </section>
-  );
+  )
 }
