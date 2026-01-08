@@ -154,14 +154,14 @@ export default function BannerCarouselComponent() {
           {/* Botões de navegação */}
           <button
             onClick={prevSlide}
-            className="absolute top-3/4 left-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute bottom-0 left-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-0 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronLeft />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute top-3/4 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute bottom-0 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-0 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronRight />
           </button>
