@@ -50,7 +50,7 @@ const banners = [
     image: banner4,
   },
   {
-    id: 5,
+    id: 6,
     title: 'Quinto Banner',
     description: 'Descrição do quinto banner',
     image: banner5,
@@ -132,6 +132,8 @@ export default function BannerCarouselComponent() {
           sectionHeaderTitleFirst="Como tratar a sua piscina em 5 passos"
           sectionHeaderDescription="Veja 5 passos simples, mas importantes para o tratamento adequado da sua piscina."
         />
+
+        {/* Mobile */}
         <div className="relative desktop1:hidden w-[90%] max-w-screen-xl mx-auto overflow-hidden aspect-[9/16] rounded-2xl shadow-lg h-auto">
           {bannersMobile.map((banner, index) => (
             <div
@@ -152,14 +154,14 @@ export default function BannerCarouselComponent() {
           {/* Botões de navegação */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute top-3/4 left-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronLeft />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute top-3/4 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronRight />
           </button>
@@ -176,6 +178,8 @@ export default function BannerCarouselComponent() {
             ))}
           </div>
         </div>
+
+        {/* Desktop */}
         <div className="relative hidden desktop1:flex w-[90%] max-w-screen-xl mx-auto overflow-hidden rounded-2xl shadow-lg h-auto aspect-[16/9]">
           {banners.map((banner, index) => (
             <div
@@ -196,14 +200,14 @@ export default function BannerCarouselComponent() {
           {/* Botões de navegação */}
           <button
             onClick={prevSlide}
-            className="relative top-1/2 left-4 h-fit transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
+            className="relative top-3/4 left-4 h-fit transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronLeft />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-primary bg-opacity-100 text-white p-2 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute top-3/4 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronRight />
           </button>
