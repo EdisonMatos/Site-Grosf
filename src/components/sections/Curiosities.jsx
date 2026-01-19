@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import SectionHeader from '../sectionElements/SectionHeader'
 import CarouselCuriosities from '../interactives/CarouselCuriosities'
+import MotionDivLeftToRight from '../animation/MotionDivLeftToRight'
 
 function Curiosities() {
   const curiosities = [
@@ -37,16 +38,18 @@ function Curiosities() {
       />
 
       <div className="max-w-[1215px] mx-auto border rounded-md text-primary">
-        <CarouselCuriosities
-          value={curiosities}
-          renderItem={(text) => (
-            <div className="border-1 surface-border border-round text-center py-5 px-3 mb-4">
-              <p className="text-secondFont text-paragraph3 tablet1:text-title1 max-w-lg mx-auto">
-                {text}
-              </p>
-            </div>
-          )}
-        />
+        <MotionDivLeftToRight>
+          <CarouselCuriosities
+            value={curiosities}
+            renderItem={(text) => (
+              <div className="border-1 surface-border border-round text-center py-5 px-3 mb-4">
+                <p className="text-secondFont text-paragraph3 tablet1:text-title1 max-w-lg mx-auto">
+                  {text}
+                </p>
+              </div>
+            )}
+          />
+        </MotionDivLeftToRight>
       </div>
     </div>
   )
