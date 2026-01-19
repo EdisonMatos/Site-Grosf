@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { Dialog } from "primereact/dialog";
-import "primereact/resources/themes/saga-blue/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import { MoveRight } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
-import "react-image-gallery/styles/css/image-gallery.css";
-import Button from "../../interactives/Button";
-import Buttons from "../../interactives/Buttons";
-import whatsappNumber from "../../../abstractions/whats";
+import React, { useState } from 'react'
+import { Dialog } from 'primereact/dialog'
+import 'primereact/resources/themes/saga-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+import { MoveRight } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
+import 'react-image-gallery/styles/css/image-gallery.css'
+import Button from '../../interactives/Button'
+import Buttons from '../../interactives/Buttons'
+import whatsappNumber from '../../../abstractions/whats'
 
-const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
 
 export default function StorageModal() {
-  const [visible, setVisible] = useState(false);
-  const [modalContent, setModalContent] = useState("");
-  const [modalTitle, setModalTitle] = useState("");
+  const [visible, setVisible] = useState(false)
+  const [modalContent, setModalContent] = useState('')
+  const [modalTitle, setModalTitle] = useState('')
 
-  const titleModal = "Estocagem de armazenamento!";
+  const titleModal = 'Estocagem e Armazenamento!'
 
   return (
     <div>
@@ -48,10 +48,10 @@ export default function StorageModal() {
         header={titleModal}
         visible={visible}
         onHide={() => setVisible(false)}
-        style={{ width: "90vw", maxWidth: "800px" }}
+        style={{ width: '90vw', maxWidth: '800px' }}
         modal
       >
-        <div style={{ textAlign: "justify" }}>
+        <div style={{ textAlign: 'justify' }}>
           <p>
             Veja abaixo dicas e orientações para armazenagem correta dos
             produtos para piscinas que ficarão por alguns dias no almoxarifado
@@ -161,5 +161,5 @@ export default function StorageModal() {
         </div>
       </Dialog>
     </div>
-  );
+  )
 }
