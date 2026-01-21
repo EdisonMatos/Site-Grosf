@@ -147,7 +147,6 @@ export default function BannerCarouselComponent() {
                 alt={banner.title}
                 className="w-full h-full object-contain rounded-2xl"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-4"></div>
             </div>
           ))}
 
@@ -193,7 +192,6 @@ export default function BannerCarouselComponent() {
                 alt={banner.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-white p-4"></div>
             </div>
           ))}
 
