@@ -42,7 +42,7 @@
 
 /* Todos os dots */
 .p-carousel-indicator button {
-  background: #014e6b !important;
+  background: #737373 !important;
   width: 12px !important;
   height: 12px !important;
   border-radius: 50% !important;
@@ -52,14 +52,14 @@
 
 /* Dot ativo */
 .p-carousel-indicator.p-highlight button {
-  background: #0189bb !important;
+  background: #00131B !important;
 }
 
 .p-carousel-prev,
 .p-carousel-next {
   cursor: pointer;
   transition: all 0.5s ease;
-  color: #0189bb !important;
+  color: #00131B !important;
 }
 
 .p-carousel-next-icon,

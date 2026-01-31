@@ -1,20 +1,20 @@
-import ImageGallery from "react-image-gallery";
-import PropTypes from "prop-types";
-import "react-image-gallery/styles/css/image-gallery.css";
+import ImageGallery from 'react-image-gallery'
+import PropTypes from 'prop-types'
+import 'react-image-gallery/styles/css/image-gallery.css'
 
 export default function ImagesGallery2Slides(props) {
-  const { slide1, slide2 } = props;
+  const { slide1, slide2 } = props
 
   ImagesGallery2Slides.propTypes = {
     slide1: PropTypes.any,
     slide2: PropTypes.any,
-  };
+  }
 
   const images = [
     {
       original: slide1,
       thumbnail: slide1,
-      originalAlt: "Banner de atendimento",
+      originalAlt: 'Banner de atendimento',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 100,
@@ -23,13 +23,13 @@ export default function ImagesGallery2Slides(props) {
     {
       original: slide2,
       thumbnail: slide2,
-      originalAlt: "Banner de entregas",
+      originalAlt: 'Banner de entregas',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 100,
       thumbnailWidth: 100,
     },
-  ];
+  ]
 
   return (
     <div>
@@ -42,5 +42,5 @@ export default function ImagesGallery2Slides(props) {
         slideInterval={9000}
       />
     </div>
-  );
+  )
 }
