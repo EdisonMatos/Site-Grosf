@@ -37,7 +37,7 @@ function Curiosities() {
         sectionHeaderDescription="Você sabia que as piscinas contam histórias incríveis?"
       />
 
-      <div className="max-w-[1215px] mx-auto border rounded-md text-primary">
+      <div className="max-w-[1215px] mx-auto border rounded-md text-secondary">
         <MotionDivLeftToRight>
           <CarouselCuriosities
             value={curiosities}

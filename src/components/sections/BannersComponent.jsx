@@ -153,14 +153,14 @@ export default function BannerCarouselComponent() {
           {/* Botões de navegação */}
           <button
             onClick={prevSlide}
-            className="absolute bottom-0 left-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-0 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute bottom-0 left-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-secondary p-0 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronLeft />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute bottom-0 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-0 rounded-full hover:bg-opacity-70 z-10"
+            className="absolute bottom-0 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-secondary p-0 rounded-full hover:bg-opacity-70 z-10"
           >
             <ChevronRight />
           </button>
@@ -171,7 +171,7 @@ export default function BannerCarouselComponent() {
               <div
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === current ? 'bg-primary scale-110' : 'bg-white'
+                  index === current ? 'bg-secondary scale-110' : 'bg-white'
                 }`}
               ></div>
             ))}

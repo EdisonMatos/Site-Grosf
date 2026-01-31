@@ -1,37 +1,37 @@
-import SectionHeader from "../sectionElements/SectionHeader";
-import imgPastilhaCloro from "../../assets/imgs/avoidAccidents/pastilhaCloro.jpg";
-import resgateAcidente from "../../assets/imgs/avoidAccidents/resgateAcidente.jpg";
-import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
-import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
-import React, { useState } from "react";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
-import { Dialog } from "primereact/dialog";
-import "primereact/resources/themes/saga-blue/theme.css";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import { MoveRight } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
-import "react-image-gallery/styles/css/image-gallery.css";
-import Button from "../interactives/Button";
-import ImagesGallery2Slides from "../interactives/ImagesGallery2Slides";
-import slide1 from "../../assets/imgs/avoidAccidents/slide1.jpg";
-import slide2 from "../../assets/imgs/avoidAccidents/slide2.jpg";
-import Buttons from "../interactives/Buttons";
-import whatsappNumber from "../../abstractions/whats";
-const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
+import SectionHeader from '../sectionElements/SectionHeader'
+import imgPastilhaCloro from '../../assets/imgs/avoidAccidents/pastilhaCloro.jpg'
+import resgateAcidente from '../../assets/imgs/avoidAccidents/resgateAcidente.jpg'
+import MotionDivLeftToRight from '../animation/MotionDivLeftToRight'
+import MotionDivRightToLeft from '../animation/MotionDivRightToLeft'
+import React, { useState } from 'react'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
+import { Dialog } from 'primereact/dialog'
+import 'primereact/resources/themes/saga-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
+import { MoveRight } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
+import 'react-image-gallery/styles/css/image-gallery.css'
+import Button from '../interactives/Button'
+import ImagesGallery2Slides from '../interactives/ImagesGallery2Slides'
+import slide1 from '../../assets/imgs/avoidAccidents/slide1.jpg'
+import slide2 from '../../assets/imgs/avoidAccidents/slide2.jpg'
+import Buttons from '../interactives/Buttons'
+import whatsappNumber from '../../abstractions/whats'
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
 
 export default function AboutUs() {
-  const [visible, setVisible] = useState(false);
-  const [modalContent, setModalContent] = useState("");
-  const [modalTitle, setModalTitle] = useState("");
+  const [visible, setVisible] = useState(false)
+  const [modalContent, setModalContent] = useState('')
+  const [modalTitle, setModalTitle] = useState('')
 
   const onClick = () => {
     setModalTitle(
-      "Negócios corporativos x meio ambiente. É possível uma convivência pacífica?"
-    );
+      'Negócios corporativos x meio ambiente. É possível uma convivência pacífica?',
+    )
 
-    setVisible(true);
-  };
+    setVisible(true)
+  }
 
   return (
     <div className="flex justify-center full">
@@ -50,7 +50,7 @@ export default function AboutUs() {
 
           <div className="desktop1:w-[48.5%] desktop3:w-[46.3%]">
             <MotionDivLeftToRight>
-              <h1 className="text-primary flex items-center phone1:w-[100%] phone1:font-medium phone1:text-title2 phone3:text-title2 phone1:pb-[10px] tablet1:text-title2 desktop1:text-title4">
+              <h1 className="text-secondary flex items-center phone1:w-[100%] phone1:font-medium phone1:text-title2 phone3:text-title2 phone1:pb-[10px] tablet1:text-title2 desktop1:text-title4">
                 Negócios corporativos x meio ambiente. É possível uma
                 convivência pacífica?
               </h1>
@@ -122,10 +122,10 @@ export default function AboutUs() {
           header={modalTitle}
           visible={visible}
           onHide={() => setVisible(false)}
-          style={{ width: "90vw", maxWidth: "800px" }}
+          style={{ width: '90vw', maxWidth: '800px' }}
           modal
         >
-          <div className="text-paragraph3" style={{ textAlign: "justify" }}>
+          <div className="text-paragraph3" style={{ textAlign: 'justify' }}>
             <p>
               Nesses mais de 30 anos de operação ininterrupta, nossa empresa tem
               se dedicado e operado com o que há de mais sagrado e importante no
@@ -138,7 +138,7 @@ export default function AboutUs() {
               Água servida, água barrenta, água contaminada, água de reuso, água
               de rios e lagos, água suja, essa tem sido nossa luta constante
               embora não seja nossa atividade fim.
-            </p>{" "}
+            </p>{' '}
             <br />
             <p>
               Recuperar e nunca jogar fora águas de piscinas, essa sim é a nossa
@@ -247,5 +247,5 @@ export default function AboutUs() {
         </Dialog>
       </div>
     </div>
-  );
+  )
 }

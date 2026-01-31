@@ -1,12 +1,12 @@
-import { Link } from "react-scroll";
-import mpaLogo from "../../assets/importAssets/Logo.png";
-import { Phone, Mail } from "lucide-react";
-import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
-import MotionDivUpToDown from "../animation/MotionDivUpToDown";
-import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
-import whatsappNumber from "../../abstractions/whats";
+import { Link } from 'react-scroll'
+import mpaLogo from '../../assets/importAssets/Logo.png'
+import { Phone, Mail } from 'lucide-react'
+import MotionDivLeftToRight from '../animation/MotionDivLeftToRight'
+import MotionDivUpToDown from '../animation/MotionDivUpToDown'
+import MotionDivRightToLeft from '../animation/MotionDivRightToLeft'
+import whatsappNumber from '../../abstractions/whats'
 
-const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
 
 function Footer() {
   return (
@@ -15,7 +15,7 @@ function Footer() {
         <MotionDivLeftToRight>
           <div className="flex flex-col gap-y-[16px] desktop1:w-auto">
             <img
-              alt="Logo MPA Piscinas"
+              alt="Logomarca da Grosf"
               src={mpaLogo}
               className="w-full tablet1:w-[40%] desktop1:w-[80%] h-[105px] bg-white p-3 rounded-md"
             ></img>
@@ -52,7 +52,7 @@ function Footer() {
               SOBRE
             </h1>
             <p>
-              {" "}
+              {' '}
               Agradecemos sua visita! Esperamos que em breve você se torne nosso
               cliente e desfrute de todos os benefícios que oferecemos.
             </p>
@@ -101,7 +101,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Produtos e Acessórios{" "}
+                    Produtos e Acessórios{' '}
                   </Link>
                 </div>
               </div>
@@ -116,7 +116,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Cursos e Palestras{" "}
+                    Cursos e Palestras{' '}
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -129,7 +129,7 @@ function Footer() {
                     offset={-80}
                     href="#"
                   >
-                    Perguntas Frequentes{" "}
+                    Perguntas Frequentes{' '}
                   </Link>
                 </div>
                 <div className="h-[36px] ">
@@ -164,14 +164,14 @@ function Footer() {
               target="_blank"
               href="https://www.paperstreet.com.br"
             >
-              {" "}
+              {' '}
               Gostaria de ter um site como este? Clique aqui
             </a>
           </p>
         </MotionDivUpToDown>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

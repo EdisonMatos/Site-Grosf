@@ -1,30 +1,30 @@
-import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
-import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
-import MotionDivUpToDown from "../animation/MotionDivUpToDown";
-import mpaLogo from "../../assets/importAssets/Logo.webp";
-import { Phone, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import whatsappNumber from "../../abstractions/whats";
+import MotionDivLeftToRight from '../animation/MotionDivLeftToRight'
+import MotionDivRightToLeft from '../animation/MotionDivRightToLeft'
+import MotionDivUpToDown from '../animation/MotionDivUpToDown'
+import mpaLogo from '../../assets/importAssets/Logo.webp'
+import { Phone, Mail } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import whatsappNumber from '../../abstractions/whats'
 
-const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
 
 export default function FooterProducts() {
-  const [scrolling, setScrolling] = useState(false);
+  const [scrolling, setScrolling] = useState(false)
 
   const handleLinkClick = (sectionId, offset) => {
-    setScrolling(true);
+    setScrolling(true)
     setTimeout(() => {
-      const sectionTop = document.getElementById(sectionId).offsetTop + offset;
+      const sectionTop = document.getElementById(sectionId).offsetTop + offset
       window.scrollTo({
         top: sectionTop,
-        behavior: "smooth",
-      });
+        behavior: 'smooth',
+      })
       setTimeout(() => {
-        setScrolling(false);
-      }, 50);
-    }, 10);
-  };
+        setScrolling(false)
+      }, 50)
+    }, 10)
+  }
 
   return (
     <footer className="bg-secondary full gap-y-[42px]  text-white font-mainFont text-left text-paragraph3 flex flex-col py-[28px] justify-between items-center">
@@ -32,9 +32,9 @@ export default function FooterProducts() {
         <MotionDivLeftToRight>
           <div className="flex flex-col gap-y-[16px] desktop1:w-[290px]">
             <img
-              alt="Logo MPA Piscinas"
+              alt="Logomarca da Grosf"
               src={mpaLogo}
-              className="w-[109px] h-[115px]"
+              className="w-full tablet1:w-[40%] desktop1:w-[80%] h-[105px] bg-white p-3 rounded-md"
             ></img>
             <p className="full">Na sua piscinas fazemos tudo, você nada!</p>
             <div className="flex full gap-x-[8px] items-center">
@@ -74,7 +74,7 @@ export default function FooterProducts() {
                 <div className="h-[36px] ">
                   <Link
                     to="/"
-                    onClick={() => handleLinkClick("home", 0)}
+                    onClick={() => handleLinkClick('home', 0)}
                     className="relative cursor-pointer"
                     spy={true}
                     smooth={true}
@@ -87,7 +87,7 @@ export default function FooterProducts() {
                 <div className="h-[36px] ">
                   <Link
                     to="/"
-                    onClick={() => handleLinkClick("about", -70)}
+                    onClick={() => handleLinkClick('about', -70)}
                     className="relative cursor-pointer"
                     spy={true}
                     smooth={true}
@@ -100,7 +100,7 @@ export default function FooterProducts() {
                 <div className="h-[36px] ">
                   <Link
                     to="/"
-                    onClick={() => handleLinkClick("products", -70)}
+                    onClick={() => handleLinkClick('products', -70)}
                     className="relative py-4 cursor-pointer"
                     spy={true}
                     smooth={true}
@@ -115,7 +115,7 @@ export default function FooterProducts() {
                 <div className="h-[36px] ">
                   <Link
                     to="/"
-                    onClick={() => handleLinkClick("courses", -70)}
+                    onClick={() => handleLinkClick('courses', -70)}
                     className="relative cursor-pointer"
                     spy={true}
                     smooth={true}
@@ -128,7 +128,7 @@ export default function FooterProducts() {
                 <div className="h-[36px] ">
                   <Link
                     to="/"
-                    onClick={() => handleLinkClick("faq", -70)}
+                    onClick={() => handleLinkClick('faq', -70)}
                     className="relative cursor-pointer"
                     spy={true}
                     smooth={true}
@@ -141,7 +141,7 @@ export default function FooterProducts() {
                 <div className="h-[36px] ">
                   <Link
                     to="/"
-                    onClick={() => handleLinkClick("contact", -190)}
+                    onClick={() => handleLinkClick('contact', -190)}
                     className="relative cursor-pointer"
                     spy={true}
                     smooth={true}
@@ -170,12 +170,12 @@ export default function FooterProducts() {
               target="_blank"
               href="https://www.paperstreet.com.br"
             >
-              {" "}
+              {' '}
               Gostaria de ter um site como este? Clique aqui
             </a>
           </p>
         </MotionDivUpToDown>
       </div>
     </footer>
-  );
+  )
 }
