@@ -102,12 +102,12 @@ export default function NavbarSection() {
             <img
               src={Logo}
               alt="Logomarca da Grosf"
-              width={180}
+              width={100}
               height={80}
               className={`mr-[40px] h-[80px] p-3 bg-white rounded-md ${
                 scrolling
-                  ? 'h-[56px] max-h-[56px] transition-all duration-1000'
-                  : 'h-[112px] max-h-[112px] transition-all duration-1000'
+                  ? 'h-[56px] max-h-[56px] w-[110px] transition-all duration-1000'
+                  : 'h-[56px] max-h-[112px] w-[160px] transition-all duration-1000'
               } tablet3:mb-0`}
             />
           </ScrollLink>
