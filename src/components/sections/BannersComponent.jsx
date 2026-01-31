@@ -152,6 +152,7 @@ export default function BannerCarouselComponent() {
 
           {/* Botões de navegação */}
           <button
+            aria-label="Botão para passar banner"
             onClick={prevSlide}
             className="absolute bottom-0 left-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-secondary p-0 rounded-full hover:bg-opacity-70 z-10"
           >
@@ -159,6 +160,7 @@ export default function BannerCarouselComponent() {
           </button>
 
           <button
+            aria-label="Botão para passar banner"
             onClick={nextSlide}
             className="absolute bottom-0 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-secondary p-0 rounded-full hover:bg-opacity-70 z-10"
           >
@@ -197,6 +199,7 @@ export default function BannerCarouselComponent() {
 
           {/* Botões de navegação */}
           <button
+            aria-label="Botão para passar banner"
             onClick={prevSlide}
             className="relative top-3/4 left-4 h-fit transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
           >
@@ -204,6 +207,7 @@ export default function BannerCarouselComponent() {
           </button>
 
           <button
+            aria-label="Botão para passar banner"
             onClick={nextSlide}
             className="absolute top-3/4 right-4 transform -translate-y-1/2 bg-white bg-opacity-100 text-primary p-2 rounded-full hover:bg-opacity-70 z-10"
           >

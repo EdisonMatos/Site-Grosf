@@ -1,67 +1,65 @@
-import { useState, useEffect } from 'react'
-import AboutUs from '../components/sections/AboutUs'
-import BackToTopButton from '../components/interactives/BackToTopButton'
-import FloatingWhatsappButton from '../components/interactives/FloatingWhatsappButton'
-import BannersCarousel from '../components/sections/BannersCarouselDesktop'
-import OurProducts from '../components/sections/OurProducts'
-import FrequentlyAskedQuestions from '../components/sections/FrenquentlyAskedQuestions'
-import Courses from '../components/sections/Courses'
-import AvoidAccidents from '../components/sections/AvoidAcidents'
-import Numbers from '../components/sections/Numbers'
+import { useState, useEffect, lazy, Suspense } from 'react'
+
+// CRÍTICOS (sem lazy)
 import NavbarSection from '../components/sections/NavbarSection'
 import HeroSection from '../components/sections/HeroSection'
-import CtaWhatsapp from '../components/sections/CtaWhatsapp'
-import Footer from '../components/sections/Footer'
-import PhoneBannersCarousel from '../components/sections/BannersCarouselPhone'
-import TabletBannersCarousel from '../components/sections/BannersCarouselTablet'
-import Storage from '../components/sections/Storage'
-import Ecalc from '../components/sections/ECalc'
-import BannerCarouselComponent from '../components/sections/BannersComponent'
-import Curiosities from '../components/sections/Curiosities'
+
+// LAZY (abaixo da dobra)
+const AboutUs = lazy(() => import('../components/sections/AboutUs'))
+const Numbers = lazy(() => import('../components/sections/Numbers'))
+const Storage = lazy(() => import('../components/sections/Storage'))
+const Ecalc = lazy(() => import('../components/sections/ECalc'))
+const AvoidAccidents = lazy(
+  () => import('../components/sections/AvoidAcidents'),
+)
+const CtaWhatsapp = lazy(() => import('../components/sections/CtaWhatsapp'))
+const BannerCarouselComponent = lazy(
+  () => import('../components/sections/BannersComponent'),
+)
+const Curiosities = lazy(() => import('../components/sections/Curiosities'))
+const FrequentlyAskedQuestions = lazy(
+  () => import('../components/sections/FrenquentlyAskedQuestions'),
+)
+const Footer = lazy(() => import('../components/sections/Footer'))
+
+// Interativos
+const BackToTopButton = lazy(
+  () => import('../components/interactives/BackToTopButton'),
+)
+const FloatingWhatsappButton = lazy(
+  () => import('../components/interactives/FloatingWhatsappButton'),
+)
+
+// Fallback simples (evita CLS)
+function SectionFallback({ height = '200px' }) {
+  return <div style={{ minHeight: height }} />
+}
 
 export default function ImportPage() {
-  const [carouselComponent, setCarouselComponent] = useState(null)
-
-  useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth
-      if (width <= 639) {
-        setCarouselComponent(<PhoneBannersCarousel />)
-      } else if (width >= 640 && width <= 1023) {
-        setCarouselComponent(<TabletBannersCarousel />)
-      } else {
-        setCarouselComponent(<BannersCarousel />)
-      }
-    }
-
-    handleResize()
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
   return (
     <div>
+      {/* LCP */}
       <NavbarSection />
-      <HeroSection />
-      <AboutUs modal={true} />
-      <Numbers />
-      <Storage modal={true} />
-      {/* <OurProducts /> */}
-      <Ecalc />
-      <AvoidAccidents />
-      <CtaWhatsapp />
-      {/* <Courses /> */}
-      {/* {carouselComponent} */}
-      <BannerCarouselComponent />
-      <Curiosities />
-      <FrequentlyAskedQuestions />
-      <BackToTopButton />
-      <FloatingWhatsappButton />
-      <Footer />
+      <main>
+        <HeroSection />
+
+        {/* Conteúdo abaixo da dobra */}
+        <Suspense fallback={null}>
+          <AboutUs modal={true} />
+          <Numbers />
+          <Storage modal={true} />
+          <Ecalc />
+          <AvoidAccidents />
+          <CtaWhatsapp />
+          <BannerCarouselComponent />
+          <Curiosities />
+          <FrequentlyAskedQuestions />
+          <BackToTopButton />
+          <FloatingWhatsappButton />
+
+          <Footer />
+        </Suspense>
+      </main>
     </div>
   )
 }

@@ -58,7 +58,7 @@ function Buttons({
         disabled={disabled}
       >
         <span
-          className={`flex w-full items-center justify-center h-full gap-3 font-normal text-center text-white ${textSize}`}
+          className={`flex w-full items-center justify-center h-full gap-3 font-normal text-center text-black ${textSize}`}
         >
           {icon} {label}
         </span>
