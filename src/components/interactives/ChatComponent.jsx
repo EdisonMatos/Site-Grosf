@@ -56,7 +56,7 @@ export default function CalculaFacilGrosf() {
         {
           from: 'bot',
           text: `Usando o volume calculado: ${volume.toFixed(
-            3
+            3,
           )} lts. Calculando produtos...`,
         },
       ])
@@ -112,13 +112,13 @@ export default function CalculaFacilGrosf() {
 
     if (userChoice === 'Somente o volume da piscina') {
       delayResponse(`O volume da piscina é ${v.toFixed(3)} lts.`, () =>
-        setStep('askProducts')
+        setStep('askProducts'),
       )
     } else {
       // Option2: calcular produtos
       delayResponse(
         `O volume da piscina é ${v.toFixed(3)} lts. Calculando produtos...`,
-        () => calcularProdutos(v, treatmentOption)
+        () => calcularProdutos(v, treatmentOption),
       )
     }
   }
@@ -138,87 +138,87 @@ export default function CalculaFacilGrosf() {
     if (format === 'Quadrada ou retangular') {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
-          14 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          14 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
-          10 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          10 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `- Se usar Cloro Granulado 10 em 1: ${Math.round(
-          18 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          18 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `- ${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
-          'pt-BR'
-        )} ml.`
+          'pt-BR',
+        )} ml.`,
       )
       produtos.push(
         `- Clarificante: ${Math.round(6 * volumeM3).toLocaleString(
-          'pt-BR'
-        )} ml.`
+          'pt-BR',
+        )} ml.`,
       )
       produtos.push(
         `- Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString(
-          'pt-BR'
-        )} ml.`
+          'pt-BR',
+        )} ml.`,
       )
     } else if (format === 'Oval') {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
-          14 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          14 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
-          10 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          10 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `- Se usar Cloro Granulado 10 em 1: ${Math.round(
-          18 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          18 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
-          'pt-BR'
-        )} ml.`
+          'pt-BR',
+        )} ml.`,
       )
       produtos.push(
-        `Clarificante: ${Math.round(6 * volumeM3).toLocaleString('pt-BR')} ml.`
+        `Clarificante: ${Math.round(6 * volumeM3).toLocaleString('pt-BR')} ml.`,
       )
       produtos.push(
-        `Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString('pt-BR')} ml.`
+        `Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString('pt-BR')} ml.`,
       )
     } else if (format === 'Redonda') {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
-          12 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          12 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
-          9 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          9 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `- Se usar Cloro Granulado 10 em 1: ${Math.round(
-          16 * volumeM3
-        ).toLocaleString('pt-BR')} gramas.`
+          16 * volumeM3,
+        ).toLocaleString('pt-BR')} gramas.`,
       )
       produtos.push(
         `${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
-          'pt-BR'
-        )} ml.`
+          'pt-BR',
+        )} ml.`,
       )
       produtos.push(
-        `Clarificante: ${Math.round(5 * volumeM3).toLocaleString('pt-BR')} ml.`
+        `Clarificante: ${Math.round(5 * volumeM3).toLocaleString('pt-BR')} ml.`,
       )
       produtos.push(
-        `Elimina óleo: ${Math.round(12 * volumeM3).toLocaleString('pt-BR')} ml.`
+        `Elimina óleo: ${Math.round(12 * volumeM3).toLocaleString('pt-BR')} ml.`,
       )
     }
 
@@ -237,7 +237,7 @@ export default function CalculaFacilGrosf() {
 
   const calc = (quantidadePor1000) => {
     return (((volume * 1000) / 1000) * quantidadePor1000).toLocaleString(
-      'pt-BR'
+      'pt-BR',
     )
   }
 
@@ -264,7 +264,7 @@ export default function CalculaFacilGrosf() {
   }, [messages])
 
   return (
-    <div className="flex flex-col max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
+    <div className="flex flex-col font-mainFont max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
       <div
         ref={containerRef}
         className="flex flex-col space-y-4 h-[350px] overflow-y-scroll phone1:pt-[280px] phone2:pt-[280px] mb-4 border-2 p-2 rounded-md"
@@ -319,7 +319,7 @@ export default function CalculaFacilGrosf() {
             }`}
             onClick={() =>
               handleTreatmentOption(
-                'Primeiro tratamento ou longo período de abandono'
+                'Primeiro tratamento ou longo período de abandono',
               )
             }
             name="Primeiro tratamento ou longo período de abandono"
@@ -478,7 +478,7 @@ export default function CalculaFacilGrosf() {
 
                   `Elevador de alcalinidade em pó:
                   ${calc(
-                    17
+                    17,
                   )} gramas até elevar a alcalinidade para 100,0 ppm em média.`,
 
                   `Auxiliar de aspiração:
