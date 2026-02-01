@@ -106,8 +106,8 @@ export default function NavbarSection() {
               height="95"
               className={`mr-[40px] h-[80px] p-3 bg-white rounded-md ${
                 scrolling
-                  ? 'h-[56px] max-h-[56px] w-[110px] transition-all duration-1000'
-                  : 'h-[56px] max-h-[112px] w-[160px] transition-all duration-1000'
+                  ? 'h-[56px] max-h-[56px] w-fit transition-all duration-1000'
+                  : 'h-[56px] max-h-[112px] w-fit transition-all duration-1000'
               } tablet3:mb-0`}
             />
           </ScrollLink>
