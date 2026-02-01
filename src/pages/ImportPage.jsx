@@ -30,11 +30,6 @@ const FloatingWhatsappButton = lazy(
   () => import('../components/interactives/FloatingWhatsappButton'),
 )
 
-// Fallback simples (evita CLS)
-function SectionFallback({ height = '200px' }) {
-  return <div style={{ minHeight: height }} />
-}
-
 export default function ImportPage() {
   return (
     <div>
