@@ -10,14 +10,16 @@ const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
 
 function Footer() {
   return (
-    <footer className="bg-secondary full gap-y-[42px]  text-white font-mainFont text-left text-paragraph3 flex flex-col py-[26px] phone3:py-[48px] justify-between items-center">
-      <div className=" w-[88%] max-w-[1110px] flex flex-col gap-y-[42px]  desktop1:flex-row desktop1:justify-between">
+    <footer className="bg-secondary full gap-y-[42px] text-white font-mainFont text-left text-paragraph3 flex flex-col py-[26px] phone3:py-[48px] justify-between items-center">
+      <div className=" w-[88%] max-w-[1110px] flex flex-col gap-y-[42px] desktop1:flex-row desktop1:justify-between">
         <MotionDivLeftToRight>
           <div className="flex flex-col gap-y-[16px] desktop1:w-auto">
             <img
               alt="Logomarca da Grosf"
               src={mpaLogo}
-              className="w-full tablet1:w-[40%] desktop1:w-[80%] h-[105px] bg-white p-3 rounded-md"
+              width="300"
+              height="95"
+              className="w-fit h-[105px] bg-white p-3 rounded-md"
             ></img>
             <p className="full">Mergulhe na magia desse nosso vasto oceano.</p>
             <div className="flex full gap-x-[8px] items-center">

@@ -102,8 +102,8 @@ export default function NavbarSection() {
             <img
               src={Logo}
               alt="Logomarca da Grosf"
-              width={100}
-              height={80}
+              width="300"
+              height="95"
               className={`mr-[40px] h-[80px] p-3 bg-white rounded-md ${
                 scrolling
                   ? 'h-[56px] max-h-[56px] w-[110px] transition-all duration-1000'
