@@ -1,27 +1,27 @@
-import SectionHeader from "../sectionElements/SectionHeader";
-import ImagesGallery3Slides from "../interactives/ImagesGallery3Slides";
-import slide1 from "../../assets/banners/aboutUs/slide1.jpg";
-import slide2 from "../../assets/banners/aboutUs/slide2.jpg";
-import slide3 from "../../assets/banners/aboutUs/slide3.jpg";
-import slide4 from "../../assets/banners/aboutUs/slide4.jpg";
-import slide5 from "../../assets/banners/aboutUs/slide5.jpg";
-import slide6 from "../../assets/banners/aboutUs/slide6.jpg";
-import slide7 from "../../assets/banners/aboutUs/slide7.jpg";
-import slide8 from "../../assets/banners/aboutUs/slide8.jpg";
-import slide9 from "../../assets/banners/aboutUs/slide9.jpg";
-import slide10 from "../../assets/banners/aboutUs/slide10.jpg";
-import slide11 from "../../assets/banners/aboutUs/slide11.jpg";
+import SectionHeader from '../sectionElements/SectionHeader'
+import ImagesGallery3Slides from '../interactives/ImagesGallery3Slides'
+import slide1 from '../../assets/banners/aboutUs/slide1.webp'
+import slide2 from '../../assets/banners/aboutUs/slide2.webp'
+import slide3 from '../../assets/banners/aboutUs/slide3.webp'
+import slide4 from '../../assets/banners/aboutUs/slide4.webp'
+import slide5 from '../../assets/banners/aboutUs/slide5.webp'
+import slide6 from '../../assets/banners/aboutUs/slide6.webp'
+import slide7 from '../../assets/banners/aboutUs/slide7.webp'
+import slide8 from '../../assets/banners/aboutUs/slide8.webp'
+import slide9 from '../../assets/banners/aboutUs/slide9.webp'
+import slide10 from '../../assets/banners/aboutUs/slide10.webp'
+import slide11 from '../../assets/banners/aboutUs/slide11.webp'
 
-import ArticleComponent from "../sectionElements/ArticleComponent";
-import SectionArticle from "../sectionElements/SectionArticle";
-import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
-import MotionDivLeftToRight from "../animation/MotionDivLeftToRight";
-import React, { useState } from "react";
-import AboutModal from "../sectionElements/about/AboutModal";
-import ParagraphSemFading from "../sectionElements/about/ParagraphSemFading";
-import ParagraphWithFading from "../sectionElements/about/ParagraphWithFading";
-import AboutFading from "../sectionElements/about/AboutFading";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import ArticleComponent from '../sectionElements/ArticleComponent'
+import SectionArticle from '../sectionElements/SectionArticle'
+import MotionDivRightToLeft from '../animation/MotionDivRightToLeft'
+import MotionDivLeftToRight from '../animation/MotionDivLeftToRight'
+import React, { useState } from 'react'
+import AboutModal from '../sectionElements/about/AboutModal'
+import ParagraphSemFading from '../sectionElements/about/ParagraphSemFading'
+import ParagraphWithFading from '../sectionElements/about/ParagraphWithFading'
+import AboutFading from '../sectionElements/about/AboutFading'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
 
 export default function AboutUs({ modal }) {
   return (
@@ -73,5 +73,5 @@ export default function AboutUs({ modal }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
