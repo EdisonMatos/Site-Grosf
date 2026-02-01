@@ -1,7 +1,7 @@
-import React from "react";
-import ImageGallery from "react-image-gallery";
-import PropTypes from "prop-types";
-import "react-image-gallery/styles/css/image-gallery.css";
+import React from 'react'
+import ImageGallery from 'react-image-gallery'
+import PropTypes from 'prop-types'
+import 'react-image-gallery/styles/css/image-gallery.css'
 
 export default function ImagesGallery3Slides(props) {
   const {
@@ -15,7 +15,7 @@ export default function ImagesGallery3Slides(props) {
     slide9,
     slide10,
     slide11,
-  } = props;
+  } = props
 
   ImagesGallery3Slides.propTypes = {
     slide1: PropTypes.any,
@@ -26,14 +26,14 @@ export default function ImagesGallery3Slides(props) {
     slide7: PropTypes.any,
     slide8: PropTypes.any,
     slide9: PropTypes.any,
-  };
+  }
 
   const images = [
     {
       original: slide1,
       thumbnail: slide1,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -42,8 +42,8 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide2,
       thumbnail: slide2,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -52,8 +52,8 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide3,
       thumbnail: slide3,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -62,8 +62,8 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide5,
       thumbnail: slide5,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -72,8 +72,8 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide6,
       thumbnail: slide6,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -82,8 +82,8 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide7,
       thumbnail: slide7,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -92,8 +92,8 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide8,
       thumbnail: slide8,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -102,8 +102,8 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide9,
       thumbnail: slide9,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
@@ -112,25 +112,25 @@ export default function ImagesGallery3Slides(props) {
     {
       original: slide11,
       thumbnail: slide11,
-      originalAlt: "Imagem do departamento da Grosf",
-      thumbnailAlt: "Imagem do departamento da Grosf",
+      originalAlt: 'Imagem do departamento da Grosf',
+      thumbnailAlt: 'Imagem do departamento da Grosf',
       originalHeight: 100,
       originalWidth: 100,
       thumbnailHeight: 50,
       thumbnailWidth: 50,
     },
-  ];
+  ]
 
   return (
     <div>
       <ImageGallery
         items={images}
-        showBullets={true}
+        showBullets={false}
         autoPlay={true}
         showFullscreenButton={false}
         useBrowserFullscreen={true}
         showThumbnails={true}
       />
     </div>
-  );
+  )
 }
