@@ -29,7 +29,7 @@ export default function ImgAndButtonsCard(props) {
         {/* <button className="text-white bg-primary rounded-[10px] text-paragraph3 py-[8px] px-[31px] font-mainFont font-medium w-full transition hover:bg-blue-600">
           <MotionDivLeftToRight><p>{button1Label}</p></MotionDivLeftToRight>
         </button> */}
-        <Buttons className="w-full h-10 desktop1:h-8 mb-4" />
+        <Buttons name='Consultar produtos' className="w-full h-10 desktop1:h-8 mb-4" />
       </Link>
     </div>
   )
