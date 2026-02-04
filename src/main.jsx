@@ -9,6 +9,7 @@ import NetunoPage from './pages/NetunoPage.jsx'
 import SodramarPage from './pages/SodramarPage.jsx'
 import SuallPage from './pages/SuallPage.jsx'
 import './index.css'
+import Allquimia from './pages/Allquimia.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path="/netuno" element={<NetunoPage />} />
       <Route path="/sodramar" element={<SodramarPage />} />
       <Route path="/suall" element={<SuallPage />} />
+      <Route path="/allquimia" element={<Allquimia />} />
     </Routes>
   </Router>,
 )

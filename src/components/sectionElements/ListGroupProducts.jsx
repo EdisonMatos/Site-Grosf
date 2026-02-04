@@ -1,53 +1,53 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ListGroupProducts() {
-  const [scrolling, setScrolling] = useState(false);
-  const [showSubMenu, setShowSubMenu] = useState(false);
+  const [scrolling, setScrolling] = useState(false)
+  const [showSubMenu, setShowSubMenu] = useState(false)
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
-      setScrolling(true);
+      setScrolling(true)
     } else {
-      setScrolling(false);
+      setScrolling(false)
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   const toggleSubMenu = (show) => {
-    setShowSubMenu(show);
-  };
+    setShowSubMenu(show)
+  }
 
   const handleLinkClick = (sectionId, offset) => {
-    setScrolling(true);
+    setScrolling(true)
     setTimeout(() => {
-      const sectionTop = document.getElementById(sectionId).offsetTop + offset;
+      const sectionTop = document.getElementById(sectionId).offsetTop + offset
       window.scrollTo({
         top: sectionTop,
-        behavior: "smooth",
-      });
+        behavior: 'smooth',
+      })
       setTimeout(() => {
-        setScrolling(false);
-      }, 500);
-    }, 100);
-  };
+        setScrolling(false)
+      }, 500)
+    }, 100)
+  }
 
   return (
     <ul
       className={`h-14 my-auto flex items-center justify-end tablet1:items-center tablet1:flex-wrap tablet1:gap-2 tablet2:gap-4 desktop2:gap-8 w-full font-semibold text-paragraph3 font-poppins ${
-        scrolling ? "" : "text-white transition-color duration-200"
+        scrolling ? '' : 'text-white transition-color duration-200'
       }`}
     >
       <li className="transition group">
         <Link
           to="/"
-          onClick={() => handleLinkClick("home", 0)}
+          onClick={() => handleLinkClick('home', 0)}
           className="relative cursor-pointer"
           spy={true}
           smooth={true}
@@ -55,10 +55,10 @@ export default function ListGroupProducts() {
           offset={-100}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>INÍCIO</span>
+          <span className={scrolling ? 'hover:text-primary' : ''}>INÍCIO</span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? "bg-primary" : "bg-white"
+              scrolling ? 'bg-primary' : 'bg-white'
             }`}
           ></div>
         </Link>
@@ -66,7 +66,7 @@ export default function ListGroupProducts() {
       <li className="transition group">
         <Link
           to="/"
-          onClick={() => handleLinkClick("about", -70)}
+          onClick={() => handleLinkClick('about', -70)}
           className="relative cursor-pointer"
           spy={true}
           smooth={true}
@@ -74,12 +74,12 @@ export default function ListGroupProducts() {
           offset={-70}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>
+          <span className={scrolling ? 'hover:text-primary' : ''}>
             SOBRE NÓS
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? "bg-primary" : "bg-white"
+              scrolling ? 'bg-primary' : 'bg-white'
             }`}
           ></div>
         </Link>
@@ -91,7 +91,7 @@ export default function ListGroupProducts() {
       >
         <Link
           to="/"
-          onClick={() => handleLinkClick("products", -70)}
+          onClick={() => handleLinkClick('products', -70)}
           className="relative py-4 cursor-pointer"
           spy={true}
           smooth={true}
@@ -100,14 +100,14 @@ export default function ListGroupProducts() {
           href="#"
         >
           <span
-            className={`inline-block ${scrolling ? "hover:text-primary" : ""}`}
+            className={`inline-block ${scrolling ? 'hover:text-primary' : ''}`}
           >
             PRODUTOS E ACESSÓRIOS
           </span>
         </Link>
         <div
           className={`animate-${
-            showSubMenu ? "fade-in" : "fade-out"
+            showSubMenu ? 'fade-in' : 'fade-out'
           } duration-1000`}
         >
           {showSubMenu && (
@@ -163,9 +163,17 @@ export default function ListGroupProducts() {
               <li>
                 <a
                   href="/netuno"
-                  className="block w-[80%] mx-auto px-4 py-2 text-center text-tertiary transition duration-500 cursor-pointer hover:text-primary hover:bg-quinary"
+                  className="block w-[80%] mx-auto px-4 py-2 text-center text-tertiary transition duration-500 border-b cursor-pointer hover:text-primary hover:bg-quinary"
                 >
                   Netuno
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/allquimia"
+                  className="block w-[80%] mx-auto px-4 py-2 text-center text-tertiary transition duration-500 cursor-pointer hover:text-primary hover:bg-quinary"
+                >
+                  Allquimia
                 </a>
               </li>
             </ul>
@@ -175,7 +183,7 @@ export default function ListGroupProducts() {
       <li className="transition group">
         <Link
           to="/"
-          onClick={() => handleLinkClick("courses", -70)}
+          onClick={() => handleLinkClick('courses', -70)}
           className="relative cursor-pointer"
           spy={true}
           smooth={true}
@@ -183,12 +191,12 @@ export default function ListGroupProducts() {
           offset={-70}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>
+          <span className={scrolling ? 'hover:text-primary' : ''}>
             CURSOS E PALESTRAS
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? "bg-primary" : "bg-white"
+              scrolling ? 'bg-primary' : 'bg-white'
             }`}
           ></div>
         </Link>
@@ -196,7 +204,7 @@ export default function ListGroupProducts() {
       <li className="transition group">
         <Link
           to="/"
-          onClick={() => handleLinkClick("faq", -70)}
+          onClick={() => handleLinkClick('faq', -70)}
           className="relative cursor-pointer"
           spy={true}
           smooth={true}
@@ -204,12 +212,12 @@ export default function ListGroupProducts() {
           offset={-70}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>
+          <span className={scrolling ? 'hover:text-primary' : ''}>
             PERGUNTAS FREQUENTES
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? "bg-primary" : "bg-white"
+              scrolling ? 'bg-primary' : 'bg-white'
             }`}
           ></div>
         </Link>
@@ -217,7 +225,7 @@ export default function ListGroupProducts() {
       <li className="transition group">
         <Link
           to="/"
-          onClick={() => handleLinkClick("contact", -190)}
+          onClick={() => handleLinkClick('contact', -190)}
           className="relative cursor-pointer"
           spy={true}
           smooth={true}
@@ -225,14 +233,14 @@ export default function ListGroupProducts() {
           offset={-190}
           href="#"
         >
-          <span className={scrolling ? "hover:text-primary" : ""}>CONTATO</span>
+          <span className={scrolling ? 'hover:text-primary' : ''}>CONTATO</span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? "bg-primary" : "bg-white"
+              scrolling ? 'bg-primary' : 'bg-white'
             }`}
           ></div>
         </Link>
       </li>
     </ul>
-  );
+  )
 }

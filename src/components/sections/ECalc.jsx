@@ -1,17 +1,17 @@
-import SectionHeader from "../sectionElements/SectionHeader";
-import SectionContent from "../sectionElements/SectionContent";
-import SectionArticle from "../sectionElements/SectionArticle";
-import SquareCalculator from "../interactives/SquareCalculator";
-import RoundCalculator from "../interactives/RoundCalculator";
-import ChatBot from "../interactives/ChatComponent";
-import MotionDivDownToUp from "../animation/MotionDivDownToUp";
-import whatsappNumber from "../../abstractions/whats";
+import SectionHeader from '../sectionElements/SectionHeader'
+import SectionContent from '../sectionElements/SectionContent'
+import SectionArticle from '../sectionElements/SectionArticle'
+import SquareCalculator from '../interactives/SquareCalculator'
+import RoundCalculator from '../interactives/RoundCalculator'
+import ChatBot from '../interactives/ChatComponent'
+import MotionDivDownToUp from '../animation/MotionDivDownToUp'
+import whatsappNumber from '../../abstractions/whats'
 
-const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
 
 export default function Ecalc() {
   return (
-    <div className="flex justify-center full bg-quinary" id="products">
+    <div className="flex justify-center full bg-quinary">
       <div className="w-[88%] max-w-[1110px] py-[26px] phone3:py-[48px]">
         <SectionHeader
           sectionHeaderTitleSecond="Calcule Fácil Grosf"
@@ -52,5 +52,5 @@ export default function Ecalc() {
         </SectionContent>
       </div>
     </div>
-  );
+  )
 }

@@ -7,6 +7,7 @@ import HeroSection from '../components/sections/HeroSection'
 // LAZY (abaixo da dobra)
 const AboutUs = lazy(() => import('../components/sections/AboutUs'))
 const Numbers = lazy(() => import('../components/sections/Numbers'))
+const OurProducts = lazy(() => import('../components/sections/OurProducts'))
 const Storage = lazy(() => import('../components/sections/Storage'))
 const Ecalc = lazy(() => import('../components/sections/ECalc'))
 const AvoidAccidents = lazy(
@@ -42,6 +43,7 @@ export default function ImportPage() {
         <Suspense fallback={null}>
           <AboutUs modal={true} />
           <Numbers />
+          <OurProducts />
           <Storage modal={true} />
           <Ecalc />
           <AvoidAccidents />
@@ -51,7 +53,6 @@ export default function ImportPage() {
           <FrequentlyAskedQuestions />
           <BackToTopButton />
           <FloatingWhatsappButton />
-
           <Footer />
         </Suspense>
       </main>

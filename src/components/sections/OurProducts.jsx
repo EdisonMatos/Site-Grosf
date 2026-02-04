@@ -1,21 +1,22 @@
-import SectionHeader from "../sectionElements/SectionHeader";
-import SectionContent from "../sectionElements/SectionContent";
-import ImgAndButtonsCard from "../cards/ImgAndButtonsCard";
-import hthLogo from "../../assets/imgs/brands/hthLogo.jpg";
-import gencoLogo from "../../assets/imgs/brands/gencoLogo.jpg";
-import domclorLogo from "../../assets/imgs/brands/domclorLogo.jpg";
-import neoclorLogo from "../../assets/imgs/brands/neoclorLogo.jpg";
-import netunoLogo from "../../assets/imgs/brands/netunoLogo.jpg";
-import sodramarLogo from "../../assets/imgs/brands/sodramarLogo.jpg";
-import suallLogo from "../../assets/imgs/brands/suallLogo.jpg";
+import SectionHeader from '../sectionElements/SectionHeader'
+import SectionContent from '../sectionElements/SectionContent'
+import ImgAndButtonsCard from '../cards/ImgAndButtonsCard'
+import hthLogo from '../../assets/imgs/brands/hthLogo.webp'
+import gencoLogo from '../../assets/imgs/brands/gencoLogo.webp'
+import domclorLogo from '../../assets/imgs/brands/domclorLogo.webp'
+import neoclorLogo from '../../assets/imgs/brands/neoclorLogo.webp'
+import netunoLogo from '../../assets/imgs/brands/netunoLogo.webp'
+import sodramarLogo from '../../assets/imgs/brands/sodramarLogo.webp'
+import suallLogo from '../../assets/imgs/brands/suallLogo.webp'
+import allquimiaLogo from '../../assets/imgs/brands/allquimiaLogo.webp'
 
 export default function OurProducts() {
   return (
     <div className="flex justify-center full bg-quinary" id="products">
       <div className="w-[88%] max-w-[1110px] py-[26px] phone3:py-[48px]">
         <SectionHeader
-          sectionHeaderTitleSecond="A definir."
-          sectionHeaderDescription="A definir."
+          sectionHeaderTitleSecond="Produtos e Acessórios"
+          sectionHeaderDescription="Aqui você encontra as melhores marcas. Escolha aquela da sua confiança e boas compras!"
         />
         <SectionContent>
           <ImgAndButtonsCard
@@ -60,8 +61,14 @@ export default function OurProducts() {
             button1Link="/netuno"
             alt="Logo da marca Netuno"
           />
+          <ImgAndButtonsCard
+            img={allquimiaLogo}
+            button1Label="Consultar Produtos"
+            button1Link="/allquimia"
+            alt="Logo da marca Allquimia"
+          />
         </SectionContent>
       </div>
     </div>
-  );
+  )
 }

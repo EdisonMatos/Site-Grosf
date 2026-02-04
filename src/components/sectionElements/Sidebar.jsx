@@ -1,11 +1,11 @@
-import { Link } from "react-scroll";
-import { PropTypes } from "prop-types";
+import { Link } from 'react-scroll'
+import { PropTypes } from 'prop-types'
 
 export default function Sidebar({ showSidebar }) {
   return (
     <div
       className={`sidebar transition-transform transform ${
-        showSidebar ? "animate-slide-down" : "animate-slide-up"
+        showSidebar ? 'animate-slide-down' : 'animate-slide-up'
       }`}
     >
       <div className="mx-auto w-[88%] max-w-[1110px] tablet2:hidden">
@@ -93,9 +93,9 @@ export default function Sidebar({ showSidebar }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 Sidebar.propTypes = {
   showSidebar: PropTypes.bool.isRequired,
-};
+}
