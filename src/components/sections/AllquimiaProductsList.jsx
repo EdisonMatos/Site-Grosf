@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Checkbox from '@mui/material/Checkbox'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import SuallProducts from '../util/productsData/suall/SuallProducts'
 import AllquimiaProducts from '../util/productsData/allquimia/AllquimiaProducts'
 import ImgCodeDescCard from '../cards/ImgCodeDescCard'
 

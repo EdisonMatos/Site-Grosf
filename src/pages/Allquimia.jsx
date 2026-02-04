@@ -4,7 +4,7 @@ import HeroProducts from '../components/sectionElements/HeroProducts'
 import BackToTopButton from '../components/interactives/BackToTopButton'
 import FloatingWhatsappButton from '../components/interactives/FloatingWhatsappButton'
 import imgLogo from '../assets/imgs/brands/allquimiaLogo.webp'
-import AllquimiaProductsList from '../components/sections/AllquimiaProducts'
+import AllquimiaProductsList from '../components/sections/AllquimiaProductsList'
 
 export default function Allquimia() {
   return (
