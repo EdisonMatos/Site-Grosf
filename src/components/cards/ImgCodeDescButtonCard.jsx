@@ -14,7 +14,7 @@ export default function ImgCodeDescButtonCard(props) {
   }
 
   return (
-    <div className="w-full phone3:w-[46%] tablet1:w-[47%] tablet2:w-[30.5%] desktop1:w-[30.6%] desktop3:w-[31%] bg-white p-[15px] rounded-[10px] flex flex-col gap-[10px]">
+    <div className="w-full relative phone3:w-[46%] tablet1:w-[47%] tablet2:w-[30.5%] desktop1:w-[30.6%] desktop3:w-[31%] min-h-[410px] bg-white p-[15px] rounded-[10px] flex flex-col justify-between gap-[10px] overflow-hidden">
       <div className="flex justify-center items-center h-[200px] phone3:h-[200px] tablet1:h-[200px]">
         <img src={img} alt={alt} className="max-h-[190px] max-w-[150px]" />
       </div>
@@ -28,7 +28,7 @@ export default function ImgCodeDescButtonCard(props) {
         {description}
       </p>
       <a href={button1Link} target="_blank" className="w-full">
-        <button className="text-white bg-primary rounded-[10px] phone3:px-[15px] py-[8px] px-[31px] text-paragraph3 font-mainFont font-medium w-full transition hover:bg-red-900">
+        <button className="text-white bg-blue-700 rounded-[10px] phone3:px-[15px] py-[8px] px-[31px] text-paragraph3 font-mainFont font-medium w-full transition hover:bg-blue-900">
           {button1Label}
         </button>
       </a>
