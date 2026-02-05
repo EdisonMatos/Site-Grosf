@@ -41,9 +41,8 @@ export default function HeroSection() {
                 <div>
                   <div className="text-justify phone1:w-full phone1:font-medium phone1:text-paragraph4">
                     <p>
-                      Nossos profissionais são preparados para atendê-lo de
-                      forma objetiva, técnica, transparente e humanizada, siga
-                      navegando e surpreenda-se!
+                      Continue navegando e conheça nossas origens e os
+                      princípios que norteiam nossa empresa!
                     </p>
                   </div>
                 </div>
