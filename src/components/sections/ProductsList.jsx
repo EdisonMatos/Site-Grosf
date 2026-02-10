@@ -1,15 +1,15 @@
-import { useState } from "react";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import ImgCodeDescButtonCard from "../cards/ImgCodeDescButtonCard";
-import HthProducts from "../util/productsData/hth/HthProducts";
+import { useState } from 'react'
+import Checkbox from '@mui/material/Checkbox'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import ImgCodeDescButtonCard from '../cards/ImgCodeDescButtonCard'
+import HthProducts from '../util/productsData/hth/HthProducts'
 
 export default function ProductsList() {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState('all')
 
   const handleCheckboxChange = (category) => {
-    setSelectedCategory(category);
-  };
+    setSelectedCategory(category)
+  }
 
   return (
     <div className="bg-quinary">
@@ -23,8 +23,8 @@ export default function ProductsList() {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={selectedCategory === "all"}
-                    onChange={() => handleCheckboxChange("all")}
+                    checked={selectedCategory === 'all'}
+                    onChange={() => handleCheckboxChange('all')}
                   />
                 }
                 label={<span className="font-mainFont">Todos</span>}
@@ -32,8 +32,8 @@ export default function ProductsList() {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={selectedCategory === "cloros"}
-                    onChange={() => handleCheckboxChange("cloros")}
+                    checked={selectedCategory === 'cloros'}
+                    onChange={() => handleCheckboxChange('cloros')}
                   />
                 }
                 label={<span className="font-mainFont">Cloros</span>}
@@ -41,8 +41,8 @@ export default function ProductsList() {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={selectedCategory === "auxiliares"}
-                    onChange={() => handleCheckboxChange("auxiliares")}
+                    checked={selectedCategory === 'auxiliares'}
+                    onChange={() => handleCheckboxChange('auxiliares')}
                   />
                 }
                 label={<span className="font-mainFont">Auxiliares</span>}
@@ -50,7 +50,7 @@ export default function ProductsList() {
             </div>
           </div>
           <div className="flex flex-wrap items-start justify-start w-full gap-7 desktop1:w-[76%]">
-            {(selectedCategory === "cloros" || selectedCategory === "all") && (
+            {(selectedCategory === 'cloros' || selectedCategory === 'all') && (
               <>
                 <ImgCodeDescButtonCard
                   img={HthProducts.cloros.hthCloros1.img}
@@ -70,7 +70,7 @@ export default function ProductsList() {
                   button1Link={HthProducts.cloros.hthCloros2.fispqLink}
                   category={HthProducts.cloros.hthCloros2.category}
                 />
-                <ImgCodeDescButtonCard
+                {/* <ImgCodeDescButtonCard
                   img={HthProducts.cloros.hthCloros3.img}
                   code={HthProducts.cloros.hthCloros3.code}
                   description={HthProducts.cloros.hthCloros3.description}
@@ -78,8 +78,8 @@ export default function ProductsList() {
                   button1Label="Baixar Ficha FISPQ"
                   button1Link={HthProducts.cloros.hthCloros3.fispqLink}
                   category={HthProducts.cloros.hthCloros3.category}
-                />
-                <ImgCodeDescButtonCard
+                /> */}
+                {/* <ImgCodeDescButtonCard
                   img={HthProducts.cloros.hthCloros4.img}
                   code={HthProducts.cloros.hthCloros4.code}
                   description={HthProducts.cloros.hthCloros4.description}
@@ -87,8 +87,8 @@ export default function ProductsList() {
                   button1Label="Baixar Ficha FISPQ"
                   button1Link={HthProducts.cloros.hthCloros4.fispqLink}
                   category={HthProducts.cloros.hthCloros4.category}
-                />
-                <ImgCodeDescButtonCard
+                /> */}
+                {/* <ImgCodeDescButtonCard
                   img={HthProducts.cloros.hthCloros5.img}
                   code={HthProducts.cloros.hthCloros5.code}
                   description={HthProducts.cloros.hthCloros5.description}
@@ -96,7 +96,7 @@ export default function ProductsList() {
                   button1Label="Baixar Ficha FISPQ"
                   button1Link={HthProducts.cloros.hthCloros5.fispqLink}
                   category={HthProducts.cloros.hthCloros5.category}
-                />
+                /> */}
                 <ImgCodeDescButtonCard
                   img={HthProducts.cloros.hthCloros6.img}
                   code={HthProducts.cloros.hthCloros6.code}
@@ -106,7 +106,7 @@ export default function ProductsList() {
                   button1Link={HthProducts.cloros.hthCloros6.fispqLink}
                   category={HthProducts.cloros.hthCloros6.category}
                 />
-                <ImgCodeDescButtonCard
+                {/* <ImgCodeDescButtonCard
                   img={HthProducts.cloros.hthCloros7.img}
                   code={HthProducts.cloros.hthCloros7.code}
                   description={HthProducts.cloros.hthCloros7.description}
@@ -114,7 +114,7 @@ export default function ProductsList() {
                   button1Label="Baixar Ficha FISPQ"
                   button1Link={HthProducts.cloros.hthCloros7.fispqLink}
                   category={HthProducts.cloros.hthCloros7.category}
-                />
+                /> */}
                 <ImgCodeDescButtonCard
                   img={HthProducts.cloros.hthCloros8.img}
                   code={HthProducts.cloros.hthCloros8.code}
@@ -151,10 +151,28 @@ export default function ProductsList() {
                   button1Link={HthProducts.cloros.hthCloros11.fispqLink}
                   category={HthProducts.cloros.hthCloros11.category}
                 />
+                <ImgCodeDescButtonCard
+                  img={HthProducts.cloros.hthCloros12.img}
+                  code={HthProducts.cloros.hthCloros12.code}
+                  description={HthProducts.cloros.hthCloros12.description}
+                  alt={HthProducts.cloros.hthCloros12.description}
+                  button1Label="Baixar Ficha FISPQ"
+                  button1Link={HthProducts.cloros.hthCloros12.fispqLink}
+                  category={HthProducts.cloros.hthCloros12.category}
+                />
+                <ImgCodeDescButtonCard
+                  img={HthProducts.cloros.hthCloros13.img}
+                  code={HthProducts.cloros.hthCloros13.code}
+                  description={HthProducts.cloros.hthCloros13.description}
+                  alt={HthProducts.cloros.hthCloros13.description}
+                  button1Label="Baixar Ficha FISPQ"
+                  button1Link={HthProducts.cloros.hthCloros13.fispqLink}
+                  category={HthProducts.cloros.hthCloros13.category}
+                />
               </>
             )}
-            {(selectedCategory === "auxiliares" ||
-              selectedCategory === "all") && (
+            {(selectedCategory === 'auxiliares' ||
+              selectedCategory === 'all') && (
               <>
                 <ImgCodeDescButtonCard
                   img={HthProducts.auxiliares.hthAuxiliares1.img}
@@ -383,7 +401,7 @@ export default function ProductsList() {
                     HthProducts.auxiliares.hthAuxiliares21.description
                   }
                   alt={HthProducts.auxiliares.hthAuxiliares21.description}
-                  button1Label="Baixar Ficha FISPQ"
+                  button1Label="Não possui Ficha FISPQ"
                   button1Link={HthProducts.auxiliares.hthAuxiliares21.fispqLink}
                   category={HthProducts.auxiliares.hthAuxiliares21.category}
                 />
@@ -393,5 +411,5 @@ export default function ProductsList() {
         </div>
       </div>
     </div>
-  );
+  )
 }
