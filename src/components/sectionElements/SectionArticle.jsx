@@ -1,11 +1,12 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types'
 
 function SectionArticle(props) {
-  const articleTitle = props.articleTitle;
-  const articleSubtitle = props.articleSubtitle;
-  const articleParagraphOne = props.articleParagraphOne;
-  const articleParagraphTwo = props.articleParagraphTwo;
-  const articleParagraphThree = props.articleParagraphThree;
+  const articleTitle = props.articleTitle
+  const articleSubtitle = props.articleSubtitle
+  const articleParagraphOne = props.articleParagraphOne
+  const articleParagraphTwo = props.articleParagraphTwo
+  const articleParagraphThree = props.articleParagraphThree
+  const articleParagraphFour = props.articleParagraphFour
 
   SectionArticle.propTypes = {
     articleTitle: PropTypes.any,
@@ -13,7 +14,8 @@ function SectionArticle(props) {
     articleParagraphOne: PropTypes.any,
     articleParagraphTwo: PropTypes.any,
     articleParagraphThree: PropTypes.any,
-  };
+    articleParagraphFour: PropTypes.any,
+  }
 
   return (
     <div className=" desktop1:flex desktop1:flex-row desktop1:items-center desktop1:justify-between desktop1:gap-[10%] desktop2:gap-[5%] desktop3:gap-0">
@@ -28,10 +30,11 @@ function SectionArticle(props) {
           <p className="">{articleParagraphOne}</p>
           <p className="pt-[2%]">{articleParagraphTwo}</p>
           <p className="pt-[2%]">{articleParagraphThree}</p>
+          <p className="pt-[2%]">{articleParagraphFour}</p>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default SectionArticle;
+export default SectionArticle
