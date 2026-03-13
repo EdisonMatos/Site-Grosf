@@ -4,6 +4,7 @@ import slide1 from "../../assets/imgs/armazem/slide1.webp";
 import slide2 from "../../assets/imgs/armazem/slide2.webp";
 import slide3 from "../../assets/imgs/armazem/slide3.webp";
 import slide4 from "../../assets/imgs/armazem/slide4.webp";
+import slide5 from "../../assets/imgs/armazem/slide5.webp";
 
 import ArticleComponent from "../sectionElements/ArticleComponent";
 import SectionArticle from "../sectionElements/SectionArticle";
@@ -55,6 +56,7 @@ export default function Storage({ modal }) {
                     slide2={slide2}
                     slide3={slide3}
                     slide4={slide4}
+                    slide5={slide5}
                   />
                 </MotionDivRightToLeft>
               </div>
