@@ -1,8 +1,8 @@
 import SectionHeader from "../sectionElements/SectionHeader";
 import ImagesGallery3Slides from "../interactives/ImagesGallery3Slides";
 import slide1 from "../../assets/banners/aboutUs/slide1.webp";
-import slide2 from "../../assets/banners/aboutUs/slide2.webp";
 import slide3 from "../../assets/banners/aboutUs/slide3.webp";
+import slide2 from "../../assets/banners/aboutUs/slide2.webp";
 import slide4 from "../../assets/banners/aboutUs/slide4.webp";
 import slide5 from "../../assets/banners/aboutUs/slide5.webp";
 import slide6 from "../../assets/banners/aboutUs/slide6.webp";
@@ -51,9 +51,9 @@ export default function AboutUs({ modal }) {
                 <MotionDivRightToLeft>
                   <ImagesGallery3Slides
                     slide1={slide1}
-                    slide2={slide2}
-                    slide3={slide3}
-                    slide4={slide4}
+                    slide2={slide3}
+                    slide3={slide4}
+                    slide4={slide2}
                     slide5={slide5}
                     slide6={slide6}
                     slide7={slide7}
