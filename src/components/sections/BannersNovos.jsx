@@ -3,19 +3,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionHeader from "../sectionElements/SectionHeader";
 
 // Importe as imagens corretamente
-import banner0 from "../../assets/banners/bannersCarousel/banners0.webp";
-import banner1 from "../../assets/banners/bannersCarousel/banners1.webp";
-import banner2 from "../../assets/banners/bannersCarousel/banners2.webp";
-import banner3 from "../../assets/banners/bannersCarousel/banners3.webp";
-import banner4 from "../../assets/banners/bannersCarousel/banners4.webp";
-import banner5 from "../../assets/banners/bannersCarousel/banners5.webp";
+import banner0 from "../../assets/banners/bannersNovos/bannerDesktop1.webp";
+import banner1 from "../../assets/banners/bannersNovos/bannerDesktop2.webp";
+import banner2 from "../../assets/banners/bannersNovos/bannerDesktop3.webp";
 
-import banner0Mobile from "../../assets/banners/bannersCarousel/bannersMobile0.webp";
-import banner1Mobile from "../../assets/banners/bannersCarousel/bannersMobile1.webp";
-import banner2Mobile from "../../assets/banners/bannersCarousel/bannersMobile2.webp";
-import banner3Mobile from "../../assets/banners/bannersCarousel/bannersMobile3.webp";
-import banner4Mobile from "../../assets/banners/bannersCarousel/bannersMobile4.webp";
-import banner5Mobile from "../../assets/banners/bannersCarousel/bannersMobile5.webp";
+import banner0Mobile from "../../assets/banners/bannersNovos/bannerMobile1.webp";
+import banner1Mobile from "../../assets/banners/bannersNovos/bannerMobile2.webp";
+import banner2Mobile from "../../assets/banners/bannersNovos/bannerMobile3.webp";
 
 // Array de banners
 const banners = [
@@ -37,24 +31,6 @@ const banners = [
     description: "Descrição do terceiro banner",
     image: banner2,
   },
-  {
-    id: 4,
-    title: "Quarto Banner",
-    description: "Descrição do quarto banner",
-    image: banner3,
-  },
-  {
-    id: 5,
-    title: "Quinto Banner",
-    description: "Descrição do quinto banner",
-    image: banner4,
-  },
-  {
-    id: 6,
-    title: "Quinto Banner",
-    description: "Descrição do quinto banner",
-    image: banner5,
-  },
 ];
 
 const bannersMobile = [
@@ -75,24 +51,6 @@ const bannersMobile = [
     title: "Terceiro Banner",
     description: "Descrição do terceiro banner",
     image: banner2Mobile,
-  },
-  {
-    id: 4,
-    title: "Quarto Banner",
-    description: "Descrição do quarto banner",
-    image: banner3Mobile,
-  },
-  {
-    id: 5,
-    title: "Quinto Banner",
-    description: "Descrição do quinto banner",
-    image: banner4Mobile,
-  },
-  {
-    id: 6,
-    title: "Quinto Banner",
-    description: "Descrição do quinto banner",
-    image: banner5Mobile,
   },
 ];
 
@@ -128,13 +86,13 @@ export default function BannersNovos() {
   return (
     <section className="w-full bg-quinary py-12">
       <div className="w-[90%] max-w-[1110px] m-auto">
-        <SectionHeader
+        {/* <SectionHeader
           sectionHeaderTitleFirst="Como tratar a sua piscina em 5 passos"
           sectionHeaderDescription="Veja 5 passos simples, mas importantes para o tratamento adequado da sua piscina."
-        />
+        /> */}
 
         {/* Mobile */}
-        <div className="relative desktop1:hidden w-[90%] max-w-screen-xl mx-auto overflow-hidden aspect-[9/16] rounded-2xl shadow-lg h-auto">
+        <div className="relative desktop1:hidden w-[90%] max-w-screen-xl mx-auto overflow-hidden aspect-[11/16.5] rounded-2xl shadow-lg h-auto">
           {bannersMobile.map((banner, index) => (
             <div
               key={banner.id}
@@ -173,7 +131,7 @@ export default function BannersNovos() {
               <div
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === current ? "bg-secondary scale-110" : "bg-white"
+                  index === current ? "bg-primary scale-110" : "bg-white"
                 }`}
               ></div>
             ))}
@@ -192,7 +150,7 @@ export default function BannersNovos() {
               <img
                 src={banner.image}
                 alt={banner.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full"
               />
             </div>
           ))}
