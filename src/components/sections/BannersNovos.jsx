@@ -139,7 +139,7 @@ export default function BannersNovos() {
         </div>
 
         {/* Desktop */}
-        <div className="relative hidden desktop1:flex w-[90%] max-w-screen-xl mx-auto overflow-hidden rounded-2xl shadow-lg h-auto aspect-[16/9]">
+        <div className="relative hidden desktop1:flex w-[90%] max-w-screen-xl mx-auto overflow-hidden rounded-2xl shadow-lg h-auto aspect-[15/10]">
           {banners.map((banner, index) => (
             <div
               key={banner.id}
