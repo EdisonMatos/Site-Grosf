@@ -84,7 +84,7 @@ export default function BannersNovos() {
   }, []);
 
   return (
-    <section className="w-full bg-quinary py-12">
+    <section className="w-full bg-white py-12">
       <div className="w-[90%] max-w-[1110px] m-auto">
         {/* <SectionHeader
           sectionHeaderTitleFirst="Como tratar a sua piscina em 5 passos"
