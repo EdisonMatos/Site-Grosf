@@ -4,6 +4,7 @@ import { useState, useEffect, lazy, Suspense } from "react";
 import NavbarSection from "../components/sections/NavbarSection";
 import HeroSection from "../components/sections/HeroSection";
 import BannersNovos from "../components/sections/BannersNovos";
+import Courses from "../components/sections/Courses";
 
 // LAZY (abaixo da dobra)
 const AboutUs = lazy(() => import("../components/sections/AboutUs"));
@@ -49,6 +50,7 @@ export default function ImportPage() {
           <Ecalc />
           <AvoidAccidents />
           <CtaWhatsapp />
+          <Courses />
           <BannerCarouselComponent />
           <Curiosities />
           <BannersNovos />

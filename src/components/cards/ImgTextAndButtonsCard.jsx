@@ -14,10 +14,16 @@ export default function ImgTextAndButtonsCard(props) {
   };
 
   return (
-    <div className="w-full tablet1:w-[45%] desktop1:w-[29%]  bg-white p-[15px] my-[14px] rounded-[10px] flex flex-col gap-[15px]">
+    <div className="w-full tablet1:w-[45%] desktop1:w-[29%] min-h-[270px] bg-white p-[15px] my-[14px] rounded-[10px] flex flex-col gap-[15px] justify-between">
       <MotionDivLeftToRight>
         <div className="flex justify-center items-center h-[125px] phone3:h-[80px] tablet1:h-[125px]">
-          <img src={img} alt={alt} className="max-h-[90px] max-w-[150px]" />
+          <img
+            src={img}
+            alt={alt}
+            width={86}
+            height={90}
+            className="max-h-[90px] max-w-[150px]"
+          />
         </div>
       </MotionDivLeftToRight>
       <p className="text-center font-mainFont text-paragraph3 text-quaternary">
@@ -25,11 +31,14 @@ export default function ImgTextAndButtonsCard(props) {
           <p>{text}</p>
         </MotionDivLeftToRight>
       </p>
+
       <a href={button1Link} target="_blank" className="w-full">
-        {/* <button className="text-white bg-primary rounded-[10px] py-[8px] px-[31px] font-mainFont font-medium text-paragraph3 w-full transition hover:bg-blue-600">
-          <MotionDivLeftToRight><p>{button1Label}</p></MotionDivLeftToRight>
-        </button> */}
-        <Buttons className="w-full h-8 mb-4" />
+        <MotionDivLeftToRight>
+          <Buttons
+            name={button1Label}
+            className="w-full h-10 desktop1:h-8 mb-4"
+          />
+        </MotionDivLeftToRight>
       </a>
     </div>
   );
