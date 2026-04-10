@@ -13,7 +13,7 @@ export default function Courses() {
           sectionHeaderTitleSecond="Aprimore seu conhecimento"
           sectionHeaderDescription="Confira abaixo nossas sugestões para palestras ou cursos para tratamento da sua piscina. Escolha o que mais lhe interessar, e boas aulas!"
         />
-        <SectionContent>
+        <div className="flex flex-wrap items-center justify-around w-full">
           <ImgTextAndButtonsCard
             img={hthLogo}
             text="Curso presencial de tratamento de águas de piscinas."
@@ -29,14 +29,7 @@ export default function Courses() {
             button1Link="https://www.genco.com.br/escola-da-piscina/"
             alt="Logo da marca Genco"
           />
-          <ImgTextAndButtonsCard
-            img={hidroazulLogo}
-            text="Curso completo na Universidade da Piscina."
-            button1Label="Faça sua inscrição"
-            button1Link="https://hidroazul.com.br/universidade-da-piscina/"
-            alt="Logo da marca Hidroazul"
-          />
-        </SectionContent>
+        </div>
       </div>
     </div>
   );
