@@ -53,8 +53,8 @@ export default function ImportPage() {
           <Storage modal={true} />
           <AvoidAccidents />
           <CtaWhatsapp />
-          <FrequentlyAskedQuestions />
           <BannersNovos />
+          <FrequentlyAskedQuestions />
           <BackToTopButton />
           <FloatingWhatsappButton />
           <Footer />
