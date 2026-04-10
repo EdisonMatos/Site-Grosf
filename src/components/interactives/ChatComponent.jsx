@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import Buttons from "../interactives/Buttons";
+import img from "../../assets/imgs/imgChat.webp";
 
 export default function CalculaFacilGrosf() {
   const [messages, setMessages] = useState([
@@ -267,8 +268,9 @@ export default function CalculaFacilGrosf() {
     <div className="flex flex-col font-mainFont max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
       <div
         ref={containerRef}
-        className="flex flex-col space-y-4 h-[200px] phone3:h-[250px] tablet1:h-[350px] overflow-y-scroll pt-[10px] mb-4 border-2 p-2 rounded-md"
+        className="flex flex-col space-y-4 h-[300px] phone3:h-[400px] tablet1:h-[500px] overflow-y-scroll pt-[10px] mb-4 border-2 p-2 rounded-md"
       >
+        <img src={img} alt="" />
         {messages.map((msg, idx) => (
           <div
             key={idx}
