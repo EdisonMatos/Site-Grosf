@@ -270,7 +270,11 @@ export default function CalculaFacilGrosf() {
         ref={containerRef}
         className="flex flex-col space-y-4 h-[250px] phone2:h-[300px] phone3:h-[350px] tablet1:h-[400px] overflow-y-scroll pt-[10px] mb-4 border-2 p-2 rounded-md"
       >
-        <img src={img} alt="imagem de piscina" className="max-w-auto mb-4 mt-4 px-5 rounded-sm" />
+        <img
+          src={img}
+          alt="imagem de piscina"
+          className="max-w-auto mb-4 mt-4 px-5 rounded-sm"
+        />
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -284,9 +288,9 @@ export default function CalculaFacilGrosf() {
           </div>
         ))}
       </div>
-      <p className="font-mainFont flex justify-center pb-4 text-black">
+      {/* <p className="font-mainFont flex justify-center pb-4 text-black">
         Versão 5.0{" "}
-      </p>
+      </p> */}
 
       {step === "start" && (
         <div className="flex flex-col space-y-2">
