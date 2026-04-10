@@ -11,7 +11,7 @@ const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
 
 export default function Ecalc() {
   return (
-    <div className="flex justify-center full bg-quinary">
+    <div className="flex justify-center full bg-quinary" id='chatGrosf'>
       <div className="w-[88%] max-w-[1110px] py-[26px] phone3:py-[48px]">
         <SectionHeader
           sectionHeaderTitleSecond="Calcule Fácil Grosf"

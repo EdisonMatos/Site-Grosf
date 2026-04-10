@@ -31,7 +31,7 @@ function Curiosities() {
   }, [curiosities.length]);
 
   return (
-    <div className=" bg-quinary w-full py-[26px] phone3:py-[48px] mx-auto">
+    <div className=" bg-quinary w-full py-[26px] phone3:py-[48px] mx-auto" id="curiosities">
       <div className="w-[90%] max-w-[1110px] m-auto">
         <SectionHeader
           sectionHeaderTitleSecond="Curiosidades & História"
