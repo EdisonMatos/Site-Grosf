@@ -100,7 +100,7 @@ export default function Sidebar({ showSidebar }) {
               >
                 <li className="mb-2">
                   <span className="hover:text-primary">
-                    Curiosidade e história
+                    Curiosidades e história
                   </span>
                 </li>
               </Link>
