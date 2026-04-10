@@ -46,15 +46,15 @@ export default function ImportPage() {
           <AboutUs modal={true} />
           <Numbers />
           <OurProducts />
-          <Storage modal={true} />
+          <BannerCarouselComponent />
           <Ecalc />
+          <Courses />
+          <Curiosities />
+          <Storage modal={true} />
           <AvoidAccidents />
           <CtaWhatsapp />
-          <Courses />
-          <BannerCarouselComponent />
-          <Curiosities />
-          <BannersNovos />
           <FrequentlyAskedQuestions />
+          <BannersNovos />
           <BackToTopButton />
           <FloatingWhatsappButton />
           <Footer />

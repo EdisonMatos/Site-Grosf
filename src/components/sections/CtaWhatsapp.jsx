@@ -1,15 +1,15 @@
-import SectionContent from '../sectionElements/SectionContent'
-import imgCta from '../../assets/importAssets/CtaWhatsapp.webp'
-import imgBackground from '../../assets/importAssets/bg2.webp'
-import WhatsAppIcon from '../../assets/importAssets/WhatsAppIcon.webp'
-import MotionDivUpToDown from '../animation/MotionDivUpToDown'
-import MotionDivDownToUp from '../animation/MotionDivDownToUp'
-import whatsappNumber from '../../abstractions/whats'
-import MotionDivRightToLeft from '../animation/MotionDivRightToLeft'
-import Buttons from '../interactives/Buttons'
-import { FaWhatsapp } from 'react-icons/fa'
+import SectionContent from "../sectionElements/SectionContent";
+import imgCta from "../../assets/importAssets/CtaWhatsapp.webp";
+import imgBackground from "../../assets/importAssets/bg2.webp";
+import WhatsAppIcon from "../../assets/importAssets/WhatsAppIcon.webp";
+import MotionDivUpToDown from "../animation/MotionDivUpToDown";
+import MotionDivDownToUp from "../animation/MotionDivDownToUp";
+import whatsappNumber from "../../abstractions/whats";
+import MotionDivRightToLeft from "../animation/MotionDivRightToLeft";
+import Buttons from "../interactives/Buttons";
+import { FaWhatsapp } from "react-icons/fa";
 
-const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`
+const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 
 export default function CtaWhatsapp() {
   return (
@@ -17,9 +17,9 @@ export default function CtaWhatsapp() {
       className="relative mt-12 phone1:mt-[15%] phone2:mt-[20%] phone3:mt-[20%] bg-center bg-cover tablet1:mt-28"
       style={{
         backgroundImage: `url(${imgBackground})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed',
-        backgroundColor: '',
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundColor: "",
       }}
       id="contact"
     >
@@ -74,5 +74,5 @@ export default function CtaWhatsapp() {
         </div>
       </SectionContent>
     </div>
-  )
+  );
 }
