@@ -1,33 +1,33 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-scroll'
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 export default function ListGroup() {
-  const [scrolling, setScrolling] = useState(false)
-  const [showSubMenu, setShowSubMenu] = useState(false)
+  const [scrolling, setScrolling] = useState(false);
+  const [showSubMenu, setShowSubMenu] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
-      setScrolling(true)
+      setScrolling(true);
     } else {
-      setScrolling(false)
+      setScrolling(false);
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleSubMenu = (show) => {
-    setShowSubMenu(show)
-  }
+    setShowSubMenu(show);
+  };
 
   return (
     <ul
-      className={`h-14 my-auto flex items-center justify-end tablet1:items-center tablet1:flex-wrap tablet1:gap-2 tablet2:gap-4 desktop2:gap-8 w-full font-semibold text-paragraph3 font-poppins ${
-        scrolling ? '' : 'text-white transition-color duration-200'
+      className={`h-14 my-auto flex items-center justify-end tablet1:items-center tablet1:flex-wrap tablet1:gap-2 tablet2:gap-4 desktop2:gap-8 w-full tablet2:w-[550px] desktop1:min-w-[550px] desktop1:w-full font-semibold text-paragraph3 font-poppins ${
+        scrolling ? "" : "text-white transition-color duration-200"
       }`}
     >
       <li className="transition group">
@@ -40,10 +40,10 @@ export default function ListGroup() {
           offset={-100}
           href="#"
         >
-          <span className={scrolling ? 'hover:text-primary' : ''}>Início</span>
+          <span className={scrolling ? "hover:text-primary" : ""}>Início</span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? 'bg-primary' : 'bg-white'
+              scrolling ? "bg-primary" : "bg-white"
             }`}
           ></div>
         </Link>
@@ -58,12 +58,12 @@ export default function ListGroup() {
           offset={-70}
           href="#"
         >
-          <span className={scrolling ? 'hover:text-primary' : ''}>
+          <span className={scrolling ? "hover:text-primary" : ""}>
             Sobre nós
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? 'bg-primary' : 'bg-white'
+              scrolling ? "bg-primary" : "bg-white"
             }`}
           ></div>
         </Link>
@@ -85,7 +85,7 @@ export default function ListGroup() {
           >
             <span
               className={`inline-block ${
-                scrolling ? 'hover:text-primary' : ''
+                scrolling ? "hover:text-primary" : ""
               }`}
             >
               Produtos e Acessórios
@@ -93,7 +93,7 @@ export default function ListGroup() {
           </Link>
           <div
             className={`animate-${
-              showSubMenu ? 'fade-in' : 'fade-out'
+              showSubMenu ? "fade-in" : "fade-out"
             } duration-1000`}
           >
             {showSubMenu && (
@@ -177,12 +177,12 @@ export default function ListGroup() {
           offset={-70}
           href="#"
         >
-          <span className={scrolling ? 'hover:text-primary' : ''}>
+          <span className={scrolling ? "hover:text-primary" : ""}>
             Cursos e Palestras
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? 'bg-primary' : 'bg-white'
+              scrolling ? "bg-primary" : "bg-white"
             }`}
           ></div>
         </Link>
@@ -197,17 +197,17 @@ export default function ListGroup() {
           offset={-70}
           href="#"
         >
-          <span className={scrolling ? 'hover:text-primary' : ''}>
+          <span className={scrolling ? "hover:text-primary" : ""}>
             Perguntas Frequentes
           </span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? 'bg-primary' : 'bg-white'
+              scrolling ? "bg-primary" : "bg-white"
             }`}
           ></div>
         </Link>
       </li>
-      
+
       <li className="transition group">
         <Link
           to="contact"
@@ -218,14 +218,14 @@ export default function ListGroup() {
           offset={-190}
           href="#"
         >
-          <span className={scrolling ? 'hover:text-primary' : ''}>Contato</span>
+          <span className={scrolling ? "hover:text-primary" : ""}>Contato</span>
           <div
             className={`absolute -bottom-2 left-0 w-full h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              scrolling ? 'bg-primary' : 'bg-white'
+              scrolling ? "bg-primary" : "bg-white"
             }`}
           ></div>
         </Link>
       </li>
     </ul>
-  )
+  );
 }
