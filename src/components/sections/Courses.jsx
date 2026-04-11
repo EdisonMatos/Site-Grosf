@@ -13,7 +13,7 @@ export default function Courses() {
           sectionHeaderTitleSecond="Aprimore seu conhecimento"
           sectionHeaderDescription="Confira abaixo nossas sugestões para palestras ou cursos para tratamento da sua piscina. Escolha o que mais lhe interessar, e boas aulas!"
         />
-        <div className="flex flex-wrap items-center justify-around w-full">
+        <div className="flex flex-wrap items-center justify-center w-full">
           <ImgTextAndButtonsCard
             img={hthLogo}
             text="Curso presencial de tratamento de águas de piscinas."
