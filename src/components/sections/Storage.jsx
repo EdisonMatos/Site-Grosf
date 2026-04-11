@@ -19,7 +19,7 @@ import MotionDivDownToUp from "../animation/MotionDivDownToUp";
 
 export default function Storage({ modal }) {
   return (
-    <div className="flex justify-center full" id="storage">
+    <div className="flex justify-center full bg-white" id="storage">
       <div
         className="font-mainFont py-[26px] phone3:py-[48px] w-[88%] max-w-[1110px]"
         id="about"

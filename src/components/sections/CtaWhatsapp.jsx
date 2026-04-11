@@ -14,12 +14,13 @@ const whatsappContactLink = `https://wa.me/` + `${whatsappNumber}`;
 export default function CtaWhatsapp() {
   return (
     <div
-      className="relative mt-12 phone1:mt-[15%] phone2:mt-[20%] phone3:mt-[20%] bg-center bg-cover tablet1:mt-28"
+      className="relative bg-center bg-cover"
       style={{
+        backgroundColor: "#eaeaea",
         backgroundImage: `url(${imgBackground})`,
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
-        backgroundColor: "",
+        backgroundPosition: "center",
       }}
       id="contact"
     >

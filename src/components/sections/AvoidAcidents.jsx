@@ -38,7 +38,10 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="flex justify-center w-full bg-quinary" id="avoidAcident">
+    <div
+      className="flex justify-center w-full bg-quinary mb-12 phone1:mb-[15%] phone2:mb-[20%] phone3:mb-[20%] tablet1:mb-28"
+      id="avoidAcident"
+    >
       <div className="font-mainFont w-[88%] max-w-[1110px] pb-[8px] pt-[26px] phone3:pt-[48px] tablet1:pb-0 ">
         <SectionHeader
           sectionHeaderTitleSecond="Atuação responsável"
