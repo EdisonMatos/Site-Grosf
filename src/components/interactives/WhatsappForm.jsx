@@ -48,7 +48,7 @@ const WhatsappForm = () => {
 
     const mensagemWhatsapp = `Nome: ${name} \nTelefone: ${phone} \nEmail: ${email} \nMensagem: ${message}`
 
-    const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(
+    const linkWhatsapp = `https://wa.me/${numeroWhatsapp}${encodeURIComponent(
       mensagemWhatsapp,
     )}`
 
