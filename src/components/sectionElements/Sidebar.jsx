@@ -1,7 +1,7 @@
 import { Link } from "react-scroll";
 import { PropTypes } from "prop-types";
 
-export default function Sidebar({ showSidebar }) {
+export default function Sidebar({ showSidebar, handleSidebarItemClick }) {
   return (
     <div
       className={`sidebar transition-transform transform ${
@@ -16,6 +16,7 @@ export default function Sidebar({ showSidebar }) {
                 to="home"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-100}
@@ -28,6 +29,7 @@ export default function Sidebar({ showSidebar }) {
                 to="about"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -40,6 +42,7 @@ export default function Sidebar({ showSidebar }) {
                 to="products"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -54,6 +57,7 @@ export default function Sidebar({ showSidebar }) {
                 to="tratebemasuapiscina"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -68,6 +72,7 @@ export default function Sidebar({ showSidebar }) {
                 to="chatGrosf"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -82,6 +87,7 @@ export default function Sidebar({ showSidebar }) {
                 to="courses"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -94,13 +100,14 @@ export default function Sidebar({ showSidebar }) {
                 to="curiosities"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
               >
                 <li className="mb-2">
                   <span className="hover:text-primary">
-                    Curiosidades e história
+                    Curiosidades e História
                   </span>
                 </li>
               </Link>
@@ -108,6 +115,7 @@ export default function Sidebar({ showSidebar }) {
                 to="storage"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -120,6 +128,7 @@ export default function Sidebar({ showSidebar }) {
                 to="avoidAcident"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -134,6 +143,7 @@ export default function Sidebar({ showSidebar }) {
                 to="faq"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-80}
@@ -148,6 +158,7 @@ export default function Sidebar({ showSidebar }) {
                 to="contact"
                 className="cursor-pointer"
                 spy={true}
+                onClick={handleSidebarItemClick}
                 smooth={true}
                 duration={500}
                 offset={-200}
