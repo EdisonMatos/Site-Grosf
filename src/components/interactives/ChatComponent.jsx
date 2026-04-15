@@ -57,7 +57,7 @@ export default function CalculaFacilGrosf() {
         {
           from: "bot",
           text: `Usando o volume calculado: ${volume.toFixed(
-            3,
+            3
           )} lts. Calculando produtos...`,
         },
       ]);
@@ -113,13 +113,13 @@ export default function CalculaFacilGrosf() {
 
     if (userChoice === "Somente o volume da piscina") {
       delayResponse(`O volume da piscina é ${v.toFixed(3)} lts.`, () =>
-        setStep("askProducts"),
+        setStep("askProducts")
       );
     } else {
       // Option2: calcular produtos
       delayResponse(
         `O volume da piscina é ${v.toFixed(3)} lts. Calculando produtos...`,
-        () => calcularProdutos(v, treatmentOption),
+        () => calcularProdutos(v, treatmentOption)
       );
     }
   };
@@ -139,87 +139,87 @@ export default function CalculaFacilGrosf() {
     if (format === "Quadrada ou retangular") {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
-          14 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          14 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
-          10 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          10 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Cloro Granulado 10 em 1: ${Math.round(
-          18 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          18 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- ${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
-          "pt-BR",
-        )} ml.`,
+          "pt-BR"
+        )} ml.`
       );
       produtos.push(
         `- Clarificante: ${Math.round(6 * volumeM3).toLocaleString(
-          "pt-BR",
-        )} ml.`,
+          "pt-BR"
+        )} ml.`
       );
       produtos.push(
         `- Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString(
-          "pt-BR",
-        )} ml.`,
+          "pt-BR"
+        )} ml.`
       );
     } else if (format === "Oval") {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
-          14 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          14 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
-          10 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          10 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Cloro Granulado 10 em 1: ${Math.round(
-          18 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          18 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
-          "pt-BR",
-        )} ml.`,
+          "pt-BR"
+        )} ml.`
       );
       produtos.push(
-        `Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml.`,
+        `Clarificante: ${Math.round(6 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
       produtos.push(
-        `Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString("pt-BR")} ml.`,
+        `Elimina óleo: ${Math.round(14 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
     } else if (format === "Redonda") {
       produtos.push(
         `- Se usar Cloro Granulado Tradicional: ${Math.round(
-          12 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          12 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Dicloro Puro ou Multifunções: ${Math.round(
-          9 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          9 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `- Se usar Cloro Granulado 10 em 1: ${Math.round(
-          16 * volumeM3,
-        ).toLocaleString("pt-BR")} gramas.`,
+          16 * volumeM3
+        ).toLocaleString("pt-BR")} gramas.`
       );
       produtos.push(
         `${nomeAlgicida}: ${Math.round(7 * volumeAC).toLocaleString(
-          "pt-BR",
-        )} ml.`,
+          "pt-BR"
+        )} ml.`
       );
       produtos.push(
-        `Clarificante: ${Math.round(5 * volumeM3).toLocaleString("pt-BR")} ml.`,
+        `Clarificante: ${Math.round(5 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
       produtos.push(
-        `Elimina óleo: ${Math.round(12 * volumeM3).toLocaleString("pt-BR")} ml.`,
+        `Elimina óleo: ${Math.round(12 * volumeM3).toLocaleString("pt-BR")} ml.`
       );
     }
 
@@ -238,7 +238,7 @@ export default function CalculaFacilGrosf() {
 
   const calc = (quantidadePor1000) => {
     return (((volume * 1000) / 1000) * quantidadePor1000).toLocaleString(
-      "pt-BR",
+      "pt-BR"
     );
   };
 
@@ -265,7 +265,7 @@ export default function CalculaFacilGrosf() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col font-mainFont max-w-md mx-auto mt-10 p-4 border rounded-lg shadow-lg bg-white phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
+    <div className="flex flex-col max-w-md p-4 mx-auto mt-10 bg-white border rounded-lg shadow-lg font-mainFont phone1:text-paragraph2 phone2:text-paragraph3 tablet1:text-paragraph4">
       <div
         ref={containerRef}
         className="flex flex-col space-y-4 h-[250px] phone2:h-[300px] phone3:h-[350px] tablet1:h-[400px] overflow-y-scroll pt-[10px] mb-4 border-2 p-2 rounded-md"
@@ -273,7 +273,7 @@ export default function CalculaFacilGrosf() {
         <img
           src={img}
           alt="imagem de piscina"
-          className="max-w-auto mb-4 mt-4 px-5 rounded-sm"
+          className="px-5 mt-4 mb-4 rounded-sm max-w-auto"
         />
         {messages.map((msg, idx) => (
           <div
@@ -288,7 +288,7 @@ export default function CalculaFacilGrosf() {
           </div>
         ))}
       </div>
-      {/* <p className="font-mainFont flex justify-center pb-4 text-black">
+      {/* <p className="flex justify-center pb-4 text-black font-mainFont">
         Versão 5.0{" "}
       </p> */}
 
@@ -325,7 +325,7 @@ export default function CalculaFacilGrosf() {
             }`}
             onClick={() =>
               handleTreatmentOption(
-                "Primeiro tratamento ou longo período de abandono",
+                "Primeiro tratamento ou longo período de abandono"
               )
             }
             name="Primeiro tratamento ou longo período de abandono"
@@ -377,7 +377,7 @@ export default function CalculaFacilGrosf() {
       )}
 
       {step === "measures" && (
-        <div className="flex flex-col space-y-2 mt-2">
+        <div className="flex flex-col mt-2 space-y-2">
           {format !== "Redonda" && (
             <>
               <input
@@ -386,7 +386,7 @@ export default function CalculaFacilGrosf() {
                 placeholder="Comprimento (m)"
                 value={inputs.comprimento}
                 onChange={handleInputChange}
-                className="input-field border-2 rounded-md p-2 outline-none"
+                className="p-2 border-2 rounded-md outline-none input-field"
               />
               <input
                 type="number"
@@ -394,7 +394,7 @@ export default function CalculaFacilGrosf() {
                 placeholder="Largura (m)"
                 value={inputs.largura}
                 onChange={handleInputChange}
-                className="input-field border-2 rounded-md p-2 outline-none"
+                className="p-2 border-2 rounded-md outline-none input-field"
               />
             </>
           )}
@@ -405,7 +405,7 @@ export default function CalculaFacilGrosf() {
               placeholder="Diâmetro (m)"
               value={inputs.diametro}
               onChange={handleInputChange}
-              className="input-field border-2 rounded-md p-2 outline-none"
+              className="p-2 border-2 rounded-md outline-none input-field"
             />
           )}
           <input
@@ -414,13 +414,13 @@ export default function CalculaFacilGrosf() {
             placeholder="Profundidade média (m)"
             value={inputs.profundidade}
             onChange={handleInputChange}
-            className="input-field border-2 rounded-md p-2 outline-none"
+            className="p-2 border-2 rounded-md outline-none input-field"
           />
           <Buttons
             disabled={clicked}
             onClick={calcularVolume}
-            className="btn-primary w-full mt-2 bg-primary rounded-md p-2 outline-none text-white"
-            name="Calcular volume e produtos"
+            className="w-full p-2 mt-2 text-white rounded-md outline-none btn-primary bg-primary"
+            name="Calcular"
           ></Buttons>
         </div>
       )}
@@ -432,7 +432,7 @@ export default function CalculaFacilGrosf() {
           </p>
           <div className="flex flex-col gap-2">
             <Buttons
-              className="px-6 py-2 w-full bg-primary text-white rounded-lg"
+              className="w-full px-6 py-2 text-white rounded-lg bg-primary"
               onClick={() => {
                 setStep("productOption");
                 delayResponse("Você deseja qual tipo de tratamento?", null);
@@ -440,7 +440,7 @@ export default function CalculaFacilGrosf() {
               name="Sim"
             ></Buttons>
             <Buttons
-              className="px-6 py-2 w-full bg-gray-400 text-white rounded-lg"
+              className="w-full px-6 py-2 text-white bg-gray-400 rounded-lg"
               onClick={() => {
                 setStep("reset");
                 setMessages((prev) => [
@@ -462,7 +462,7 @@ export default function CalculaFacilGrosf() {
           <p>Gostaria de saber também os produtos circunstanciais?</p>
           <div className="flex flex-col gap-2">
             <Buttons
-              className="px-6 py-2 w-full bg-primary text-white rounded-lg"
+              className="w-full px-6 py-2 text-white rounded-lg bg-primary"
               onClick={() => {
                 const msgs = [
                   `Produtos Circunstanciais:`,
@@ -484,7 +484,7 @@ export default function CalculaFacilGrosf() {
 
                   `Elevador de alcalinidade em pó:
                   ${calc(
-                    17,
+                    17
                   )} gramas até elevar a alcalinidade para 100,0 ppm em média.`,
 
                   `Auxiliar de aspiração:
@@ -522,7 +522,7 @@ export default function CalculaFacilGrosf() {
               name="Sim"
             />
             <Buttons
-              className="px-6 py-2 w-full bg-gray-400 text-white rounded-lg"
+              className="w-full px-6 py-2 text-white bg-gray-400 rounded-lg"
               onClick={() => {
                 setStep("reset");
                 setMessages((prev) => [
@@ -542,7 +542,7 @@ export default function CalculaFacilGrosf() {
       {step === "reset" && (
         <Buttons
           onClick={handleReset}
-          className="btn-primary w-full mt-4 bg-primary p-2 rounded-md text-white"
+          className="w-full p-2 mt-4 text-white rounded-md btn-primary bg-primary"
           name="Reiniciar cálculo"
         ></Buttons>
       )}
